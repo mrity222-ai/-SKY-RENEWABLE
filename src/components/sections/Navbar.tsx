@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, MapPin, Menu, X, Sun, ChevronDown, Zap, Home, Factory, Wrench, ShieldCheck, Info, Users, BookOpen, Calculator as CalcIcon, BatteryFull, Layout } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X, Sun, ChevronDown, Zap, Home, Factory, Wrench, ShieldCheck, Info, Users, BookOpen, Calculator as CalcIcon, BatteryFull, Layout, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -44,6 +44,7 @@ export function Navbar() {
       ]
     },
     { name: "Projects", href: "/projects" },
+    { name: "Subsidy Guide", href: "/government-solar-subsidy" },
     { name: "Calculator", href: "/solar-calculator" },
   ];
 

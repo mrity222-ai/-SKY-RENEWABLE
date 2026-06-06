@@ -28,6 +28,7 @@ export function Footer() {
             <ul className="space-y-3">
               <FooterLink href="/about-us">About Us</FooterLink>
               <FooterLink href="/projects">Case Studies</FooterLink>
+              <FooterLink href="/government-solar-subsidy">Subsidy Guide</FooterLink>
             </ul>
           </div>
 
