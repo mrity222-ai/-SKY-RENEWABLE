@@ -62,20 +62,24 @@ export function Navbar() {
           ? "bg-white/80 backdrop-blur-2xl shadow-xl py-4 border-b border-black/5" 
           : "bg-transparent py-6"
       )}>
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="bg-primary p-2 rounded-xl shadow-lg transition-transform group-hover:rotate-12">
-              <Sun className="size-5 text-accent" />
-            </div>
-            <div className="flex flex-col -space-y-1">
-              <span className={cn(
-                "font-headline text-xl md:text-2xl font-black tracking-tight transition-colors duration-500",
-                isScrolled ? "text-primary" : "text-white"
-              )}>ARKĀ</span>
-              <span className="text-[8px] font-black tracking-[0.2em] text-accent uppercase">Solar Energy</span>
-            </div>
-          </Link>
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          {/* LOGO - LEFT */}
+          <div className="flex-1 flex justify-start">
+            <Link href="/" className="flex items-center gap-3 group shrink-0">
+              <div className="bg-primary p-2 rounded-xl shadow-lg transition-transform group-hover:rotate-12">
+                <Sun className="size-5 text-accent" />
+              </div>
+              <div className="flex flex-col -space-y-1">
+                <span className={cn(
+                  "font-headline text-xl md:text-2xl font-black tracking-tight transition-colors duration-500",
+                  isScrolled ? "text-primary" : "text-white"
+                )}>ARKĀ</span>
+                <span className="text-[8px] font-black tracking-[0.2em] text-accent uppercase">Solar Energy</span>
+              </div>
+            </Link>
+          </div>
 
+          {/* NAV MENU - CENTER */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = link.submenu 
@@ -135,70 +139,72 @@ export function Navbar() {
                 </div>
               );
             })}
-            <div className={cn(
-              "h-5 w-px mx-4 transition-colors",
-              isScrolled ? "bg-primary/10" : "bg-white/10"
-            )} />
-            <Button asChild className="bg-accent text-primary rounded-full px-6 hover:bg-white transition-all shadow-lg font-black border-none h-11 text-xs uppercase tracking-wider">
-              <Link href="/get-quote">Get a Quote</Link>
-            </Button>
           </nav>
 
-          <div className="lg:hidden flex items-center">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(
-                  "transition-colors",
-                  isScrolled ? "text-primary" : "text-white"
-                )}>
-                  <Menu className="size-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="bg-white border-none overflow-y-auto w-full max-w-[320px] p-8">
-                <div className="flex flex-col gap-12 pt-8">
-                  <Link href="/" className="flex items-center gap-3 group">
-                    <Sun className="size-8 text-accent" />
-                    <span className="font-headline text-2xl font-black text-primary tracking-tight">Arkā Solar</span>
-                  </Link>
-                  <nav className="flex flex-col gap-8">
-                    {navLinks.map((link) => (
-                      <div key={link.name} className="space-y-4">
-                        {link.href !== "#" ? (
-                          <Link 
-                            href={link.href}
-                            className={cn(
-                              "text-xl font-black uppercase tracking-tight transition-colors",
-                              pathname === link.href ? "text-accent" : "text-primary"
-                            )}
-                          >
-                            {link.name}
-                          </Link>
-                        ) : (
-                          <span className="text-xl font-black uppercase tracking-tight text-primary/40">
-                            {link.name}
-                          </span>
-                        )}
-                        {link.submenu && (
-                          <div className="grid gap-4 ml-4 border-l-2 border-primary/5 pl-4">
-                            {link.submenu.map((sub) => (
-                              <Link key={sub.name} href={sub.href} className="text-sm font-bold text-muted-foreground hover:text-accent flex items-center gap-3 py-1">
-                                <span className="bg-primary/5 p-1.5 rounded-lg">{sub.icon}</span>
-                                {sub.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </nav>
-                  <div className="pt-8 border-t border-primary/5">
-                    <Button asChild className="w-full bg-primary text-white rounded-full py-6 font-bold text-base shadow-xl">
-                      <Link href="/get-quote">Get a Quote</Link>
-                    </Button>
+          {/* CTA - RIGHT */}
+          <div className="flex-1 flex justify-end items-center gap-4">
+            <div className="hidden lg:flex items-center">
+              <Button asChild className="bg-accent text-primary rounded-full px-6 hover:bg-white transition-all shadow-lg font-black border-none h-11 text-xs uppercase tracking-wider">
+                <Link href="/get-quote">Get a Quote</Link>
+              </Button>
+            </div>
+
+            <div className="lg:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className={cn(
+                    "transition-colors",
+                    isScrolled ? "text-primary" : "text-white"
+                  )}>
+                    <Menu className="size-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="bg-white border-none overflow-y-auto w-full max-w-[320px] p-8">
+                  <div className="flex flex-col gap-12 pt-8">
+                    <Link href="/" className="flex items-center gap-3 group">
+                      <Sun className="size-8 text-accent" />
+                      <span className="font-headline text-2xl font-black text-primary tracking-tight">Arkā Solar</span>
+                    </Link>
+                    <nav className="flex flex-col gap-8">
+                      {navLinks.map((link) => (
+                        <div key={link.name} className="space-y-4">
+                          {link.href !== "#" ? (
+                            <Link 
+                              href={link.href}
+                              className={cn(
+                                "text-xl font-black uppercase tracking-tight transition-colors",
+                                pathname === link.href ? "text-accent" : "text-primary"
+                              )}
+                            >
+                              {link.name}
+                            </Link>
+                          ) : (
+                            <span className="text-xl font-black uppercase tracking-tight text-primary/40">
+                              {link.name}
+                            </span>
+                          )}
+                          {link.submenu && (
+                            <div className="grid gap-4 ml-4 border-l-2 border-primary/5 pl-4">
+                              {link.submenu.map((sub) => (
+                                <Link key={sub.name} href={sub.href} className="text-sm font-bold text-muted-foreground hover:text-accent flex items-center gap-3 py-1">
+                                  <span className="bg-primary/5 p-1.5 rounded-lg">{sub.icon}</span>
+                                  {sub.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </nav>
+                    <div className="pt-8 border-t border-primary/5">
+                      <Button asChild className="w-full bg-primary text-white rounded-full py-6 font-bold text-base shadow-xl">
+                        <Link href="/get-quote">Get a Quote</Link>
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>
