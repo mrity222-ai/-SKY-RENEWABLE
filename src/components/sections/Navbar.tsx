@@ -52,7 +52,6 @@ export function Navbar() {
       ]
     },
     { name: "About Us", href: "/about-us" },
-    { name: "Contact", href: "/contact-us" },
   ];
 
   return (
