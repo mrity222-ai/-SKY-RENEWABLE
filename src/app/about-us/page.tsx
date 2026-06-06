@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -6,30 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { 
   CheckCircle2, 
-  Target, 
   Award, 
-  Heart, 
   ShieldCheck, 
   Zap, 
-  Users, 
   Building2, 
   MapPin, 
-  Facebook, 
   Twitter, 
   Linkedin, 
-  Instagram,
-  ChevronRight,
-  TrendingUp,
-  Cpu,
-  Globe,
-  BadgeCheck,
+  TrendingUp, 
+  Globe, 
+  BadgeCheck, 
   Star
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
-import { motion } from "framer-motion";
 
 export default function AboutPage() {
   const team = [
@@ -47,10 +38,6 @@ export default function AboutPage() {
     { city: "Ahmedabad", type: "Head Office", address: "Solar Plaza, MG Road, Ahmedabad - 380001", image: "https://picsum.photos/seed/arka_off1/600/400" },
     { city: "Surat", type: "Regional Office", address: "Green Tech Park, Vesu, Surat - 395007", image: "https://picsum.photos/seed/arka_off2/600/400" },
     { city: "Sanand", type: "Branch Office", address: "GIDC Industrial Estate, Sanand - 382110", image: "https://picsum.photos/seed/arka_off3/600/400" },
-  ];
-
-  const certifications = [
-    "ISO 9001:2015", "MSME Registered", "GST Compliant", "Startup India", "MNRE Authorized"
   ];
 
   return (
@@ -129,7 +116,7 @@ export default function AboutPage() {
             <ScrollReveal direction="left" delay={0.2}>
               <div className="relative aspect-square rounded-[60px] overflow-hidden shadow-2xl group">
                 <Image 
-                  src="https://picsum.photos/seed/arka_story/800/800" 
+                  src="https://picsum.photos/seed/arka_about_story/800/800" 
                   alt="Solar Engineers" 
                   fill 
                   className="object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -334,22 +321,6 @@ export default function AboutPage() {
                     <h3 className="text-2xl font-bold font-headline text-primary">{member.name}</h3>
                     <p className="text-muted-foreground font-medium">{member.role}</p>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 11 – CERTIFICATIONS & COMPLIANCE */}
-      <section className="py-32 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-6">
-            {certifications.map((cert, i) => (
-              <ScrollReveal key={i} delay={i * 0.05} direction="zoom">
-                <div className="bg-white px-10 py-6 rounded-3xl shadow-sm border border-primary/5 flex items-center gap-4">
-                   <BadgeCheck className="text-accent size-6" />
-                   <span className="font-bold text-primary">{cert}</span>
                 </div>
               </ScrollReveal>
             ))}
