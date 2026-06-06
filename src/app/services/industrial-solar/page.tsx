@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Factory, TrendingDown, ShieldCheck, Zap, BarChart3, Building2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function IndustrialSolarPage() {
@@ -96,7 +97,7 @@ export default function IndustrialSolarPage() {
 
 function IndustrialCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
-    <Card className="p-12 border-none shadow-sm rounded-[40px] bg-white space-y-6 hover:shadow-2xl hover:-translate-y-2 transition-all">
+    <Card className="p-12 border-none shadow-sm rounded-[40px] bg-white space-y-6 hover:shadow-xl hover:-translate-y-2 transition-all">
       <div className="bg-primary/5 w-20 h-20 rounded-2xl flex items-center justify-center text-primary">{icon}</div>
       <h3 className="text-2xl font-bold font-headline text-primary">{title}</h3>
       <p className="text-muted-foreground leading-relaxed">{desc}</p>
