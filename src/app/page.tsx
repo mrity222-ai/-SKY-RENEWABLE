@@ -48,13 +48,15 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative rounded-[40px] overflow-hidden aspect-video shadow-2xl">
-              <Image 
-                src={installImg?.imageUrl || ""} 
-                alt="Solar Installation" 
-                fill 
-                className="object-cover"
-                data-ai-hint="solar installation"
-              />
+              {installImg?.imageUrl && (
+                <Image 
+                  src={installImg.imageUrl} 
+                  alt="Solar Installation" 
+                  fill 
+                  className="object-cover"
+                  data-ai-hint="solar installation"
+                />
+              )}
             </div>
             <div className="space-y-8">
               <h2 className="text-4xl font-bold font-headline text-primary">Powering India's Sustainable Future</h2>

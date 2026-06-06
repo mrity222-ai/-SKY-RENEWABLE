@@ -10,14 +10,16 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center pt-20">
       <div className="absolute inset-0 -z-10">
-        <Image
-          src={heroImg?.imageUrl || ""}
-          alt="Arkā Solar Hero"
-          fill
-          className="object-cover brightness-50"
-          priority
-          data-ai-hint="solar panels"
-        />
+        {heroImg?.imageUrl && (
+          <Image
+            src={heroImg.imageUrl}
+            alt="Arkā Solar Hero"
+            fill
+            className="object-cover brightness-50"
+            priority
+            data-ai-hint="solar panels"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div>
       </div>
 

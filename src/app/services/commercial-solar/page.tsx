@@ -22,7 +22,9 @@ export default function CommercialSolarPage() {
           </div>
         </div>
         <div className="absolute inset-0 opacity-20">
-          <Image src={industrialImg?.imageUrl || ""} alt="Industrial Solar" fill className="object-cover" />
+          {industrialImg?.imageUrl && (
+            <Image src={industrialImg.imageUrl} alt="Industrial Solar" fill className="object-cover" />
+          )}
         </div>
       </section>
 

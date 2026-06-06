@@ -22,7 +22,9 @@ export default function ResidentialSolarPage() {
           </div>
         </div>
         <div className="absolute inset-0 opacity-20">
-          <Image src={heroImg?.imageUrl || ""} alt="Hero" fill className="object-cover" />
+          {heroImg?.imageUrl && (
+            <Image src={heroImg.imageUrl} alt="Hero" fill className="object-cover" />
+          )}
         </div>
       </section>
 

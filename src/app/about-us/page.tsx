@@ -20,7 +20,9 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="absolute inset-0 opacity-20">
-          <Image src={heroImg?.imageUrl || ""} alt="Background" fill className="object-cover" />
+          {heroImg?.imageUrl && (
+            <Image src={heroImg.imageUrl} alt="Background" fill className="object-cover" />
+          )}
         </div>
       </section>
 
@@ -45,7 +47,9 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative aspect-square rounded-[48px] overflow-hidden shadow-2xl">
-              <Image src={installImg?.imageUrl || ""} alt="Team at work" fill className="object-cover" />
+              {installImg?.imageUrl && (
+                <Image src={installImg.imageUrl} alt="Team at work" fill className="object-cover" />
+              )}
             </div>
           </div>
         </div>
