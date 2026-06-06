@@ -1,9 +1,10 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, MapPin, Menu, X, Sun, ChevronDown, Zap, Home, Factory, Wrench, ShieldCheck, Info, Users, BookOpen, Calculator as CalcIcon, BatteryFull, Layout, BadgeCheck } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X, Sun, ChevronDown, Zap, Home, Factory, Wrench, ShieldCheck, Info, Users, BookOpen, Calculator as CalcIcon, BatteryFull, Layout, BadgeCheck, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -29,7 +30,6 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about-us" },
     { 
       name: "Services", 
       href: "/services",
@@ -51,47 +51,46 @@ export function Navbar() {
         { name: "Solar Calculator", href: "/solar-calculator", icon: <CalcIcon className="size-4" /> },
       ]
     },
+    { name: "About Us", href: "/about-us" },
+    { name: "Contact", href: "/contact-us" },
   ];
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[100]">
-      {/* Top Bar */}
-      <AnimatePresence>
-        {!isScrolled && (
-          <motion.div 
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="bg-primary text-primary-foreground py-2 text-[10px] md:text-xs hidden md:block overflow-hidden"
-          >
-            <div className="container mx-auto px-4 flex justify-between items-center">
-              <div className="flex gap-8">
-                <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><Phone className="size-3 text-accent" /> +91 98765 43210</span>
-                <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><Mail className="size-3 text-accent" /> contact@arkasolar.in</span>
-              </div>
-              <div className="flex gap-4">
-                <span className="flex items-center gap-2"><MapPin className="size-3 text-accent" /> Ahmedabad, Gujarat</span>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Main Header */}
-      <header className={cn(
-        "transition-all duration-500 border-b",
+      {/* Top Info Bar */}
+      <div className={cn(
+        "py-2.5 text-[11px] md:text-xs transition-all duration-500 hidden md:block",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-2xl shadow-2xl py-2 border-black/5" 
-          : "bg-transparent py-4 border-white/5"
+          ? "bg-primary/95 backdrop-blur-lg border-b border-white/5" 
+          : "bg-primary/40 backdrop-blur-md border-b border-white/10"
+      )}>
+        <div className="container mx-auto px-4 flex justify-between items-center text-white/80">
+          <div className="flex gap-8">
+            <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><MapPin className="size-3 text-accent" /> Solar Plaza, MG Road, Ahmedabad</span>
+            <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><Phone className="size-3 text-accent" /> +91 98765 43210</span>
+            <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><Mail className="size-3 text-accent" /> hello@arkasolar.in</span>
+          </div>
+          <div className="flex gap-5">
+            <Link href="#" className="hover:text-accent transition-colors"><Facebook className="size-3.5" /></Link>
+            <Link href="#" className="hover:text-accent transition-colors"><Twitter className="size-3.5" /></Link>
+            <Link href="#" className="hover:text-accent transition-colors"><Instagram className="size-3.5" /></Link>
+            <Link href="#" className="hover:text-accent transition-colors"><Linkedin className="size-3.5" /></Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Glassmorphism Navbar */}
+      <header className={cn(
+        "transition-all duration-500",
+        isScrolled 
+          ? "bg-white/80 backdrop-blur-2xl shadow-2xl py-3 border-b border-black/5" 
+          : "bg-transparent py-5"
       )}>
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group">
-            <motion.div 
-              whileHover={{ rotate: 90 }}
-              className="bg-primary p-2.5 rounded-2xl shadow-xl shadow-primary/20"
-            >
+            <div className="bg-primary p-2.5 rounded-2xl shadow-xl shadow-primary/20 transition-transform group-hover:rotate-12">
               <Sun className="size-6 text-accent" />
-            </motion.div>
+            </div>
             <div className="flex flex-col -space-y-1">
               <span className={cn(
                 "font-headline text-2xl font-black tracking-tight transition-colors duration-500",
@@ -101,11 +100,11 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav Menu */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = link.submenu 
-                ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname.startsWith(link.href))
+                ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname === link.href)
                 : pathname === link.href;
 
               return (
@@ -118,16 +117,6 @@ export function Navbar() {
                           ? (isActive ? "text-primary bg-primary/5" : "text-primary/70 hover:bg-primary/5") 
                           : (isActive ? "text-white bg-white/10" : "text-white/70 hover:bg-white/10")
                       )}>
-                        {isActive && (
-                          <motion.div 
-                            layoutId="nav-indicator"
-                            className={cn(
-                              "absolute inset-0 rounded-full -z-10",
-                              isScrolled ? "bg-primary/10" : "bg-white/20"
-                            )}
-                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                          />
-                        )}
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="start" className="rounded-3xl p-3 min-w-[260px] shadow-2xl border-none glass-morphism animate-in fade-in zoom-in-95 duration-200">
@@ -172,22 +161,16 @@ export function Navbar() {
               );
             })}
             <div className={cn(
-              "h-6 w-px mx-3 transition-colors",
+              "h-6 w-px mx-4 transition-colors",
               isScrolled ? "bg-primary/10" : "bg-white/10"
             )} />
-            <Button asChild className="bg-accent text-primary rounded-full px-8 hover:bg-white transition-all shadow-xl shadow-accent/20 font-bold border-none h-12">
-              <Link href="/get-quote">Request Proposal</Link>
+            <Button asChild className="bg-accent text-primary rounded-full px-8 hover:bg-white transition-all shadow-xl shadow-accent/20 font-black border-none h-12">
+              <Link href="/get-quote">Get a Quote</Link>
             </Button>
           </nav>
 
           {/* Mobile UI */}
           <div className="lg:hidden flex items-center gap-3">
-             <Button variant="ghost" size="icon" asChild className={cn(
-               "transition-colors",
-               isScrolled ? "text-primary" : "text-white"
-             )}>
-                <Link href="/get-quote"><Zap className="size-5" /></Link>
-             </Button>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className={cn(
@@ -236,12 +219,8 @@ export function Navbar() {
                   </nav>
                   <div className="pt-10 space-y-4 border-t border-primary/5">
                     <Button asChild className="w-full bg-primary text-white rounded-full py-7 font-bold text-xl shadow-2xl">
-                      <Link href="/get-quote">Book Free Survey</Link>
+                      <Link href="/get-quote">Get a Quote</Link>
                     </Button>
-                    <div className="flex justify-center gap-8 py-4">
-                       <Link href="tel:+919876543210" className="p-4 bg-primary/5 rounded-2xl text-primary hover:bg-accent transition-all"><Phone className="size-6" /></Link>
-                       <Link href="mailto:contact@arkasolar.in" className="p-4 bg-primary/5 rounded-2xl text-primary hover:bg-accent transition-all"><Mail className="size-6" /></Link>
-                    </div>
                   </div>
                 </div>
               </SheetContent>

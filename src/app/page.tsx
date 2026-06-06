@@ -1,4 +1,7 @@
-import React from "react";
+
+'use client';
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -13,13 +16,15 @@ import {
   Cpu, 
   Globe, 
   Star,
-  Quote
+  Quote,
+  ChevronLeft,
+  ChevronRight,
+  MousePointer2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
-import { Typewriter } from "@/components/animations/Typewriter";
 import { Calculator } from "@/components/sections/Calculator";
 import { 
   Accordion,
@@ -27,8 +32,27 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const HERO_IMAGES = [
+  "https://picsum.photos/seed/arka_hero_1/1920/1080",
+  "https://picsum.photos/seed/arka_hero_2/1920/1080",
+  "https://picsum.photos/seed/arka_hero_3/1920/1080",
+];
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
+
   const partners = [
     { name: "Tata Power", icon: <Sun /> },
     { name: "Waaree", icon: <Cpu /> },
@@ -47,47 +71,96 @@ export default function Home() {
 
   return (
     <div className="bg-white selection:bg-black selection:text-white overflow-hidden">
-      {/* SECTION 1 – HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 pb-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 lg:pr-12">
-              <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
-                  ☀ Clean Energy Solutions
-                </span>
-              </ScrollReveal>
-              <ScrollReveal direction="up" delay={0.1}>
-                <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
-                  Powering Homes & Businesses With <span className="text-[#B8B8B8]">Smart Solar Energy</span>
-                </h1>
-              </ScrollReveal>
-              <ScrollReveal direction="up" delay={0.2}>
-                <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl font-normal leading-[1.6]">
-                  Save More. Consume Less. Build A Sustainable Future. Help homeowners, businesses, and industries reduce electricity costs with reliable solar energy solutions.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal direction="up" delay={0.3}>
-                <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
-                    <Link href="/get-quote">Get Free Quote</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-50">
-                    <Link href="/get-quote">Book Site Survey</Link>
-                  </Button>
-                </div>
-              </ScrollReveal>
-            </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
-              <Image 
-                src="https://picsum.photos/seed/arka_hero_main/1200/900" 
-                alt="Solar Installation" 
-                fill 
+      {/* SECTION 1 – PREMIUM HERO SLIDER */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Slider */}
+        <div className="absolute inset-0 z-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, scale: 1.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="relative h-full w-full"
+            >
+              <Image
+                src={HERO_IMAGES[currentSlide]}
+                alt="Solar Energy"
+                fill
                 className="object-cover"
                 priority
               />
-            </ScrollReveal>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent z-10" />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Hero Content */}
+        <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center">
+          <ScrollReveal direction="up" className="max-w-4xl space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-md border border-accent/30 px-4 py-1.5 rounded-full"
+            >
+              <Zap className="size-4 text-accent" />
+              <span className="text-white text-[12px] font-bold uppercase tracking-widest">Solar Energy Solutions</span>
+            </motion.div>
+            
+            <h1 className="text-[48px] md:text-[72px] lg:text-[100px] font-black text-white leading-[1.05] tracking-tighter">
+              Powering India With <br />
+              <span className="text-accent">Smart Solar Energy</span>
+            </h1>
+            
+            <p className="text-[16px] md:text-[20px] text-white/80 max-w-2xl leading-relaxed font-medium">
+              Switch to solar today. Clean power, long-term savings, and a brighter future for your home and business. Experience the pinnacle of energy independence.
+            </p>
+
+            <div className="flex flex-wrap gap-6 pt-4">
+              <Button asChild size="lg" className="bg-accent text-primary rounded-full px-12 py-8 text-[16px] font-black hover:bg-white transition-all shadow-xl shadow-accent/20 hover:shadow-accent/40 group relative overflow-hidden">
+                <Link href="/get-quote">
+                  <span className="relative z-10 flex items-center gap-2">Get a Quote <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" /></span>
+                  <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm rounded-full px-12 py-8 text-[16px] font-bold hover:bg-white/10 transition-all">
+                <Link href="/get-quote">Book Site Survey</Link>
+              </Button>
+            </div>
+          </ScrollReveal>
+
+          {/* Slider Navigation */}
+          <div className="absolute bottom-32 right-4 md:right-12 flex gap-4">
+            <button onClick={prevSlide} className="size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
+              <ChevronLeft className="size-6" />
+            </button>
+            <button onClick={nextSlide} className="size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
+              <ChevronRight className="size-6" />
+            </button>
           </div>
+
+          {/* Bottom Feature Bar */}
+          <div className="absolute bottom-0 left-0 right-0 bg-primary/40 backdrop-blur-xl border-t border-white/10 py-10">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <HeroFeature text="Lower Electricity Bills" />
+                <HeroFeature text="Clean & Renewable Energy" />
+                <HeroFeature text="Energy Independence" />
+                <HeroFeature text="Low Maintenance" />
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="absolute bottom-32 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
+          >
+            <div className="w-px h-12 bg-gradient-to-b from-accent to-transparent" />
+            <span className="text-[10px] text-white/50 uppercase tracking-[0.4em] font-bold">Scroll</span>
+          </motion.div>
         </div>
       </section>
 
@@ -327,6 +400,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+function HeroFeature({ text }: { text: string }) {
+  return (
+    <div className="flex items-center gap-3 text-white group">
+      <div className="size-6 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-300">
+        <CheckCircle2 className="size-4" />
+      </div>
+      <span className="text-[14px] md:text-[16px] font-bold tracking-tight">{text}</span>
     </div>
   );
 }
