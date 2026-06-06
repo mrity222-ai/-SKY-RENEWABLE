@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Loader2, Sparkles, AlertCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 
 export function AIAdvisor() {
   const [consumption, setConsumption] = useState("");
@@ -47,93 +47,97 @@ export function AIAdvisor() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <Card className="rounded-[24px] shadow-xl border-none p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-primary">Monthly Consumption (kWh/Units)</label>
-                  <Input 
-                    placeholder="e.g. 450" 
-                    type="number" 
-                    value={consumption}
-                    onChange={(e) => setConsumption(e.target.value)}
-                    className="rounded-xl border-primary/20 h-12 focus:ring-accent"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold text-primary">Available Roof Area (sq. meters)</label>
-                  <Input 
-                    placeholder="e.g. 50" 
-                    type="number" 
-                    value={roofArea}
-                    onChange={(e) => setRoofArea(e.target.value)}
-                    className="rounded-xl border-primary/20 h-12 focus:ring-accent"
-                  />
-                </div>
-                <Button 
-                  disabled={loading} 
-                  type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white rounded-full h-12 text-lg font-bold shadow-lg shadow-primary/20 transition-all active:scale-95"
-                >
-                  {loading ? <><Loader2 className="mr-2 animate-spin size-5" /> Analyzing Patterns...</> : "Get AI Recommendation"}
-                </Button>
-              </form>
-            </Card>
-
-            <motion.div layout className="min-h-[300px]">
-              <AnimatePresence mode="wait">
-                {recommendation ? (
-                  <motion.div 
-                    key="recommendation"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                    className="space-y-6"
-                  >
-                    <div className="bg-white p-8 rounded-[24px] shadow-lg space-y-4 border border-primary/5">
-                      <div className="flex justify-between items-center pb-4 border-b border-primary/5">
-                        <span className="font-bold text-primary">System Size:</span>
-                        <span className="text-2xl font-bold text-accent">{recommendation.recommendedSystemSizeKw} kW</span>
-                      </div>
-                      <div className="flex justify-between items-center pb-4 border-b border-primary/5">
-                        <span className="font-bold text-primary">Est. Subsidy:</span>
-                        <span className="text-2xl font-bold text-accent">₹{recommendation.estimatedSubsidyAmountRupees.toLocaleString()}</span>
-                      </div>
-                      <div className="pt-4">
-                        <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
-                          <AlertCircle className="size-4 text-accent" /> Subsidy Details
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
-                          {recommendation.subsidyDetails}
-                        </p>
-                      </div>
+          <LayoutGroup>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <motion.div layout>
+                <Card className="rounded-[24px] shadow-xl border-none p-8">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-primary">Monthly Consumption (kWh/Units)</label>
+                      <Input 
+                        placeholder="e.g. 450" 
+                        type="number" 
+                        value={consumption}
+                        onChange={(e) => setConsumption(e.target.value)}
+                        className="rounded-xl border-primary/20 h-12 focus:ring-accent"
+                      />
                     </div>
-                    
-                    <motion.div 
-                      layout
-                      className="bg-accent/10 border border-accent/20 p-6 rounded-[24px]"
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold text-primary">Available Roof Area (sq. meters)</label>
+                      <Input 
+                        placeholder="e.g. 50" 
+                        type="number" 
+                        value={roofArea}
+                        onChange={(e) => setRoofArea(e.target.value)}
+                        className="rounded-xl border-primary/20 h-12 focus:ring-accent"
+                      />
+                    </div>
+                    <Button 
+                      disabled={loading} 
+                      type="submit" 
+                      className="w-full bg-primary hover:bg-primary/90 text-white rounded-full h-12 text-lg font-bold shadow-lg shadow-primary/20 transition-all active:scale-95"
                     >
-                      <h4 className="font-bold text-primary mb-2">Our Recommendation</h4>
-                      <p className="text-sm text-primary/80 leading-relaxed">
-                        {recommendation.recommendationSummary}
-                      </p>
+                      {loading ? <><Loader2 className="mr-2 animate-spin size-5" /> Analyzing Patterns...</> : "Get AI Recommendation"}
+                    </Button>
+                  </form>
+                </Card>
+              </motion.div>
+
+              <motion.div layout className="min-h-[300px]">
+                <AnimatePresence mode="wait">
+                  {recommendation ? (
+                    <motion.div 
+                      key="recommendation"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.4, type: "spring", bounce: 0.3 }}
+                      className="space-y-6"
+                    >
+                      <div className="bg-white p-8 rounded-[24px] shadow-lg space-y-4 border border-primary/5">
+                        <div className="flex justify-between items-center pb-4 border-b border-primary/5">
+                          <span className="font-bold text-primary">System Size:</span>
+                          <span className="text-2xl font-bold text-accent">{recommendation.recommendedSystemSizeKw} kW</span>
+                        </div>
+                        <div className="flex justify-between items-center pb-4 border-b border-primary/5">
+                          <span className="font-bold text-primary">Est. Subsidy:</span>
+                          <span className="text-2xl font-bold text-accent">₹{recommendation.estimatedSubsidyAmountRupees.toLocaleString()}</span>
+                        </div>
+                        <div className="pt-4">
+                          <h4 className="font-bold text-primary mb-2 flex items-center gap-2">
+                            <AlertCircle className="size-4 text-accent" /> Subsidy Details
+                          </h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                            {recommendation.subsidyDetails}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <motion.div 
+                        layout
+                        className="bg-accent/10 border border-accent/20 p-6 rounded-[24px]"
+                      >
+                        <h4 className="font-bold text-primary mb-2">Our Recommendation</h4>
+                        <p className="text-sm text-primary/80 leading-relaxed">
+                          {recommendation.recommendationSummary}
+                        </p>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
-                ) : (
-                  <motion.div 
-                    key="placeholder"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="h-full flex flex-col items-center justify-center text-center p-8 bg-white/50 border border-dashed border-primary/20 rounded-[24px]"
-                  >
-                    <Sparkles className="size-12 text-primary/20 mb-4" />
-                    <p className="text-muted-foreground">Enter your electricity consumption and roof area to see your personalized solar recommendation.</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </div>
+                  ) : (
+                    <motion.div 
+                      key="placeholder"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="h-full flex flex-col items-center justify-center text-center p-8 bg-white/50 border border-dashed border-primary/20 rounded-[24px]"
+                    >
+                      <Sparkles className="size-12 text-primary/20 mb-4" />
+                      <p className="text-muted-foreground">Enter your electricity consumption and roof area to see your personalized solar recommendation.</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </div>
+          </LayoutGroup>
         </div>
       </div>
     </section>

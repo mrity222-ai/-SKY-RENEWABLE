@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +37,6 @@ export function Navbar() {
         { name: "About Us", href: "/about-us", icon: <Info className="size-4" /> },
         { name: "Why Choose Us", href: "/company/why-choose-us", icon: <ShieldCheck className="size-4" /> },
         { name: "Our Process", href: "/company/process", icon: <Zap className="size-4" /> },
-        { name: "Our Team", href: "/company/team", icon: <Users className="size-4" /> },
       ]
     },
     { 
@@ -55,7 +55,6 @@ export function Navbar() {
       href: "/resources",
       submenu: [
         { name: "Solar Calculator", href: "/solar-calculator", icon: <CalcIcon className="size-4" /> },
-        { name: "Subsidy Guide", href: "/resources/subsidy-guide", icon: <BookOpen className="size-4" /> },
         { name: "Blog", href: "/blog", icon: <BookOpen className="size-4" /> },
       ]
     },
@@ -97,13 +96,24 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-2">
-            {navLinks.map((link) => (
-              link.submenu ? (
+            {navLinks.map((link) => {
+              const isActive = link.submenu 
+                ? link.submenu.some(sub => pathname === sub.href) || pathname.startsWith(link.href)
+                : pathname === link.href;
+
+              return link.submenu ? (
                 <DropdownMenu key={link.name}>
                   <DropdownMenuTrigger className={cn(
-                    "px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1.5 hover:bg-primary/5 transition-all outline-none",
-                    pathname.startsWith(link.href) ? "text-accent" : "text-primary/80"
+                    "relative px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1.5 hover:bg-primary/5 transition-all outline-none",
+                    isActive ? "text-primary" : "text-primary/80"
                   )}>
+                    {isActive && (
+                      <motion.div 
+                        layoutId="nav-pill"
+                        className="absolute inset-0 bg-primary/5 rounded-full -z-10"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
                     {link.name} <ChevronDown className="size-3" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" className="rounded-2xl p-2 min-w-[220px] shadow-2xl border-none">
@@ -124,14 +134,21 @@ export function Navbar() {
                   key={link.name} 
                   href={link.href}
                   className={cn(
-                    "px-4 py-2 rounded-full text-sm font-bold transition-all hover:bg-primary/5",
-                    pathname === link.href ? "text-accent" : "text-primary/80"
+                    "relative px-4 py-2 rounded-full text-sm font-bold transition-all hover:bg-primary/5",
+                    isActive ? "text-primary" : "text-primary/80"
                   )}
                 >
+                  {isActive && (
+                    <motion.div 
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-primary/5 rounded-full -z-10"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
                   {link.name}
                 </Link>
-              )
-            ))}
+              );
+            })}
             <div className="h-6 w-px bg-primary/10 mx-2" />
             <Button asChild className="bg-primary text-white rounded-full px-8 hover:bg-primary/90 shadow-lg shadow-primary/20 font-bold">
               <Link href="/get-quote">Get Free Quote</Link>
