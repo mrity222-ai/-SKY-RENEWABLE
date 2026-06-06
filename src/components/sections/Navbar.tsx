@@ -59,7 +59,6 @@ export function Navbar() {
         { name: "Blog", href: "/blog", icon: <BookOpen className="size-4" /> },
       ]
     },
-    { name: "Contact", href: "/contact-us" },
   ];
 
   return (
