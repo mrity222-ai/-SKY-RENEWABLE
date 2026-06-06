@@ -44,8 +44,14 @@ export function Navbar() {
       ]
     },
     { name: "Projects", href: "/projects" },
-    { name: "Subsidy Guide", href: "/government-solar-subsidy" },
-    { name: "Calculator", href: "/solar-calculator" },
+    { 
+      name: "Resources", 
+      href: "#",
+      submenu: [
+        { name: "Subsidy Guide", href: "/government-solar-subsidy", icon: <BookOpen className="size-4" /> },
+        { name: "Solar Calculator", href: "/solar-calculator", icon: <CalcIcon className="size-4" /> },
+      ]
+    },
   ];
 
   return (
@@ -100,7 +106,7 @@ export function Navbar() {
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = link.submenu 
-                ? link.submenu.some(sub => pathname === sub.href) || pathname.startsWith(link.href)
+                ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname.startsWith(link.href))
                 : pathname === link.href;
 
               return (
@@ -201,15 +207,21 @@ export function Navbar() {
                   <nav className="flex flex-col gap-6">
                     {navLinks.map((link) => (
                       <div key={link.name} className="space-y-4">
-                        <Link 
-                          href={link.href}
-                          className={cn(
-                            "text-2xl font-black uppercase tracking-tight transition-colors",
-                            pathname === link.href ? "text-accent" : "text-primary"
-                          )}
-                        >
-                          {link.name}
-                        </Link>
+                        {link.href !== "#" ? (
+                          <Link 
+                            href={link.href}
+                            className={cn(
+                              "text-2xl font-black uppercase tracking-tight transition-colors",
+                              pathname === link.href ? "text-accent" : "text-primary"
+                            )}
+                          >
+                            {link.name}
+                          </Link>
+                        ) : (
+                          <span className="text-2xl font-black uppercase tracking-tight text-primary/40">
+                            {link.name}
+                          </span>
+                        )}
                         {link.submenu && (
                           <div className="grid gap-4 ml-6 border-l-2 border-primary/5 pl-6">
                             {link.submenu.map((sub) => (
