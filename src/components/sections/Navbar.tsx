@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, MapPin, Menu, X, Sun, ChevronDown, Zap, Home, Factory, Wrench, ShieldCheck, Info, Users, BookOpen, Calculator as CalcIcon } from "lucide-react";
+import { Phone, Mail, MapPin, Menu, X, Sun, ChevronDown, Zap, Home, Factory, Wrench, ShieldCheck, Info, Users, BookOpen, Calculator as CalcIcon, BatteryFull, Layout } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -45,7 +45,9 @@ export function Navbar() {
         { name: "Residential Solar", href: "/services/residential-solar", icon: <Home className="size-4" /> },
         { name: "Commercial Solar", href: "/services/commercial-solar", icon: <Factory className="size-4" /> },
         { name: "Industrial Solutions", href: "/services/industrial-solar", icon: <Zap className="size-4" /> },
-        { name: "Maintenance & AMC", href: "/services/maintenance", icon: <Wrench className="size-4" /> },
+        { name: "Rooftop Installation", href: "/services/rooftop-installation", icon: <Layout className="size-4" /> },
+        { name: "Battery Storage", href: "/services/battery-storage", icon: <BatteryFull className="size-4" /> },
+        { name: "Maintenance & AMC", href: "/services/solar-maintenance", icon: <Wrench className="size-4" /> },
       ]
     },
     { name: "Projects", href: "/projects" },

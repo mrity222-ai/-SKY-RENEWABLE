@@ -1,106 +1,138 @@
+'use client';
 
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Factory, TrendingDown, ShieldCheck, Zap, BarChart3, Building2, ArrowRight } from "lucide-react";
+import { 
+  Factory, 
+  Cpu, 
+  ShieldAlert, 
+  BarChart3, 
+  ArrowRight,
+  Zap,
+  CheckCircle2,
+  Globe
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { Counter } from "@/components/animations/Counter";
 
 export default function IndustrialSolarPage() {
-  const industrialImg = PlaceHolderImages.find(img => img.id === "project-industrial");
-
   return (
-    <div className="bg-white">
-      {/* Hero */}
-      <section className="relative py-32 bg-primary overflow-hidden">
-        <div className="container mx-auto px-4 relative z-10 text-white">
-          <div className="max-w-3xl space-y-8">
-            <div className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">INDUSTRIAL EPC SOLUTIONS</div>
-            <h1 className="text-5xl md:text-8xl font-bold font-headline leading-tight">Heavy Duty Power for <span className="text-accent">Industry</span></h1>
-            <p className="text-xl text-white/70 max-w-2xl">
-              Turn your factory roof into a profit center. Claim accelerated depreciation, reduce heavy load bills, and meet your green energy targets.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-accent text-primary font-bold rounded-full px-10">
-                <Link href="/get-quote">Get Industrial Quote</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-10">
-                <Link href="/projects">View Case Studies</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-        <div className="absolute inset-0 opacity-20">
-          {industrialImg?.imageUrl && (
-            <Image src={industrialImg.imageUrl} alt="Industrial Solar" fill className="object-cover" />
-          )}
-        </div>
-      </section>
-
-      {/* Strategic Benefits */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <h2 className="text-4xl font-bold text-primary font-headline">Strategic Solar Investment</h2>
-            <p className="text-lg text-muted-foreground">For Indian industries, solar is not just an energy choice—it's a financial tool to combat rising operational costs.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <IndustrialCard 
-              icon={<TrendingDown className="size-10" />}
-              title="Operational Savings"
-              desc="Lock in your electricity costs at ₹2-3 per unit for the next 25 years vs grid rates of ₹8-11."
-            />
-            <IndustrialCard 
-              icon={<BarChart3 className="size-10" />}
-              title="Accelerated Depreciation"
-              desc="Industrial clients can claim 40% depreciation in Year 1, providing massive tax offsets."
-            />
-            <IndustrialCard 
-              icon={<Building2 className="size-10" />}
-              title="ESG & Compliance"
-              desc="Fulfill Renewable Purchase Obligations (RPO) and boost your brand's global sustainability rating."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Models */}
-      <section className="py-24 bg-primary/5">
+    <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
+      {/* HERO SECTION */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-primary font-headline leading-tight">Flexible Financing Models</h2>
+              <ScrollReveal direction="up">
+                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                  Industrial EPC
+                </span>
+              </ScrollReveal>
               <div className="space-y-6">
-                <div className="p-8 bg-white rounded-[32px] shadow-sm space-y-4 border-l-8 border-accent">
-                   <h3 className="text-2xl font-bold text-primary">CAPEX Model</h3>
-                   <p className="text-muted-foreground">You own the system from Day 1. Maximize tax benefits and enjoy 100% of the energy savings directly.</p>
-                </div>
-                <div className="p-8 bg-white rounded-[32px] shadow-sm space-y-4 border-l-8 border-primary">
-                   <h3 className="text-2xl font-bold text-primary">RESCO / OPEX Model</h3>
-                   <p className="text-muted-foreground">Zero investment. Pay only for the energy generated at a rate significantly lower than the grid.</p>
-                </div>
+                <ScrollReveal direction="up" delay={0.1}>
+                  <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight">
+                    Industrial Solar: <br />
+                    <span className="text-[#B8B8B8]">High-Yield Energy Ecosystems</span>
+                  </h1>
+                </ScrollReveal>
+                <ScrollReveal direction="up" delay={0.2}>
+                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
+                    Large-scale high-yield solar arrays for factories, warehouses, and industrial parks. Our engineering-first approach ensures maximum uptime and performance.
+                  </p>
+                </ScrollReveal>
               </div>
-              <Button asChild size="lg" className="rounded-full px-12">
-                <Link href="/contact-us">Consult an Expert <ArrowRight className="ml-2" /></Link>
-              </Button>
+              <ScrollReveal direction="up" delay={0.3}>
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
+                    <Link href="/get-quote">Get Industrial Proposal</Link>
+                  </Button>
+                </div>
+              </ScrollReveal>
             </div>
-            <div className="relative aspect-square rounded-[60px] overflow-hidden shadow-2xl">
-              <Image src="https://picsum.photos/seed/arkaindustrial2/800/800" alt="Industrial Installation" fill className="object-cover" />
-            </div>
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+              <Image 
+                src="https://picsum.photos/seed/arka_ind_hero/1200/800" 
+                alt="Industrial Solar Plant" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* STATS SECTION */}
+      <section className="py-24 border-y border-neutral-100">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+            <StatItem value={150} suffix="MW+" label="Installed Capacity" />
+            <StatItem value={50000} suffix="T" label="CO2 Reduction" />
+            <StatItem value={100} suffix="+" label="Industrial Hubs" />
+            <StatItem value={99} suffix="%" label="Uptime Guarantee" />
+          </div>
+        </div>
+      </section>
+
+      {/* EPC MODELS */}
+      <section className="py-32 bg-[#F9F9F9]">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <ScrollReveal direction="right">
+              <Card className="p-12 rounded-[60px] border-none bg-white shadow-sm space-y-6">
+                <div className="size-16 rounded-2xl bg-black text-white flex items-center justify-center">
+                  <Factory className="size-8" />
+                </div>
+                <h3 className="text-[28px] font-semibold text-black">CAPEX Model</h3>
+                <p className="text-[#555] text-[15px] leading-[1.7]">Own the system directly. Maximize your tax benefits and claim accelerated depreciation while enjoying 100% of the energy savings.</p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> 100% Ownership</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> Full Tax Credits</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> Maximum ROI</li>
+                </ul>
+              </Card>
+            </ScrollReveal>
+            <ScrollReveal direction="left" delay={0.2}>
+              <Card className="p-12 rounded-[60px] border-none bg-black text-white shadow-sm space-y-6">
+                <div className="size-16 rounded-2xl bg-white text-black flex items-center justify-center">
+                  <Globe className="size-8" />
+                </div>
+                <h3 className="text-[28px] font-semibold text-white">RESCO / OPEX Model</h3>
+                <p className="text-white/60 text-[15px] leading-[1.7]">Zero investment. Pay only for the energy you consume at a rate significantly lower than the grid tariff. We manage the system.</p>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Zero Upfront Cost</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Maintenance Included</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Immediate Savings</li>
+                </ul>
+              </Card>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-32 px-4 bg-black text-white">
+        <div className="container mx-auto max-w-5xl text-center space-y-10">
+          <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Scale Your Industry Sustainably</h2>
+          <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
+            <Link href="/get-quote">Speak to an Expert</Link>
+          </Button>
         </div>
       </section>
     </div>
   );
 }
 
-function IndustrialCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
+function StatItem({ value, suffix = "", prefix = "", label }: { value: number, suffix?: string, prefix?: string, label: string }) {
   return (
-    <Card className="p-12 border-none shadow-sm rounded-[40px] bg-white space-y-6 hover:shadow-xl hover:-translate-y-2 transition-all">
-      <div className="bg-primary/5 w-20 h-20 rounded-2xl flex items-center justify-center text-primary">{icon}</div>
-      <h3 className="text-2xl font-bold font-headline text-primary">{title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{desc}</p>
-    </Card>
+    <div className="space-y-2">
+      <div className="text-[40px] lg:text-[56px] font-semibold text-black leading-none">
+        <Counter value={value} suffix={suffix} prefix={prefix} />
+      </div>
+      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
+    </div>
   );
 }

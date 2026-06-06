@@ -1,72 +1,130 @@
+'use client';
 
-import Link from "next/link";
+import React from "react";
 import Image from "next/image";
-import { Factory, TrendingDown, BarChart3, Building2, ShieldCheck, Zap } from "lucide-react";
+import Link from "next/link";
+import { 
+  Building2, 
+  TrendingUp, 
+  BarChart3, 
+  ShieldCheck, 
+  ArrowRight,
+  Factory,
+  Zap,
+  CheckCircle2
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Card } from "@/components/ui/card";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { Counter } from "@/components/animations/Counter";
+import { 
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function CommercialSolarPage() {
-  const industrialImg = PlaceHolderImages.find(img => img.id === "project-industrial");
+  const features = [
+    { icon: <TrendingUp />, title: "Accelerated Depreciation", desc: "Claim 40% depreciation in Year 1 for massive tax savings on your business profits." },
+    { icon: <BarChart3 />, title: "Fixed Energy Costs", desc: "Protect your bottom line from rising utility tariffs for the next 25 years." },
+    { icon: <ShieldCheck />, title: "ESG Compliance", desc: "Boost your brand value and meet sustainability targets for global corporate standards." },
+    { icon: <Zap />, title: "Smart ROI", desc: "Average payback period of 3-5 years followed by 20+ years of free energy." },
+  ];
 
   return (
-    <div className="bg-white">
-      <section className="relative py-24 bg-primary text-white">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-block bg-accent/20 text-accent px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">COMMERCIAL & INDUSTRIAL</div>
-            <h1 className="text-5xl md:text-7xl font-bold font-headline">Maximize Profits with <br /><span className="text-accent">Clean Power</span></h1>
-            <p className="text-xl text-white/70">Reduce operational overheads, claim accelerated depreciation, and boost your sustainability credentials.</p>
-            <Button size="lg" asChild className="bg-accent text-primary font-bold rounded-full px-10">
-              <Link href="/contact-us">Get Industrial Quote</Link>
-            </Button>
-          </div>
-        </div>
-        <div className="absolute inset-0 opacity-20">
-          {industrialImg?.imageUrl && (
-            <Image src={industrialImg.imageUrl} alt="Industrial Solar" fill className="object-cover" />
-          )}
-        </div>
-      </section>
-
-      <section className="py-24">
+    <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
+      {/* HERO SECTION */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-4xl font-bold font-headline text-primary leading-tight">Solar for Business: <br />A Strategic Investment</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                For businesses in India, electricity tariffs are often the highest operating expense. By switching to solar, you lock in your energy costs for the next 25 years.
-              </p>
-              <div className="grid gap-6">
-                <CommercialBenefitItem 
-                  icon={<TrendingDown className="size-6 text-accent" />}
-                  title="Accelerated Depreciation"
-                  desc="Claim up to 40% depreciation in the first year for significant tax savings."
-                />
-                <CommercialBenefitItem 
-                  icon={<BarChart3 className="size-6 text-accent" />}
-                  title="Fixed Energy Costs"
-                  desc="Protect your business from future electricity tariff hikes."
-                />
-                <CommercialBenefitItem 
-                  icon={<Building2 className="size-6 text-accent" />}
-                  title="ESG Compliance"
-                  desc="Enhance your brand value by demonstrating environmental responsibility."
-                />
+              <ScrollReveal direction="up">
+                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                  Business Solutions
+                </span>
+              </ScrollReveal>
+              <div className="space-y-6">
+                <ScrollReveal direction="up" delay={0.1}>
+                  <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight">
+                    Commercial Solar: <br />
+                    <span className="text-[#B8B8B8]">Reduce Operational Overheads</span>
+                  </h1>
+                </ScrollReveal>
+                <ScrollReveal direction="up" delay={0.2}>
+                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
+                    Strategic solar investments for offices, shops, and hospitals. Lock in your electricity costs and maximize business profits with our Tier-1 commercial rooftop systems.
+                  </p>
+                </ScrollReveal>
               </div>
+              <ScrollReveal direction="up" delay={0.3}>
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
+                    <Link href="/get-quote">Request Proposal</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-50">
+                    <Link href="/get-quote">Book Site Audit</Link>
+                  </Button>
+                </div>
+              </ScrollReveal>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-primary/5 p-12 rounded-[48px] space-y-4 text-center">
-                <div className="text-4xl font-black text-accent font-headline">4-5Y</div>
-                <p className="text-sm font-bold text-primary">Average ROI Period</p>
-              </div>
-              <div className="bg-primary p-12 rounded-[48px] space-y-4 text-center text-white">
-                <div className="text-4xl font-black text-accent font-headline">40%</div>
-                <p className="text-sm font-bold opacity-70">Tax Benefits</p>
-              </div>
-              <div className="col-span-2 bg-accent/10 p-12 rounded-[48px] text-center">
-                <h4 className="text-2xl font-bold text-primary mb-2">CAPEX & OPEX Models</h4>
-                <p className="text-muted-foreground">Flexible ownership models to suit your cash flow requirements.</p>
-              </div>
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+              <Image 
+                src="https://picsum.photos/seed/arka_comm_hero/1200/800" 
+                alt="Commercial Solar Installation" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS SECTION */}
+      <section className="py-24 border-y border-neutral-100">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+            <StatItem value={1200} suffix="+" label="Commercial Projects" />
+            <StatItem value={40} suffix="%" label="Tax Depreciation" />
+            <StatItem value={4} suffix="Y" label="Average Payback" />
+            <StatItem value={50} suffix="MW+" label="Installed Capacity" />
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES GRID */}
+      <section className="py-32 bg-[#F9F9F9]">
+        <div className="container mx-auto px-4">
+          <ScrollReveal className="text-center mb-20 space-y-4">
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">A Strategic Financial Tool</h2>
+            <p className="text-[#777] text-[14px] max-w-xl mx-auto">Solar isn't just energy; it's a way to boost your business EBITDA.</p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, i) => (
+              <ScrollReveal key={i} delay={i * 0.1} direction="up">
+                <Card className="p-10 h-full rounded-[40px] border-none bg-white shadow-sm hover:shadow-xl transition-all group">
+                  <div className="size-14 rounded-2xl bg-[#F5F5F5] flex items-center justify-center mb-8 text-black group-hover:bg-black group-hover:text-white transition-colors">
+                    {React.cloneElement(feature.icon as React.ReactElement, { className: "size-6" })}
+                  </div>
+                  <h3 className="text-[20px] font-semibold text-black mb-4">{feature.title}</h3>
+                  <p className="text-[13px] text-[#555] leading-[1.6]">{feature.desc}</p>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-32 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <div className="bg-black rounded-[60px] p-20 text-center text-white space-y-10">
+            <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Empower Your Business Today</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
+                <Link href="/get-quote">Get Commercial Quote</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -75,14 +133,13 @@ export default function CommercialSolarPage() {
   );
 }
 
-function CommercialBenefitItem({ icon, title, desc }: { icon: any, title: string, desc: string }) {
+function StatItem({ value, suffix = "", prefix = "", label }: { value: number, suffix?: string, prefix?: string, label: string }) {
   return (
-    <div className="flex gap-4 p-6 bg-white rounded-3xl border border-primary/5 shadow-sm">
-      <div className="shrink-0">{icon}</div>
-      <div>
-        <h4 className="font-bold text-primary">{title}</h4>
-        <p className="text-muted-foreground text-sm">{desc}</p>
+    <div className="space-y-2">
+      <div className="text-[40px] lg:text-[56px] font-semibold text-black leading-none">
+        <Counter value={value} suffix={suffix} prefix={prefix} />
       </div>
+      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
     </div>
   );
 }
