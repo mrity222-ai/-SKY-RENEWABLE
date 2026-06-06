@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -138,18 +137,6 @@ export default function Home() {
             <button onClick={nextSlide} className="size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all">
               <ChevronRight className="size-6" />
             </button>
-          </div>
-
-          {/* Bottom Feature Bar */}
-          <div className="absolute bottom-0 left-0 right-0 bg-primary/40 backdrop-blur-xl border-t border-white/10 py-10">
-            <div className="container mx-auto px-4">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                <HeroFeature text="Lower Electricity Bills" />
-                <HeroFeature text="Clean & Renewable Energy" />
-                <HeroFeature text="Energy Independence" />
-                <HeroFeature text="Low Maintenance" />
-              </div>
-            </div>
           </div>
 
           {/* Scroll Indicator */}
@@ -400,17 +387,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
-  );
-}
-
-function HeroFeature({ text }: { text: string }) {
-  return (
-    <div className="flex items-center gap-3 text-white group">
-      <div className="size-6 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-primary transition-all duration-300">
-        <CheckCircle2 className="size-4" />
-      </div>
-      <span className="text-[14px] md:text-[16px] font-bold tracking-tight">{text}</span>
     </div>
   );
 }
