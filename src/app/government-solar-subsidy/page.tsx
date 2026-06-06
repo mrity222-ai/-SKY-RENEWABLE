@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -59,32 +60,32 @@ export default function SubsidyGuidePage() {
       {/* SECTION 1 – HERO SECTION */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Government Solar Subsidy
                 </span>
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight">
+                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
                     Save More With Government <br />
                     <span className="text-[#B8B8B8]">Solar Subsidy Programs</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
+                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
                     Reduce Your Solar Installation Cost With Official Subsidy Benefits. Understand how government schemes can help you transition to clean energy faster.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Check Subsidy Eligibility</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-50">
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
                     <Link href="/get-quote">Get Free Solar Quote</Link>
                   </Button>
                 </div>
@@ -148,7 +149,7 @@ export default function SubsidyGuidePage() {
                     <CheckCircle2 className="size-5" />
                   </div>
                   <h3 className="text-[20px] font-semibold text-black mb-4">{benefit.title}</h3>
-                  <p className="text-[13px] text-[#555] leading-[1.6]">{benefit.desc}</p>
+                  <p className="text-[13px] text-[#555] leading-[1.8]">{benefit.desc}</p>
                 </Card>
               </ScrollReveal>
             ))}
@@ -195,19 +196,19 @@ export default function SubsidyGuidePage() {
           <ScrollReveal className="text-center mb-24">
             <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Solar Subsidy Application Process</h2>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {[
-              { title: "Consultation", desc: "Energy audit & system sizing." },
-              { title: "Site Survey", desc: "Technical inspection of roof." },
-              { title: "Design", desc: "Custom 3D layout engineering." },
-              { title: "Installation", desc: "Deployment by certified team." },
-              { title: "Submission", desc: "Filing of subsidy paperwork." },
-              { title: "Processing", desc: "Verification & bank transfer." }
+              { title: "Consultation", desc: "Energy audit." },
+              { title: "Site Survey", desc: "Technical inspection." },
+              { title: "Design", desc: "Custom 3D layout." },
+              { title: "Installation", desc: "Professional deployment." },
+              { title: "Submission", desc: "Paperwork filing." },
+              { title: "Processing", desc: "Verification & credit." }
             ].map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up" className="text-center space-y-6">
-                <div className="text-[48px] font-bold text-black/5 leading-none">0{i + 1}</div>
+                <div className="text-[40px] md:text-[48px] font-bold text-black/5 leading-none">0{i + 1}</div>
                 <div className="space-y-2">
-                  <h4 className="text-[13px] font-bold text-black uppercase tracking-widest">{step.title}</h4>
+                  <h4 className="text-[11px] font-bold text-black uppercase tracking-widest">{step.title}</h4>
                   <p className="text-[12px] text-[#777] leading-relaxed">{step.desc}</p>
                 </div>
               </ScrollReveal>
@@ -226,7 +227,7 @@ export default function SubsidyGuidePage() {
             {documentCards.map((doc, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up">
                 <Card className="p-8 rounded-[32px] border-none bg-white shadow-sm flex items-start gap-6 group hover:shadow-xl transition-all">
-                  <div className="size-12 rounded-xl bg-[#F5F5F5] flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-colors">
+                  <div className="size-12 rounded-xl bg-[#F5F5F5] flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-colors shrink-0">
                     {React.cloneElement(doc.icon as React.ReactElement, { className: "size-6" })}
                   </div>
                   <div className="space-y-1">
@@ -254,21 +255,21 @@ export default function SubsidyGuidePage() {
             <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Common Questions About Subsidy</h2>
           </ScrollReveal>
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="q1" className="bg-[#F9F9F9] rounded-[24px] border-none px-8">
+            <AccordionItem value="q1" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
               <AccordionTrigger className="text-left font-semibold text-black py-6">What is a solar subsidy?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-relaxed">It is a financial incentive from the government to lower the net cost of solar installation for homeowners, paid as a direct bank transfer after installation.</AccordionContent>
+              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">It is a financial incentive from the government to lower the net cost of solar installation for homeowners, paid as a direct bank transfer after installation.</AccordionContent>
             </AccordionItem>
-            <AccordionItem value="q2" className="bg-[#F9F9F9] rounded-[24px] border-none px-8">
+            <AccordionItem value="q2" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
               <AccordionTrigger className="text-left font-semibold text-black py-6">Who is eligible for solar subsidy?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-relaxed">Currently, residential property owners with a valid domestic electricity connection are eligible. Industrial and commercial properties generally do not receive a direct subsidy but benefit from tax incentives like accelerated depreciation.</AccordionContent>
+              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">Currently, residential property owners with a valid domestic electricity connection are eligible. Industrial and commercial properties generally do not receive a direct subsidy but benefit from tax incentives like accelerated depreciation.</AccordionContent>
             </AccordionItem>
-            <AccordionItem value="q3" className="bg-[#F9F9F9] rounded-[24px] border-none px-8">
+            <AccordionItem value="q3" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
               <AccordionTrigger className="text-left font-semibold text-black py-6">How much subsidy can I receive?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-relaxed">The amount depends on the system size and the specific state-central blend of the scheme. It is typically calculated per kilowatt of installed capacity up to a cap.</AccordionContent>
+              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">The amount depends on the system size and the specific state-central blend of the scheme. It is typically calculated per kilowatt of installed capacity up to a cap.</AccordionContent>
             </AccordionItem>
-            <AccordionItem value="q4" className="bg-[#F9F9F9] rounded-[24px] border-none px-8">
+            <AccordionItem value="q4" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
               <AccordionTrigger className="text-left font-semibold text-black py-6">How long does approval take?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-relaxed">The technical approval (Feasibility) usually takes 1-2 weeks. The actual disbursement of funds after installation and net-metering can take 4-8 weeks depending on DISCOM processing times.</AccordionContent>
+              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">The technical approval (Feasibility) usually takes 1-2 weeks. The actual disbursement of funds after installation and net-metering can take 4-8 weeks depending on DISCOM processing times.</AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
@@ -310,15 +311,15 @@ export default function SubsidyGuidePage() {
             <div className="text-center text-white space-y-10 relative overflow-hidden">
               <div className="space-y-6">
                 <h2 className="text-[30px] lg:text-[48px] font-semibold leading-tight">Ready To Reduce Your <br /> <span className="text-accent">Solar Installation Cost?</span></h2>
-                <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.6]">
+                <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.8]">
                   Get expert guidance on subsidy eligibility and start your solar journey today. Our consultants are ready to assist you.
                 </p>
               </div>
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px] hover:bg-neutral-200">
+              <div className="flex flex-wrap justify-center gap-6 pt-4">
+                <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 h-16 text-sm hover:bg-neutral-200">
                   <Link href="/get-quote">Check Eligibility</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 py-8 text-[14px] font-semibold hover:bg-white/10">
+                <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10">
                   <Link href="/get-quote">Book Free Consultation</Link>
                 </Button>
               </div>

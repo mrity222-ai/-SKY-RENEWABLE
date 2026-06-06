@@ -116,38 +116,38 @@ export default function ProjectsPage() {
       {/* SECTION 1 – HERO SECTION */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Our Projects
                 </span>
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight">
+                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
                     Transforming Energy Through <br />
                     <span className="text-[#B8B8B8]">Successful Solar Projects</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
+                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
                     Real Installations. Real Savings. Real Impact. Explore our portfolio of residential, commercial, industrial, and government solar projects completed across multiple locations.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Get Free Quote</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-50">
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
                     <Link href="/get-quote">Book Site Survey</Link>
                   </Button>
                 </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
               <Image 
                 src="https://picsum.photos/seed/arka_project_hero/1200/800" 
                 alt="Solar Project Hero" 
@@ -161,7 +161,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* SECTION 2 – PROJECT STATISTICS */}
-      <section className="py-24 border-y border-neutral-100">
+      <section className="py-24 border-y border-neutral-100 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             <StatCard value={500} suffix="+" label="Projects Completed" />
@@ -173,7 +173,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* SECTION 3 – PROJECT FILTERS */}
-      <section className="py-20 bg-[#F9F9F9]">
+      <section className="py-24 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <LayoutGroup>
             <div className="flex flex-wrap justify-center gap-2 mb-20">
@@ -182,7 +182,7 @@ export default function ProjectsPage() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={cn(
-                    "relative px-8 py-3 rounded-full text-[13px] font-bold transition-all outline-none",
+                    "relative px-8 py-3 rounded-full text-[12px] font-bold transition-all outline-none",
                     activeCategory === cat ? "text-white" : "text-[#777] hover:text-black"
                   )}
                 >
@@ -198,7 +198,6 @@ export default function ProjectsPage() {
               ))}
             </div>
 
-            {/* SECTION 4 – FEATURED PROJECTS GRID */}
             <motion.div 
               layout 
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
@@ -210,7 +209,7 @@ export default function ProjectsPage() {
                     layout
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
                     <Card className="rounded-[40px] border-none bg-white shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden group h-full flex flex-col">
@@ -222,7 +221,7 @@ export default function ProjectsPage() {
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute top-6 left-6">
-                          <Badge className="bg-white/90 backdrop-blur-md text-black border-none px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest">
+                          <Badge className="bg-white/90 backdrop-blur-md text-black border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
                             {project.type}
                           </Badge>
                         </div>
@@ -232,14 +231,14 @@ export default function ProjectsPage() {
                           <div className="flex items-center gap-2 text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">
                             <MapPin className="size-3" /> {project.location}
                           </div>
-                          <h3 className="text-[22px] font-semibold text-black leading-tight">
+                          <h3 className="text-[20px] md:text-[22px] font-semibold text-black leading-tight">
                             {project.title}
                           </h3>
                         </div>
-                        <p className="text-[13px] text-[#555] leading-[1.6] line-clamp-2">
+                        <p className="text-[13px] text-[#555] leading-[1.8] line-clamp-2">
                           {project.description}
                         </p>
-                        <div className="grid grid-cols-2 gap-4 pt-4 border-t border-neutral-100">
+                        <div className="grid grid-cols-2 gap-4 pt-6 border-t border-neutral-100">
                           <div>
                             <p className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">Capacity</p>
                             <p className="text-[16px] font-bold text-black">{project.capacity}</p>
@@ -250,7 +249,7 @@ export default function ProjectsPage() {
                           </div>
                         </div>
                         <Button variant="link" className="p-0 h-auto text-black font-bold group-hover:gap-2 transition-all mt-auto self-start">
-                          View Details <ArrowRight className="ml-2 size-4" />
+                          View Project Details <ArrowRight className="ml-2 size-4" />
                         </Button>
                       </div>
                     </Card>
@@ -272,12 +271,11 @@ export default function ProjectsPage() {
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             {[1, 2, 3, 4, 5, 6].map((idx) => (
               <ScrollReveal key={idx} direction="up" delay={idx * 0.1}>
-                <div className="relative group overflow-hidden rounded-[32px] cursor-pointer shadow-lg">
+                <div className="relative group overflow-hidden rounded-[40px] cursor-pointer shadow-lg aspect-square">
                   <Image 
-                    src={`https://picsum.photos/seed/arka_gal_${idx}/800/${idx % 2 === 0 ? '1000' : '600'}`} 
+                    src={`https://picsum.photos/seed/arka_gal_${idx}/800/800`} 
                     alt={`Gallery ${idx}`} 
-                    width={800} 
-                    height={idx % 2 === 0 ? 1000 : 600} 
+                    fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -291,19 +289,19 @@ export default function ProjectsPage() {
       </section>
 
       {/* SECTION 6 – PROJECT PROCESS */}
-      <section className="py-32 bg-black text-white overflow-hidden">
+      <section className="py-32 bg-black text-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-24 space-y-4">
             <span className="text-white/40 font-bold text-[11px] uppercase tracking-[0.3em]">Execution Workflow</span>
             <h2 className="text-[30px] lg:text-[40px] font-semibold">How We Deliver Excellence</h2>
           </ScrollReveal>
-          <div className="grid md:grid-cols-6 gap-8">
-            <ProcessStep num="01" title="Consultation" desc="Initial energy audit and goal setting." />
-            <ProcessStep num="02" title="Site Survey" desc="Technical analysis of roof and grid." />
-            <ProcessStep num="03" title="Design" desc="Custom 3D layout for maximum yield." />
-            <ProcessStep num="04" title="Installation" desc="Precision engineering and deployment." />
-            <ProcessStep num="05" title="Testing" desc="Rigorous quality and safety checks." />
-            <ProcessStep num="06" title="Support" desc="24/7 monitoring and AMC support." />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            <ProcessStep num="01" title="Consultation" desc="Initial energy audit." />
+            <ProcessStep num="02" title="Site Survey" desc="Technical analysis." />
+            <ProcessStep num="03" title="Design" desc="Custom 3D layout." />
+            <ProcessStep num="04" title="Installation" desc="Precision engineering." />
+            <ProcessStep num="05" title="Testing" desc="Quality checks." />
+            <ProcessStep num="06" title="Support" desc="24/7 monitoring." />
           </div>
         </div>
       </section>
@@ -318,11 +316,11 @@ export default function ProjectsPage() {
                 <h2 className="text-[30px] lg:text-[40px] font-semibold text-black leading-tight">
                   Driving The Green <br /> Revolution Forward
                 </h2>
-                <p className="text-[14px] text-[#555] leading-[1.6] max-w-lg">
+                <p className="text-[14px] text-[#555] leading-[1.8] max-w-lg">
                   Every project we complete contributes to a larger goal of carbon neutrality and energy independence for our clients.
                 </p>
               </ScrollReveal>
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-2 gap-8 md:gap-12">
                 <ImpactCard icon={<Zap />} val="50M+" label="Units Generated" />
                 <ImpactCard icon={<TreeDeciduous />} val="5000+" label="Tons CO₂ Reduced" />
                 <ImpactCard icon={<TrendingUp />} val="₹10Cr+" label="Customer Savings" />
@@ -342,7 +340,7 @@ export default function ProjectsPage() {
       <section className="py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
-            <h2 className="text-[30px] lg:text-[48px] font-semibold text-black">Client Success Stories</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Client Success Stories</h2>
             <p className="text-[#777] text-[14px]">Trusted by homeowners and industry leaders alike.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
@@ -365,19 +363,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 9 – TECHNOLOGY PARTNERS */}
-      <section className="py-24 border-y border-neutral-100">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-[10px] font-bold text-[#B8B8B8] uppercase tracking-[0.4em] mb-12">Engineering Partners</p>
-          <div className="flex flex-wrap justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all">
-            {["Tata Power", "Waaree", "Adani Solar", "Havells", "Luminous", "Exide", "Microtek"].map((p, i) => (
-              <span key={i} className="text-[20px] font-bold text-black uppercase tracking-tighter">{p}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 10 – MAP COVERAGE */}
+      {/* SECTION 9 – MAP COVERAGE */}
       <section className="py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-12">
@@ -386,11 +372,11 @@ export default function ProjectsPage() {
               <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Our Project Presence</h2>
               <p className="text-[#777] text-[14px]">Serving major industrial and urban hubs with dedicated local service teams.</p>
             </ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {["Lucknow", "Noida", "Kanpur", "Prayagraj", "Varanasi", "Ghaziabad", "Meerut", "Gorakhpur"].map((city, i) => (
-                <ScrollReveal key={i} delay={i * 0.05} direction="up" className="p-6 bg-[#F9F9F9] rounded-2xl border border-neutral-100 text-center hover:bg-black hover:text-white transition-all cursor-default group">
+                <ScrollReveal key={i} delay={i * 0.05} direction="up" className="p-6 bg-[#F9F9F9] rounded-[24px] border border-neutral-100 text-center hover:bg-black hover:text-white transition-all cursor-default group">
                   <MapPin className="size-4 mx-auto mb-3 text-[#B8B8B8] group-hover:text-accent transition-colors" />
-                  <span className="text-[14px] font-bold">{city}</span>
+                  <span className="text-[13px] font-bold">{city}</span>
                 </ScrollReveal>
               ))}
             </div>
@@ -398,22 +384,22 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 11 – FINAL CTA */}
+      {/* SECTION 10 – FINAL CTA */}
       <section className="py-32 px-4 bg-black">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal direction="zoom">
             <div className="text-center text-white space-y-10 relative overflow-hidden">
               <div className="space-y-6">
                 <h2 className="text-[34px] lg:text-[64px] font-semibold leading-[1.05]">Ready To Start Your <br /> <span className="text-accent">Solar Project?</span></h2>
-                <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.6]">
+                <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.8]">
                   Get expert consultation and a customized solar solution for your home or business. Join the transition to clean energy today.
                 </p>
               </div>
-              <div className="flex flex-wrap justify-center gap-4 relative z-10 pt-4">
-                <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px] hover:bg-neutral-200">
-                  <Link href="/get-quote">Get Free Quote</Link>
+              <div className="flex flex-wrap justify-center gap-6 pt-4">
+                <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 h-16 text-sm hover:bg-neutral-200">
+                  <Link href="/get-quote">Get Your Free Quote</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 py-8 text-[14px] font-semibold hover:bg-white/10">
+                <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10">
                   <Link href="/get-quote">Schedule Site Survey</Link>
                 </Button>
               </div>
@@ -428,20 +414,20 @@ export default function ProjectsPage() {
 function StatCard({ value, suffix, label }: { value: number, suffix: string, label: string }) {
   return (
     <ScrollReveal direction="up" className="space-y-2">
-      <div className="text-[40px] lg:text-[56px] font-semibold text-black leading-none">
+      <div className="text-[34px] md:text-[56px] font-semibold text-black leading-none">
         <Counter value={value} suffix={suffix} />
       </div>
-      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
+      <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
     </ScrollReveal>
   );
 }
 
 function ProcessStep({ num, title, desc }: { num: string, title: string, desc: string }) {
   return (
-    <ScrollReveal direction="up" className="space-y-6">
-      <div className="text-[48px] font-bold text-white/10 leading-none">{num}</div>
-      <div className="space-y-2">
-        <h4 className="text-[13px] font-bold text-white uppercase tracking-widest">{title}</h4>
+    <ScrollReveal direction="up" className="space-y-4">
+      <div className="text-[40px] md:text-[48px] font-bold text-white/10 leading-none">{num}</div>
+      <div className="space-y-1">
+        <h4 className="text-[11px] font-bold text-white uppercase tracking-widest">{title}</h4>
         <p className="text-white/40 text-[12px] leading-relaxed">{desc}</p>
       </div>
     </ScrollReveal>
@@ -450,12 +436,12 @@ function ProcessStep({ num, title, desc }: { num: string, title: string, desc: s
 
 function ImpactCard({ icon, val, label }: { icon: any, val: string, label: string }) {
   return (
-    <div className="space-y-2">
-      <div className="size-10 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black mb-4">
+    <div className="space-y-3">
+      <div className="size-10 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black mb-2">
         {React.cloneElement(icon, { className: "size-5" })}
       </div>
-      <h4 className="text-[24px] font-bold text-black leading-none">{val}</h4>
-      <p className="text-[11px] font-bold text-[#B8B8B8] uppercase tracking-widest">{label}</p>
+      <h4 className="text-[20px] md:text-[24px] font-bold text-black leading-none">{val}</h4>
+      <p className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">{label}</p>
     </div>
   );
 }
@@ -467,14 +453,14 @@ function TestimonialCard({ name, type, review }: { name: string, type: string, r
         <div className="flex gap-1 text-black">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-4 fill-current" />)}
         </div>
-        <p className="text-[14px] text-black italic leading-[1.7] flex-grow">"{review}"</p>
+        <p className="text-[14px] text-black italic leading-[1.8] flex-grow">"{review}"</p>
         <div className="flex items-center gap-4 border-t border-neutral-100 pt-6">
           <div className="size-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#B8B8B8]">
             <Star className="size-5" />
           </div>
           <div>
             <h4 className="text-[14px] font-bold text-black">{name}</h4>
-            <p className="text-[11px] text-[#B8B8B8] font-bold uppercase tracking-widest">{type}</p>
+            <p className="text-[10px] text-[#B8B8B8] font-bold uppercase tracking-widest">{type}</p>
           </div>
         </div>
       </Card>
