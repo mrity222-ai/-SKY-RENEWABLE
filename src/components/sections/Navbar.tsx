@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, MapPin, Menu, X, Sun, ChevronDown, Zap, Home, Factory, Wrench, ShieldCheck, Info, Users, BookOpen, Calculator as CalcIcon, BatteryFull, Layout, BadgeCheck, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Menu, Sun, ChevronDown, Zap, Home, Factory, Wrench, BatteryFull, Layout, BookOpen, Calculator as CalcIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,28 +57,6 @@ export function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[100]">
-      {/* Top Info Bar */}
-      <div className={cn(
-        "py-2.5 text-[11px] md:text-xs transition-all duration-500 hidden md:block",
-        isScrolled 
-          ? "bg-primary/95 backdrop-blur-lg border-b border-white/5" 
-          : "bg-primary/40 backdrop-blur-md border-b border-white/10"
-      )}>
-        <div className="container mx-auto px-4 flex justify-between items-center text-white/80">
-          <div className="flex gap-8">
-            <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><MapPin className="size-3 text-accent" /> Solar Plaza, MG Road, Ahmedabad</span>
-            <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><Phone className="size-3 text-accent" /> +91 98765 43210</span>
-            <span className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer"><Mail className="size-3 text-accent" /> hello@arkasolar.in</span>
-          </div>
-          <div className="flex gap-5">
-            <Link href="#" className="hover:text-accent transition-colors"><Facebook className="size-3.5" /></Link>
-            <Link href="#" className="hover:text-accent transition-colors"><Twitter className="size-3.5" /></Link>
-            <Link href="#" className="hover:text-accent transition-colors"><Instagram className="size-3.5" /></Link>
-            <Link href="#" className="hover:text-accent transition-colors"><Linkedin className="size-3.5" /></Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main Glassmorphism Navbar */}
       <header className={cn(
         "transition-all duration-500",
