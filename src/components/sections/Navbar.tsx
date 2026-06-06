@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -29,15 +30,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { 
-      name: "Company", 
-      href: "/about-us",
-      submenu: [
-        { name: "About Us", href: "/about-us", icon: <Info className="size-4" /> },
-        { name: "Why Choose Us", href: "/company/why-choose-us", icon: <ShieldCheck className="size-4" /> },
-        { name: "Our Process", href: "/company/process", icon: <Zap className="size-4" /> },
-      ]
-    },
+    { name: "About Us", href: "/about-us" },
     { 
       name: "Services", 
       href: "/services",

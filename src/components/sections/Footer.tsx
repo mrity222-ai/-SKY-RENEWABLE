@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import { Sun, Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin, ArrowRight, Zap } from "lucide-react";
 
@@ -26,8 +27,6 @@ export function Footer() {
             <h4 className="text-[12px] font-bold text-black uppercase tracking-widest">Company</h4>
             <ul className="space-y-3">
               <FooterLink href="/about-us">About Us</FooterLink>
-              <FooterLink href="/company/why-choose-us">Why Choose Us</FooterLink>
-              <FooterLink href="/company/process">Our Process</FooterLink>
               <FooterLink href="/projects">Case Studies</FooterLink>
             </ul>
           </div>
