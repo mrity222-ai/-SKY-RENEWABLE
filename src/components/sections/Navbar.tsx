@@ -44,14 +44,7 @@ export function Navbar() {
       ]
     },
     { name: "Projects", href: "/projects" },
-    { 
-      name: "Resources", 
-      href: "/resources",
-      submenu: [
-        { name: "Solar Calculator", href: "/solar-calculator", icon: <CalcIcon className="size-4" /> },
-        { name: "Blog", href: "/blog", icon: <BookOpen className="size-4" /> },
-      ]
-    },
+    { name: "Calculator", href: "/solar-calculator" },
   ];
 
   return (
