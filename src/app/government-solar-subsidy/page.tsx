@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -50,9 +49,9 @@ export default function SubsidyGuidePage() {
     { icon: <FileText />, title: "Aadhaar Card", desc: "Identity proof for the property owner." },
     { icon: <FileText />, title: "PAN Card", desc: "Required for financial and tax verification." },
     { icon: <Zap />, title: "Electricity Bill", desc: "Last 6 months' bills for consumption audit." },
-    { icon: <ShieldCheck />, title: "Property Proof", desc: "Ownership documents for the installation site." },
-    { icon: <UserCheck />, title: "Bank Details", desc: "Canceled cheque for direct subsidy transfer." },
-    { icon: <FileText />, title: "Photos", desc: "Passport-size photos and site preparation images." },
+    { icon: <ShieldCheck />, title: "Property Ownership Proof", desc: "Ownership documents for the installation site." },
+    { icon: <UserCheck />, title: "Bank Account Details", desc: "Canceled cheque for direct subsidy transfer." },
+    { icon: <FileText />, title: "Passport Size Photo", desc: "Recent photos for application verification." },
   ];
 
   return (
@@ -76,14 +75,14 @@ export default function SubsidyGuidePage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Reduce your solar installation cost with official subsidy benefits. Understand how government schemes can help you transition to clean energy faster.
+                    Reduce Your Solar Installation Cost With Official Subsidy Benefits. Understand how government schemes can help you transition to clean energy faster.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
                 <div className="flex flex-wrap gap-4">
                   <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
-                    <Link href="/get-quote">Check Eligibility</Link>
+                    <Link href="/get-quote">Check Subsidy Eligibility</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-50">
                     <Link href="/get-quote">Get Free Solar Quote</Link>
@@ -168,11 +167,11 @@ export default function SubsidyGuidePage() {
               </ScrollReveal>
               <div className="space-y-4">
                 {[
-                  "Individual Residential Property Owners",
-                  "Valid Electricity Connection in Owner's Name",
-                  "Adequate Shade-Free Rooftop Availability",
-                  "Installation through MNRE/DISCOM Authorized Vendors",
-                  "Complete KYC and Ownership Documentation"
+                  "Residential Property Owners",
+                  "Valid Electricity Connection",
+                  "Rooftop Availability",
+                  "Approved Solar Installation",
+                  "Required Documentation"
                 ].map((item, i) => (
                   <ScrollReveal key={i} delay={i * 0.1} direction="right" className="flex items-center gap-4 group">
                     <div className="size-6 rounded-full border border-white/20 flex items-center justify-center text-accent">
@@ -202,7 +201,7 @@ export default function SubsidyGuidePage() {
               { title: "Site Survey", desc: "Technical inspection of roof." },
               { title: "Design", desc: "Custom 3D layout engineering." },
               { title: "Installation", desc: "Deployment by certified team." },
-              { title: "Documentation", desc: "Filing of subsidy paperwork." },
+              { title: "Submission", desc: "Filing of subsidy paperwork." },
               { title: "Processing", desc: "Verification & bank transfer." }
             ].map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up" className="text-center space-y-6">
@@ -265,7 +264,7 @@ export default function SubsidyGuidePage() {
             </AccordionItem>
             <AccordionItem value="q3" className="bg-[#F9F9F9] rounded-[24px] border-none px-8">
               <AccordionTrigger className="text-left font-semibold text-black py-6">How much subsidy can I receive?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-relaxed">Under the PM-Suryodaya scheme, you can receive up to ₹78,000 for systems up to 3kW. The amount depends on the system size and the specific state-central blend of the scheme.</AccordionContent>
+              <AccordionContent className="text-[#555] pb-6 leading-relaxed">The amount depends on the system size and the specific state-central blend of the scheme. It is typically calculated per kilowatt of installed capacity up to a cap.</AccordionContent>
             </AccordionItem>
             <AccordionItem value="q4" className="bg-[#F9F9F9] rounded-[24px] border-none px-8">
               <AccordionTrigger className="text-left font-semibold text-black py-6">How long does approval take?</AccordionTrigger>
@@ -279,7 +278,7 @@ export default function SubsidyGuidePage() {
       <section className="py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Why Choose Our Subsidy Experts</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Why Choose Our Solar Experts</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
             {[
