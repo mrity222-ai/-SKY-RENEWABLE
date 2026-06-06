@@ -1,0 +1,41 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-solar",
+      "description": "Solar panels on a modern roof with sun flare",
+      "imageUrl": "https://picsum.photos/seed/arka1/1200/600",
+      "imageHint": "solar panels"
+    },
+    {
+      "id": "solar-installation",
+      "description": "Engineers installing solar panels",
+      "imageUrl": "https://picsum.photos/seed/arka2/600/400",
+      "imageHint": "solar installation"
+    },
+    {
+      "id": "solar-roof",
+      "description": "Aerial view of a house with full solar array",
+      "imageUrl": "https://picsum.photos/seed/arka3/600/400",
+      "imageHint": "solar house"
+    },
+    {
+      "id": "project-industrial",
+      "description": "Large scale industrial solar project",
+      "imageUrl": "https://picsum.photos/seed/arka4/800/600",
+      "imageHint": "industrial solar"
+    },
+    {
+      "id": "project-residential",
+      "description": "Modern home with sleek solar panels",
+      "imageUrl": "https://picsum.photos/seed/arka5/800/600",
+      "imageHint": "modern home"
+    },
+    {
+      "id": "blog-subsidy",
+      "description": "Paperwork and solar panel models",
+      "imageUrl": "https://picsum.photos/seed/arka6/400/300",
+      "imageHint": "solar finance"
+    }
+  ]
+}

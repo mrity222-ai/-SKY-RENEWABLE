@@ -1,0 +1,90 @@
+
+import Link from "next/link";
+import { Sun, Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="bg-primary text-white pt-24 pb-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="bg-accent p-1.5 rounded-lg">
+                <Sun className="size-6 text-primary" />
+              </div>
+              <span className="font-headline text-2xl font-bold tracking-tight">Arkā<span className="text-accent">Solar</span></span>
+            </Link>
+            <p className="text-white/60 leading-relaxed">
+              Leading the solar revolution with premium rooftop installations and innovative energy monitoring solutions. Powering a sustainable tomorrow.
+            </p>
+            <div className="flex gap-4">
+              <Link href="#" className="p-2 bg-white/5 rounded-lg hover:bg-accent hover:text-primary transition-all"><Facebook className="size-5" /></Link>
+              <Link href="#" className="p-2 bg-white/5 rounded-lg hover:bg-accent hover:text-primary transition-all"><Twitter className="size-5" /></Link>
+              <Link href="#" className="p-2 bg-white/5 rounded-lg hover:bg-accent hover:text-primary transition-all"><Instagram className="size-5" /></Link>
+              <Link href="#" className="p-2 bg-white/5 rounded-lg hover:bg-accent hover:text-primary transition-all"><Linkedin className="size-5" /></Link>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold font-headline mb-8 border-l-4 border-accent pl-4">Quick Links</h4>
+            <ul className="space-y-4 text-white/60">
+              <li><Link href="#about" className="hover:text-accent transition-colors">About Arkā Solar</Link></li>
+              <li><Link href="#offerings" className="hover:text-accent transition-colors">Residential Solar</Link></li>
+              <li><Link href="#offerings" className="hover:text-accent transition-colors">Industrial Solutions</Link></li>
+              <li><Link href="#calculator" className="hover:text-accent transition-colors">Savings Calculator</Link></li>
+              <li><Link href="#projects" className="hover:text-accent transition-colors">Recent Projects</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold font-headline mb-8 border-l-4 border-accent pl-4">Contact Info</h4>
+            <ul className="space-y-6">
+              <li className="flex gap-4">
+                <Phone className="size-6 text-accent shrink-0" />
+                <div>
+                  <div className="text-sm font-bold">Call Us</div>
+                  <div className="text-white/60">+91 98765 43210</div>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <Mail className="size-6 text-accent shrink-0" />
+                <div>
+                  <div className="text-sm font-bold">Email Support</div>
+                  <div className="text-white/60">hello@arkasolar.in</div>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <MapPin className="size-6 text-accent shrink-0" />
+                <div>
+                  <div className="text-sm font-bold">Headquarters</div>
+                  <div className="text-white/60">Solar Plaza, MG Road, Ahmedabad - 380001</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold font-headline mb-8 border-l-4 border-accent pl-4">Newsletter</h4>
+            <p className="text-white/60 mb-6 text-sm">Stay updated with latest solar trends and subsidy news.</p>
+            <form className="space-y-4">
+              <input 
+                type="email" 
+                placeholder="Your email address" 
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent"
+              />
+              <button className="w-full bg-accent text-primary font-bold rounded-xl py-3 hover:bg-accent/90 transition-all">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+          <p>© 2024 Arkā Solar Systems Private Limited. All Rights Reserved.</p>
+          <div className="flex gap-8">
+            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
