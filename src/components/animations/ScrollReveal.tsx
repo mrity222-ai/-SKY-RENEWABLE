@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { ReactNode } from "react";
@@ -8,14 +7,18 @@ interface ScrollRevealProps {
   children: ReactNode;
   direction?: "up" | "down" | "left" | "right";
   delay?: number;
+  duration?: number;
   className?: string;
+  stagger?: boolean;
 }
 
 export function ScrollReveal({ 
   children, 
   direction = "up", 
   delay = 0,
-  className = ""
+  duration = 0.8,
+  className = "",
+  stagger = false
 }: ScrollRevealProps) {
   const variants = {
     hidden: {
@@ -28,9 +31,10 @@ export function ScrollReveal({
       y: 0,
       x: 0,
       transition: {
-        duration: 0.8,
+        duration: duration,
         ease: [0.21, 0.47, 0.32, 0.98],
         delay: delay,
+        staggerChildren: stagger ? 0.1 : 0,
       },
     },
   };

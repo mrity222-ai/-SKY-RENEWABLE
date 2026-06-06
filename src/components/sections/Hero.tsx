@@ -1,15 +1,21 @@
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calculator } from "lucide-react";
+import { ArrowRight, Calculator, Sun } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export function Hero() {
   const heroImg = PlaceHolderImages.find(img => img.id === "hero-solar");
+  const containerRef = useRef(null);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 200]);
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center pt-20">
-      <div className="absolute inset-0 -z-10">
+    <section ref={containerRef} id="home" className="relative min-h-[95vh] flex items-center pt-20 overflow-hidden">
+      <motion.div style={{ y }} className="absolute inset-0 -z-10">
         {heroImg?.imageUrl && (
           <Image
             src={heroImg.imageUrl}
@@ -20,48 +26,74 @@ export function Hero() {
             data-ai-hint="solar panels"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent"></div>
-      </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+      </motion.div>
 
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl text-white space-y-8">
-          <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 rounded-full px-4 py-1 backdrop-blur-sm">
-            <span className="text-accent text-sm font-semibold uppercase tracking-wider">Trusted by 5000+ Homeowners</span>
-          </div>
+        <div className="max-w-4xl text-white space-y-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 rounded-full px-5 py-1.5 backdrop-blur-md"
+          >
+            <Sun className="size-4 text-accent animate-spin-slow" style={{ animationDuration: '8s' }} />
+            <span className="text-accent text-xs font-bold uppercase tracking-widest">Trusted by 5,000+ Families Across India</span>
+          </motion.div>
           
-          <h1 className="text-5xl md:text-7xl font-bold font-headline leading-tight">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-6xl md:text-8xl font-bold font-headline leading-[1.1]"
+          >
             सूरज की शक्ति, <br />
-            <span className="text-accent underline decoration-white/30 underline-offset-8">आपका सुनहरा भविष्य</span>
-          </h1>
+            <span className="text-accent italic">आपका सुनहरा भविष्य</span>
+          </motion.h1>
           
-          <p className="text-xl md:text-2xl text-white/80 max-w-2xl font-light">
-            Go green, save big. Power your home with the most reliable solar rooftop solutions in India. 
-            Reduce electricity bills by up to 90%.
-          </p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-2xl text-white/80 max-w-2xl font-light leading-relaxed"
+          >
+            Empowering India's homes with the most reliable solar rooftop solutions. 
+            Join the revolution and reduce your bills by up to 90%.
+          </motion.p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <Button size="lg" className="bg-accent text-primary font-bold text-lg px-8 rounded-full hover:bg-accent/90">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap gap-5 pt-4"
+          >
+            <Button size="lg" className="bg-accent text-primary font-bold text-lg px-10 rounded-full hover:bg-white hover:scale-105 transition-all shadow-2xl shadow-accent/20">
               Get A Quote <ArrowRight className="ml-2 size-5" />
             </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 text-white border-white/20 text-lg px-8 rounded-full backdrop-blur-sm hover:bg-white/20">
+            <Button variant="outline" size="lg" className="bg-white/5 text-white border-white/20 text-lg px-10 rounded-full backdrop-blur-md hover:bg-white/20 transition-all">
               <Calculator className="mr-2 size-5" /> Calculate Savings
             </Button>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-3 gap-8 pt-12 border-t border-white/10">
-            <div>
-              <div className="text-3xl font-bold text-accent">90%</div>
-              <div className="text-white/60 text-sm">Bill Savings</div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="grid grid-cols-3 gap-12 pt-16 border-t border-white/10 max-w-2xl"
+          >
+            <div className="space-y-1">
+              <div className="text-4xl font-black text-accent">90%</div>
+              <div className="text-white/50 text-xs font-bold uppercase tracking-widest">Bill Savings</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-accent">5yr+</div>
-              <div className="text-white/60 text-sm">Payback Period</div>
+            <div className="space-y-1">
+              <div className="text-4xl font-black text-accent">5yr+</div>
+              <div className="text-white/50 text-xs font-bold uppercase tracking-widest">Payback</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-accent">25yr</div>
-              <div className="text-white/60 text-sm">Panel Warranty</div>
+            <div className="space-y-1">
+              <div className="text-4xl font-black text-accent">25yr</div>
+              <div className="text-white/50 text-xs font-bold uppercase tracking-widest">Warranty</div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
