@@ -228,7 +228,7 @@ export default function Home() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16 items-end">
-            <h2 className="text-[30px] lg:text-[40px] font-black text-foreground leading-[1.1] tracking-tighter">
+            <h2 className="text-[30px] lg:text-[40px] font-bold text-foreground leading-[1.1] tracking-tighter">
               Why Choose <br /> SKY RENEWABLE Solar Solutions?
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl">
@@ -376,7 +376,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal direction="left">
               <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
-                <Image src="https://picsum.photos/seed/arka_h_subsidy/1000/750" alt="Solar Subsidy Schemes" fill className="object-cover" />
+                <Image src="https://picsum.photos/seed/arka_h_about/1000/750" alt="Solar Subsidy Schemes" fill className="object-cover" />
               </div>
             </ScrollReveal>
           </div>
@@ -384,14 +384,20 @@ export default function Home() {
       </section>
 
       {/* SECTION 10 – TECHNOLOGY PARTNERS */}
-      <section className="py-24 border-y border-muted bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal className="mb-12">
+      <section className="py-24 border-y border-muted bg-white overflow-hidden">
+        <div className="container mx-auto px-4 text-center mb-12">
+          <ScrollReveal>
             <h2 className="text-[12px] font-bold text-muted-foreground tracking-[0.3em] uppercase">Authorized Technology Partners</h2>
           </ScrollReveal>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-30 grayscale hover:grayscale-0 transition-all">
+        </div>
+        <div className="relative flex overflow-hidden">
+          <div className="animate-marquee flex items-center gap-12 md:gap-20 opacity-30 grayscale hover:grayscale-0 transition-all whitespace-nowrap py-4">
             {partners.map((p, i) => (
-              <span key={i} className="text-[16px] md:text-[22px] font-black text-foreground uppercase tracking-tighter">{p}</span>
+              <span key={`p1-${i}`} className="text-[16px] md:text-[22px] font-black text-foreground uppercase tracking-tighter px-4">{p}</span>
+            ))}
+            {/* Duplicate for seamless loop */}
+            {partners.map((p, i) => (
+              <span key={`p2-${i}`} className="text-[16px] md:text-[22px] font-black text-foreground uppercase tracking-tighter px-4">{p}</span>
             ))}
           </div>
         </div>
