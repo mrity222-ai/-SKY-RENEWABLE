@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Sun, ChevronDown, Zap, Home, Factory, Wrench, BatteryFull, Layout, BookOpen, Calculator as CalcIcon } from "lucide-react";
+import { Menu, Sun, ChevronDown, Zap, Home, Factory, Wrench, BatteryFull, Layout, BookOpen, Calculator as CalcIcon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +27,7 @@ export function Navbar() {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial scroll position
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -36,13 +36,44 @@ export function Navbar() {
     { 
       name: "Services", 
       href: "/services",
+      isMega: true,
       submenu: [
-        { name: "Residential Solar", href: "/services/residential-solar", icon: <Home className="size-4" /> },
-        { name: "Commercial Solar", href: "/services/commercial-solar", icon: <Factory className="size-4" /> },
-        { name: "Industrial Solutions", href: "/services/industrial-solar", icon: <Zap className="size-4" /> },
-        { name: "Rooftop Installation", href: "/services/rooftop-installation", icon: <Layout className="size-4" /> },
-        { name: "Battery Storage", href: "/services/battery-storage", icon: <BatteryFull className="size-4" /> },
-        { name: "Maintenance & AMC", href: "/services/solar-maintenance", icon: <Wrench className="size-4" /> },
+        { 
+          name: "Residential Solar", 
+          href: "/services/residential-solar", 
+          icon: <Home className="size-5" />,
+          desc: "Clean energy for modern homes with subsidy aid."
+        },
+        { 
+          name: "Commercial Solar", 
+          href: "/services/commercial-solar", 
+          icon: <Factory className="size-5" />,
+          desc: "Scale your business with sustainable power solutions."
+        },
+        { 
+          name: "Industrial Solutions", 
+          href: "/services/industrial-solar", 
+          icon: <Zap className="size-5" />,
+          desc: "High-yield EPC for manufacturing and plants."
+        },
+        { 
+          name: "Rooftop Installation", 
+          href: "/services/rooftop-installation", 
+          icon: <Layout className="size-5" />,
+          desc: "Precision engineering for all rooftop types."
+        },
+        { 
+          name: "Battery Storage", 
+          href: "/services/battery-storage", 
+          icon: <BatteryFull className="size-5" />,
+          desc: "Smart lithium-ion storage for 24/7 backup."
+        },
+        { 
+          name: "Maintenance & AMC", 
+          href: "/services/solar-maintenance", 
+          icon: <Wrench className="size-5" />,
+          desc: "Professional health audits and periodic cleaning."
+        },
       ]
     },
     { name: "Projects", href: "/projects" },
@@ -57,26 +88,14 @@ export function Navbar() {
     { name: "About Us", href: "/about-us" },
   ];
 
-  // Helper to determine link styles to avoid hydration mismatches
-  const getLinkStyles = (isActive: boolean) => {
-    // During hydration, we match the server's default state (scrolled=false)
-    const effectiveScrolled = mounted ? isScrolled : false;
-    
-    if (effectiveScrolled) {
-      if (isActive) return "text-primary bg-primary/5";
-      return "text-primary hover:bg-muted";
-    } else {
-      if (isActive) return "text-primary bg-white/10";
-      return "text-primary hover:bg-white/10";
-    }
-  };
+  if (!mounted) return null;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[100]">
       <header className={cn(
         "transition-all duration-500",
-        (mounted && isScrolled) 
-          ? "bg-white/80 backdrop-blur-2xl shadow-xl py-4 border-b border-black/5" 
+        isScrolled 
+          ? "bg-white/90 backdrop-blur-2xl shadow-xl py-4 border-b border-black/5" 
           : "bg-transparent py-6"
       )}>
         <div className="container mx-auto px-4 flex items-center justify-between">
@@ -87,9 +106,7 @@ export function Navbar() {
                 <Sun className="size-5 text-accent" />
               </div>
               <div className="flex flex-col -space-y-1">
-                <span className={cn(
-                  "font-headline text-xl md:text-2xl font-black tracking-tight transition-colors duration-500 text-primary"
-                )}>SKY RENEWABLE</span>
+                <span className="font-headline text-xl md:text-2xl font-black tracking-tight text-primary">SKY RENEWABLE</span>
                 <span className="text-[8px] font-black tracking-[0.2em] text-accent uppercase">Solar Energy</span>
               </div>
             </Link>
@@ -108,40 +125,68 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-bold flex items-center gap-1 transition-all outline-none",
-                        getLinkStyles(isActive)
+                        isActive ? "text-primary bg-primary/5" : "text-primary hover:bg-primary/5"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent align="center" sideOffset={10} className="rounded-[32px] p-2 min-w-[260px] shadow-2xl border border-border bg-white/95 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200">
-                        <div className="grid gap-0.5">
+                      <DropdownMenuContent 
+                        align={link.isMega ? "center" : "center"} 
+                        sideOffset={15} 
+                        className={cn(
+                          "rounded-[32px] p-4 shadow-2xl border border-border bg-white/95 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200",
+                          link.isMega ? "min-w-[700px] lg:min-w-[850px]" : "min-w-[260px]"
+                        )}
+                      >
+                        <div className={cn(
+                          "grid gap-2",
+                          link.isMega ? "grid-cols-2 md:grid-cols-3" : "grid-cols-1"
+                        )}>
                           {link.submenu.map((sub) => (
                             <DropdownMenuItem key={sub.name} asChild>
-                              <Link href={sub.href} className="w-full cursor-pointer py-3 px-4 rounded-2xl hover:bg-primary hover:text-white flex items-center gap-3 group/item transition-all">
-                                <div className="bg-muted p-2 rounded-xl group-hover/item:bg-accent group-hover/item:text-foreground transition-colors">
-                                  {sub.icon}
+                              <Link 
+                                href={sub.href} 
+                                className={cn(
+                                  "w-full cursor-pointer p-4 rounded-2xl hover:bg-primary hover:text-white flex flex-col gap-2 group/item transition-all",
+                                  !link.isMega && "flex-row items-center gap-3"
+                                )}
+                              >
+                                <div className="flex items-center gap-3">
+                                  <div className="bg-primary/5 p-2 rounded-xl group-hover/item:bg-accent group-hover/item:text-foreground transition-colors shrink-0">
+                                    {sub.icon}
+                                  </div>
+                                  <span className="font-bold text-sm tracking-tight">{sub.name}</span>
                                 </div>
-                                <span className="font-bold text-sm">{sub.name}</span>
+                                {link.isMega && sub.desc && (
+                                  <p className="text-[11px] font-medium leading-relaxed opacity-70 group-hover/item:text-white/80">
+                                    {sub.desc}
+                                  </p>
+                                )}
                               </Link>
                             </DropdownMenuItem>
                           ))}
                         </div>
+                        {link.isMega && (
+                          <div className="mt-4 pt-4 border-t border-muted flex items-center justify-between px-2">
+                            <p className="text-[10px] font-black uppercase tracking-widest text-primary/40">Our Energy Ecosystem</p>
+                            <Link href="/services" className="text-[11px] font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all">
+                              View All Solutions <ArrowRight className="size-3" />
+                            </Link>
+                          </div>
+                        )}
                       </DropdownMenuContent>
                     </DropdownMenu>
                   ) : (
                     <Link 
                       href={link.href}
                       className={cn(
-                        "relative px-4 py-2 rounded-full text-[13px] font-bold transition-all",
-                        getLinkStyles(isActive)
+                        "relative px-4 py-2 rounded-full text-[13px] font-bold transition-all block text-primary",
+                        isActive ? "bg-primary/5" : "hover:bg-primary/5"
                       )}
                     >
-                      {isActive && mounted && (
+                      {isActive && (
                         <motion.div 
                           layoutId="nav-indicator"
-                          className={cn(
-                            "absolute inset-0 rounded-full -z-10",
-                            isScrolled ? "bg-primary/10" : "bg-white/20"
-                          )}
+                          className="absolute inset-0 rounded-full bg-primary/10 -z-10"
                           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                         />
                       )}
@@ -164,7 +209,7 @@ export function Navbar() {
             <div className="lg:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="transition-colors text-primary">
+                  <Button variant="ghost" size="icon" className="text-primary hover:bg-primary/5">
                     <Menu className="size-6" />
                   </Button>
                 </SheetTrigger>
@@ -180,10 +225,7 @@ export function Navbar() {
                           {link.href !== "#" ? (
                             <Link 
                               href={link.href}
-                              className={cn(
-                                "text-xl font-black uppercase tracking-tight transition-colors",
-                                (pathname === link.href) ? "text-primary" : "text-primary"
-                              )}
+                              className="text-xl font-black uppercase tracking-tight text-primary"
                             >
                               {link.name}
                             </Link>
@@ -195,7 +237,7 @@ export function Navbar() {
                           {link.submenu && (
                             <div className="grid gap-4 ml-4 border-l-2 border-muted pl-4">
                               {link.submenu.map((sub) => (
-                                <Link key={sub.name} href={sub.href} className="text-sm font-bold text-primary hover:text-primary flex items-center gap-3 py-1">
+                                <Link key={sub.name} href={sub.href} className="text-sm font-bold text-primary hover:opacity-70 flex items-center gap-3 py-1">
                                   <span className="bg-muted p-1.5 rounded-lg">{sub.icon}</span>
                                   {sub.name}
                                 </Link>
