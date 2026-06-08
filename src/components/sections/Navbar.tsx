@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -57,18 +58,16 @@ export function Navbar() {
   ];
 
   // Helper to determine link styles to avoid hydration mismatches
-  const getLinkStyles = (linkName: string, isActive: boolean) => {
+  const getLinkStyles = (isActive: boolean) => {
     // During hydration, we match the server's default state (scrolled=false)
     const effectiveScrolled = mounted ? isScrolled : false;
     
     if (effectiveScrolled) {
       if (isActive) return "text-primary bg-primary/5";
-      return "text-foreground/70 hover:bg-muted";
+      return "text-primary hover:bg-muted";
     } else {
-      if (isActive) return "text-white bg-white/10";
-      // Specific blue color for Resources link as requested
-      if (linkName === "Resources") return "text-primary";
-      return "text-white/70 hover:bg-white/10";
+      if (isActive) return "text-primary bg-white/10";
+      return "text-primary hover:bg-white/10";
     }
   };
 
@@ -89,8 +88,7 @@ export function Navbar() {
               </div>
               <div className="flex flex-col -space-y-1">
                 <span className={cn(
-                  "font-headline text-xl md:text-2xl font-black tracking-tight transition-colors duration-500",
-                  (mounted && isScrolled) ? "text-foreground" : "text-white"
+                  "font-headline text-xl md:text-2xl font-black tracking-tight transition-colors duration-500 text-primary"
                 )}>SKY RENEWABLE</span>
                 <span className="text-[8px] font-black tracking-[0.2em] text-accent uppercase">Solar Energy</span>
               </div>
@@ -110,7 +108,7 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-bold flex items-center gap-1 transition-all outline-none",
-                        getLinkStyles(link.name, isActive)
+                        getLinkStyles(isActive)
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -134,7 +132,7 @@ export function Navbar() {
                       href={link.href}
                       className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-bold transition-all",
-                        getLinkStyles(link.name, isActive)
+                        getLinkStyles(isActive)
                       )}
                     >
                       {isActive && mounted && (
@@ -166,10 +164,7 @@ export function Navbar() {
             <div className="lg:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className={cn(
-                    "transition-colors",
-                    (mounted && isScrolled) ? "text-foreground" : "text-white"
-                  )}>
+                  <Button variant="ghost" size="icon" className="transition-colors text-primary">
                     <Menu className="size-6" />
                   </Button>
                 </SheetTrigger>
@@ -187,23 +182,20 @@ export function Navbar() {
                               href={link.href}
                               className={cn(
                                 "text-xl font-black uppercase tracking-tight transition-colors",
-                                (pathname === link.href || link.name === "Resources") ? "text-primary" : "text-foreground"
+                                (pathname === link.href) ? "text-primary" : "text-primary"
                               )}
                             >
                               {link.name}
                             </Link>
                           ) : (
-                            <span className={cn(
-                              "text-xl font-black uppercase tracking-tight",
-                              link.name === "Resources" ? "text-primary" : "text-muted-foreground"
-                            )}>
+                            <span className="text-xl font-black uppercase tracking-tight text-primary">
                               {link.name}
                             </span>
                           )}
                           {link.submenu && (
                             <div className="grid gap-4 ml-4 border-l-2 border-muted pl-4">
                               {link.submenu.map((sub) => (
-                                <Link key={sub.name} href={sub.href} className="text-sm font-bold text-muted-foreground hover:text-primary flex items-center gap-3 py-1">
+                                <Link key={sub.name} href={sub.href} className="text-sm font-bold text-primary hover:text-primary flex items-center gap-3 py-1">
                                   <span className="bg-muted p-1.5 rounded-lg">{sub.icon}</span>
                                   {sub.name}
                                 </Link>
