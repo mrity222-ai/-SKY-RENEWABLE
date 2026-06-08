@@ -221,13 +221,13 @@ export default function ProjectsPage() {
                       />
                       
                       {/* Premium Info Box Overlay */}
-                      <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                        <div className="text-[40px] md:text-[48px] font-black text-foreground tracking-tighter leading-none">
+                      <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-[#16A34A] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        <div className="text-[40px] md:text-[48px] font-black text-[#0F172A] tracking-tighter leading-none">
                           {project.id < 10 ? `0${project.id}` : project.id}
                         </div>
                         <div className="flex flex-col gap-0.5">
-                          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">{project.type}</span>
-                          <h3 className="text-[16px] md:text-[18px] font-bold text-foreground leading-tight max-w-[180px]">
+                          <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-[0.2em]">{project.type}</span>
+                          <h3 className="text-[16px] md:text-[18px] font-bold text-[#0F172A] leading-tight max-w-[180px]">
                             {project.title}
                           </h3>
                         </div>
@@ -247,24 +247,6 @@ export default function ProjectsPage() {
               </AnimatePresence>
             </motion.div>
           </LayoutGroup>
-        </div>
-      </section>
-
-      {/* SECTION 4 – PROJECT PROCESS */}
-      <section className="py-32 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-24 space-y-4">
-            <span className="text-white/40 font-bold text-[11px] uppercase tracking-[0.3em]">Execution Workflow</span>
-            <h2 className="text-[30px] lg:text-[40px] font-semibold">How We Deliver Excellence</h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            <ProcessStep num="01" title="Consultation" desc="Initial energy audit." />
-            <ProcessStep num="02" title="Site Survey" desc="Technical analysis." />
-            <ProcessStep num="03" title="Design" desc="Custom 3D layout." />
-            <ProcessStep num="04" title="Installation" desc="Precision engineering." />
-            <ProcessStep num="05" title="Testing" desc="Quality checks." />
-            <ProcessStep num="06" title="Support" desc="24/7 monitoring." />
-          </div>
         </div>
       </section>
 
@@ -380,18 +362,6 @@ function StatCard({ value, suffix, label }: { value: number, suffix: string, lab
         <Counter value={value} suffix={suffix} />
       </div>
       <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
-    </ScrollReveal>
-  );
-}
-
-function ProcessStep({ num, title, desc }: { num: string, title: string, desc: string }) {
-  return (
-    <ScrollReveal direction="up" className="space-y-4">
-      <div className="text-[40px] md:text-[48px] font-bold text-white/10 leading-none">{num}</div>
-      <div className="space-y-1">
-        <h4 className="text-[11px] font-bold text-white uppercase tracking-widest">{title}</h4>
-        <p className="text-white/40 text-[12px] leading-relaxed">{desc}</p>
-      </div>
     </ScrollReveal>
   );
 }
