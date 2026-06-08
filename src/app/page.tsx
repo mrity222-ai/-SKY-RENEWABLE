@@ -307,7 +307,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {projects.map((p, i) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
-                <Card className="rounded-[24px] border-none overflow-hidden group relative h-[560px] w-full shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
+                <Card className="rounded-[24px] border-none overflow-hidden group relative h-[320px] md:h-[420px] lg:h-[560px] w-full shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
                   <Image src={p.image} alt={`${p.name} Solar System`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   
                   {/* Premium Info Box Overlay */}
@@ -428,25 +428,27 @@ export default function Home() {
                 </p>
               </ScrollReveal>
 
-              <ScrollReveal direction="right" delay={0.1} className="flex flex-wrap gap-4">
-                <button 
-                  onClick={() => setActiveFaqCategory('basics')}
-                  className={cn(
-                    "px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest transition-all",
-                    activeFaqCategory === 'basics' ? "bg-primary text-white shadow-lg" : "bg-muted text-muted-foreground hover:bg-primary/5 hover:text-primary"
-                  )}
-                >
-                  System Basics
-                </button>
-                <button 
-                  onClick={() => setActiveFaqCategory('support')}
-                  className={cn(
-                    "px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest transition-all",
-                    activeFaqCategory === 'support' ? "bg-primary text-white shadow-lg" : "bg-muted text-muted-foreground hover:bg-primary/5 hover:text-primary"
-                  )}
-                >
-                  Client Support
-                </button>
+              <ScrollReveal direction="right" delay={0.1}>
+                <div className="flex flex-row flex-wrap items-center justify-start gap-4">
+                  <button 
+                    onClick={() => setActiveFaqCategory('basics')}
+                    className={cn(
+                      "px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest transition-all",
+                      activeFaqCategory === 'basics' ? "bg-primary text-white shadow-lg" : "bg-muted text-muted-foreground hover:bg-primary/5 hover:text-primary"
+                    )}
+                  >
+                    System Basics
+                  </button>
+                  <button 
+                    onClick={() => setActiveFaqCategory('support')}
+                    className={cn(
+                      "px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest transition-all",
+                      activeFaqCategory === 'support' ? "bg-primary text-white shadow-lg" : "bg-muted text-muted-foreground hover:bg-primary/5 hover:text-primary"
+                    )}
+                  >
+                    Client Support
+                  </button>
+                </div>
               </ScrollReveal>
             </div>
 
