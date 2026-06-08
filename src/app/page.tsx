@@ -228,7 +228,7 @@ export default function Home() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16 items-end">
-            <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-black text-foreground leading-[1.1] tracking-tighter">
+            <h2 className="text-[30px] lg:text-[40px] font-black text-foreground leading-[1.1] tracking-tighter">
               Why Choose <br /> SKY RENEWABLE Solar Solutions?
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl">
@@ -307,7 +307,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {projects.map((p, i) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
-                <Card className="rounded-[24px] border-none overflow-hidden group relative h-[320px] md:h-[420px] lg:h-[560px] w-full shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
+                <Card className="rounded-[24px] border-none overflow-hidden group relative h-[560px] w-full shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
                   <Image src={p.image} alt={`${p.name} Solar System`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   
                   {/* Premium Info Box Overlay */}
@@ -419,12 +419,12 @@ export default function Home() {
             {/* LEFT SIDE: COMPANY INFO */}
             <div className="lg:col-span-5 space-y-12">
               <ScrollReveal direction="right" className="space-y-6">
-                <span className="text-primary font-bold text-[12px] uppercase tracking-[0.3em]">Expert Q&A</span>
+                <span className="text-primary font-bold text-[12px] uppercase tracking-[0.3em]">EXPERT Q&A</span>
                 <h2 className="text-[34px] lg:text-[48px] font-semibold text-foreground leading-[1.1]">
                   Comprehensive Energy <br /> Solutions Unfolded
                 </h2>
                 <p className="text-muted-foreground text-[14px] leading-relaxed max-w-lg">
-                  Navigating the transition to renewable energy can be complex. Whether you're curious about rooftop installation costs, government subsidy eligibility, or long-term maintenance, our experts provide clear, data-driven answers to help you achieve energy independence.
+                  Navigating the transition to renewable energy can be complex. Whether you're curious about rooftop solar installation, maintenance services, or government subsidy assistance, our experts provide clear, data-driven answers to help you achieve energy independence.
                 </p>
               </ScrollReveal>
 
