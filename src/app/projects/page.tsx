@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -221,13 +220,13 @@ export default function ProjectsPage() {
                       />
                       
                       {/* Premium Info Box Overlay */}
-                      <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-[#16A34A] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                        <div className="text-[40px] md:text-[48px] font-black text-[#0F172A] tracking-tighter leading-none">
+                      <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        <div className="text-[40px] md:text-[48px] font-black text-foreground tracking-tighter leading-none">
                           {project.id < 10 ? `0${project.id}` : project.id}
                         </div>
                         <div className="flex flex-col gap-0.5">
-                          <span className="text-[10px] font-bold text-[#64748B] uppercase tracking-[0.2em]">{project.type}</span>
-                          <h3 className="text-[16px] md:text-[18px] font-bold text-[#0F172A] leading-tight max-w-[180px]">
+                          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">{project.type}</span>
+                          <h3 className="text-[16px] md:text-[18px] font-bold text-foreground leading-tight max-w-[180px]">
                             {project.title}
                           </h3>
                         </div>
@@ -276,33 +275,6 @@ export default function ProjectsPage() {
                 <Image src="https://picsum.photos/seed/arka_impact/800/800" alt="Solar Impact" fill className="object-cover" />
               </div>
             </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6 – CLIENT TESTIMONIALS */}
-      <section className="py-32 bg-[#F9F9F9]">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-20 space-y-4">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Client Success Stories</h2>
-            <p className="text-[#777] text-[14px]">Trusted by homeowners and industry leaders alike.</p>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-8">
-            <TestimonialCard 
-              name="Vikram Seth" 
-              type="Industrial Project" 
-              review="Arkā Solar transformed our manufacturing cost structure. The ROI was even better than projected in the initial design."
-            />
-            <TestimonialCard 
-              name="Anita Desai" 
-              type="Residential Project" 
-              review="Zero electricity bills since we installed our 10kW system. The installation team was professional and exceptionally clean."
-            />
-            <TestimonialCard 
-              name="Rohan Mehra" 
-              type="Commercial Project" 
-              review="The monitoring app is brilliant. We can see our savings in real-time. Truly an engineering-first company."
-            />
           </div>
         </div>
       </section>
