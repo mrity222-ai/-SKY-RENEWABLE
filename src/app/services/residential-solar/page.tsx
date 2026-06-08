@@ -4,25 +4,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
-  Home, 
   Banknote, 
   ShieldCheck, 
   Zap, 
-  CheckCircle2, 
   ArrowRight,
-  Star,
   Sun
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 export default function ResidentialSolarPage() {
   const benefits = [
@@ -116,20 +107,6 @@ export default function ResidentialSolarPage() {
         </div>
       </section>
 
-      {/* FAQ SECTION */}
-      <section className="py-32">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Common Questions</h2>
-          </ScrollReveal>
-          <Accordion type="single" collapsible className="space-y-4">
-            <FaqItem value="q1" q="How much space is needed for a 3kW system?" a="A typical 3kW system requires about 300 sq. ft. of shade-free roof area." />
-            <FaqItem value="q2" q="Does solar work during monsoon?" a="Yes, solar panels generate electricity from daylight, not just direct heat. While generation is lower on cloudy days, it never stops completely." />
-            <FaqItem value="q3" q="What is Net-Metering?" a="Net-metering allows you to send excess energy back to the grid and receive credits on your electricity bill." />
-          </Accordion>
-        </div>
-      </section>
-
       {/* FINAL CTA */}
       <section className="py-32 px-4">
         <div className="container mx-auto max-w-5xl">
@@ -155,18 +132,5 @@ function StatItem({ value, suffix = "", prefix = "", label }: { value: number, s
       </div>
       <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
     </div>
-  );
-}
-
-function FaqItem({ value, q, a }: { value: string, q: string, a: string }) {
-  return (
-    <AccordionItem value={value} className="bg-[#F9F9F9] rounded-[24px] border-none px-8 overflow-hidden">
-      <AccordionTrigger className="text-left font-semibold text-[16px] text-black py-6 hover:no-underline">
-        {q}
-      </AccordionTrigger>
-      <AccordionContent className="text-[#555] text-[14px] leading-[1.6] pb-6">
-        {a}
-      </AccordionContent>
-    </AccordionItem>
   );
 }
