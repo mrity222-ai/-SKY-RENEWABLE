@@ -93,7 +93,7 @@ export function Navbar() {
                         "relative px-4 py-2 rounded-full text-[13px] font-bold flex items-center gap-1 transition-all outline-none",
                         isScrolled 
                           ? (isActive ? "text-primary bg-primary/5" : "text-foreground/70 hover:bg-muted") 
-                          : (isActive ? "text-white bg-white/10" : "text-white/70 hover:bg-white/10")
+                          : (isActive ? "text-white bg-white/10" : (link.name === "Resources" ? "text-primary" : "text-white/70 hover:bg-white/10"))
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -119,7 +119,7 @@ export function Navbar() {
                         "relative px-4 py-2 rounded-full text-[13px] font-bold transition-all",
                         isScrolled 
                           ? (isActive ? "text-primary" : "text-foreground/70 hover:bg-muted") 
-                          : (isActive ? "text-white" : "text-white/70 hover:bg-white/10")
+                          : (isActive ? "text-white" : (link.name === "Resources" ? "text-primary" : "text-white/70 hover:bg-white/10"))
                       )}
                     >
                       {isActive && (
@@ -172,13 +172,16 @@ export function Navbar() {
                               href={link.href}
                               className={cn(
                                 "text-xl font-black uppercase tracking-tight transition-colors",
-                                pathname === link.href ? "text-primary" : "text-foreground"
+                                (pathname === link.href || link.name === "Resources") ? "text-primary" : "text-foreground"
                               )}
                             >
                               {link.name}
                             </Link>
                           ) : (
-                            <span className="text-xl font-black uppercase tracking-tight text-muted-foreground">
+                            <span className={cn(
+                              "text-xl font-black uppercase tracking-tight",
+                              link.name === "Resources" ? "text-primary" : "text-muted-foreground"
+                            )}>
                               {link.name}
                             </span>
                           )}
