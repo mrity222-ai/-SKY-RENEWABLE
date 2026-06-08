@@ -17,13 +17,16 @@ import { motion } from "framer-motion";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial scroll position
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -53,11 +56,27 @@ export function Navbar() {
     { name: "About Us", href: "/about-us" },
   ];
 
+  // Helper to determine link styles to avoid hydration mismatches
+  const getLinkStyles = (linkName: string, isActive: boolean) => {
+    // During hydration, we match the server's default state (scrolled=false)
+    const effectiveScrolled = mounted ? isScrolled : false;
+    
+    if (effectiveScrolled) {
+      if (isActive) return "text-primary bg-primary/5";
+      return "text-foreground/70 hover:bg-muted";
+    } else {
+      if (isActive) return "text-white bg-white/10";
+      // Specific blue color for Resources link as requested
+      if (linkName === "Resources") return "text-primary";
+      return "text-white/70 hover:bg-white/10";
+    }
+  };
+
   return (
     <div className="fixed top-0 left-0 right-0 z-[100]">
       <header className={cn(
         "transition-all duration-500",
-        isScrolled 
+        (mounted && isScrolled) 
           ? "bg-white/80 backdrop-blur-2xl shadow-xl py-4 border-b border-black/5" 
           : "bg-transparent py-6"
       )}>
@@ -71,7 +90,7 @@ export function Navbar() {
               <div className="flex flex-col -space-y-1">
                 <span className={cn(
                   "font-headline text-xl md:text-2xl font-black tracking-tight transition-colors duration-500",
-                  isScrolled ? "text-foreground" : "text-white"
+                  (mounted && isScrolled) ? "text-foreground" : "text-white"
                 )}>SKY RENEWABLE</span>
                 <span className="text-[8px] font-black tracking-[0.2em] text-accent uppercase">Solar Energy</span>
               </div>
@@ -91,9 +110,7 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-bold flex items-center gap-1 transition-all outline-none",
-                        isScrolled 
-                          ? (isActive ? "text-primary bg-primary/5" : "text-foreground/70 hover:bg-muted") 
-                          : (isActive ? "text-white bg-white/10" : (link.name === "Resources" ? "text-primary" : "text-white/70 hover:bg-white/10"))
+                        getLinkStyles(link.name, isActive)
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -117,12 +134,10 @@ export function Navbar() {
                       href={link.href}
                       className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-bold transition-all",
-                        isScrolled 
-                          ? (isActive ? "text-primary" : "text-foreground/70 hover:bg-muted") 
-                          : (isActive ? "text-white" : (link.name === "Resources" ? "text-primary" : "text-white/70 hover:bg-white/10"))
+                        getLinkStyles(link.name, isActive)
                       )}
                     >
-                      {isActive && (
+                      {isActive && mounted && (
                         <motion.div 
                           layoutId="nav-indicator"
                           className={cn(
@@ -153,7 +168,7 @@ export function Navbar() {
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className={cn(
                     "transition-colors",
-                    isScrolled ? "text-foreground" : "text-white"
+                    (mounted && isScrolled) ? "text-foreground" : "text-white"
                   )}>
                     <Menu className="size-6" />
                   </Button>
