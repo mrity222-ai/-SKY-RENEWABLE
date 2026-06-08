@@ -212,46 +212,35 @@ export default function ProjectsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
-                    <Card className="rounded-[40px] border-none bg-white shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden group h-full flex flex-col">
-                      <div className="relative aspect-[4/3] overflow-hidden">
-                        <Image 
-                          src={project.image} 
-                          alt={project.title} 
-                          fill 
-                          className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        <div className="absolute top-6 left-6">
-                          <Badge className="bg-white/90 backdrop-blur-md text-black border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                            {project.type}
-                          </Badge>
+                    <Card className="rounded-[24px] border-none overflow-hidden group relative aspect-[4/3] shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
+                      <Image 
+                        src={project.image} 
+                        alt={project.title} 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      
+                      {/* Premium Info Box Overlay */}
+                      <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        <div className="text-[40px] md:text-[48px] font-black text-foreground tracking-tighter leading-none">
+                          {project.id < 10 ? `0${project.id}` : project.id}
                         </div>
-                      </div>
-                      <div className="p-10 space-y-6 flex-grow flex flex-col">
-                        <div className="space-y-2">
-                          <div className="flex items-center gap-2 text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">
-                            <MapPin className="size-3" /> {project.location}
-                          </div>
-                          <h3 className="text-[20px] md:text-[22px] font-semibold text-black leading-tight">
+                        <div className="flex flex-col gap-0.5">
+                          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">{project.type}</span>
+                          <h3 className="text-[16px] md:text-[18px] font-bold text-foreground leading-tight max-w-[180px]">
                             {project.title}
                           </h3>
                         </div>
-                        <p className="text-[13px] text-[#555] leading-[1.8] line-clamp-2">
-                          {project.description}
-                        </p>
-                        <div className="grid grid-cols-2 gap-4 pt-6 border-t border-neutral-100">
-                          <div>
-                            <p className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">Capacity</p>
-                            <p className="text-[16px] font-bold text-black">{project.capacity}</p>
-                          </div>
-                          <div>
-                            <p className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">Savings</p>
-                            <p className="text-[16px] font-bold text-accent">{project.savings}</p>
-                          </div>
-                        </div>
-                        <Button variant="link" className="p-0 h-auto text-black font-bold group-hover:gap-2 transition-all mt-auto self-start">
-                          View Project Details <ArrowRight className="ml-2 size-4" />
-                        </Button>
                       </div>
+
+                      {/* Hover Overlay for Type/Location */}
+                      <div className="absolute top-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <Badge className="bg-white/90 backdrop-blur-md text-black border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                          <MapPin className="size-3 mr-1" /> {project.location}
+                        </Badge>
+                      </div>
+
+                      <Link href={`/get-quote`} className="absolute inset-0 z-10" aria-label={`View ${project.title}`} />
                     </Card>
                   </motion.div>
                 ))}

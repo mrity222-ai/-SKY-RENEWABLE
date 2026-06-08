@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -25,7 +26,8 @@ import {
   BadgeCheck,
   TrendingUp,
   Leaf,
-  Banknote
+  Banknote,
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -64,9 +66,9 @@ export default function Home() {
   ];
 
   const projects = [
-    { id: 1, name: "Skyline Villa", capacity: "10kW", location: "Ahmedabad", image: "https://picsum.photos/seed/arka_h_p1/800/600" },
-    { id: 2, name: "GIDC Industrial Park", capacity: "250kW", location: "Sanand", image: "https://picsum.photos/seed/arka_h_p2/800/600" },
-    { id: 3, name: "Emerald Heights", capacity: "50kW", location: "Surat", image: "https://picsum.photos/seed/arka_h_p3/800/600" },
+    { id: 1, name: "Skyline Villa", capacity: "10kW", location: "Ahmedabad", type: "Residential", image: "https://picsum.photos/seed/arka_h_p1/800/600" },
+    { id: 2, name: "GIDC Industrial Park", capacity: "250kW", location: "Sanand", type: "Industrial", image: "https://picsum.photos/seed/arka_h_p2/800/600" },
+    { id: 3, name: "Emerald Heights", capacity: "50kW", location: "Surat", type: "Commercial", image: "https://picsum.photos/seed/arka_h_p3/800/600" },
   ];
 
   return (
@@ -85,7 +87,7 @@ export default function Home() {
             >
               <Image
                 src={HERO_IMAGES[currentSlide]}
-                alt="Sky Renewable Solar Energy Solutions for Home and Business"
+                alt="Sky Renewable Solar Energy Solutions"
                 fill
                 className="object-cover"
                 priority
@@ -234,22 +236,25 @@ export default function Home() {
             <p className="text-muted-foreground text-[14px]">Successful solar installations delivering clean energy across India.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {projects.map((p) => (
+            {projects.map((p, i) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
-                <Card className="rounded-[40px] overflow-hidden border-none shadow-sm group bg-white h-full flex flex-col">
-                  <div className="relative aspect-video overflow-hidden">
-                    <Image src={p.image} alt={`${p.name} - ${p.capacity} Solar System Installation`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                  </div>
-                  <div className="p-8 space-y-4 flex-grow flex flex-col">
-                    <div className="space-y-1">
-                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{p.location}</p>
-                      <h3 className="text-[20px] font-semibold text-foreground">{p.name}</h3>
+                <Card className="rounded-[24px] border-none overflow-hidden group relative aspect-[4/3] shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
+                  <Image src={p.image} alt={`${p.name} Solar System`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  
+                  {/* Premium Info Box Overlay */}
+                  <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <div className="text-[40px] md:text-[48px] font-black text-foreground tracking-tighter leading-none">
+                      0{p.id}
                     </div>
-                    <p className="text-[13px] text-primary font-bold">{p.capacity} System</p>
-                    <Button asChild variant="link" className="p-0 h-auto text-primary font-bold group-hover:gap-2 transition-all mt-auto self-start">
-                      <Link href="/projects">Read Project Success Story <ArrowRight className="ml-2 size-4" /></Link>
-                    </Button>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">{p.type}</span>
+                      <h3 className="text-[16px] md:text-[18px] font-bold text-foreground leading-tight max-w-[180px]">
+                        {p.name}
+                      </h3>
+                    </div>
                   </div>
+
+                  <Link href="/projects" className="absolute inset-0 z-10" />
                 </Card>
               </ScrollReveal>
             ))}
@@ -302,7 +307,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal direction="left">
               <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
-                <Image src="https://picsum.photos/seed/arka_h_subsidy/1000/750" alt="Government Rooftop Solar Subsidy Schemes" fill className="object-cover" />
+                <Image src="https://picsum.photos/seed/arka_h_subsidy/1000/750" alt="Solar Subsidy Schemes" fill className="object-cover" />
               </div>
             </ScrollReveal>
           </div>
@@ -345,7 +350,7 @@ export default function Home() {
             <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Solar Energy FAQs</h2>
           </ScrollReveal>
           <Accordion type="single" collapsible className="space-y-4">
-            <FaqItem value="q1" q="How much can I save with a rooftop solar system?" a="On average, residential customers save 80-90% on their electricity bills. The system typically pays for itself within 4-5 years." />
+            <FaqItem value="q1" q="How much can I save with a rooftop solar system?" a="On average, residential customers save 80-90% on their electricity bills. The system pay for itself in 4-5 years." />
             <FaqItem value="q2" q="Who is eligible for the government solar subsidy?" a="Currently, residential homeowners with a valid domestic connection can claim up to ₹78,000 under the central government rooftop solar scheme." />
             <FaqItem value="q3" q="How long do solar panels last?" a="Tier-1 solar panels come with a performance warranty of 25 years and often generate power for much longer with proper maintenance." />
             <FaqItem value="q4" q="Does Sky Renewable provide solar maintenance?" a="Yes, we offer comprehensive Annual Maintenance Contracts (AMC) that include periodic cleaning and technical audits." />
