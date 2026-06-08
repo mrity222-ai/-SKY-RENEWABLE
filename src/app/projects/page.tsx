@@ -250,34 +250,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 5 – PROJECT GALLERY */}
-      <section className="py-32">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-20 space-y-4">
-            <span className="text-[#B8B8B8] font-bold text-[11px] uppercase tracking-[0.3em]">Gallery</span>
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Project Visuals</h2>
-          </ScrollReveal>
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {[1, 2, 3, 4, 5, 6].map((idx) => (
-              <ScrollReveal key={idx} direction="up" delay={idx * 0.1}>
-                <div className="relative group overflow-hidden rounded-[40px] cursor-pointer shadow-lg aspect-square">
-                  <Image 
-                    src={`https://picsum.photos/seed/arka_gal_${idx}/800/800`} 
-                    alt={`Gallery ${idx}`} 
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <Search className="text-white size-10" />
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6 – PROJECT PROCESS */}
+      {/* SECTION 4 – PROJECT PROCESS */}
       <section className="py-32 bg-black text-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-24 space-y-4">
@@ -295,7 +268,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 7 – PROJECT IMPACT */}
+      {/* SECTION 5 – PROJECT IMPACT */}
       <section className="py-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -325,7 +298,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 8 – CLIENT TESTIMONIALS */}
+      {/* SECTION 6 – CLIENT TESTIMONIALS */}
       <section className="py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
@@ -352,7 +325,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 9 – MAP COVERAGE */}
+      {/* SECTION 7 – MAP COVERAGE */}
       <section className="py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-12">
@@ -373,7 +346,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 10 – FINAL CTA */}
+      {/* SECTION 8 – FINAL CTA */}
       <section className="py-32 px-4 bg-black">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal direction="zoom">
