@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function SolarMaintenancePage() {
   const services = [
@@ -46,7 +47,7 @@ export default function SolarMaintenancePage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Your solar system is a long-term investment. Our professional AMC services ensure your panels generate maximum power for all 25 years of their lifespan.
+                    Your solar system is a long-term investment. AMC services ensure panels generate maximum power.
                   </p>
                 </ScrollReveal>
               </div>
@@ -88,14 +89,7 @@ export default function SolarMaintenancePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 px-4 bg-black text-white text-center">
-        <div className="container mx-auto max-w-5xl space-y-10">
-          <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Maximize Your Solar Yield</h2>
-          <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
-            <Link href="/contact-us">Get AMC Details</Link>
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

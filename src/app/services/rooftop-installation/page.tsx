@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function RooftopInstallationPage() {
   const steps = [
@@ -48,7 +49,7 @@ export default function RooftopInstallationPage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Our rooftop installations are built to withstand 180kmph wind speeds and last for decades. We handle every detail from site survey to grid connectivity.
+                    Our rooftop installations are built to withstand 180kmph wind speeds.
                   </p>
                 </ScrollReveal>
               </div>
@@ -106,14 +107,7 @@ export default function RooftopInstallationPage() {
         </div>
       </section>
 
-      <section className="py-32 px-4 bg-black">
-        <div className="container mx-auto max-w-5xl text-center text-white space-y-10">
-          <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Ready for a Technical Audit?</h2>
-          <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
-            <Link href="/get-quote">Schedule Site Visit</Link>
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

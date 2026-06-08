@@ -37,6 +37,7 @@ import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
 import { Calculator } from "@/components/sections/Calculator";
+import { CTASection } from "@/components/sections/CTASection";
 import { 
   Accordion,
   AccordionContent,
@@ -224,7 +225,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5 – WHY CHOOSE SOLAR ENERGY? (PREMIUM MINIMAL DESIGN) */}
+      {/* SECTION 5 – WHY CHOOSE SOLAR ENERGY? */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 mb-16 items-end">
@@ -238,51 +239,45 @@ export default function Home() {
           
           <div className="border-t border-border pt-16">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-              {/* Block 1 */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">Significant Cost Savings</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">
-                  Eliminate or drastically reduce your monthly electricity expenses. By generating your own power, you protect yourself against rising utility tariffs and achieve ROI in record time through immediate operational savings.
+                  Eliminate or drastically reduce your monthly electricity expenses. By generating your own power, you protect yourself against rising utility tariffs and achieve ROI in record time.
                 </p>
               </div>
 
-              {/* Block 2 */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">Environmental Benefits</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">
-                  Join the green revolution by switching to clean, renewable energy. Solar systems significantly lower your carbon footprint, helping preserve the environment for future generations while meeting modern sustainability goals.
+                  Join the green revolution by switching to clean, renewable energy. Solar systems significantly lower your carbon footprint, helping preserve the environment for future generations.
                 </p>
               </div>
 
-              {/* Block 3 */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">Energy Independence</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">
-                  Gain complete control over your power requirements. Solar energy reduces your dependence on the centralized grid, ensuring energy security and immunity from fluctuating energy prices and supply inconsistencies.
+                  Gain complete control over your power requirements. Solar energy reduces your dependence on the centralized grid, ensuring energy security and immunity from fluctuating prices.
                 </p>
               </div>
 
-              {/* Block 4 */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">Increased Property Value</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">
-                  Solar installations are high-value capital improvements. Properties equipped with high-yield solar systems often command a higher market value and attract premium buyers focused on energy-efficient infrastructure.
+                  Solar installations are high-value capital improvements. Properties equipped with high-yield solar systems often command a higher market value and attract premium buyers.
                 </p>
               </div>
 
-              {/* Block 5 */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">Government Subsidy Benefits</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">
-                  Leverage financial assistance through central and state government solar programs. We assist you in navigating subsidy schemes like PM-Suryodaya to maximize your financial incentives and lower upfront capital.
+                  Leverage financial assistance through central and state government solar programs like PM-Suryodaya to maximize your financial incentives and lower upfront capital.
                 </p>
               </div>
 
-              {/* Block 6 */}
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-foreground">Long-Term Reliability</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">
-                  Solar panels are engineered for a lifespan of 25+ years with minimal maintenance. Our systems use Tier-1 components designed for durability, ensuring your investment continues to deliver performance for decades.
+                  Solar panels are engineered for a lifespan of 25+ years with minimal maintenance. Our systems use Tier-1 components designed for durability and performance.
                 </p>
               </div>
             </div>
@@ -307,10 +302,9 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {projects.map((p, i) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
-                <Card className="rounded-[24px] border-none overflow-hidden group relative h-[320px] md:h-[420px] lg:h-[560px] w-full shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
+                <Card className="rounded-[24px] border-none overflow-hidden group relative h-[560px] w-full shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
                   <Image src={p.image} alt={`${p.name} Solar System`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   
-                  {/* Premium Info Box Overlay */}
                   <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                     <div className="text-[40px] md:text-[48px] font-black text-foreground tracking-tighter leading-none">
                       0{p.id}
@@ -395,7 +389,6 @@ export default function Home() {
             {partners.map((p, i) => (
               <span key={`p1-${i}`} className="text-[16px] md:text-[22px] font-black text-foreground uppercase tracking-tighter px-4">{p}</span>
             ))}
-            {/* Duplicate for seamless loop */}
             {partners.map((p, i) => (
               <span key={`p2-${i}`} className="text-[16px] md:text-[22px] font-black text-foreground uppercase tracking-tighter px-4">{p}</span>
             ))}
@@ -422,7 +415,6 @@ export default function Home() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
-            {/* LEFT SIDE: COMPANY INFO */}
             <div className="lg:col-span-5 space-y-12">
               <ScrollReveal direction="right" className="space-y-6">
                 <span className="text-primary font-bold text-[12px] uppercase tracking-[0.3em]">EXPERT Q&A</span>
@@ -458,7 +450,6 @@ export default function Home() {
               </ScrollReveal>
             </div>
 
-            {/* RIGHT SIDE: FAQ ACCORDION */}
             <div className="lg:col-span-7">
               <ScrollReveal direction="left">
                 <AnimatePresence mode="wait">
@@ -494,24 +485,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 13 – FINAL CTA */}
-      <section className="py-32 px-4 bg-white">
-        <div className="container mx-auto max-w-5xl">
-          <div className="bg-foreground rounded-[60px] p-12 md:p-24 text-center text-white space-y-10 relative overflow-hidden">
-            <h2 className="text-[34px] lg:text-[64px] font-semibold leading-[1.05]">Ready for Energy Independence?</h2>
-            <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.8]">
-              Contact the best solar company today for a personalized rooftop audit and ROI assessment.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 pt-4">
-              <button className="bg-primary text-white font-semibold rounded-full px-12 h-16 text-sm hover:bg-white hover:text-primary transition-all flex items-center justify-center">
-                <Link href="/get-quote">Get Your Free Solar Quote</Link>
-              </button>
-              <button className="border border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10 transition-all flex items-center justify-center">
-                <Link href="/get-quote">Schedule Site Survey</Link>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

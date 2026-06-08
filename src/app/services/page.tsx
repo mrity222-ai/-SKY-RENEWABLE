@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -7,6 +6,7 @@ import Image from "next/image";
 import { ArrowRight, Zap, Home, Factory, Wrench, ShieldCheck, Sun, BatteryFull, Layout } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function ServicesPage() {
   const services = [
@@ -71,7 +71,7 @@ export default function ServicesPage() {
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.2}>
             <p className="text-[14px] lg:text-[16px] text-[#555] max-w-2xl mx-auto leading-[1.6]">
-              From small homes to massive industrial complexes, we provide engineered solar solutions that deliver maximum savings and long-term reliability.
+              From homes to industrial complexes, we provide engineered solar solutions that deliver maximum savings.
             </p>
           </ScrollReveal>
         </div>
@@ -114,23 +114,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 px-4 bg-black text-white text-center">
-        <div className="container mx-auto max-w-5xl space-y-10">
-          <ScrollReveal direction="up">
-            <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Ready To Switch To Solar?</h2>
-          </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.1}>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px] hover:bg-neutral-200">
-                <Link href="/get-quote">Get Free Quote</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 py-8 text-[14px] font-semibold hover:bg-white/10">
-                <Link href="/get-quote">Book Site Survey</Link>
-              </Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function BatteryStoragePage() {
   const benefits = [
@@ -45,7 +46,7 @@ export default function BatteryStoragePage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Take control of your energy. Store your solar power during the day and use it at night or during power cuts with our advanced lithium-ion storage solutions.
+                    Take control of your energy. Store your solar power during the day.
                   </p>
                 </ScrollReveal>
               </div>
@@ -87,14 +88,7 @@ export default function BatteryStoragePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 px-4 bg-black text-white text-center">
-        <div className="container mx-auto max-w-5xl space-y-10">
-          <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Achieve Energy Freedom Today</h2>
-          <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
-            <Link href="/get-quote">Consult an Expert</Link>
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

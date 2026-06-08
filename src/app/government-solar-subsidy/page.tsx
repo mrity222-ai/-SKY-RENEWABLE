@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -7,20 +6,17 @@ import Link from "next/link";
 import { 
   ShieldCheck, 
   Banknote, 
-  Clock, 
   CheckCircle2, 
-  ArrowRight,
-  ClipboardCheck,
   FileText,
   UserCheck,
   Zap,
-  HelpCircle,
   TrendingUp,
   Leaf
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { CTASection } from "@/components/sections/CTASection";
 import { 
   Accordion,
   AccordionContent,
@@ -38,12 +34,12 @@ export default function SubsidyGuidePage() {
   ];
 
   const benefitCards = [
-    { title: "Reduced Upfront Investment", desc: "Direct bank transfers or billing adjustments reduce your initial cash outflow." },
+    { title: "Reduced Upfront Investment", desc: "Direct bank transfers reduce your initial cash outflow." },
     { title: "Faster Payback Period", desc: "Most subsidized systems reach break-even within 4 to 5 years." },
-    { title: "Long-Term Savings", desc: "Lock in your electricity costs for the next 25 years with a high-performance system." },
-    { title: "Environment-Friendly Energy", desc: "Offset tons of CO2 emissions while powering your home with the sun." },
-    { title: "Energy Independence", desc: "Reduce reliance on the grid and protect yourself from rising utility tariffs." },
-    { title: "Increased Property Value", desc: "Solar-powered homes with active net-metering often command a premium in the market." },
+    { title: "Long-Term Savings", desc: "Lock in your electricity costs for the next 25 years." },
+    { title: "Environment-Friendly Energy", desc: "Offset tons of CO2 emissions while powering your home." },
+    { title: "Energy Independence", desc: "Reduce reliance on the grid and protect yourself from rising tariffs." },
+    { title: "Increased Property Value", desc: "Solar-powered homes often command a premium." },
   ];
 
   const documentCards = [
@@ -76,7 +72,7 @@ export default function SubsidyGuidePage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
-                    Reduce Your Solar Installation Cost With Official Subsidy Benefits. Understand how government schemes can help you transition to clean energy faster.
+                    Reduce Your Solar Installation Cost With Official Subsidy Benefits.
                   </p>
                 </ScrollReveal>
               </div>
@@ -84,9 +80,6 @@ export default function SubsidyGuidePage() {
                 <div className="flex flex-wrap gap-4">
                   <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Check Subsidy Eligibility</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
-                    <Link href="/get-quote">Get Free Solar Quote</Link>
                   </Button>
                 </div>
               </ScrollReveal>
@@ -112,9 +105,7 @@ export default function SubsidyGuidePage() {
               <div className="space-y-6">
                 <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">What Is Solar Subsidy?</h2>
                 <p className="text-[14px] text-[#555] leading-[1.8]">
-                  A solar subsidy is a financial incentive provided by the central and state governments to encourage the adoption of rooftop solar energy. These schemes are designed to make renewable energy accessible to everyone by bearing a portion of the installation cost. 
-                  <br /><br />
-                  In India, programs like the PM-Suryodaya Yojana provide direct bank transfers to homeowners, significantly lowering the barrier to entry and promoting national energy security.
+                  A solar subsidy is a financial incentive provided by the central and state governments to encourage adoption.
                 </p>
               </div>
             </ScrollReveal>
@@ -157,90 +148,6 @@ export default function SubsidyGuidePage() {
         </div>
       </section>
 
-      {/* SECTION 4 – ELIGIBILITY CRITERIA */}
-      <section className="py-32 bg-black text-white overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-10">
-              <ScrollReveal direction="right" className="space-y-6">
-                <h2 className="text-[30px] lg:text-[40px] font-semibold">Who Can Apply?</h2>
-                <p className="text-white/40 text-[14px]">Subsidy eligibility is primarily focused on the residential sector to drive mass adoption of rooftop solar.</p>
-              </ScrollReveal>
-              <div className="space-y-4">
-                {[
-                  "Residential Property Owners",
-                  "Valid Electricity Connection",
-                  "Rooftop Availability",
-                  "Approved Solar Installation",
-                  "Required Documentation"
-                ].map((item, i) => (
-                  <ScrollReveal key={i} delay={i * 0.1} direction="right" className="flex items-center gap-4 group">
-                    <div className="size-6 rounded-full border border-white/20 flex items-center justify-center text-accent">
-                      <CheckCircle2 className="size-4" />
-                    </div>
-                    <span className="text-[14px] font-medium text-white/80">{item}</span>
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-            <ScrollReveal direction="left" className="relative aspect-square rounded-[60px] overflow-hidden opacity-80">
-              <Image src="https://picsum.photos/seed/arka_eligibility/800/800" alt="Eligibility Illustration" fill className="object-cover" />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5 – HOW TO APPLY */}
-      <section className="py-32">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-24">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Solar Subsidy Application Process</h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[
-              { title: "Consultation", desc: "Energy audit." },
-              { title: "Site Survey", desc: "Technical inspection." },
-              { title: "Design", desc: "Custom 3D layout." },
-              { title: "Installation", desc: "Professional deployment." },
-              { title: "Submission", desc: "Paperwork filing." },
-              { title: "Processing", desc: "Verification & credit." }
-            ].map((step, i) => (
-              <ScrollReveal key={i} delay={i * 0.1} direction="up" className="text-center space-y-6">
-                <div className="text-[40px] md:text-[48px] font-bold text-black/5 leading-none">0{i + 1}</div>
-                <div className="space-y-2">
-                  <h4 className="text-[11px] font-bold text-black uppercase tracking-widest">{step.title}</h4>
-                  <p className="text-[12px] text-[#777] leading-relaxed">{step.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6 – DOCUMENTS REQUIRED */}
-      <section className="py-32 bg-[#F9F9F9]">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Required Documents</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {documentCards.map((doc, i) => (
-              <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                <Card className="p-8 rounded-[32px] border-none bg-white shadow-sm flex items-start gap-6 group hover:shadow-xl transition-all">
-                  <div className="size-12 rounded-xl bg-[#F5F5F5] flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-colors shrink-0">
-                    {React.cloneElement(doc.icon as React.ReactElement, { className: "size-6" })}
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="text-[16px] font-bold text-black">{doc.title}</h4>
-                    <p className="text-[12px] text-[#777] leading-relaxed">{doc.desc}</p>
-                  </div>
-                </Card>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 7 – SOLAR SAVINGS CALCULATOR */}
       <section className="py-32 bg-black text-white">
         <div className="container mx-auto px-4">
@@ -248,85 +155,8 @@ export default function SubsidyGuidePage() {
         </div>
       </section>
 
-      {/* SECTION 8 – FAQ SECTION */}
-      <section className="py-32">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Common Questions About Subsidy</h2>
-          </ScrollReveal>
-          <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="q1" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
-              <AccordionTrigger className="text-left font-semibold text-black py-6">What is a solar subsidy?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">It is a financial incentive from the government to lower the net cost of solar installation for homeowners, paid as a direct bank transfer after installation.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="q2" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
-              <AccordionTrigger className="text-left font-semibold text-black py-6">Who is eligible for solar subsidy?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">Currently, residential property owners with a valid domestic electricity connection are eligible. Industrial and commercial properties generally do not receive a direct subsidy but benefit from tax incentives like accelerated depreciation.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="q3" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
-              <AccordionTrigger className="text-left font-semibold text-black py-6">How much subsidy can I receive?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">The amount depends on the system size and the specific state-central blend of the scheme. It is typically calculated per kilowatt of installed capacity up to a cap.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="q4" className="bg-[#F9F9F9] rounded-[24px] border-none px-8 shadow-sm">
-              <AccordionTrigger className="text-left font-semibold text-black py-6">How long does approval take?</AccordionTrigger>
-              <AccordionContent className="text-[#555] pb-6 leading-[1.8]">The technical approval (Feasibility) usually takes 1-2 weeks. The actual disbursement of funds after installation and net-metering can take 4-8 weeks depending on DISCOM processing times.</AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-
-      {/* SECTION 9 – WHY CHOOSE US */}
-      <section className="py-32 bg-[#F9F9F9]">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Why Choose Our Solar Experts</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Certified Installation Team", desc: "Expert engineers ensuring 100% compliance with government safety standards." },
-              { title: "Documentation Support", desc: "End-to-end handling of your application to ensure zero rejection rates." },
-              { title: "Premium Components", desc: "We use only approved, high-efficiency Tier-1 solar modules and inverters." },
-              { title: "End-To-End Service", desc: "From technical survey to final grid-tie and subsidy credit." },
-              { title: "Fast Installation", desc: "Turnkey delivery within record timelines for residential systems." },
-              { title: "Dedicated Support", desc: "Post-installation monitoring and lifecycle maintenance support." }
-            ].map((item, i) => (
-              <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                <div className="space-y-4 text-center md:text-left">
-                  <div className="size-12 bg-black text-white rounded-xl flex items-center justify-center mx-auto md:mx-0">
-                    <CheckCircle2 className="size-6" />
-                  </div>
-                  <h3 className="text-[18px] font-bold text-black">{item.title}</h3>
-                  <p className="text-[13px] text-[#555] leading-relaxed">{item.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 10 – FINAL CTA */}
-      <section className="py-32 px-4 bg-black">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal direction="zoom">
-            <div className="text-center text-white space-y-10 relative overflow-hidden">
-              <div className="space-y-6">
-                <h2 className="text-[30px] lg:text-[48px] font-semibold leading-tight">Ready To Reduce Your <br /> <span className="text-accent">Solar Installation Cost?</span></h2>
-                <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.8]">
-                  Get expert guidance on subsidy eligibility and start your solar journey today. Our consultants are ready to assist you.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-6 pt-4">
-                <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 h-16 text-sm hover:bg-neutral-200">
-                  <Link href="/get-quote">Check Eligibility</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10">
-                  <Link href="/get-quote">Book Free Consultation</Link>
-                </Button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

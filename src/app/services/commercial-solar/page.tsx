@@ -17,12 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function CommercialSolarPage() {
   const features = [
@@ -53,7 +48,7 @@ export default function CommercialSolarPage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Strategic solar investments for offices, shops, and hospitals. Lock in your electricity costs and maximize business profits with our Tier-1 commercial rooftop systems.
+                    Strategic solar investments for offices, shops, and hospitals. Lock in your costs.
                   </p>
                 </ScrollReveal>
               </div>
@@ -117,18 +112,7 @@ export default function CommercialSolarPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="bg-black rounded-[60px] p-20 text-center text-white space-y-10">
-            <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Empower Your Business Today</h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
-                <Link href="/get-quote">Get Commercial Quote</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

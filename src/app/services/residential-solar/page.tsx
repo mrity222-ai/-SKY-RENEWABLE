@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function ResidentialSolarPage() {
   const benefits = [
@@ -44,7 +45,7 @@ export default function ResidentialSolarPage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Custom rooftop systems for modern homes. Reduce your electricity bills by up to 90% while claiming government subsidies and enjoying 25 years of performance warranty.
+                    Custom rooftop systems for modern homes. Reduce your electricity bills by up to 90%.
                   </p>
                 </ScrollReveal>
               </div>
@@ -108,18 +109,7 @@ export default function ResidentialSolarPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="bg-black rounded-[60px] p-20 text-center text-white space-y-10">
-            <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Start Your Solar Journey</h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
-                <Link href="/get-quote">Get Free Quote</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

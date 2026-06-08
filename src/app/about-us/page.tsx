@@ -10,8 +10,6 @@ import {
   Zap, 
   Building2, 
   MapPin, 
-  Twitter, 
-  Linkedin, 
   TrendingUp, 
   Globe, 
   BadgeCheck, 
@@ -21,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function AboutPage() {
   const partners = [
@@ -46,7 +45,7 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.2}>
               <p className="text-[13px] lg:text-[14px] text-[#555] max-w-2xl font-normal leading-[1.6]">
                 Arkā Solar is dedicated to transforming India's energy landscape through engineering excellence, 
-                unwavering integrity, and a commitment to a carbon-free future. We believe in high-performance solar ecosystems that maximize harvest in every condition.
+                unwavering integrity, and a commitment to a carbon-free future.
               </p>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.3}>
@@ -85,7 +84,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4">
                 <p className="text-[13px] lg:text-[14px] text-[#555] leading-[1.6]">
-                  Founded with a core belief that solar energy is the most democratized form of power, Arkā Solar started as a small team of engineers in Ahmedabad. Today, we have successfully installed over 5,000+ rooftop systems across India.
+                  Founded with a core belief that solar energy is the most democratized form of power, Arkā Solar started as a small team of engineers. Today, we have successfully installed over 5,000+ rooftop systems across India.
                 </p>
                 <p className="text-[13px] lg:text-[14px] text-[#555] leading-[1.6]">
                   Our focus has always been on quality components and hassle-free customer experience. We don't just sell panels; we build long-term relationships through performance monitoring and maintenance.
@@ -119,7 +118,6 @@ export default function AboutPage() {
       {/* SECTION 3 – VISION & MISSION */}
       <section className="py-24 bg-[#0A0A0A] text-white">
         <div className="container mx-auto px-4 space-y-40">
-          {/* Vision Block */}
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <ScrollReveal direction="right" className="space-y-8">
               <span className="inline-block bg-white/10 text-white/70 px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">Our Vision</span>
@@ -148,7 +146,6 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
 
-          {/* Mission Block */}
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <ScrollReveal direction="right" className="lg:order-2 space-y-8">
               <span className="inline-block bg-white/10 text-white/70 px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">Our Mission</span>
@@ -257,28 +254,7 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 12 – FINAL CTA */}
-      <section className="py-24 px-4 bg-black">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal direction="zoom">
-            <div className="text-center text-white space-y-10 relative overflow-hidden">
-              <div className="space-y-6">
-                <h2 className="text-[30px] lg:text-[48px] font-semibold leading-tight">Ready To Switch To Solar Energy?</h2>
-                <p className="text-[13px] lg:text-[14px] text-white/50 max-w-xl mx-auto font-normal leading-[1.6]">
-                  Start saving on electricity bills and move towards a sustainable future with our expert solar solutions.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-10 py-6 text-[14px] hover:bg-neutral-200">
-                  <Link href="/get-quote">Get Free Quote</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-10 py-6 text-[14px] font-semibold hover:bg-white/10">
-                  <Link href="/get-quote">Schedule Site Visit</Link>
-                </Button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

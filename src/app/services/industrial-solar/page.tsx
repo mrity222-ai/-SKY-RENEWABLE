@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function IndustrialSolarPage() {
   return (
@@ -40,7 +41,7 @@ export default function IndustrialSolarPage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Large-scale high-yield solar arrays for factories, warehouses, and industrial parks. Our engineering-first approach ensures maximum uptime and performance.
+                    Large-scale high-yield solar arrays for factories. Engineering-first approach.
                   </p>
                 </ScrollReveal>
               </div>
@@ -87,11 +88,10 @@ export default function IndustrialSolarPage() {
                   <Factory className="size-8" />
                 </div>
                 <h3 className="text-[28px] font-semibold text-black">CAPEX Model</h3>
-                <p className="text-[#555] text-[15px] leading-[1.7]">Own the system directly. Maximize your tax benefits and claim accelerated depreciation while enjoying 100% of the energy savings.</p>
+                <p className="text-[#555] text-[15px] leading-[1.7]">Own the system directly. Maximize your tax benefits and enjoy 100% of the energy savings.</p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> 100% Ownership</li>
                   <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> Full Tax Credits</li>
-                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> Maximum ROI</li>
                 </ul>
               </Card>
             </ScrollReveal>
@@ -101,11 +101,10 @@ export default function IndustrialSolarPage() {
                   <Globe className="size-8" />
                 </div>
                 <h3 className="text-[28px] font-semibold text-white">RESCO / OPEX Model</h3>
-                <p className="text-white/60 text-[15px] leading-[1.7]">Zero investment. Pay only for the energy you consume at a rate significantly lower than the grid tariff. We manage the system.</p>
+                <p className="text-white/60 text-[15px] leading-[1.7]">Zero investment. Pay only for the energy you consume at a rate significantly lower than the grid.</p>
                 <ul className="space-y-3 text-white/80">
                   <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Zero Upfront Cost</li>
                   <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Maintenance Included</li>
-                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Immediate Savings</li>
                 </ul>
               </Card>
             </ScrollReveal>
@@ -114,14 +113,7 @@ export default function IndustrialSolarPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-32 px-4 bg-black text-white">
-        <div className="container mx-auto max-w-5xl text-center space-y-10">
-          <h2 className="text-[34px] lg:text-[48px] font-semibold leading-tight">Scale Your Industry Sustainably</h2>
-          <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 py-8 text-[14px]">
-            <Link href="/get-quote">Speak to an Expert</Link>
-          </Button>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }

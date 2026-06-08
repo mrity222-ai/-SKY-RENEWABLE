@@ -1,39 +1,39 @@
-
 import { ShieldCheck, Award, Users, Banknote, Gauge, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CTASection } from "@/components/sections/CTASection";
 
 export default function WhyChooseUsPage() {
   const points = [
     {
       icon: <Award className="size-8" />,
       title: "Tier-1 Only Components",
-      desc: "We exclusively use Tier-1 Bloomberg listed solar modules and top-rated inverters from brands like Fronius, Sungrow, and Enphase."
+      desc: "We exclusively use Tier-1 Bloomberg listed solar modules and top-rated inverters."
     },
     {
       icon: <ShieldCheck className="size-8" />,
       title: "Structural Integrity",
-      desc: "Our mounting structures are hot-dip galvanized and wind-tested for 180kmph, ensuring your roof remains safe for decades."
+      desc: "Our mounting structures are hot-dip galvanized and wind-tested for 180kmph."
     },
     {
       icon: <Users className="size-8" />,
       title: "In-House Engineering",
-      desc: "Unlike competitors who subcontract labor, we have a dedicated team of 50+ certified in-house solar engineers and technicians."
+      desc: "We have a dedicated team of certified in-house solar engineers and technicians."
     },
     {
       icon: <Banknote className="size-8" />,
       title: "Liaison Expertise",
-      desc: "We have an unmatched success rate in government subsidy (CFA) approvals and net-metering applications across 5 states."
+      desc: "Unmatched success rate in government subsidy (CFA) approvals and net-metering applications."
     },
     {
       icon: <Gauge className="size-8" />,
       title: "Performance Monitoring",
-      desc: "Every Arkā system comes with cloud-based IoT monitoring. We know about generation issues before you even notice them."
+      desc: "Every Arkā system comes with cloud-based IoT monitoring."
     },
     {
       icon: <Clock className="size-8" />,
       title: "Zero-Downtime Service",
-      desc: "Our AMC customers enjoy a 48-hour service guarantee. If we don't fix a generation issue within 48 hours, we compensate for the loss."
+      desc: "Our AMC customers enjoy a 48-hour service guarantee."
     }
   ];
 
@@ -42,7 +42,7 @@ export default function WhyChooseUsPage() {
       <section className="py-24 bg-primary text-white text-center">
         <div className="container mx-auto px-4 max-w-4xl space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold font-headline">The <span className="text-accent">Arkā Advantage</span></h1>
-          <p className="text-xl text-white/70">Engineering excellence, financial transparency, and uncompromising quality standards.</p>
+          <p className="text-xl text-white/70">Engineering excellence and uncompromising quality standards.</p>
         </div>
       </section>
 
@@ -71,11 +71,10 @@ export default function WhyChooseUsPage() {
               <Stat value="120MW" label="Total Capacity" />
               <Stat value="48H" label="Service Guarantee" />
            </div>
-           <Button asChild className="bg-accent text-primary font-bold rounded-full px-12 py-8 text-xl">
-             <Link href="/get-quote">Experience Arkā Quality <ArrowRight className="ml-2" /></Link>
-           </Button>
         </div>
       </section>
+
+      <CTASection />
     </div>
   );
 }

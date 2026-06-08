@@ -23,6 +23,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
+import { CTASection } from "@/components/sections/CTASection";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -131,7 +132,7 @@ export default function ProjectsPage() {
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
                   <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
-                    Real Installations. Real Savings. Real Impact. Explore our portfolio of residential, commercial, industrial, and government solar projects completed across multiple locations.
+                    Real Installations. Real Savings. Real Impact. Explore our portfolio of solar projects completed across multiple locations.
                   </p>
                 </ScrollReveal>
               </div>
@@ -211,7 +212,7 @@ export default function ProjectsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
-                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[320px] md:h-[420px] lg:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
+                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
                       <Image 
                         src={project.image} 
                         alt={project.title} 
@@ -219,7 +220,6 @@ export default function ProjectsPage() {
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       
-                      {/* Premium Info Box Overlay */}
                       <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                         <div className="text-[40px] md:text-[48px] font-black text-foreground tracking-tighter leading-none">
                           {project.id < 10 ? `0${project.id}` : project.id}
@@ -232,7 +232,6 @@ export default function ProjectsPage() {
                         </div>
                       </div>
 
-                      {/* Hover Overlay for Type/Location */}
                       <div className="absolute top-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <Badge className="bg-white/90 backdrop-blur-md text-black border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
                           <MapPin className="size-3 mr-1" /> {project.location}
@@ -286,7 +285,7 @@ export default function ProjectsPage() {
             <ScrollReveal className="space-y-4">
               <span className="text-[#B8B8B8] font-bold text-[11px] uppercase tracking-[0.3em]">Coverage</span>
               <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Our Project Presence</h2>
-              <p className="text-[#777] text-[14px]">Serving major industrial and urban hubs with dedicated local service teams.</p>
+              <p className="text-[#777] text-[14px]">Serving major hubs with dedicated local service teams.</p>
             </ScrollReveal>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {["Lucknow", "Noida", "Kanpur", "Prayagraj", "Varanasi", "Ghaziabad", "Meerut", "Gorakhpur"].map((city, i) => (
@@ -301,28 +300,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* SECTION 8 – FINAL CTA */}
-      <section className="py-32 px-4 bg-black">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal direction="zoom">
-            <div className="text-center text-white space-y-10 relative overflow-hidden">
-              <div className="space-y-6">
-                <h2 className="text-[34px] lg:text-[64px] font-semibold leading-[1.05]">Ready To Start Your <br /> <span className="text-accent">Solar Project?</span></h2>
-                <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.8]">
-                  Get expert consultation and a customized solar solution for your home or business. Join the transition to clean energy today.
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-6 pt-4">
-                <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 h-16 text-sm hover:bg-neutral-200">
-                  <Link href="/get-quote">Get Your Free Quote</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10">
-                  <Link href="/get-quote">Schedule Site Survey</Link>
-                </Button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 }
@@ -347,27 +325,5 @@ function ImpactCard({ icon, val, label }: { icon: any, val: string, label: strin
       <h4 className="text-[20px] md:text-[24px] font-bold text-black leading-none">{val}</h4>
       <p className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">{label}</p>
     </div>
-  );
-}
-
-function TestimonialCard({ name, type, review }: { name: string, type: string, review: string }) {
-  return (
-    <ScrollReveal direction="up">
-      <Card className="p-10 rounded-[40px] border-none bg-white shadow-sm space-y-8 flex flex-col h-full">
-        <div className="flex gap-1 text-black">
-          {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-4 fill-current" />)}
-        </div>
-        <p className="text-[14px] text-black italic leading-[1.8] flex-grow">"{review}"</p>
-        <div className="flex items-center gap-4 border-t border-neutral-100 pt-6">
-          <div className="size-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#B8B8B8]">
-            <Star className="size-5" />
-          </div>
-          <div>
-            <h4 className="text-[14px] font-bold text-black">{name}</h4>
-            <p className="text-[10px] text-[#B8B8B8] font-bold uppercase tracking-widest">{type}</p>
-          </div>
-        </div>
-      </Card>
-    </ScrollReveal>
   );
 }
