@@ -34,12 +34,6 @@ export default function AboutPage() {
     "Tata Power Solar", "Waaree", "Adani Solar", "Luminous", "Havells", "Exide", "Microtek"
   ];
 
-  const offices = [
-    { city: "Ahmedabad", type: "Head Office", address: "Solar Plaza, MG Road, Ahmedabad - 380001", image: "https://picsum.photos/seed/arka_off1/600/400" },
-    { city: "Surat", type: "Regional Office", address: "Green Tech Park, Vesu, Surat - 395007", image: "https://picsum.photos/seed/arka_off2/600/400" },
-    { city: "Sanand", type: "Branch Office", address: "GIDC Industrial Estate, Sanand - 382110", image: "https://picsum.photos/seed/arka_off3/600/400" },
-  ];
-
   return (
     <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
       {/* SECTION 1 – HERO INTRO */}
@@ -264,31 +258,6 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all">
             {partners.map((p, i) => (
               <span key={i} className="text-[14px] font-bold text-black uppercase tracking-widest cursor-default">{p}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 9 – OUR OFFICES */}
-      <section className="py-24 bg-[#F9F9F9]">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Our Presence</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {offices.map((office, i) => (
-              <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                <Card className="rounded-[24px] overflow-hidden border-none shadow-sm bg-white group">
-                  <div className="relative aspect-video">
-                    <Image src={office.image} alt={office.city} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  </div>
-                  <div className="p-8 space-y-3">
-                    <span className="text-[#777] font-semibold text-[11px] uppercase tracking-widest">{office.type}</span>
-                    <h3 className="text-[22px] font-semibold text-black">{office.city}</h3>
-                    <p className="text-[#555] text-[13px] leading-[1.6]">{office.address}</p>
-                  </div>
-                </Card>
-              </ScrollReveal>
             ))}
           </div>
         </div>
