@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -27,7 +26,11 @@ import {
   TrendingUp,
   Leaf,
   Banknote,
-  MapPin
+  MapPin,
+  Phone,
+  Mail,
+  HelpCircle,
+  MessageCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -41,6 +44,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const HERO_IMAGES = [
   "https://picsum.photos/seed/arka_hero_1/1920/1080",
@@ -50,6 +54,7 @@ const HERO_IMAGES = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeFaqCategory, setActiveFaqCategory] = useState<'basics' | 'support'>('basics');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -70,6 +75,21 @@ export default function Home() {
     { id: 2, name: "GIDC Industrial Park", capacity: "250kW", location: "Sanand", type: "Industrial", image: "https://picsum.photos/seed/arka_h_p2/800/1200" },
     { id: 3, name: "Emerald Heights", capacity: "50kW", location: "Surat", type: "Commercial", image: "https://picsum.photos/seed/arka_h_p3/800/1200" },
   ];
+
+  const faqData = {
+    basics: [
+      { q: "Which is the best solar energy company for rooftop installation?", a: "Sky Renewable is widely recognized as a premier rooftop solar installer in India, offering turnkey engineering, procurement, and construction (EPC) services with a focus on high-yield generation and professional maintenance." },
+      { q: "How can I find a reliable solar installer near me?", a: "Sky Renewable provides local service teams across multiple urban and industrial hubs. You can book a professional site survey through our website or contact our assistance desk to find our nearest office." },
+      { q: "What is the approximate cost of solar system installation?", a: "The cost varies based on system size and component selection. Generally, a residential 3kW system starts from ₹1.8 Lakhs before subsidies. We provide detailed financial modeling during our free site audit." },
+      { q: "How much government subsidy is available for solar panels?", a: "Under the PM-Suryodaya Yojana, residential homeowners can receive direct financial assistance (CFA) of up to ₹78,000 for system sizes up to 3kW." },
+    ],
+    support: [
+      { q: "How long does a rooftop solar system last?", a: "Tier-1 solar panels are engineered for longevity, coming with a 25-year performance warranty. Most systems continue to generate clean energy efficiently for 30+ years." },
+      { q: "What maintenance is required for solar panels?", a: "Maintenance is minimal but essential. It involves periodic cleaning (usually once or twice a month) and annual technical audits of electrical connections and inverter health to ensure peak performance." },
+      { q: "Can solar panels work during cloudy weather?", a: "Yes, solar panels utilize daylight (diffused light) to generate electricity. While generation is lower than on clear sunny days, the system remains active and contributes to your daily power needs." },
+      { q: "Is solar energy suitable for commercial properties?", a: "Absolutely. Commercial properties benefit significantly from solar through accelerated depreciation (tax benefits), lower operational costs, and ESG compliance, with average payback periods of 3-5 years." },
+    ]
+  };
 
   return (
     <div className="bg-white selection:bg-primary selection:text-white overflow-hidden">
@@ -344,18 +364,97 @@ export default function Home() {
       </section>
 
       {/* SECTION 12 – FAQ */}
-      <section className="py-32">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Solar Energy FAQs</h2>
-          </ScrollReveal>
-          <Accordion type="single" collapsible className="space-y-4">
-            <FaqItem value="q1" q="How much can I save with a rooftop solar system?" a="On average, residential customers save 80-90% on their electricity bills. The system pay for itself in 4-5 years." />
-            <FaqItem value="q2" q="Who is eligible for the government solar subsidy?" a="Currently, residential homeowners with a valid domestic connection can claim up to ₹78,000 under the central government rooftop solar scheme." />
-            <FaqItem value="q3" q="How long do solar panels last?" a="Tier-1 solar panels come with a performance warranty of 25 years and often generate power for much longer with proper maintenance." />
-            <FaqItem value="q4" q="Does Sky Renewable provide solar maintenance?" a="Yes, we offer comprehensive Annual Maintenance Contracts (AMC) that include periodic cleaning and technical audits." />
-            <FaqItem value="q5" q="What is Net Metering in solar?" a="Net metering is a billing mechanism that credits solar system owners for the electricity they add to the grid." />
-          </Accordion>
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+            {/* LEFT SIDE: COMPANY INFO */}
+            <div className="lg:col-span-5 space-y-12">
+              <ScrollReveal direction="right" className="space-y-6">
+                <span className="text-primary font-bold text-[12px] uppercase tracking-[0.3em]">Expert Q&A</span>
+                <h2 className="text-[34px] lg:text-[48px] font-semibold text-foreground leading-[1.1]">
+                  Comprehensive Energy <br /> Solutions Unfolded
+                </h2>
+                <p className="text-muted-foreground text-[14px] leading-relaxed max-w-lg">
+                  Navigating the transition to renewable energy can be complex. Whether you're curious about rooftop installation costs, government subsidy eligibility, or long-term maintenance, our experts provide clear, data-driven answers to help you achieve energy independence.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal direction="right" delay={0.1} className="flex flex-wrap gap-4">
+                <button 
+                  onClick={() => setActiveFaqCategory('basics')}
+                  className={cn(
+                    "px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest transition-all",
+                    activeFaqCategory === 'basics' ? "bg-primary text-white shadow-lg" : "bg-muted text-muted-foreground hover:bg-primary/5 hover:text-primary"
+                  )}
+                >
+                  System Basics
+                </button>
+                <button 
+                  onClick={() => setActiveFaqCategory('support')}
+                  className={cn(
+                    "px-8 py-3 rounded-full text-[12px] font-black uppercase tracking-widest transition-all",
+                    activeFaqCategory === 'support' ? "bg-primary text-white shadow-lg" : "bg-muted text-muted-foreground hover:bg-primary/5 hover:text-primary"
+                  )}
+                >
+                  Client Support
+                </button>
+              </ScrollReveal>
+
+              <ScrollReveal direction="right" delay={0.2} className="grid gap-6">
+                <div className="flex items-center gap-6 p-6 bg-white rounded-[24px] shadow-sm border border-border group hover:shadow-md transition-shadow">
+                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <Phone className="size-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-[12px] font-bold text-muted-foreground uppercase tracking-widest mb-1">Direct Assistance</h4>
+                    <p className="text-[16px] font-black text-foreground">+91 98765 43210</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-6 p-6 bg-white rounded-[24px] shadow-sm border border-border group hover:shadow-md transition-shadow">
+                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    <MapPin className="size-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-[12px] font-bold text-muted-foreground uppercase tracking-widest mb-1">Technical Office</h4>
+                    <p className="text-[16px] font-black text-foreground max-w-[200px] leading-tight">Solar Plaza, MG Road, Ahmedabad - 380001</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* RIGHT SIDE: FAQ ACCORDION */}
+            <div className="lg:col-span-7">
+              <ScrollReveal direction="left">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeFaqCategory}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Accordion type="single" collapsible className="space-y-4">
+                      {faqData[activeFaqCategory].map((faq, index) => (
+                        <AccordionItem 
+                          key={index} 
+                          value={`item-${index}`} 
+                          className="bg-white rounded-[20px] border border-border px-8 overflow-hidden shadow-sm hover:shadow-md transition-all group"
+                        >
+                          <AccordionTrigger className="text-left font-bold text-[16px] md:text-[18px] text-foreground py-7 hover:no-underline [&[data-state=open]>svg]:rotate-180">
+                            {faq.q}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground text-[14px] md:text-[15px] leading-[1.8] pb-8">
+                            {faq.a}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </motion.div>
+                </AnimatePresence>
+              </ScrollReveal>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -469,18 +568,5 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
         </div>
       </Card>
     </ScrollReveal>
-  );
-}
-
-function FaqItem({ value, q, a }: { value: string, q: string, a: string }) {
-  return (
-    <AccordionItem value={value} className="bg-muted rounded-[24px] border-none px-8 overflow-hidden shadow-sm mb-4">
-      <AccordionTrigger className="text-left font-semibold text-base text-foreground py-6 hover:no-underline">
-        {q}
-      </AccordionTrigger>
-      <AccordionContent className="text-muted-foreground text-[14px] leading-[1.8] pb-6">
-        {a}
-      </AccordionContent>
-    </AccordionItem>
   );
 }
