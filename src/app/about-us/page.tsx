@@ -23,13 +23,6 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
 
 export default function AboutPage() {
-  const team = [
-    { name: "Vikram Mehta", role: "Founder & CEO", image: "https://picsum.photos/seed/arka_t1/400/500" },
-    { name: "Ananya Sharma", role: "Chief Technical Officer", image: "https://picsum.photos/seed/arka_t2/400/500" },
-    { name: "Rahul Deshmukh", role: "Lead Solar Engineer", image: "https://picsum.photos/seed/arka_t3/400/500" },
-    { name: "Priya Iyer", role: "Head of Operations", image: "https://picsum.photos/seed/arka_t4/400/500" },
-  ];
-
   const partners = [
     "Tata Power Solar", "Waaree", "Adani Solar", "Luminous", "Havells", "Exide", "Microtek"
   ];
@@ -258,31 +251,6 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all">
             {partners.map((p, i) => (
               <span key={i} className="text-[14px] font-bold text-black uppercase tracking-widest cursor-default">{p}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 10 – MEET OUR TEAM */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-16 space-y-2">
-            <span className="text-[#777] font-semibold text-[12px] uppercase tracking-widest">The Team</span>
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Meet The Experts</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-4 gap-8">
-            {team.map((member, i) => (
-              <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                <div className="group space-y-4 text-center">
-                  <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden">
-                    <Image src={member.image} alt={member.name} fill className="object-cover transition-transform duration-700 grayscale hover:grayscale-0" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-[18px] font-bold text-black">{member.name}</h3>
-                    <p className="text-[13px] text-[#777]">{member.role}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
             ))}
           </div>
         </div>
