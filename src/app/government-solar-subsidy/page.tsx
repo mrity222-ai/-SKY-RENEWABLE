@@ -98,8 +98,18 @@ export default function SubsidyGuidePage() {
       </section>
 
       {/* SECTION 2 – SUBSIDY OVERVIEW */}
-      <section className="py-32 bg-[#F9F9F9]">
-        <div className="container mx-auto px-4">
+      <section className="relative py-32 bg-[#F9F9F9] overflow-hidden">
+        {/* Background Image Overlay */}
+        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
+          <Image 
+            src="https://picsum.photos/seed/arka_subsidy_bg/1920/1080" 
+            alt="Solar Subsidy Background" 
+            fill 
+            className="object-cover"
+          />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
             <ScrollReveal direction="right">
               <div className="space-y-6">
