@@ -134,12 +134,12 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-6">
-              <Button asChild size="lg" className="bg-primary text-white rounded-full px-10 h-14 md:h-16 text-sm font-black hover:bg-white hover:text-primary transition-all shadow-2xl">
-                <Link href="/get-quote">Get a Free Quote <ArrowRight className="ml-2 size-4" /></Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm rounded-full px-10 h-14 md:h-16 text-sm font-bold hover:bg-white/10 transition-all">
+              <button className="bg-primary text-white rounded-full px-10 h-14 md:h-16 text-sm font-black hover:bg-white hover:text-primary transition-all shadow-2xl flex items-center justify-center">
+                <Link href="/get-quote" className="flex items-center">Get a Free Quote <ArrowRight className="ml-2 size-4" /></Link>
+              </button>
+              <button className="border border-white/30 text-white backdrop-blur-sm rounded-full px-10 h-14 md:h-16 text-sm font-bold hover:bg-white/10 transition-all flex items-center justify-center">
                 <Link href="/get-quote">Book Expert Site Survey</Link>
-              </Button>
+              </button>
             </div>
           </ScrollReveal>
 
@@ -187,9 +187,9 @@ export default function Home() {
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild variant="outline" className="rounded-full px-8 h-12 border-primary/10 text-primary hover:bg-primary/5">
+                <button className="rounded-full px-8 h-12 border border-primary/10 text-primary hover:bg-primary/5 transition-colors font-bold text-sm">
                   <Link href="/about-us">Explore Our Solar Journey</Link>
-                </Button>
+                </button>
               </ScrollReveal>
             </div>
             <ScrollReveal direction="left">
@@ -280,9 +280,9 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Button asChild variant="outline" className="rounded-full px-10 h-14 border-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
+            <button className="rounded-full px-10 h-14 border border-primary/10 text-primary hover:bg-primary hover:text-white transition-all font-bold text-sm">
               <Link href="/projects">Browse All Solar Projects</Link>
-            </Button>
+            </button>
           </div>
         </div>
       </section>
@@ -321,9 +321,9 @@ export default function Home() {
                 <SubsidyBenefit icon={<Leaf />} title="Eco-Incentives" desc="Sustainable energy goals." />
                 <SubsidyBenefit icon={<ShieldCheck />} title="Energy Security" desc="Grid independence." />
               </div>
-              <Button asChild className="bg-primary text-white rounded-full px-10 h-14 font-bold hover:bg-primary/90 transition-all">
+              <button className="bg-primary text-white rounded-full px-10 h-14 font-bold hover:bg-primary/90 transition-all text-sm">
                 <Link href="/government-solar-subsidy">Check Subsidy Eligibility</Link>
-              </Button>
+              </button>
             </ScrollReveal>
             <ScrollReveal direction="left">
               <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
@@ -399,28 +399,6 @@ export default function Home() {
                   Client Support
                 </button>
               </ScrollReveal>
-
-              <ScrollReveal direction="right" delay={0.2} className="grid gap-6">
-                <div className="flex items-center gap-6 p-6 bg-white rounded-[24px] shadow-sm border border-border group hover:shadow-md transition-shadow">
-                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    <Phone className="size-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-[12px] font-bold text-muted-foreground uppercase tracking-widest mb-1">Direct Assistance</h4>
-                    <p className="text-[16px] font-black text-foreground">+91 98765 43210</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-6 p-6 bg-white rounded-[24px] shadow-sm border border-border group hover:shadow-md transition-shadow">
-                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    <MapPin className="size-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-[12px] font-bold text-muted-foreground uppercase tracking-widest mb-1">Technical Office</h4>
-                    <p className="text-[16px] font-black text-foreground max-w-[200px] leading-tight">Solar Plaza, MG Road, Ahmedabad - 380001</p>
-                  </div>
-                </div>
-              </ScrollReveal>
             </div>
 
             {/* RIGHT SIDE: FAQ ACCORDION */}
@@ -467,12 +445,12 @@ export default function Home() {
               Contact the best solar company today for a personalized rooftop audit and ROI assessment.
             </p>
             <div className="flex flex-wrap justify-center gap-6 pt-4">
-              <Button asChild size="lg" className="bg-primary text-white font-semibold rounded-full px-12 h-16 text-sm hover:bg-white hover:text-primary transition-all">
+              <button className="bg-primary text-white font-semibold rounded-full px-12 h-16 text-sm hover:bg-white hover:text-primary transition-all flex items-center justify-center">
                 <Link href="/get-quote">Get Your Free Solar Quote</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10">
+              </button>
+              <button className="border border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10 transition-all flex items-center justify-center">
                 <Link href="/get-quote">Schedule Site Survey</Link>
-              </Button>
+              </button>
             </div>
           </div>
         </div>
