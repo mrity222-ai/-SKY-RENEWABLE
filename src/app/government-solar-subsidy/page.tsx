@@ -59,7 +59,7 @@ export default function SubsidyGuidePage() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-secondary text-white px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Government Solar Subsidy
                 </span>
               </ScrollReveal>
