@@ -67,6 +67,7 @@ export default function AboutPage() {
                 fill 
                 className="object-cover"
                 priority
+                data-ai-hint="solar field"
               />
             </div>
           </ScrollReveal>
@@ -108,6 +109,7 @@ export default function AboutPage() {
                   alt="Solar Engineers" 
                   fill 
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  data-ai-hint="solar engineers"
                 />
               </div>
             </ScrollReveal>
@@ -141,7 +143,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="left">
               <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden">
-                <Image src="https://picsum.photos/seed/arka_vision/800/600" alt="Sustainable Future" fill className="object-cover opacity-80" />
+                <Image src="https://picsum.photos/seed/arka_vision/800/600" alt="Sustainable Future" fill className="object-cover opacity-80" data-ai-hint="sustainable energy" />
               </div>
             </ScrollReveal>
           </div>
@@ -169,7 +171,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="left" className="lg:order-1">
               <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden">
-                <Image src="https://picsum.photos/seed/arka_mission/800/600" alt="Making Solar Simple" fill className="object-cover opacity-80" />
+                <Image src="https://picsum.photos/seed/arka_mission/800/600" alt="Making Solar Simple" fill className="object-cover opacity-80" data-ai-hint="solar home" />
               </div>
             </ScrollReveal>
           </div>
@@ -240,14 +242,19 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 8 – TECHNOLOGY PARTNERS */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal className="mb-12">
-             <h2 className="text-[24px] font-semibold text-black">Technology Partners</h2>
+      <section className="py-24 border-y border-neutral-50 bg-white overflow-hidden">
+        <div className="container mx-auto px-4 text-center mb-12">
+          <ScrollReveal>
+            <h2 className="text-[12px] font-bold text-muted-foreground tracking-[0.3em] uppercase">Technology Partners</h2>
           </ScrollReveal>
-          <div className="flex flex-wrap justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all">
+        </div>
+        <div className="relative flex overflow-hidden">
+          <div className="animate-marquee flex items-center gap-12 md:gap-20 opacity-30 grayscale hover:grayscale-0 transition-all whitespace-nowrap py-4">
             {partners.map((p, i) => (
-              <span key={i} className="text-[14px] font-bold text-black uppercase tracking-widest cursor-default">{p}</span>
+              <span key={`p1-${i}`} className="text-[16px] md:text-[22px] font-black text-black uppercase tracking-tighter px-4">{p}</span>
+            ))}
+            {partners.map((p, i) => (
+              <span key={`p2-${i}`} className="text-[16px] md:text-[22px] font-black text-black uppercase tracking-tighter px-4">{p}</span>
             ))}
           </div>
         </div>
