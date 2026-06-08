@@ -224,19 +224,68 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5 – WHY CHOOSE US */}
-      <section className="py-32">
+      {/* SECTION 5 – WHY CHOOSE SOLAR ENERGY? (PREMIUM MINIMAL DESIGN) */}
+      <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Why We Are the Best Solar Company</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-8">
-            <FeatureCard icon={<Award />} title="Certified Solar Engineers" desc="Our team ensures every installation meets international safety and performance standards." />
-            <FeatureCard icon={<BadgeCheck />} title="Government Subsidy Aid" desc="Full assistance in claiming PM-Suryodaya and state solar subsidies." />
-            <FeatureCard icon={<Sun />} title="Tier-1 Solar Modules" desc="We use only Bloomberg-listed solar panels and high-yield inverters." />
-            <FeatureCard icon={<Zap />} title="Rapid Installation" desc="Turnkey project delivery within record timelines across India." />
-            <FeatureCard icon={<ShieldCheck />} title="Lifetime Support" desc="Comprehensive performance warranties and 48-hour service response." />
-            <FeatureCard icon={<Users />} title="Client-Centric EPC" desc="Customized engineering designs for maximum ROI on your solar investment." />
+          <div className="grid lg:grid-cols-2 gap-12 mb-16 items-end">
+            <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-black text-foreground leading-[1.1] tracking-tighter">
+              Why Choose <br /> SKY RENEWABLE Solar Solutions?
+            </h2>
+            <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-xl">
+              Transitioning to solar power is more than an environmental choice—it's a strategic financial decision that delivers predictability, savings, and long-term asset value for decades.
+            </p>
+          </div>
+          
+          <div className="border-t border-border pt-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+              {/* Block 1 */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">Significant Cost Savings</h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  Eliminate or drastically reduce your monthly electricity expenses. By generating your own power, you protect yourself against rising utility tariffs and achieve ROI in record time through immediate operational savings.
+                </p>
+              </div>
+
+              {/* Block 2 */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">Environmental Benefits</h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  Join the green revolution by switching to clean, renewable energy. Solar systems significantly lower your carbon footprint, helping preserve the environment for future generations while meeting modern sustainability goals.
+                </p>
+              </div>
+
+              {/* Block 3 */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">Energy Independence</h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  Gain complete control over your power requirements. Solar energy reduces your dependence on the centralized grid, ensuring energy security and immunity from fluctuating energy prices and supply inconsistencies.
+                </p>
+              </div>
+
+              {/* Block 4 */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">Increased Property Value</h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  Solar installations are high-value capital improvements. Properties equipped with high-yield solar systems often command a higher market value and attract premium buyers focused on energy-efficient infrastructure.
+                </p>
+              </div>
+
+              {/* Block 5 */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">Government Subsidy Benefits</h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  Leverage financial assistance through central and state government solar programs. We assist you in navigating subsidy schemes like PM-Suryodaya to maximize your financial incentives and lower upfront capital.
+                </p>
+              </div>
+
+              {/* Block 6 */}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground">Long-Term Reliability</h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">
+                  Solar panels are engineered for a lifespan of 25+ years with minimal maintenance. Our systems use Tier-1 components designed for durability, ensuring your investment continues to deliver performance for decades.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -485,20 +534,6 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
           </Button>
         </Card>
       </Link>
-    </ScrollReveal>
-  );
-}
-
-function FeatureCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
-  return (
-    <ScrollReveal direction="up" className="h-full">
-      <Card className="p-10 h-full rounded-[40px] border-none bg-muted shadow-sm hover:shadow-xl transition-all group">
-        <div className="size-12 md:size-14 rounded-2xl bg-white flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-colors shadow-sm">
-          {React.cloneElement(icon, { className: "size-6" })}
-        </div>
-        <h3 className="text-[20px] md:text-[22px] font-semibold text-foreground mb-4">{title}</h3>
-        <p className="text-[13px] text-muted-foreground leading-[1.8]">{desc}</p>
-      </Card>
     </ScrollReveal>
   );
 }
