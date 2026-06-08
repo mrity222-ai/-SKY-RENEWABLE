@@ -66,9 +66,9 @@ export default function Home() {
   ];
 
   const projects = [
-    { id: 1, name: "Skyline Villa", capacity: "10kW", location: "Ahmedabad", type: "Residential", image: "https://picsum.photos/seed/arka_h_p1/800/600" },
-    { id: 2, name: "GIDC Industrial Park", capacity: "250kW", location: "Sanand", type: "Industrial", image: "https://picsum.photos/seed/arka_h_p2/800/600" },
-    { id: 3, name: "Emerald Heights", capacity: "50kW", location: "Surat", type: "Commercial", image: "https://picsum.photos/seed/arka_h_p3/800/600" },
+    { id: 1, name: "Skyline Villa", capacity: "10kW", location: "Ahmedabad", type: "Residential", image: "https://picsum.photos/seed/arka_h_p1/800/1200" },
+    { id: 2, name: "GIDC Industrial Park", capacity: "250kW", location: "Sanand", type: "Industrial", image: "https://picsum.photos/seed/arka_h_p2/800/1200" },
+    { id: 3, name: "Emerald Heights", capacity: "50kW", location: "Surat", type: "Commercial", image: "https://picsum.photos/seed/arka_h_p3/800/1200" },
   ];
 
   return (
@@ -238,7 +238,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {projects.map((p, i) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
-                <Card className="rounded-[24px] border-none overflow-hidden group relative aspect-[4/3] shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
+                <Card className="rounded-[24px] border-none overflow-hidden group relative h-[320px] md:h-[420px] lg:h-[560px] w-full shadow-md hover:shadow-2xl transition-all duration-500 bg-white">
                   <Image src={p.image} alt={`${p.name} Solar System`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   
                   {/* Premium Info Box Overlay */}

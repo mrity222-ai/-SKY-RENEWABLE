@@ -37,7 +37,7 @@ const projects = [
     date: "Oct 2024",
     client: "Mr. Khanna",
     savings: "₹1,20,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr1/800/600",
+    image: "https://picsum.photos/seed/arka_pr1/800/1200",
     description: "Full rooftop solar installation with smart monitoring and lithium-ion battery backup."
   },
   {
@@ -49,7 +49,7 @@ const projects = [
     date: "Sept 2024",
     client: "Apex Realty",
     savings: "₹18,00,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr2/800/600",
+    image: "https://picsum.photos/seed/arka_pr2/800/1200",
     description: "Bespoke industrial-grade solar solution powering the entire common area grid."
   },
   {
@@ -61,7 +61,7 @@ const projects = [
     date: "Aug 2024",
     client: "GreenFab Industries",
     savings: "₹60,00,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr3/800/600",
+    image: "https://picsum.photos/seed/arka_pr3/800/1200",
     description: "Large scale heavy-duty solar array integrated with factory load management systems."
   },
   {
@@ -73,7 +73,7 @@ const projects = [
     date: "July 2024",
     client: "Local Municipal Council",
     savings: "₹9,50,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr4/800/600",
+    image: "https://picsum.photos/seed/arka_pr4/800/1200",
     description: "Grid-tie solar solution reducing public infrastructure operational costs."
   },
   {
@@ -85,7 +85,7 @@ const projects = [
     date: "June 2024",
     client: "Dr. Singh",
     savings: "₹1,80,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr5/800/600",
+    image: "https://picsum.photos/seed/arka_pr5/800/1200",
     description: "Architecturally integrated solar panels for a luxury riverfront residence."
   },
   {
@@ -97,7 +97,7 @@ const projects = [
     date: "May 2024",
     client: "SafeWay Logistics",
     savings: "₹42,00,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr6/800/600",
+    image: "https://picsum.photos/seed/arka_pr6/800/1200",
     description: "Roof-mounted high-efficiency panels optimized for large surface areas."
   }
 ];
@@ -212,7 +212,7 @@ export default function ProjectsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
-                    <Card className="rounded-[24px] border-none overflow-hidden group relative aspect-[4/3] shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
+                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[320px] md:h-[420px] lg:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
                       <Image 
                         src={project.image} 
                         alt={project.title} 
