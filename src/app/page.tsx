@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -70,7 +69,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-white selection:bg-black selection:text-white overflow-hidden">
+    <div className="bg-white selection:bg-primary selection:text-white overflow-hidden">
       {/* HERO SLIDER */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -90,7 +89,7 @@ export default function Home() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent z-10" />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -98,13 +97,13 @@ export default function Home() {
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center">
           <ScrollReveal direction="up" className="max-w-4xl space-y-6">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
-              <Zap className="size-4 text-accent" />
+              <Zap className="size-4 text-primary" />
               <span className="text-white text-[10px] font-black uppercase tracking-[0.2em]">Solar Energy Solutions</span>
             </div>
             
             <h1 className="text-[40px] md:text-[64px] lg:text-[96px] font-black text-white leading-[1.05] tracking-tighter">
               Powering India With <br />
-              <span className="text-accent">Smart Solar Energy</span>
+              <span className="text-primary">Smart Solar Energy</span>
             </h1>
             
             <p className="text-base md:text-xl text-white/80 max-w-2xl leading-relaxed font-medium">
@@ -112,7 +111,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-6">
-              <Button asChild size="lg" className="bg-accent text-primary rounded-full px-10 h-14 md:h-16 text-sm font-black hover:bg-white transition-all shadow-2xl">
+              <Button asChild size="lg" className="bg-primary text-white rounded-full px-10 h-14 md:h-16 text-sm font-black hover:bg-white hover:text-primary transition-all shadow-2xl">
                 <Link href="/get-quote">Get a Quote <ArrowRight className="ml-2 size-4" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm rounded-full px-10 h-14 md:h-16 text-sm font-bold hover:bg-white/10 transition-all">
@@ -122,10 +121,10 @@ export default function Home() {
           </ScrollReveal>
 
           <div className="absolute bottom-12 right-4 md:right-12 flex gap-4">
-            <button onClick={prevSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-black transition-all group">
+            <button onClick={prevSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
               <ChevronLeft className="size-6 transition-transform group-active:scale-90" />
             </button>
-            <button onClick={nextSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-black transition-all group">
+            <button onClick={nextSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
               <ChevronRight className="size-6 transition-transform group-active:scale-90" />
             </button>
           </div>
@@ -133,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 2 – TRUST & ACHIEVEMENTS */}
-      <section className="py-24 border-b border-neutral-100 bg-white">
+      <section className="py-24 border-b border-muted bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 text-center">
             <StatItem val={500} suffix="+" label="Projects Completed" />
@@ -150,22 +149,22 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-muted text-muted-foreground px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Who We Are
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
-                <h2 className="text-[30px] lg:text-[40px] font-semibold text-black leading-tight">
-                  Building A Sustainable Future <br /><span className="text-[#B8B8B8]">Through Solar Energy</span>
+                <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground leading-tight">
+                  Building A Sustainable Future <br /><span className="text-primary">Through Solar Energy</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
-                <p className="text-[14px] text-[#555] leading-[1.8] max-w-xl">
-                  At Arkā Solar, we are dedicated to transforming India's energy landscape. Our mission is to empower homeowners and businesses with high-performance solar ecosystems that maximize energy harvest and minimize environmental footprint.
+                <p className="text-[14px] text-muted-foreground leading-[1.8] max-w-xl">
+                  At Sky Renewable, we are dedicated to transforming India's energy landscape. Our mission is to empower homeowners and businesses with high-performance solar ecosystems that maximize energy harvest and minimize environmental footprint.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild variant="outline" className="rounded-full px-8 h-12 border-black/10 text-black hover:bg-neutral-50">
+                <Button asChild variant="outline" className="rounded-full px-8 h-12 border-primary/10 text-primary hover:bg-primary/5">
                   <Link href="/about-us">Learn More About Us</Link>
                 </Button>
               </ScrollReveal>
@@ -185,11 +184,11 @@ export default function Home() {
       </section>
 
       {/* SECTION 4 – OUR SOLAR SOLUTIONS */}
-      <section className="py-32 bg-[#F9F9F9]">
+      <section className="py-32 bg-muted">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal className="space-y-4 mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Solar Solutions Designed For Every Need</h2>
-            <p className="text-[#777] text-[14px] max-w-xl mx-auto">Premium engineered solutions tailored for maximum energy harvest and long-term reliability.</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Solar Solutions Designed For Every Need</h2>
+            <p className="text-muted-foreground text-[14px] max-w-xl mx-auto">Premium engineered solutions tailored for maximum energy harvest and long-term reliability.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <SolutionCard icon={<HomeIcon />} title="Residential Solar" desc="Custom rooftop systems for modern homes." href="/services/residential-solar" />
@@ -206,11 +205,11 @@ export default function Home() {
       <section className="py-32">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Why Choose Our Solar Solutions</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Why Choose Our Solar Solutions</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard icon={<Award />} title="Certified Solar Experts" desc="Our team of certified engineers ensures every installation meets the highest quality standards." />
-            <FeatureCard icon={<BadgeCheck />} title="Government Subsidy Support" desc="We handle all the paperwork for your PM-Suryodaya and state government subsidies." />
+            <FeatureCard icon={<BadgeCheck />} title="Government Subsidy Support" desc="We handle all the paperwork for your government subsidies." />
             <FeatureCard icon={<Sun />} title="Premium Components" desc="We exclusively use Tier-1 modules and high-efficiency inverters from global leaders." />
             <FeatureCard icon={<Zap />} title="Fast Installation" desc="Our streamlined process ensures your rooftop system is live within record timelines." />
             <FeatureCard icon={<ShieldCheck />} title="25-Year Warranty" desc="Enjoy peace of mind with our long-term performance and structure warranties." />
@@ -220,18 +219,18 @@ export default function Home() {
       </section>
 
       {/* SECTION 6 – SOLAR SAVINGS CALCULATOR */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-foreground text-white">
         <div className="container mx-auto px-4">
           <Calculator />
         </div>
       </section>
 
       {/* SECTION 7 – FEATURED PROJECTS */}
-      <section className="py-32 bg-[#F9F9F9]">
+      <section className="py-32 bg-muted">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Our Featured Solar Projects</h2>
-            <p className="text-[#777] text-[14px]">Explore our portfolio of successful installations across diverse sectors.</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Our Featured Solar Projects</h2>
+            <p className="text-muted-foreground text-[14px]">Explore our portfolio of successful installations across diverse sectors.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {projects.map((p) => (
@@ -242,11 +241,11 @@ export default function Home() {
                   </div>
                   <div className="p-8 space-y-4 flex-grow flex flex-col">
                     <div className="space-y-1">
-                      <p className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-widest">{p.location}</p>
-                      <h3 className="text-[20px] font-semibold text-black">{p.name}</h3>
+                      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{p.location}</p>
+                      <h3 className="text-[20px] font-semibold text-foreground">{p.name}</h3>
                     </div>
-                    <p className="text-[13px] text-[#555] font-bold">{p.capacity} System</p>
-                    <Button asChild variant="link" className="p-0 h-auto text-black font-bold group-hover:gap-2 transition-all mt-auto self-start">
+                    <p className="text-[13px] text-primary font-bold">{p.capacity} System</p>
+                    <Button asChild variant="link" className="p-0 h-auto text-primary font-bold group-hover:gap-2 transition-all mt-auto self-start">
                       <Link href="/projects">View Project Details <ArrowRight className="ml-2 size-4" /></Link>
                     </Button>
                   </div>
@@ -255,7 +254,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Button asChild variant="outline" className="rounded-full px-10 h-14 border-black/10 text-black hover:bg-black hover:text-white transition-all">
+            <Button asChild variant="outline" className="rounded-full px-10 h-14 border-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
               <Link href="/projects">View All Projects</Link>
             </Button>
           </div>
@@ -266,7 +265,7 @@ export default function Home() {
       <section className="py-32">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Our Solar Installation Process</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Our Solar Installation Process</h2>
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             <ProcessCard num="01" title="Consultation" desc="Energy audit." />
@@ -280,15 +279,15 @@ export default function Home() {
       </section>
 
       {/* SECTION 9 – GOVERNMENT SUBSIDY */}
-      <section className="py-32 bg-[#F9F9F9]">
+      <section className="py-32 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <ScrollReveal direction="right" className="space-y-8">
-              <span className="inline-block bg-white text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
+              <span className="inline-block bg-white text-muted-foreground px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                 Subsidy Guide
               </span>
-              <h2 className="text-[30px] lg:text-[40px] font-semibold text-black leading-tight">
-                Government Solar <br /><span className="text-[#B8B8B8]">Subsidy Benefits</span>
+              <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground leading-tight">
+                Government Solar <br /><span className="text-secondary">Subsidy Benefits</span>
               </h2>
               <div className="grid grid-cols-2 gap-6 md:gap-10">
                 <SubsidyBenefit icon={<Banknote />} title="Reduced Cost" desc="Lower upfront capital." />
@@ -296,7 +295,7 @@ export default function Home() {
                 <SubsidyBenefit icon={<Leaf />} title="Eco-Savings" desc="Long-term utility reduction." />
                 <SubsidyBenefit icon={<ShieldCheck />} title="Energy Independence" desc="Grid reliance decrease." />
               </div>
-              <Button asChild className="bg-black text-white rounded-full px-10 h-14 font-bold hover:bg-neutral-800 transition-all">
+              <Button asChild className="bg-primary text-white rounded-full px-10 h-14 font-bold hover:bg-primary/90 transition-all">
                 <Link href="/government-solar-subsidy">Check Your Eligibility</Link>
               </Button>
             </ScrollReveal>
@@ -310,30 +309,30 @@ export default function Home() {
       </section>
 
       {/* SECTION 10 – TECHNOLOGY PARTNERS */}
-      <section className="py-24 border-y border-neutral-100 bg-white">
+      <section className="py-24 border-y border-muted bg-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal className="mb-12">
-            <h2 className="text-[12px] font-bold text-[#B8B8B8] tracking-[0.3em] uppercase">Trusted Technology Partners</h2>
+            <h2 className="text-[12px] font-bold text-muted-foreground tracking-[0.3em] uppercase">Trusted Technology Partners</h2>
           </ScrollReveal>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-30 grayscale hover:grayscale-0 transition-all">
             {partners.map((p, i) => (
-              <span key={i} className="text-[16px] md:text-[22px] font-black text-black uppercase tracking-tighter">{p}</span>
+              <span key={i} className="text-[16px] md:text-[22px] font-black text-foreground uppercase tracking-tighter">{p}</span>
             ))}
           </div>
         </div>
       </section>
 
       {/* SECTION 11 – TESTIMONIALS */}
-      <section className="py-32 bg-[#F9F9F9]">
+      <section className="py-32 bg-muted">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">What Our Customers Say</h2>
-            <p className="text-[#777] text-[14px]">Trusted by homeowners and industries across India.</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">What Our Customers Say</h2>
+            <p className="text-muted-foreground text-[14px]">Trusted by homeowners and industries across India.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
-            <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Switching to Arkā Solar was the best decision for our home. Our electricity bills have vanished." />
+            <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Switching to Sky Renewable was the best decision for our home. Our electricity bills have vanished." />
             <TestimonialCard name="Suresh Mehta" loc="Surat" review="Professional team and seamless installation. The government subsidy process was handled perfectly." />
-            <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="The ROI is impressive. The engineering-first approach of Arkā is evident in their structural quality." />
+            <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="The ROI is impressive. The engineering-first approach of Sky Renewable is evident in their structural quality." />
           </div>
         </div>
       </section>
@@ -342,14 +341,14 @@ export default function Home() {
       <section className="py-32">
         <div className="container mx-auto px-4 max-w-4xl">
           <ScrollReveal className="text-center mb-16">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Frequently Asked Questions</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Frequently Asked Questions</h2>
           </ScrollReveal>
           <Accordion type="single" collapsible className="space-y-4">
             <FaqItem value="q1" q="How much can I save with solar?" a="Typically, you can save 80-90% on your monthly electricity bills. Most residential systems pay for themselves within 4-5 years." />
-            <FaqItem value="q2" q="What subsidy is available?" a="Under the PM-Suryodaya scheme, homeowners get up to ₹78,000 as a direct bank transfer subsidy." />
+            <FaqItem value="q2" q="What subsidy is available?" a="Under the government scheme, homeowners get up to ₹78,000 as a direct bank transfer subsidy." />
             <FaqItem value="q3" q="How long does installation take?" a="The physical installation takes 3-5 days. The complete process takes about 4-6 weeks." />
             <FaqItem value="q4" q="Do you provide AMC support?" a="Yes, we offer comprehensive Annual Maintenance Contracts with 24/7 IoT monitoring." />
-            <FaqItem value="q5" q="What warranty is included?" a="We provide a 25-year performance warranty on modules and 5-year product warranty on inverters." />
+            <FaqItem value="q5" q="What warranty is included?" a="We provide a 25-year performance warranty on modules and product warranty on inverters." />
           </Accordion>
         </div>
       </section>
@@ -357,13 +356,13 @@ export default function Home() {
       {/* SECTION 13 – FINAL CTA */}
       <section className="py-32 px-4 bg-white">
         <div className="container mx-auto max-w-5xl">
-          <div className="bg-black rounded-[60px] p-12 md:p-24 text-center text-white space-y-10 relative overflow-hidden">
+          <div className="bg-foreground rounded-[60px] p-12 md:p-24 text-center text-white space-y-10 relative overflow-hidden">
             <h2 className="text-[34px] lg:text-[64px] font-semibold leading-[1.05]">Ready To Switch To Solar Energy?</h2>
             <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.8]">
               Start saving on electricity bills and move towards a sustainable future with our expert solar solutions.
             </p>
             <div className="flex flex-wrap justify-center gap-6 pt-4">
-              <Button asChild size="lg" className="bg-white text-black font-semibold rounded-full px-12 h-16 text-sm hover:bg-neutral-200">
+              <Button asChild size="lg" className="bg-primary text-white font-semibold rounded-full px-12 h-16 text-sm hover:bg-white hover:text-primary transition-all">
                 <Link href="/get-quote">Get Your Free Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10">
@@ -380,10 +379,10 @@ export default function Home() {
 function StatItem({ val, suffix, label }: { val: number, suffix: string, label: string }) {
   return (
     <div className="space-y-2">
-      <div className="text-[34px] md:text-[56px] font-semibold text-black leading-none">
+      <div className="text-[34px] md:text-[56px] font-semibold text-accent leading-none">
         <Counter value={val} suffix={suffix} />
       </div>
-      <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
+      <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-muted-foreground">{label}</p>
     </div>
   );
 }
@@ -393,12 +392,12 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
     <ScrollReveal direction="up" className="h-full">
       <Link href={href}>
         <Card className="p-10 h-full rounded-[40px] border-none bg-white shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col items-center">
-          <div className="size-16 rounded-2xl bg-[#F5F5F5] flex items-center justify-center mb-8 text-black group-hover:bg-black group-hover:text-white transition-colors">
+          <div className="size-16 rounded-2xl bg-muted flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
             {React.cloneElement(icon, { className: "size-7" })}
           </div>
-          <h3 className="text-[22px] font-semibold text-black mb-4">{title}</h3>
-          <p className="text-[13px] text-[#555] leading-[1.8] mb-8 flex-grow">{desc}</p>
-          <Button variant="link" className="p-0 h-auto text-black font-bold group-hover:gap-2 transition-all">
+          <h3 className="text-[22px] font-semibold text-foreground mb-4">{title}</h3>
+          <p className="text-[13px] text-muted-foreground leading-[1.8] mb-8 flex-grow">{desc}</p>
+          <Button variant="link" className="p-0 h-auto text-primary font-bold group-hover:gap-2 transition-all">
             Learn More <ArrowRight className="ml-2 size-4" />
           </Button>
         </Card>
@@ -410,12 +409,12 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
 function FeatureCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
     <ScrollReveal direction="up" className="h-full">
-      <Card className="p-10 h-full rounded-[40px] border-none bg-[#F9F9F9] shadow-sm hover:shadow-xl transition-all group">
-        <div className="size-12 md:size-14 rounded-2xl bg-white flex items-center justify-center mb-8 text-black group-hover:bg-black group-hover:text-white transition-colors shadow-sm">
+      <Card className="p-10 h-full rounded-[40px] border-none bg-muted shadow-sm hover:shadow-xl transition-all group">
+        <div className="size-12 md:size-14 rounded-2xl bg-white flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-colors shadow-sm">
           {React.cloneElement(icon, { className: "size-6" })}
         </div>
-        <h3 className="text-[20px] md:text-[22px] font-semibold text-black mb-4">{title}</h3>
-        <p className="text-[13px] text-[#555] leading-[1.8]">{desc}</p>
+        <h3 className="text-[20px] md:text-[22px] font-semibold text-foreground mb-4">{title}</h3>
+        <p className="text-[13px] text-muted-foreground leading-[1.8]">{desc}</p>
       </Card>
     </ScrollReveal>
   );
@@ -424,10 +423,10 @@ function FeatureCard({ icon, title, desc }: { icon: any, title: string, desc: st
 function ProcessCard({ num, title, desc }: { num: string, title: string, desc: string }) {
   return (
     <ScrollReveal direction="up" className="text-center space-y-4">
-      <div className="text-[40px] md:text-[48px] font-bold text-black/5 leading-none">{num}</div>
+      <div className="text-[40px] md:text-[48px] font-bold text-primary/10 leading-none">{num}</div>
       <div className="space-y-1">
-        <h4 className="text-[11px] font-bold text-black uppercase tracking-widest">{title}</h4>
-        <p className="text-[12px] text-[#777] leading-relaxed">{desc}</p>
+        <h4 className="text-[11px] font-bold text-foreground uppercase tracking-widest">{title}</h4>
+        <p className="text-[12px] text-muted-foreground leading-relaxed">{desc}</p>
       </div>
     </ScrollReveal>
   );
@@ -436,11 +435,11 @@ function ProcessCard({ num, title, desc }: { num: string, title: string, desc: s
 function SubsidyBenefit({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
     <div className="space-y-3">
-      <div className="size-10 bg-white rounded-xl flex items-center justify-center text-black shadow-sm">
+      <div className="size-10 bg-white rounded-xl flex items-center justify-center text-primary shadow-sm">
         {React.cloneElement(icon, { className: "size-5" })}
       </div>
-      <h4 className="text-[14px] font-bold text-black">{title}</h4>
-      <p className="text-[12px] text-[#555] leading-relaxed">{desc}</p>
+      <h4 className="text-[14px] font-bold text-foreground">{title}</h4>
+      <p className="text-[12px] text-muted-foreground leading-relaxed">{desc}</p>
     </div>
   );
 }
@@ -449,17 +448,17 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
   return (
     <ScrollReveal direction="up">
       <Card className="p-10 rounded-[40px] border-none bg-white shadow-sm space-y-8 flex flex-col h-full">
-        <div className="flex gap-1 text-black">
+        <div className="flex gap-1 text-accent">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-4 fill-current" />)}
         </div>
-        <p className="text-[14px] text-black italic leading-[1.8] flex-grow">"{review}"</p>
-        <div className="flex items-center gap-4 border-t border-neutral-100 pt-6">
-          <div className="size-10 rounded-full bg-[#F5F5F5] flex items-center justify-center text-[#B8B8B8]">
+        <p className="text-[14px] text-foreground italic leading-[1.8] flex-grow">"{review}"</p>
+        <div className="flex items-center gap-4 border-t border-muted pt-6">
+          <div className="size-10 rounded-full bg-muted flex items-center justify-center text-primary">
             <Star className="size-5" />
           </div>
           <div>
-            <h4 className="text-[14px] font-bold text-black">{name}</h4>
-            <p className="text-[10px] text-[#B8B8B8] font-bold uppercase tracking-widest">{loc}</p>
+            <h4 className="text-[14px] font-bold text-foreground">{name}</h4>
+            <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest">{loc}</p>
           </div>
         </div>
       </Card>
@@ -469,11 +468,11 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
 
 function FaqItem({ value, q, a }: { value: string, q: string, a: string }) {
   return (
-    <AccordionItem value={value} className="bg-[#F9F9F9] rounded-[24px] border-none px-8 overflow-hidden shadow-sm mb-4">
-      <AccordionTrigger className="text-left font-semibold text-base text-black py-6 hover:no-underline">
+    <AccordionItem value={value} className="bg-muted rounded-[24px] border-none px-8 overflow-hidden shadow-sm mb-4">
+      <AccordionTrigger className="text-left font-semibold text-base text-foreground py-6 hover:no-underline">
         {q}
       </AccordionTrigger>
-      <AccordionContent className="text-[#555] text-[14px] leading-[1.8] pb-6">
+      <AccordionContent className="text-muted-foreground text-[14px] leading-[1.8] pb-6">
         {a}
       </AccordionContent>
     </AccordionItem>

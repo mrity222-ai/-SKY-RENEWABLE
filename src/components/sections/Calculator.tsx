@@ -38,7 +38,7 @@ export function Calculator() {
     <div className="grid lg:grid-cols-2 gap-20 items-center">
       <div className="space-y-12">
         <div className="space-y-4">
-          <span className="text-[12px] font-bold text-[#B8B8B8] uppercase tracking-[0.3em]">Smart ROI Tool</span>
+          <span className="text-[12px] font-bold text-primary uppercase tracking-[0.3em]">Smart ROI Tool</span>
           <h2 className="text-[30px] lg:text-[48px] font-semibold text-white leading-tight">Calculate Your <br />Solar Potential</h2>
           <p className="text-white/40 text-[14px] max-w-sm">Estimate your monthly savings and environmental impact instantly.</p>
         </div>
@@ -72,7 +72,7 @@ export function Calculator() {
             />
           </div>
           
-          <Button asChild className="w-full h-16 rounded-full bg-white text-black font-bold hover:bg-neutral-200">
+          <Button asChild className="w-full h-16 rounded-full bg-white text-primary font-bold hover:bg-muted transition-all">
             <a href="/get-quote">Book Free Site Survey</a>
           </Button>
         </Card>
@@ -85,12 +85,12 @@ export function Calculator() {
         <ResultCard icon={<RotateCcw />} label="Net Investment" value={`₹${(stats.netCost / 1000).toFixed(0)}k`} />
         <div className="col-span-2 p-10 bg-white/5 rounded-[40px] flex items-center justify-between">
            <div className="flex items-center gap-6">
-              <div className="size-14 bg-white/10 rounded-2xl flex items-center justify-center text-white">
+              <div className="size-14 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary">
                 <TreeDeciduous className="size-6" />
               </div>
               <div>
                 <p className="text-[11px] font-bold text-white/40 uppercase tracking-widest">CO2 Offset</p>
-                <p className="text-[24px] font-bold text-white">{stats.co2Offset} Tons / Yr</p>
+                <p className="text-[24px] font-bold text-accent">{stats.co2Offset} Tons / Yr</p>
               </div>
            </div>
            <Info className="size-5 text-white/20" />
@@ -103,12 +103,12 @@ export function Calculator() {
 function ResultCard({ icon, label, value }: { icon: any, label: string, value: string }) {
   return (
     <div className="p-10 bg-white/5 rounded-[40px] space-y-6 hover:bg-white/10 transition-colors">
-      <div className="size-12 bg-white/10 rounded-xl flex items-center justify-center text-white">
+      <div className="size-12 bg-white/10 rounded-xl flex items-center justify-center text-primary">
         {React.cloneElement(icon, { className: "size-5" })}
       </div>
       <div>
         <p className="text-[11px] font-bold text-white/40 uppercase tracking-widest">{label}</p>
-        <p className="text-[24px] font-bold text-white">{value}</p>
+        <p className="text-[24px] font-bold text-accent">{value}</p>
       </div>
     </div>
   );
