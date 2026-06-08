@@ -24,7 +24,8 @@ import {
   FileText,
   BadgeCheck,
   TrendingUp,
-  Leaf
+  Leaf,
+  Banknote
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -84,7 +85,7 @@ export default function Home() {
             >
               <Image
                 src={HERO_IMAGES[currentSlide]}
-                alt="Solar Energy"
+                alt="Sky Renewable Solar Energy Solutions for Home and Business"
                 fill
                 className="object-cover"
                 priority
@@ -98,33 +99,33 @@ export default function Home() {
           <ScrollReveal direction="up" className="max-w-4xl space-y-6">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
               <Zap className="size-4 text-primary" />
-              <span className="text-white text-[10px] font-black uppercase tracking-[0.2em]">Solar Energy Solutions</span>
+              <span className="text-white text-[10px] font-black uppercase tracking-[0.2em]">Premium Solar Energy Solutions</span>
             </div>
             
             <h1 className="text-[40px] md:text-[64px] lg:text-[96px] font-black text-white leading-[1.05] tracking-tighter">
               Powering India With <br />
-              <span className="text-primary">Smart Solar Energy</span>
+              <span className="text-primary">Best Solar Company</span>
             </h1>
             
             <p className="text-base md:text-xl text-white/80 max-w-2xl leading-relaxed font-medium">
-              Switch to solar today. Clean power, long-term savings, and a brighter future for your home and business.
+              Switch to solar energy today with India's leading rooftop solar installer. High-yield systems, government subsidies, and long-term savings guaranteed.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-6">
               <Button asChild size="lg" className="bg-primary text-white rounded-full px-10 h-14 md:h-16 text-sm font-black hover:bg-white hover:text-primary transition-all shadow-2xl">
-                <Link href="/get-quote">Get a Quote <ArrowRight className="ml-2 size-4" /></Link>
+                <Link href="/get-quote">Get a Free Quote <ArrowRight className="ml-2 size-4" /></Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/30 text-white backdrop-blur-sm rounded-full px-10 h-14 md:h-16 text-sm font-bold hover:bg-white/10 transition-all">
-                <Link href="/get-quote">Book Site Survey</Link>
+                <Link href="/get-quote">Book Expert Site Survey</Link>
               </Button>
             </div>
           </ScrollReveal>
 
           <div className="absolute bottom-12 right-4 md:right-12 flex gap-4">
-            <button onClick={prevSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
+            <button aria-label="Previous Slide" onClick={prevSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
               <ChevronLeft className="size-6 transition-transform group-active:scale-90" />
             </button>
-            <button onClick={nextSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
+            <button aria-label="Next Slide" onClick={nextSlide} className="size-12 md:size-14 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
               <ChevronRight className="size-6 transition-transform group-active:scale-90" />
             </button>
           </div>
@@ -135,9 +136,9 @@ export default function Home() {
       <section className="py-24 border-b border-muted bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 text-center">
-            <StatItem val={500} suffix="+" label="Projects Completed" />
-            <StatItem val={10} suffix="MW+" label="Installed Capacity" />
-            <StatItem val={98} suffix="%" label="Customer Satisfaction" />
+            <StatItem val={500} suffix="+" label="Solar Projects Completed" />
+            <StatItem val={10} suffix="MW+" label="Installed Solar Capacity" />
+            <StatItem val={98} suffix="%" label="Client Satisfaction Rate" />
             <StatItem val={25} suffix="Y" label="Performance Warranty" />
           </div>
         </div>
@@ -150,22 +151,22 @@ export default function Home() {
             <div className="space-y-8">
               <ScrollReveal direction="up">
                 <span className="inline-block bg-muted text-muted-foreground px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
-                  Who We Are
+                  Leading Solar Company in India
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
                 <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground leading-tight">
-                  Building A Sustainable Future <br /><span className="text-primary">Through Solar Energy</span>
+                  Driving Sustainable Growth <br /><span className="text-primary">With Clean Solar Energy</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
                 <p className="text-[14px] text-muted-foreground leading-[1.8] max-w-xl">
-                  At Sky Renewable, we are dedicated to transforming India's energy landscape. Our mission is to empower homeowners and businesses with high-performance solar ecosystems that maximize energy harvest and minimize environmental footprint.
+                  Sky Renewable is a premier solar energy solutions provider in India. We specialize in end-to-end solar EPC services, rooftop installations, and government subsidy assistance to help you achieve energy independence.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
                 <Button asChild variant="outline" className="rounded-full px-8 h-12 border-primary/10 text-primary hover:bg-primary/5">
-                  <Link href="/about-us">Learn More About Us</Link>
+                  <Link href="/about-us">Explore Our Solar Journey</Link>
                 </Button>
               </ScrollReveal>
             </div>
@@ -173,7 +174,7 @@ export default function Home() {
               <div className="relative aspect-square rounded-[40px] overflow-hidden shadow-2xl">
                 <Image 
                   src="https://picsum.photos/seed/arka_h_about/800/800" 
-                  alt="About Arkā" 
+                  alt="Sky Renewable Solar Installation Team" 
                   fill 
                   className="object-cover"
                 />
@@ -187,16 +188,16 @@ export default function Home() {
       <section className="py-32 bg-muted">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal className="space-y-4 mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Solar Solutions Designed For Every Need</h2>
-            <p className="text-muted-foreground text-[14px] max-w-xl mx-auto">Premium engineered solutions tailored for maximum energy harvest and long-term reliability.</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Comprehensive Solar Energy Solutions</h2>
+            <p className="text-muted-foreground text-[14px] max-w-xl mx-auto">From residential rooftops to industrial plants, we deliver customized solar systems optimized for maximum power generation.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <SolutionCard icon={<HomeIcon />} title="Residential Solar" desc="Custom rooftop systems for modern homes." href="/services/residential-solar" />
-            <SolutionCard icon={<Factory />} title="Commercial Solar" desc="Reduce operational overheads for business." href="/services/commercial-solar" />
-            <SolutionCard icon={<Zap />} title="Industrial Systems" desc="Large-scale high-yield solar arrays." href="/services/industrial-solar" />
-            <SolutionCard icon={<Layout />} title="Rooftop Installation" desc="Seamless engineering-first deployment." href="/services/rooftop-installation" />
-            <SolutionCard icon={<BatteryFull />} title="Battery Storage" desc="Smart energy backup and independence." href="/services/battery-storage" />
-            <SolutionCard icon={<Wrench />} title="Solar Maintenance" desc="24/7 monitoring and service support." href="/services/solar-maintenance" />
+            <SolutionCard icon={<HomeIcon />} title="Residential Solar" desc="High-efficiency rooftop solar systems for modern homes." href="/services/residential-solar" />
+            <SolutionCard icon={<Factory />} title="Commercial Solar" desc="Scalable solar energy solutions for businesses and offices." href="/services/commercial-solar" />
+            <SolutionCard icon={<Zap />} title="Industrial Systems" desc="Large-scale solar EPC for manufacturing and heavy industry." href="/services/industrial-solar" />
+            <SolutionCard icon={<Layout />} title="Rooftop Installation" desc="Engineering-first approach for all rooftop types." href="/services/rooftop-installation" />
+            <SolutionCard icon={<BatteryFull />} title="Battery Storage" desc="Smart solar backup for 24/7 energy independence." href="/services/battery-storage" />
+            <SolutionCard icon={<Wrench />} title="Solar Maintenance" desc="Expert AMC and 24/7 solar power monitoring services." href="/services/solar-maintenance" />
           </div>
         </div>
       </section>
@@ -205,15 +206,15 @@ export default function Home() {
       <section className="py-32">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Why Choose Our Solar Solutions</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Why We Are the Best Solar Company</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
-            <FeatureCard icon={<Award />} title="Certified Solar Experts" desc="Our team of certified engineers ensures every installation meets the highest quality standards." />
-            <FeatureCard icon={<BadgeCheck />} title="Government Subsidy Support" desc="We handle all the paperwork for your government subsidies." />
-            <FeatureCard icon={<Sun />} title="Premium Components" desc="We exclusively use Tier-1 modules and high-efficiency inverters from global leaders." />
-            <FeatureCard icon={<Zap />} title="Fast Installation" desc="Our streamlined process ensures your rooftop system is live within record timelines." />
-            <FeatureCard icon={<ShieldCheck />} title="25-Year Warranty" desc="Enjoy peace of mind with our long-term performance and structure warranties." />
-            <FeatureCard icon={<Users />} title="Dedicated Support" desc="24/7 monitoring and a guaranteed 48-hour on-site service response time." />
+            <FeatureCard icon={<Award />} title="Certified Solar Engineers" desc="Our team ensures every installation meets international safety and performance standards." />
+            <FeatureCard icon={<BadgeCheck />} title="Government Subsidy Aid" desc="Full assistance in claiming PM-Suryodaya and state solar subsidies." />
+            <FeatureCard icon={<Sun />} title="Tier-1 Solar Modules" desc="We use only Bloomberg-listed solar panels and high-yield inverters." />
+            <FeatureCard icon={<Zap />} title="Rapid Installation" desc="Turnkey project delivery within record timelines across India." />
+            <FeatureCard icon={<ShieldCheck />} title="Lifetime Support" desc="Comprehensive performance warranties and 48-hour service response." />
+            <FeatureCard icon={<Users />} title="Client-Centric EPC" desc="Customized engineering designs for maximum ROI on your solar investment." />
           </div>
         </div>
       </section>
@@ -229,15 +230,15 @@ export default function Home() {
       <section className="py-32 bg-muted">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Our Featured Solar Projects</h2>
-            <p className="text-muted-foreground text-[14px]">Explore our portfolio of successful installations across diverse sectors.</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Featured Solar Projects Portfolio</h2>
+            <p className="text-muted-foreground text-[14px]">Successful solar installations delivering clean energy across India.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <Card className="rounded-[40px] overflow-hidden border-none shadow-sm group bg-white h-full flex flex-col">
                   <div className="relative aspect-video overflow-hidden">
-                    <Image src={p.image} alt={p.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <Image src={p.image} alt={`${p.name} - ${p.capacity} Solar System Installation`} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="p-8 space-y-4 flex-grow flex flex-col">
                     <div className="space-y-1">
@@ -246,7 +247,7 @@ export default function Home() {
                     </div>
                     <p className="text-[13px] text-primary font-bold">{p.capacity} System</p>
                     <Button asChild variant="link" className="p-0 h-auto text-primary font-bold group-hover:gap-2 transition-all mt-auto self-start">
-                      <Link href="/projects">View Project Details <ArrowRight className="ml-2 size-4" /></Link>
+                      <Link href="/projects">Read Project Success Story <ArrowRight className="ml-2 size-4" /></Link>
                     </Button>
                   </div>
                 </Card>
@@ -255,7 +256,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <Button asChild variant="outline" className="rounded-full px-10 h-14 border-primary/10 text-primary hover:bg-primary hover:text-white transition-all">
-              <Link href="/projects">View All Projects</Link>
+              <Link href="/projects">Browse All Solar Projects</Link>
             </Button>
           </div>
         </div>
@@ -265,15 +266,15 @@ export default function Home() {
       <section className="py-32">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Our Solar Installation Process</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Our 6-Step Solar Installation Process</h2>
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            <ProcessCard num="01" title="Consultation" desc="Energy audit." />
+            <ProcessCard num="01" title="Consultation" desc="Detailed energy audit." />
             <ProcessCard num="02" title="Site Survey" desc="Technical analysis." />
-            <ProcessCard num="03" title="System Design" desc="Custom layout." />
-            <ProcessCard num="04" title="Installation" desc="Swift deployment." />
-            <ProcessCard num="05" title="Subsidy Support" desc="Paperwork aid." />
-            <ProcessCard num="06" title="Support" desc="Ongoing care." />
+            <ProcessCard num="03" title="Design" desc="Custom solar layout." />
+            <ProcessCard num="04" title="Installation" desc="Precision deployment." />
+            <ProcessCard num="05" title="Subsidy Aid" desc="Document handling." />
+            <ProcessCard num="06" title="Support" desc="24/7 Monitoring." />
           </div>
         </div>
       </section>
@@ -284,24 +285,24 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <ScrollReveal direction="right" className="space-y-8">
               <span className="inline-block bg-white text-muted-foreground px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
-                Subsidy Guide
+                Government Solar Subsidy Guide 2026
               </span>
               <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground leading-tight">
-                Government Solar <br /><span className="text-secondary">Subsidy Benefits</span>
+                Claim Benefits Under <br /><span className="text-secondary">PM-Suryodaya Yojana</span>
               </h2>
               <div className="grid grid-cols-2 gap-6 md:gap-10">
-                <SubsidyBenefit icon={<Banknote />} title="Reduced Cost" desc="Lower upfront capital." />
-                <SubsidyBenefit icon={<TrendingUp />} title="Faster ROI" desc="Quicker payback." />
-                <SubsidyBenefit icon={<Leaf />} title="Eco-Savings" desc="Long-term utility reduction." />
-                <SubsidyBenefit icon={<ShieldCheck />} title="Energy Independence" desc="Grid reliance decrease." />
+                <SubsidyBenefit icon={<Banknote />} title="Direct Subsidy" desc="Up to ₹78,000 for homes." />
+                <SubsidyBenefit icon={<TrendingUp />} title="Faster Payback" desc="ROI within 4-5 years." />
+                <SubsidyBenefit icon={<Leaf />} title="Eco-Incentives" desc="Sustainable energy goals." />
+                <SubsidyBenefit icon={<ShieldCheck />} title="Energy Security" desc="Grid independence." />
               </div>
               <Button asChild className="bg-primary text-white rounded-full px-10 h-14 font-bold hover:bg-primary/90 transition-all">
-                <Link href="/government-solar-subsidy">Check Your Eligibility</Link>
+                <Link href="/government-solar-subsidy">Check Subsidy Eligibility</Link>
               </Button>
             </ScrollReveal>
             <ScrollReveal direction="left">
               <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
-                <Image src="https://picsum.photos/seed/arka_h_subsidy/1000/750" alt="Solar Subsidy" fill className="object-cover" />
+                <Image src="https://picsum.photos/seed/arka_h_subsidy/1000/750" alt="Government Rooftop Solar Subsidy Schemes" fill className="object-cover" />
               </div>
             </ScrollReveal>
           </div>
@@ -312,7 +313,7 @@ export default function Home() {
       <section className="py-24 border-y border-muted bg-white">
         <div className="container mx-auto px-4 text-center">
           <ScrollReveal className="mb-12">
-            <h2 className="text-[12px] font-bold text-muted-foreground tracking-[0.3em] uppercase">Trusted Technology Partners</h2>
+            <h2 className="text-[12px] font-bold text-muted-foreground tracking-[0.3em] uppercase">Authorized Technology Partners</h2>
           </ScrollReveal>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-30 grayscale hover:grayscale-0 transition-all">
             {partners.map((p, i) => (
@@ -326,13 +327,13 @@ export default function Home() {
       <section className="py-32 bg-muted">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">What Our Customers Say</h2>
-            <p className="text-muted-foreground text-[14px]">Trusted by homeowners and industries across India.</p>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Verified Client Reviews</h2>
+            <p className="text-muted-foreground text-[14px]">Trusted by thousands of residential and industrial solar users across India.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
-            <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Switching to Sky Renewable was the best decision for our home. Our electricity bills have vanished." />
-            <TestimonialCard name="Suresh Mehta" loc="Surat" review="Professional team and seamless installation. The government subsidy process was handled perfectly." />
-            <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="The ROI is impressive. The engineering-first approach of Sky Renewable is evident in their structural quality." />
+            <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Sky Renewable is the best solar company in Ahmedabad. Their installation was professional and the bill savings are real." />
+            <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with rooftop solar. They handled my PM-Suryodaya subsidy paperwork from start to finish." />
+            <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="Excellent solar EPC services. Our hospital's energy costs have significantly reduced thanks to their high-yield system." />
           </div>
         </div>
       </section>
@@ -341,14 +342,14 @@ export default function Home() {
       <section className="py-32">
         <div className="container mx-auto px-4 max-w-4xl">
           <ScrollReveal className="text-center mb-16">
-            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Frequently Asked Questions</h2>
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-foreground">Solar Energy FAQs</h2>
           </ScrollReveal>
           <Accordion type="single" collapsible className="space-y-4">
-            <FaqItem value="q1" q="How much can I save with solar?" a="Typically, you can save 80-90% on your monthly electricity bills. Most residential systems pay for themselves within 4-5 years." />
-            <FaqItem value="q2" q="What subsidy is available?" a="Under the government scheme, homeowners get up to ₹78,000 as a direct bank transfer subsidy." />
-            <FaqItem value="q3" q="How long does installation take?" a="The physical installation takes 3-5 days. The complete process takes about 4-6 weeks." />
-            <FaqItem value="q4" q="Do you provide AMC support?" a="Yes, we offer comprehensive Annual Maintenance Contracts with 24/7 IoT monitoring." />
-            <FaqItem value="q5" q="What warranty is included?" a="We provide a 25-year performance warranty on modules and product warranty on inverters." />
+            <FaqItem value="q1" q="How much can I save with a rooftop solar system?" a="On average, residential customers save 80-90% on their electricity bills. The system typically pays for itself within 4-5 years." />
+            <FaqItem value="q2" q="Who is eligible for the government solar subsidy?" a="Currently, residential homeowners with a valid domestic connection can claim up to ₹78,000 under the central government rooftop solar scheme." />
+            <FaqItem value="q3" q="How long do solar panels last?" a="Tier-1 solar panels come with a performance warranty of 25 years and often generate power for much longer with proper maintenance." />
+            <FaqItem value="q4" q="Does Sky Renewable provide solar maintenance?" a="Yes, we offer comprehensive Annual Maintenance Contracts (AMC) that include periodic cleaning and technical audits." />
+            <FaqItem value="q5" q="What is Net Metering in solar?" a="Net metering is a billing mechanism that credits solar system owners for the electricity they add to the grid." />
           </Accordion>
         </div>
       </section>
@@ -357,16 +358,16 @@ export default function Home() {
       <section className="py-32 px-4 bg-white">
         <div className="container mx-auto max-w-5xl">
           <div className="bg-foreground rounded-[60px] p-12 md:p-24 text-center text-white space-y-10 relative overflow-hidden">
-            <h2 className="text-[34px] lg:text-[64px] font-semibold leading-[1.05]">Ready To Switch To Solar Energy?</h2>
+            <h2 className="text-[34px] lg:text-[64px] font-semibold leading-[1.05]">Ready for Energy Independence?</h2>
             <p className="text-white/50 text-[14px] max-w-xl mx-auto font-normal leading-[1.8]">
-              Start saving on electricity bills and move towards a sustainable future with our expert solar solutions.
+              Contact the best solar company today for a personalized rooftop audit and ROI assessment.
             </p>
             <div className="flex flex-wrap justify-center gap-6 pt-4">
               <Button asChild size="lg" className="bg-primary text-white font-semibold rounded-full px-12 h-16 text-sm hover:bg-white hover:text-primary transition-all">
-                <Link href="/get-quote">Get Your Free Quote</Link>
+                <Link href="/get-quote">Get Your Free Solar Quote</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/20 text-white rounded-full px-12 h-16 text-sm font-semibold hover:bg-white/10">
-                <Link href="/get-quote">Schedule Site Visit</Link>
+                <Link href="/get-quote">Schedule Site Survey</Link>
               </Button>
             </div>
           </div>
@@ -477,8 +478,4 @@ function FaqItem({ value, q, a }: { value: string, q: string, a: string }) {
       </AccordionContent>
     </AccordionItem>
   );
-}
-
-function Banknote() {
-  return <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="12" x="2" y="6" rx="2" /><circle cx="12" cy="12" r="2" /><path d="M6 12h.01M18 12h.01" /></svg>;
 }
