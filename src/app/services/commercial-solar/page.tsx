@@ -76,18 +76,6 @@ export default function CommercialSolarPage() {
         </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="py-24 border-y border-neutral-100">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-            <StatItem value={1200} suffix="+" label="Commercial Projects" />
-            <StatItem value={40} suffix="%" label="Tax Depreciation" />
-            <StatItem value={4} suffix="Y" label="Average Payback" />
-            <StatItem value={50} suffix="MW+" label="Installed Capacity" />
-          </div>
-        </div>
-      </section>
-
       {/* FEATURES GRID */}
       <section className="py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
