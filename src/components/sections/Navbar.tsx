@@ -105,23 +105,17 @@ export function Navbar() {
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* LOGO - LEFT */}
           <div className="flex-1 flex justify-start">
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="bg-primary p-2 rounded-xl shadow-lg transition-transform group-hover:rotate-12 flex items-center justify-center overflow-hidden w-10 h-10">
-                {logoImage && (
-                  <Image 
-                    src={logoImage.imageUrl} 
-                    alt="Sky Renewable Logo" 
-                    width={24} 
-                    height={24} 
-                    className="object-contain"
-                    data-ai-hint={logoImage.imageHint}
-                  />
-                )}
-              </div>
-              <div className="flex flex-col -space-y-1">
-                <span className="font-headline text-xl md:text-2xl font-black tracking-tight text-primary">SKY RENEWABLE</span>
-                <span className="text-[8px] font-black tracking-[0.2em] text-primary uppercase opacity-80">Solar Energy</span>
-              </div>
+            <Link href="/" className="flex items-center group shrink-0">
+              {logoImage && (
+                <Image 
+                  src={logoImage.imageUrl} 
+                  alt="Sky Renewable Branding" 
+                  width={180} 
+                  height={50} 
+                  className="h-10 w-auto object-contain brightness-0 invert-0"
+                  data-ai-hint={logoImage.imageHint}
+                />
+              )}
             </Link>
           </div>
 
@@ -143,7 +137,7 @@ export function Navbar() {
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent 
-                        align={link.isMega ? "center" : "center"} 
+                        align="center" 
                         sideOffset={15} 
                         className={cn(
                           "rounded-[32px] p-4 shadow-2xl border border-border bg-white/95 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200",
@@ -228,20 +222,17 @@ export function Navbar() {
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-white border-none overflow-y-auto w-full max-w-[320px] p-8">
                   <div className="flex flex-col gap-12 pt-8">
-                    <Link href="/" className="flex items-center gap-3 group">
-                      <div className="bg-primary p-2 rounded-xl">
-                        {logoImage && (
-                          <Image 
-                            src={logoImage.imageUrl} 
-                            alt="Sky Renewable Logo" 
-                            width={32} 
-                            height={32} 
-                            className="object-contain"
-                            data-ai-hint={logoImage.imageHint}
-                          />
-                        )}
-                      </div>
-                      <span className="font-headline text-2xl font-black text-primary tracking-tight">SKY RENEWABLE</span>
+                    <Link href="/" className="flex items-center group">
+                      {logoImage && (
+                        <Image 
+                          src={logoImage.imageUrl} 
+                          alt="Sky Renewable" 
+                          width={140} 
+                          height={40} 
+                          className="object-contain"
+                          data-ai-hint={logoImage.imageHint}
+                        />
+                      )}
                     </Link>
                     <nav className="flex flex-col gap-8">
                       {navLinks.map((link) => (
