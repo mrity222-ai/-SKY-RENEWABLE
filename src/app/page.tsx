@@ -44,6 +44,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselPrevious, 
+  CarouselNext 
+} from "@/components/ui/carousel";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -76,21 +83,6 @@ export default function Home() {
     { id: 2, name: "GIDC Industrial Park", capacity: "250kW", location: "Sanand", type: "Industrial", image: "https://picsum.photos/seed/arka_h_p2/800/1200" },
     { id: 3, name: "Emerald Heights", capacity: "50kW", location: "Surat", type: "Commercial", image: "https://picsum.photos/seed/arka_h_p3/800/1200" },
   ];
-
-  const faqData = {
-    basics: [
-      { q: "Which is the best solar energy company for rooftop installation?", a: "Sky Renewable is widely recognized as a premier rooftop solar installer in India, offering turnkey engineering, procurement, and construction (EPC) services with a focus on high-yield generation and professional maintenance." },
-      { q: "How can I find a reliable solar installer near me?", a: "Sky Renewable provides local service teams across multiple urban and industrial hubs. You can book a professional site survey through our website or contact our assistance desk to find our nearest office." },
-      { q: "What is the approximate cost of solar system installation?", a: "The cost varies based on system size and component selection. Generally, a residential 3kW system starts from ₹1.8 Lakhs before subsidies. We provide detailed financial modeling during our free site audit." },
-      { q: "How much government subsidy is available for solar panels?", a: "Under the PM-Suryodaya Yojana, residential homeowners can receive direct financial assistance (CFA) of up to ₹78,000 for system sizes up to 3kW." },
-    ],
-    support: [
-      { q: "How long does a rooftop solar system last?", a: "Tier-1 solar panels are engineered for longevity, coming with a 25-year performance warranty. Most systems continue to generate clean energy efficiently for 30+ years." },
-      { q: "What maintenance is required for solar panels?", a: "Maintenance is minimal but essential. It involves periodic cleaning (usually once or twice a month) and annual technical audits of electrical connections and inverter health to ensure peak performance." },
-      { q: "Can solar panels work during cloudy weather?", a: "Yes, solar panels utilize daylight (diffused light) to generate electricity. While generation is lower than on clear sunny days, the system remains active and contributes to your daily power needs." },
-      { q: "Is solar energy suitable for commercial properties?", a: "Absolutely. Commercial properties benefit significantly from solar through accelerated depreciation (tax benefits), lower operational costs, and ESG compliance, with average payback periods of 3-5 years." },
-    ]
-  };
 
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-hidden">
@@ -298,10 +290,31 @@ export default function Home() {
             <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground">Voice of our Clients</h2>
             <p className="text-muted-foreground text-lg">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-10">
-            <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Professional execution and visible savings. Sky Renewable is easily the best solar company in Gujarat." />
-            <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with PM-Suryodaya subsidy paperwork. Highly recommended for rooftop solar." />
-            <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="Our hospital's electricity bill dropped by 85%. Excellent engineering and technical support." />
+          
+          <div className="relative max-w-7xl mx-auto px-4">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4 md:-ml-10">
+                <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
+                  <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Professional execution and visible savings. Sky Renewable is easily the best solar company in Gujarat." />
+                </CarouselItem>
+                <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
+                  <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with PM-Suryodaya subsidy paperwork. Highly recommended for rooftop solar." />
+                </CarouselItem>
+                <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
+                  <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="Our hospital's electricity bill dropped by 85%. Excellent engineering and technical support." />
+                </CarouselItem>
+              </CarouselContent>
+              <div className="flex justify-center gap-4 mt-12 md:hidden">
+                <CarouselPrevious className="relative static translate-y-0 translate-x-0" />
+                <CarouselNext className="relative static translate-y-0 translate-x-0" />
+              </div>
+            </Carousel>
           </div>
         </div>
       </section>
