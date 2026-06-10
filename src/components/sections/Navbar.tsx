@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Navbar() {
@@ -109,10 +109,10 @@ export function Navbar() {
               {logoImage && (
                 <Image 
                   src={logoImage.imageUrl} 
-                  alt="Sky Renewable Branding" 
+                  alt="Sky Renewable Logo" 
                   width={180} 
                   height={50} 
-                  className="h-10 w-auto object-contain brightness-0 invert-0"
+                  className="h-10 w-auto object-contain"
                   data-ai-hint={logoImage.imageHint}
                 />
               )}
