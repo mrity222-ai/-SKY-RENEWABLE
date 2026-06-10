@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, ChevronDown, Zap, Home, Factory, Wrench, BatteryFull, Layout, BookOpen, Calculator as CalcIcon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -131,7 +131,7 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-semibold flex items-center gap-1 transition-all outline-none",
-                        isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                        isActive ? "text-primary" : "text-primary hover:bg-primary/5"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -152,7 +152,7 @@ export function Navbar() {
                               <Link 
                                 href={sub.href} 
                                 className={cn(
-                                  "w-full cursor-pointer p-4 rounded-xl hover:bg-primary/5 flex flex-col gap-1.5 group/item transition-all",
+                                  "w-full cursor-pointer p-4 rounded-xl hover:bg-primary/5 flex flex-col gap-1.5 group/item transition-all text-primary",
                                   !link.isMega && "flex-row items-center gap-3"
                                 )}
                               >
@@ -160,10 +160,10 @@ export function Navbar() {
                                   <div className="bg-primary/5 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-colors shrink-0">
                                     {sub.icon}
                                   </div>
-                                  <span className="font-bold text-sm tracking-tight text-foreground">{sub.name}</span>
+                                  <span className="font-bold text-sm tracking-tight">{sub.name}</span>
                                 </div>
                                 {link.isMega && sub.desc && (
-                                  <p className="text-[11px] font-medium leading-relaxed text-muted-foreground ml-10">
+                                  <p className="text-[11px] font-medium leading-relaxed opacity-70 ml-10">
                                     {sub.desc}
                                   </p>
                                 )}
@@ -177,8 +177,8 @@ export function Navbar() {
                     <Link 
                       href={link.href}
                       className={cn(
-                        "relative px-4 py-2 rounded-full text-[13px] font-semibold transition-all block",
-                        isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                        "relative px-4 py-2 rounded-full text-[13px] font-semibold transition-all block text-primary",
+                        isActive ? "bg-primary/5" : "hover:bg-primary/5"
                       )}
                     >
                       {isActive && (
@@ -204,11 +204,15 @@ export function Navbar() {
             <div className="lg:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-foreground hover:bg-muted rounded-full">
+                  <Button variant="ghost" size="icon" className="text-primary hover:bg-muted rounded-full">
                     <Menu className="size-5" />
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="bg-white border-none w-full max-w-[320px] p-8">
+                  <SheetHeader className="sr-only">
+                    <SheetTitle>Navigation Menu</SheetTitle>
+                    <SheetDescription>Access site navigation and services</SheetDescription>
+                  </SheetHeader>
                   <div className="flex flex-col gap-10 pt-8">
                     <Link href="/" className="flex items-center">
                       {logoImage && (
@@ -218,13 +222,13 @@ export function Navbar() {
                     <nav className="flex flex-col gap-6">
                       {navLinks.map((link) => (
                         <div key={link.name} className="space-y-4">
-                          <Link href={link.href} className="text-lg font-bold text-foreground hover:text-primary">
+                          <Link href={link.href} className="text-lg font-bold text-primary hover:opacity-70">
                             {link.name}
                           </Link>
                           {link.submenu && (
                             <div className="grid gap-3 ml-4 border-l border-muted pl-4">
                               {link.submenu.map((sub) => (
-                                <Link key={sub.name} href={sub.href} className="text-sm font-medium text-muted-foreground hover:text-primary py-1">
+                                <Link key={sub.name} href={sub.href} className="text-sm font-medium text-primary hover:opacity-70 py-1">
                                   {sub.name}
                                 </Link>
                               ))}
