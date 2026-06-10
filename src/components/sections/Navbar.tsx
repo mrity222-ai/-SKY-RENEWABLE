@@ -3,8 +3,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, Sun, ChevronDown, Zap, Home, Factory, Wrench, BatteryFull, Layout, BookOpen, Calculator as CalcIcon, ArrowRight } from "lucide-react";
+import { Menu, ChevronDown, Zap, Home, Factory, Wrench, BatteryFull, Layout, BookOpen, Calculator as CalcIcon, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -15,11 +16,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  const logoImage = PlaceHolderImages.find(img => img.id === 'company-logo-icon');
 
   useEffect(() => {
     setMounted(true);
@@ -102,12 +106,21 @@ export function Navbar() {
           {/* LOGO - LEFT */}
           <div className="flex-1 flex justify-start">
             <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="bg-primary p-2 rounded-xl shadow-lg transition-transform group-hover:rotate-12">
-                <Sun className="size-5 text-accent" />
+              <div className="bg-primary p-2 rounded-xl shadow-lg transition-transform group-hover:rotate-12 flex items-center justify-center overflow-hidden w-10 h-10">
+                {logoImage && (
+                  <Image 
+                    src={logoImage.imageUrl} 
+                    alt="Sky Renewable Logo" 
+                    width={24} 
+                    height={24} 
+                    className="object-contain"
+                    data-ai-hint={logoImage.imageHint}
+                  />
+                )}
               </div>
               <div className="flex flex-col -space-y-1">
                 <span className="font-headline text-xl md:text-2xl font-black tracking-tight text-primary">SKY RENEWABLE</span>
-                <span className="text-[8px] font-black tracking-[0.2em] text-accent uppercase">Solar Energy</span>
+                <span className="text-[8px] font-black tracking-[0.2em] text-primary uppercase opacity-80">Solar Energy</span>
               </div>
             </Link>
           </div>
@@ -124,8 +137,8 @@ export function Navbar() {
                   {link.submenu ? (
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
-                        "relative px-4 py-2 rounded-full text-[13px] font-bold flex items-center gap-1 transition-all outline-none",
-                        isActive ? "text-primary bg-primary/5" : "text-primary hover:bg-primary/5"
+                        "relative px-4 py-2 rounded-full text-[13px] font-bold flex items-center gap-1 transition-all outline-none text-primary",
+                        isActive && "bg-primary/5"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -146,12 +159,12 @@ export function Navbar() {
                               <Link 
                                 href={sub.href} 
                                 className={cn(
-                                  "w-full cursor-pointer p-4 rounded-2xl hover:bg-primary hover:text-white flex flex-col gap-2 group/item transition-all",
+                                  "w-full cursor-pointer p-4 rounded-2xl hover:bg-primary hover:text-white flex flex-col gap-2 group/item transition-all text-primary",
                                   !link.isMega && "flex-row items-center gap-3"
                                 )}
                               >
                                 <div className="flex items-center gap-3">
-                                  <div className="bg-primary/5 p-2 rounded-xl group-hover/item:bg-accent group-hover/item:text-foreground transition-colors shrink-0">
+                                  <div className="bg-primary/5 p-2 rounded-xl group-hover/item:bg-white/20 transition-colors shrink-0">
                                     {sub.icon}
                                   </div>
                                   <span className="font-bold text-sm tracking-tight">{sub.name}</span>
@@ -180,7 +193,7 @@ export function Navbar() {
                       href={link.href}
                       className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-bold transition-all block text-primary",
-                        isActive ? "bg-primary/5" : "hover:bg-primary/5"
+                        isActive && "bg-primary/5"
                       )}
                     >
                       {isActive && (
@@ -216,7 +229,18 @@ export function Navbar() {
                 <SheetContent side="right" className="bg-white border-none overflow-y-auto w-full max-w-[320px] p-8">
                   <div className="flex flex-col gap-12 pt-8">
                     <Link href="/" className="flex items-center gap-3 group">
-                      <Sun className="size-8 text-accent" />
+                      <div className="bg-primary p-2 rounded-xl">
+                        {logoImage && (
+                          <Image 
+                            src={logoImage.imageUrl} 
+                            alt="Sky Renewable Logo" 
+                            width={32} 
+                            height={32} 
+                            className="object-contain"
+                            data-ai-hint={logoImage.imageHint}
+                          />
+                        )}
+                      </div>
                       <span className="font-headline text-2xl font-black text-primary tracking-tight">SKY RENEWABLE</span>
                     </Link>
                     <nav className="flex flex-col gap-8">

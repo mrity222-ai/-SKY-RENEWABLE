@@ -36,6 +36,12 @@
       "description": "Paperwork and solar panel models",
       "imageUrl": "https://picsum.photos/seed/arka6/400/300",
       "imageHint": "solar finance"
+    },
+    {
+      "id": "company-logo-icon",
+      "description": "Abstract professional solar logo icon",
+      "imageUrl": "https://picsum.photos/seed/arka_logo/100/100",
+      "imageHint": "solar logo"
     }
   ]
 }
