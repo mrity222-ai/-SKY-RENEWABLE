@@ -46,7 +46,7 @@ export default function IndustrialSolarPage() {
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex wrap gap-4">
                   <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Get Industrial Proposal</Link>
                   </Button>
@@ -62,18 +62,6 @@ export default function IndustrialSolarPage() {
                 priority
               />
             </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* STATS SECTION */}
-      <section className="py-24 border-y border-neutral-100">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-            <StatItem value={150} suffix="MW+" label="Installed Capacity" />
-            <StatItem value={50000} suffix="T" label="CO2 Reduction" />
-            <StatItem value={100} suffix="+" label="Industrial Hubs" />
-            <StatItem value={99} suffix="%" label="Uptime Guarantee" />
           </div>
         </div>
       </section>
