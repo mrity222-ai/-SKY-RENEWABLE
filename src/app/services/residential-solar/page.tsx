@@ -13,7 +13,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { Counter } from "@/components/animations/Counter";
 import { CTASection } from "@/components/sections/CTASection";
 
 export default function ResidentialSolarPage() {
@@ -73,18 +72,6 @@ export default function ResidentialSolarPage() {
         </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="py-24 border-y border-neutral-100">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-            <StatItem value={5000} suffix="+" label="Happy Families" />
-            <StatItem value={78000} prefix="₹" label="Max Subsidy" />
-            <StatItem value={90} suffix="%" label="Bill Savings" />
-            <StatItem value={25} suffix="Y" label="Performance Warranty" />
-          </div>
-        </div>
-      </section>
-
       {/* BENEFITS GRID */}
       <section className="py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
@@ -110,17 +97,6 @@ export default function ResidentialSolarPage() {
 
       {/* FINAL CTA */}
       <CTASection />
-    </div>
-  );
-}
-
-function StatItem({ value, suffix = "", prefix = "", label }: { value: number, suffix?: string, prefix?: string, label: string }) {
-  return (
-    <div className="space-y-2">
-      <div className="text-[40px] lg:text-[56px] font-semibold text-black leading-none">
-        <Counter value={value} suffix={suffix} prefix={prefix} />
-      </div>
-      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
     </div>
   );
 }
