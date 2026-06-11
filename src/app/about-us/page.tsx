@@ -5,11 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { 
   CheckCircle2, 
-  Award, 
-  ShieldCheck, 
-  Zap, 
   TrendingUp, 
-  Globe, 
   Star,
   Users,
   Clock,
@@ -18,50 +14,11 @@ import {
   Shield
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
 import { CTASection } from "@/components/sections/CTASection";
 
 export default function AboutPage() {
-  const valueProps = [
-    {
-      icon: <Users />,
-      title: "Experienced Solar Professionals",
-      desc: "Our team consists of veteran engineers and certified technicians with years of on-ground expertise."
-    },
-    {
-      icon: <Target />,
-      title: "End-to-End Project Execution",
-      desc: "From technical site surveys to net-metering and subsidy handling, we manage every detail."
-    },
-    {
-      icon: <Shield />,
-      title: "High-Quality Components",
-      desc: "We exclusively use Tier-1 modules and top-rated smart inverters to ensure long-term performance."
-    },
-    {
-      icon: <Clock />,
-      title: "Timely Project Delivery",
-      desc: "Our optimized workflow ensures residential installations are completed within 3-5 working days."
-    },
-    {
-      icon: <Headset />,
-      title: "Dedicated After-Sales Support",
-      desc: "Experience peace of mind with our 48-hour service guarantee and 24/7 IoT generation monitoring."
-    },
-    {
-      icon: <TrendingUp />,
-      title: "Focus on Safety and Performance",
-      desc: "Our structures are wind-tested for 180kmph, prioritizing structural integrity and maximum yield."
-    },
-    {
-      icon: <Star />,
-      title: "Customer-Centric Approach",
-      desc: "Personalized energy audits and tailored financial modeling to ensure maximum ROI for every client."
-    }
-  ];
-
   return (
     <div className="bg-white overflow-hidden selection:bg-primary/20 selection:text-primary">
       {/* SECTION 1 – HERO INTRO */}
@@ -96,16 +53,16 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
           <ScrollReveal direction="up" delay={0.4} className="mt-20">
-            <div className="relative aspect-[21/9] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border border-border">
+            <div className="relative aspect-[21/9] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border border-border bg-neutral-100">
               <Image 
                 src="https://picsum.photos/seed/arka_about_hero/1600/700" 
                 alt="Solar Field" 
                 fill 
-                className="object-cover"
+                className="object-cover w-full h-full"
                 priority
                 data-ai-hint="solar field"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
             </div>
           </ScrollReveal>
         </div>
@@ -125,10 +82,7 @@ export default function AboutPage() {
                   SKY RENEWABLE is a trusted solar energy solutions company committed to delivering clean, sustainable, and affordable power solutions for homes, businesses, industries, and institutions.
                 </p>
                 <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed">
-                  We specialize in complete Solar EPC Services, Rooftop Solar Installations, Operation & Maintenance, and Solar Panel Cleaning Solutions. From site survey and system design to installation, commissioning, maintenance, and performance optimization, we handle every stage with professionalism and precision.
-                </p>
-                <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed">
-                  Our goal is to help customers reduce electricity costs, improve energy efficiency, and achieve long-term energy independence through high-quality solar solutions.
+                  We specialize in complete Solar EPC Services, Rooftop Solar Installations, Operation & Maintenance, and Solar Panel Cleaning Solutions.
                 </p>
                 <p className="text-sm font-bold text-primary">Owner: Naimesh Chandraker</p>
               </div>
@@ -148,12 +102,12 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
-              <div className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden group shadow-2xl border border-border">
+              <div className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden group shadow-2xl border border-border bg-neutral-100">
                 <Image 
                   src="https://picsum.photos/seed/arka_about_story/800/800" 
                   alt="Solar Engineers" 
                   fill 
-                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
                   data-ai-hint="solar engineers"
                 />
               </div>
@@ -162,7 +116,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 4 – COMPANY ACHIEVEMENTS */}
       <section className="py-20 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
@@ -174,7 +127,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 12 – FINAL CTA */}
       <CTASection />
     </div>
   );

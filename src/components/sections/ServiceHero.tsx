@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
@@ -67,17 +66,17 @@ export function ServiceHero({
             </ScrollReveal>
           </div>
 
-          {/* Image side - Updated to aspect-square */}
+          {/* Image side - Enforced 1:1 Ratio & Containment */}
           <ScrollReveal direction="left" delay={0.4}>
-            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl group">
+            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl group bg-neutral-50">
               <Image 
                 src={image} 
                 alt={titleLine1} 
                 fill 
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
             </div>
           </ScrollReveal>
         </div>

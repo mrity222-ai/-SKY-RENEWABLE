@@ -34,14 +34,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const HERO_IMAGES = [
-  "https://picsum.photos/seed/arka_hero_res/1920/1080", // Residential
-  "https://picsum.photos/seed/arka_hero_comm/1920/1080", // Commercial
-  "https://picsum.photos/seed/arka_hero_ind/1920/1080", // Industrial
-  "https://picsum.photos/seed/arka_hero_clean/1920/1080", // Cleaning
-  "https://picsum.photos/seed/arka_hero_maint/1920/1080", // Maintenance
-  "https://picsum.photos/seed/arka_hero_roof/1920/1080", // Rooftop
-  "https://picsum.photos/seed/arka_hero_yojana/1920/1080", // PM Surya Ghar
-  "https://picsum.photos/seed/arka_hero_tech/1920/1080", // Technician
+  "https://picsum.photos/seed/arka_hero_res/1920/1080",
+  "https://picsum.photos/seed/arka_hero_comm/1920/1080",
+  "https://picsum.photos/seed/arka_hero_ind/1920/1080",
+  "https://picsum.photos/seed/arka_hero_clean/1920/1080",
+  "https://picsum.photos/seed/arka_hero_maint/1920/1080",
+  "https://picsum.photos/seed/arka_hero_roof/1920/1080",
+  "https://picsum.photos/seed/arka_hero_yojana/1920/1080",
+  "https://picsum.photos/seed/arka_hero_tech/1920/1080",
 ];
 
 export default function Home() {
@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       {/* HERO SLIDER */}
-      <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden">
+      <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-neutral-900">
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
@@ -75,14 +75,14 @@ export default function Home() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0"
+              className="absolute inset-0 w-full h-full"
             >
-              <div className="relative h-full w-full">
+              <div className="relative h-full w-full overflow-hidden">
                 <Image
                   src={HERO_IMAGES[currentSlide]}
                   alt="Sky Renewable Solar Energy Solutions"
                   fill
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                   priority
                 />
               </div>
@@ -112,7 +112,6 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Pagination Dots */}
           <div className="absolute bottom-12 md:bottom-16 flex gap-2">
             {HERO_IMAGES.map((_, idx) => (
               <button
@@ -140,10 +139,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEW SECTION: PREMIUM SUBSIDY SHOWCASE */}
       <SubsidyShowcase />
 
-      {/* SECTION 2 – TRUST & ACHIEVEMENTS */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -155,7 +152,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3 – ABOUT COMPANY */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -182,12 +178,12 @@ export default function Home() {
               </ScrollReveal>
             </div>
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
+              <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
                 <Image 
                   src="https://picsum.photos/seed/arka_h_about/800/800" 
                   alt="SKY RENEWABLE Solar Installation Team" 
                   fill 
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
             </ScrollReveal>
@@ -195,7 +191,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4 – OUR SOLAR SOLUTIONS */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center space-y-4 mb-12 md:mb-16">
@@ -213,7 +208,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5 – WHY CHOOSE SOLAR ENERGY? */}
       <section className="py-16 md:py-24 bg-background border-y border-border/50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 items-end text-center lg:text-left">
@@ -236,7 +230,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 6 – SOLAR SAVINGS CALCULATOR */}
       <section className="py-16 md:py-24 bg-foreground text-white overflow-hidden relative border-t border-white/5">
         <div className="absolute top-0 right-0 size-[300px] md:size-[500px] bg-primary/20 blur-[100px] md:blur-[150px] rounded-full pointer-events-none" />
         <div className="container relative z-10 mx-auto px-4">
@@ -244,7 +237,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 7 – FEATURED PROJECTS */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
@@ -255,8 +247,8 @@ export default function Home() {
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <Link href="/projects" className="group block">
-                  <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2">
-                    <Image src={p.image} alt={p.name} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2 bg-neutral-100">
+                    <Image src={p.image} alt={p.name} fill className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-80" />
                     <div className="absolute bottom-6 left-6 right-6">
                       <span className="inline-block bg-primary px-3 py-1 rounded-full text-[9px] font-bold text-white uppercase tracking-widest mb-3">{p.type}</span>
@@ -279,7 +271,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 11 – TESTIMONIALS */}
       <section className="py-16 md:py-24 bg-background border-t border-border">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
@@ -315,7 +306,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 13 – FINAL CTA */}
       <CTASection />
     </div>
   );

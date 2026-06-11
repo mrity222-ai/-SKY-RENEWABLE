@@ -84,23 +84,22 @@ export function Navbar() {
           : "bg-transparent backdrop-blur-none border-transparent py-4 px-4 md:px-8"
       )}>
         <div className="flex items-center justify-between gap-4">
-          {/* LOGO */}
           <div className="flex-1 flex justify-start">
-            <Link href="/" className="flex items-center group shrink-0">
+            <Link href="/" className="flex items-center group shrink-0 relative">
               {logoImage && (
-                <Image 
-                  src={logoImage.imageUrl} 
-                  alt="Sky Renewable Logo" 
-                  width={130} 
-                  height={32} 
-                  className="h-6 md:h-7 w-auto object-contain transition-transform group-hover:scale-105"
-                  data-ai-hint={logoImage.imageHint}
-                />
+                <div className="relative h-6 md:h-7 w-32">
+                  <Image 
+                    src={logoImage.imageUrl} 
+                    alt="Sky Renewable Logo" 
+                    fill
+                    className="object-contain w-full h-full transition-transform group-hover:scale-105"
+                    data-ai-hint={logoImage.imageHint}
+                  />
+                </div>
               )}
             </Link>
           </div>
 
-          {/* NAV MENU - DESKTOP */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = link.submenu 
@@ -161,7 +160,6 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* CTA - RIGHT */}
           <div className="flex-1 flex justify-end items-center gap-4">
             <Button asChild className="hidden sm:flex bg-primary text-white rounded-full px-6 hover:shadow-lg transition-all duration-300 font-bold h-9 md:h-10 text-[13px] md:text-[14px] uppercase tracking-wider">
               <Link href="/get-quote">Get Quote</Link>
@@ -181,7 +179,9 @@ export function Navbar() {
                       <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
                       <div className="flex items-center justify-between">
                         {logoImage && (
-                          <Image src={logoImage.imageUrl} alt="Sky Renewable" width={110} height={28} className="object-contain" />
+                          <div className="relative h-7 w-28">
+                            <Image src={logoImage.imageUrl} alt="Sky Renewable" fill className="object-contain" />
+                          </div>
                         )}
                       </div>
                     </SheetHeader>

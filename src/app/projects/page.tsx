@@ -4,19 +4,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
-  ArrowRight, 
   Zap, 
   MapPin, 
-  Calendar, 
-  Building2, 
-  TrendingUp, 
   TreeDeciduous, 
   Globe, 
-  Star,
-  CheckCircle2,
-  Clock,
-  Search,
-  Layout
+  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -28,78 +20,12 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const projects = [
-  {
-    id: 1,
-    title: "Skyline Residential Villa",
-    type: "Residential",
-    location: "Lucknow, Uttar Pradesh",
-    capacity: "10KW System",
-    date: "Oct 2024",
-    client: "Mr. Khanna",
-    savings: "₹1,20,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr1/800/1200",
-    description: "Full rooftop solar installation with smart monitoring and lithium-ion battery backup."
-  },
-  {
-    id: 2,
-    title: "TechPark Commercial Complex",
-    type: "Commercial",
-    location: "Noida, Uttar Pradesh",
-    capacity: "150KW System",
-    date: "Sept 2024",
-    client: "Apex Realty",
-    savings: "₹18,00,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr2/800/1200",
-    description: "Bespoke industrial-grade solar solution powering the entire common area grid."
-  },
-  {
-    id: 3,
-    title: "Eco Manufacturing Unit",
-    type: "Industrial",
-    location: "Kanpur, Uttar Pradesh",
-    capacity: "500KW System",
-    date: "Aug 2024",
-    client: "GreenFab Industries",
-    savings: "₹60,00,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr3/800/1200",
-    description: "Large scale heavy-duty solar array integrated with factory load management systems."
-  },
-  {
-    id: 4,
-    title: "Municipal Office Block",
-    type: "Government",
-    location: "Prayagraj, Uttar Pradesh",
-    capacity: "80KW System",
-    date: "July 2024",
-    client: "Local Municipal Council",
-    savings: "₹9,50,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr4/800/1200",
-    description: "Grid-tie solar solution reducing public infrastructure operational costs."
-  },
-  {
-    id: 5,
-    title: "Riverfront Modern Estate",
-    type: "Residential",
-    location: "Varanasi, Uttar Pradesh",
-    capacity: "15KW System",
-    date: "June 2024",
-    client: "Dr. Singh",
-    savings: "₹1,80,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr5/800/1200",
-    description: "Architecturally integrated solar panels for a luxury riverfront residence."
-  },
-  {
-    id: 6,
-    title: "Logistics Hub Warehouse",
-    type: "Industrial",
-    location: "Ghaziabad, Uttar Pradesh",
-    capacity: "350KW System",
-    date: "May 2024",
-    client: "SafeWay Logistics",
-    savings: "₹42,00,000 / Yr",
-    image: "https://picsum.photos/seed/arka_pr6/800/1200",
-    description: "Roof-mounted high-efficiency panels optimized for large surface areas."
-  }
+  { id: 1, title: "Skyline Residential Villa", type: "Residential", location: "Lucknow, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr1/800/1200" },
+  { id: 2, title: "TechPark Commercial Complex", type: "Commercial", location: "Noida, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr2/800/1200" },
+  { id: 3, title: "Eco Manufacturing Unit", type: "Industrial", location: "Kanpur, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr3/800/1200" },
+  { id: 4, title: "Municipal Office Block", type: "Government", location: "Prayagraj, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr4/800/1200" },
+  { id: 5, title: "Riverfront Modern Estate", type: "Residential", location: "Varanasi, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr5/800/1200" },
+  { id: 6, title: "Logistics Hub Warehouse", type: "Industrial", location: "Ghaziabad, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr6/800/1200" }
 ];
 
 const categories = ["All Projects", "Residential", "Commercial", "Industrial", "Government"];
@@ -113,7 +39,6 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-white selection:bg-black selection:text-white overflow-hidden">
-      {/* SECTION 1 – HERO SECTION */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -141,18 +66,15 @@ export default function ProjectsPage() {
                   <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Get Free Quote</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-neutral-50">
-                    <Link href="/get-quote">Book Site Survey</Link>
-                  </Button>
                 </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/3] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl">
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/3] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl bg-neutral-100">
               <Image 
                 src="https://picsum.photos/seed/arka_project_hero/1200/800" 
                 alt="Solar Project Hero" 
                 fill 
-                className="object-cover"
+                className="object-cover w-full h-full"
                 priority
               />
             </ScrollReveal>
@@ -160,7 +82,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 2 – PROJECT STATISTICS */}
       <section className="py-20 md:py-24 border-y border-neutral-100 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
@@ -172,7 +93,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 3 – PROJECT FILTERS */}
       <section className="py-24 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <LayoutGroup>
@@ -212,12 +132,12 @@ export default function ProjectsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
-                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
+                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-neutral-100">
                       <Image 
                         src={project.image} 
                         alt={project.title} 
                         fill 
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                       />
                       
                       <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-10 md:pr-12 py-5 md:py-6 flex items-center gap-4 md:gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -248,7 +168,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 5 – PROJECT IMPACT */}
       <section className="py-24 md:py-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
@@ -264,21 +183,19 @@ export default function ProjectsPage() {
               </ScrollReveal>
               <div className="grid grid-cols-2 gap-8 md:gap-12">
                 <ImpactCard icon={<Zap />} val="50M+" label="Units Generated" />
-                <ImpactCard icon={<TreeDeciduous />} val="5000+" label="Tons CO₂ Reduced" />
-                <ImpactCard icon={<TrendingUp />} val="₹10Cr+" label="Customer Savings" />
                 <ImpactCard icon={<Globe />} val="100+" label="Communities Powered" />
+                <ImpactCard icon={<TrendingUp />} val="₹10Cr+" label="Customer Savings" />
               </div>
             </div>
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl">
-                <Image src="https://picsum.photos/seed/arka_impact/800/800" alt="Solar Impact" fill className="object-cover" />
+              <div className="relative aspect-square rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl bg-neutral-100">
+                <Image src="https://picsum.photos/seed/arka_impact/800/800" alt="Solar Impact" fill className="object-cover w-full h-full" />
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* SECTION 8 – FINAL CTA */}
       <CTASection />
     </div>
   );
