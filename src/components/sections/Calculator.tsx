@@ -2,10 +2,9 @@
 
 import React, { useState, useMemo } from "react";
 import { Slider } from "@/components/ui/slider";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Zap, Banknote, CalendarCheck, RotateCcw, TreeDeciduous, Info } from "lucide-react";
-import { motion, LayoutGroup } from "framer-motion";
 
 export function Calculator() {
   const [bill, setBill] = useState(3000);
@@ -34,19 +33,19 @@ export function Calculator() {
   }, [bill]);
 
   return (
-    <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-      <div className="space-y-8 md:space-y-12">
-        <div className="space-y-4 text-center lg:text-left">
-          <span className="text-[11px] md:text-[12px] font-bold text-primary uppercase tracking-[0.2em] md:tracking-[0.3em]">Smart ROI Tool</span>
-          <h2 className="text-[28px] md:text-[48px] font-semibold text-white leading-tight">Calculate Your <br />Solar Potential</h2>
-          <p className="text-white/40 text-[14px] max-w-sm mx-auto lg:mx-0">Estimate your monthly savings and environmental impact instantly.</p>
+    <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="space-y-8 md:space-y-10">
+        <div className="space-y-3 text-center lg:text-left">
+          <span className="text-[10px] md:text-[11px] font-bold text-primary uppercase tracking-[0.2em] md:tracking-[0.3em]">Smart ROI Tool</span>
+          <h2 className="text-[26px] md:text-[34px] lg:text-[40px] font-semibold text-white leading-tight">Calculate Your <br />Solar Potential</h2>
+          <p className="text-white/40 text-[13px] md:text-[14px] max-w-sm mx-auto lg:mx-0">Estimate your monthly savings and environmental impact instantly.</p>
         </div>
 
-        <Card className="rounded-[24px] md:rounded-[40px] border-none bg-white/5 backdrop-blur-xl p-6 md:p-10 space-y-8 md:space-y-12">
-          <div className="space-y-6 md:space-y-8">
+        <Card className="rounded-[24px] md:rounded-[32px] border-none bg-white/5 backdrop-blur-xl p-6 md:p-8 space-y-8">
+          <div className="space-y-6">
             <div className="flex justify-between items-center">
               <label className="text-[13px] md:text-[14px] font-medium text-white/60">Monthly Bill</label>
-              <span className="text-[18px] md:text-[20px] font-bold text-white">₹{bill.toLocaleString()}</span>
+              <span className="text-[16px] md:text-[18px] font-bold text-white">₹{bill.toLocaleString()}</span>
             </div>
             <Slider 
               value={[bill]} 
@@ -56,10 +55,10 @@ export function Calculator() {
             />
           </div>
 
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-6">
             <div className="flex justify-between items-center">
               <label className="text-[13px] md:text-[14px] font-medium text-white/60">Roof Area (sq. ft.)</label>
-              <span className="text-[18px] md:text-[20px] font-bold text-white">{area} sq.ft.</span>
+              <span className="text-[16px] md:text-[18px] font-bold text-white">{area} sq.ft.</span>
             </div>
             <Slider 
               value={[area]} 
@@ -69,28 +68,28 @@ export function Calculator() {
             />
           </div>
           
-          <Button asChild className="w-full h-14 md:h-16 rounded-full bg-white text-primary font-bold hover:bg-muted transition-all">
+          <Button asChild className="w-full h-12 md:h-14 rounded-full bg-white text-primary font-bold hover:bg-muted transition-all text-[14px]">
             <a href="/get-quote">Book Free Site Survey</a>
           </Button>
         </Card>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 gap-4 md:gap-5">
         <ResultCard icon={<Zap />} label="System Size" value={`${stats.systemSize} kW`} />
         <ResultCard icon={<Banknote />} label="Monthly Saving" value={`₹${stats.monthlySavings.toLocaleString()}`} />
         <ResultCard icon={<CalendarCheck />} label="Payback" value={`${stats.payback} Yrs`} />
         <ResultCard icon={<RotateCcw />} label="Net Invest" value={`₹${(stats.netCost / 1000).toFixed(0)}k`} />
-        <div className="col-span-2 p-6 md:p-10 bg-white/5 rounded-[24px] md:rounded-[40px] flex items-center justify-between">
+        <div className="col-span-2 p-6 md:p-8 bg-white/5 rounded-[24px] md:rounded-[32px] flex items-center justify-between">
            <div className="flex items-center gap-4 md:gap-6">
-              <div className="size-12 md:size-14 bg-secondary/20 rounded-xl md:rounded-2xl flex items-center justify-center text-secondary shrink-0">
-                <TreeDeciduous className="size-5 md:size-6" />
+              <div className="size-10 md:size-12 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                <TreeDeciduous className="size-5 md:size-5" />
               </div>
               <div>
-                <p className="text-[9px] md:text-[11px] font-bold text-white/40 uppercase tracking-widest">CO2 Offset</p>
-                <p className="text-[18px] md:text-[24px] font-bold text-accent">{stats.co2Offset} Tons / Yr</p>
+                <p className="text-[9px] md:text-[10px] font-bold text-white/40 uppercase tracking-widest">CO2 Offset</p>
+                <p className="text-[18px] md:text-[22px] font-bold text-accent">{stats.co2Offset} Tons / Yr</p>
               </div>
            </div>
-           <Info className="size-4 md:size-5 text-white/20 hidden sm:block" />
+           <Info className="size-4 text-white/20 hidden sm:block" />
         </div>
       </div>
     </div>
@@ -99,13 +98,13 @@ export function Calculator() {
 
 function ResultCard({ icon, label, value }: { icon: any, label: string, value: string }) {
   return (
-    <div className="p-6 md:p-10 bg-white/5 rounded-[24px] md:rounded-[40px] space-y-4 md:space-y-6 hover:bg-white/10 transition-colors">
-      <div className="size-10 md:size-12 bg-white/10 rounded-lg md:rounded-xl flex items-center justify-center text-primary shrink-0">
-        {React.cloneElement(icon, { className: "size-4 md:size-5" })}
+    <div className="p-6 md:p-8 bg-white/5 rounded-[24px] md:rounded-[32px] space-y-4 hover:bg-white/10 transition-colors">
+      <div className="size-9 md:size-10 bg-white/10 rounded-lg flex items-center justify-center text-primary shrink-0">
+        {React.cloneElement(icon, { className: "size-4.5" })}
       </div>
       <div>
-        <p className="text-[9px] md:text-[11px] font-bold text-white/40 uppercase tracking-widest leading-tight">{label}</p>
-        <p className="text-[18px] md:text-[24px] font-bold text-accent">{value}</p>
+        <p className="text-[9px] md:text-[10px] font-bold text-white/40 uppercase tracking-widest leading-tight">{label}</p>
+        <p className="text-[18px] md:text-[22px] font-bold text-accent">{value}</p>
       </div>
     </div>
   );

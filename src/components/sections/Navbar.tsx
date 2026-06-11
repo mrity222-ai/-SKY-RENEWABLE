@@ -51,14 +51,14 @@ export function Navbar() {
       href: "/services",
       isMega: true,
       submenu: [
-        { name: "Solar EPC Solutions", href: "/services/industrial-solar", icon: <Zap className="size-5" /> },
-        { name: "Rooftop Solar Installations", href: "/services/rooftop-installation", icon: <Home className="size-5" /> },
-        { name: "Commercial & Industrial Projects", href: "/services/commercial-solar", icon: <Factory className="size-5" /> },
-        { name: "Operation & Maintenance", href: "/services/solar-maintenance", icon: <Wrench className="size-5" /> },
-        { name: "Solar Panel Cleaning", href: "/services/solar-maintenance", icon: <Sun className="size-5" /> },
-        { name: "Storage & Optimization", href: "/services/battery-storage", icon: <Cpu className="size-5" /> },
-        { name: "Net Metering Assistance", href: "/services/rooftop-installation", icon: <ClipboardCheck className="size-5" /> },
-        { name: "PM Surya Ghar Support", href: "/government-solar-subsidy", icon: <Banknote className="size-5" /> },
+        { name: "Solar EPC Solutions", href: "/services/industrial-solar", icon: <Zap className="size-4" /> },
+        { name: "Rooftop Solar Installations", href: "/services/rooftop-installation", icon: <Home className="size-4" /> },
+        { name: "Commercial & Industrial Projects", href: "/services/commercial-solar", icon: <Factory className="size-4" /> },
+        { name: "Operation & Maintenance", href: "/services/solar-maintenance", icon: <Wrench className="size-4" /> },
+        { name: "Solar Panel Cleaning", href: "/services/solar-maintenance", icon: <Sun className="size-4" /> },
+        { name: "Storage & Optimization", href: "/services/battery-storage", icon: <Cpu className="size-4" /> },
+        { name: "Net Metering Assistance", href: "/services/rooftop-installation", icon: <ClipboardCheck className="size-4" /> },
+        { name: "PM Surya Ghar Support", href: "/government-solar-subsidy", icon: <Banknote className="size-4" /> },
       ]
     },
     { name: "Projects", href: "/projects" },
@@ -66,8 +66,8 @@ export function Navbar() {
       name: "Resources", 
       href: "#",
       submenu: [
-        { name: "Subsidy Guide", href: "/government-solar-subsidy", icon: <Sun className="size-4" /> },
-        { name: "Solar Calculator", href: "/solar-calculator", icon: <Zap className="size-4" /> },
+        { name: "Subsidy Guide", href: "/government-solar-subsidy", icon: <Sun className="size-3.5" /> },
+        { name: "Solar Calculator", href: "/solar-calculator", icon: <Zap className="size-3.5" /> },
       ]
     },
     { name: "About Us", href: "/about-us" },
@@ -78,9 +78,9 @@ export function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 pt-4 md:pt-6">
       <header className={cn(
-        "max-w-7xl mx-auto rounded-full transition-all duration-500 border",
+        "max-w-6xl mx-auto rounded-full transition-all duration-500 border",
         isScrolled 
-          ? "bg-white/90 backdrop-blur-xl border-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.05)] py-2 md:py-3 px-4 md:px-6" 
+          ? "bg-white/90 backdrop-blur-xl border-white/20 shadow-sm py-2 md:py-3 px-4 md:px-6" 
           : "bg-transparent backdrop-blur-none border-transparent py-4 px-4 md:px-8"
       )}>
         <div className="flex items-center justify-between gap-4">
@@ -91,9 +91,9 @@ export function Navbar() {
                 <Image 
                   src={logoImage.imageUrl} 
                   alt="Sky Renewable Logo" 
-                  width={150} 
-                  height={40} 
-                  className="h-6 md:h-8 w-auto object-contain transition-transform group-hover:scale-105"
+                  width={130} 
+                  height={32} 
+                  className="h-6 md:h-7 w-auto object-contain transition-transform group-hover:scale-105"
                   data-ai-hint={logoImage.imageHint}
                 />
               )}
@@ -112,7 +112,7 @@ export function Navbar() {
                   {link.submenu ? (
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
-                        "relative px-4 py-2 rounded-full text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
+                        "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
                         isActive ? "text-primary bg-primary/5" : "text-foreground hover:bg-primary/5 hover:text-primary"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
@@ -121,21 +121,21 @@ export function Navbar() {
                         align="center" 
                         sideOffset={15} 
                         className={cn(
-                          "rounded-[24px] md:rounded-[32px] p-4 md:p-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-white/40 bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
-                          link.isMega ? "min-w-[500px] lg:min-w-[850px]" : "min-w-[260px]"
+                          "rounded-[24px] md:rounded-[32px] p-4 md:p-6 shadow-xl border border-white/40 bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
+                          link.isMega ? "min-w-[500px] lg:min-w-[800px]" : "min-w-[240px]"
                         )}
                       >
                         <div className={cn(
-                          "grid gap-2 md:gap-3",
+                          "grid gap-2",
                           link.isMega ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
                         )}>
                           {link.submenu.map((sub) => (
                             <DropdownMenuItem key={sub.name} asChild>
                               <Link 
                                 href={sub.href} 
-                                className="w-full cursor-pointer p-3 md:p-4 rounded-xl md:rounded-2xl hover:bg-primary/5 flex items-center gap-3 md:gap-4 group/item transition-all duration-300"
+                                className="w-full cursor-pointer p-3 rounded-xl hover:bg-primary/5 flex items-center gap-3 group/item transition-all duration-300"
                               >
-                                <div className="bg-primary/10 p-2 md:p-2.5 rounded-lg md:rounded-xl group-hover/item:bg-primary group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-primary/20 transition-all duration-300 shrink-0 text-primary">
+                                <div className="bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300 shrink-0 text-primary">
                                   {sub.icon}
                                 </div>
                                 <span className="font-bold text-[13px] md:text-[14px] tracking-tight text-foreground group-hover/item:text-primary transition-colors">{sub.name}</span>
@@ -149,7 +149,7 @@ export function Navbar() {
                     <Link 
                       href={link.href}
                       className={cn(
-                        "relative px-4 py-2 rounded-full text-[15px] font-semibold transition-all duration-300 block",
+                        "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 block",
                         isActive ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5 hover:text-primary"
                       )}
                     >
@@ -163,8 +163,8 @@ export function Navbar() {
 
           {/* CTA - RIGHT */}
           <div className="flex-1 flex justify-end items-center gap-4">
-            <Button asChild className="hidden sm:flex bg-primary text-white rounded-full px-6 md:px-8 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 font-bold h-9 md:h-11 text-[13px] md:text-[15px] uppercase tracking-wider">
-              <Link href="/get-quote">Get a Quote</Link>
+            <Button asChild className="hidden sm:flex bg-primary text-white rounded-full px-6 hover:shadow-lg transition-all duration-300 font-bold h-9 md:h-10 text-[13px] md:text-[14px] uppercase tracking-wider">
+              <Link href="/get-quote">Get Quote</Link>
             </Button>
 
             <div className="lg:hidden">
@@ -174,44 +174,44 @@ export function Navbar() {
                     <Menu className="size-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-white border-none w-[85%] sm:max-w-[350px] p-0 overflow-y-auto rounded-l-[30px] md:rounded-l-[40px] shadow-2xl">
+                <SheetContent side="right" className="bg-white border-none w-[85%] sm:max-w-[320px] p-0 overflow-y-auto rounded-l-[24px] shadow-2xl">
                   <div className="p-6 md:p-8 h-full flex flex-col">
-                    <SheetHeader className="mb-8 text-left">
+                    <SheetHeader className="mb-6 text-left">
                       <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                      <SheetDescription className="sr-only">Navigate through Sky Renewable services and resources.</SheetDescription>
+                      <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
                       <div className="flex items-center justify-between">
                         {logoImage && (
-                          <Image src={logoImage.imageUrl} alt="Sky Renewable" width={120} height={32} className="object-contain" />
+                          <Image src={logoImage.imageUrl} alt="Sky Renewable" width={110} height={28} className="object-contain" />
                         )}
                       </div>
                     </SheetHeader>
                     
-                    <nav className="flex flex-col gap-2 overflow-y-auto flex-grow pb-8 pr-2">
+                    <nav className="flex flex-col gap-1.5 overflow-y-auto flex-grow pb-8 pr-1">
                       {navLinks.map((link) => (
-                        <div key={link.name} className="space-y-1 mb-4">
+                        <div key={link.name} className="space-y-1 mb-3">
                           {link.href !== "#" ? (
                             <Link 
                               href={link.href} 
                               className={cn(
-                                "text-[16px] md:text-[18px] font-bold px-4 py-2 rounded-xl block transition-all",
+                                "text-[15px] md:text-[16px] font-bold px-4 py-1.5 rounded-lg block transition-all",
                                 pathname === link.href ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5"
                               )}
                             >
                               {link.name}
                             </Link>
                           ) : (
-                            <span className="text-[16px] md:text-[18px] font-bold px-4 py-2 block text-muted-foreground uppercase tracking-widest text-[10px]">
+                            <span className="text-[10px] font-bold px-4 py-1 block text-muted-foreground uppercase tracking-widest">
                               {link.name}
                             </span>
                           )}
                           {link.submenu && (
-                            <div className="grid gap-1 ml-6 border-l-2 border-primary/10 pl-4">
+                            <div className="grid gap-1 ml-6 border-l-2 border-primary/10 pl-3">
                               {link.submenu.map((sub) => (
                                 <Link 
                                   key={sub.name} 
                                   href={sub.href} 
                                   className={cn(
-                                    "text-[14px] md:text-[16px] font-medium py-2 px-3 rounded-lg block transition-all",
+                                    "text-[13px] md:text-[14px] font-medium py-1.5 px-3 rounded-lg block transition-all",
                                     pathname === sub.href ? "bg-primary/5 text-primary" : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                                   )}
                                 >
@@ -225,7 +225,7 @@ export function Navbar() {
                     </nav>
                     
                     <div className="pt-6 border-t border-border flex flex-col gap-4 mt-auto">
-                      <Button asChild className="w-full bg-primary text-white rounded-full py-6 md:py-7 font-bold shadow-xl shadow-primary/20 text-sm uppercase tracking-widest hover:bg-primary/90 transition-all">
+                      <Button asChild className="w-full bg-primary text-white rounded-full py-6 font-bold text-[13px] uppercase tracking-widest hover:bg-primary/90 transition-all">
                         <Link href="/get-quote">Get a Quote</Link>
                       </Button>
                     </div>
