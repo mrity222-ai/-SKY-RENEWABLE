@@ -41,14 +41,14 @@ export function ServiceHero({
             
             <div className="space-y-4 md:space-y-6">
               <ScrollReveal direction="up" delay={0.1}>
-                <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold leading-[1.1] tracking-tight">
-                  <span className="text-black block">{titleLine1}</span>
-                  <span className="text-[#B8B8B8] block">{titleLine2}</span>
+                <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold leading-[1.1] tracking-tight text-[#0F172A]">
+                  <span className="block">{titleLine1}</span>
+                  <span className="text-[#64748B] block">{titleLine2}</span>
                 </h1>
               </ScrollReveal>
               
               <ScrollReveal direction="up" delay={0.2}>
-                <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#555] max-w-xl mx-auto lg:mx-0 leading-[1.7]">
+                <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#64748B] max-w-xl mx-auto lg:mx-0 leading-[1.7]">
                   {description}
                 </p>
               </ScrollReveal>
@@ -56,17 +56,17 @@ export function ServiceHero({
 
             <ScrollReveal direction="up" delay={0.3}>
               <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                <Button asChild size="lg" className="bg-black text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-neutral-800 transition-all w-full sm:w-auto">
+                <Button asChild size="lg" className="bg-primary text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-primary/90 transition-all w-full sm:w-auto">
                   <Link href="/get-quote">{primaryButtonText}</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-neutral-200 text-black rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-neutral-50 transition-all w-full sm:w-auto">
+                <Button asChild variant="outline" size="lg" className="border-neutral-200 text-[#0F172A] rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-neutral-50 transition-all w-full sm:w-auto">
                   <Link href="/get-quote">{secondaryButtonText}</Link>
                 </Button>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Image side - Standardized to aspect-[4/3] */}
+          {/* Image side */}
           <ScrollReveal direction="left" delay={0.4}>
             <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image 

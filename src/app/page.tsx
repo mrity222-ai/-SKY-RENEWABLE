@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LEADING SOLAR AUTHORITY SECTION - Standardized grid and aspect ratio */}
+      {/* LEADING SOLAR AUTHORITY SECTION */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -166,8 +166,8 @@ export default function Home() {
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
-                <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-primary leading-[1.2] tracking-tight">
-                  Empowering India <br />Through <span className="text-secondary">Smart Solar</span>
+                <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-[1.2] tracking-tight">
+                  Empowering India <br />Through <span className="text-primary">Smart Solar</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
@@ -199,7 +199,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center space-y-4 mb-12 md:mb-16">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground leading-tight">Advanced Energy Solutions</h2>
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-tight">Advanced Energy Solutions</h2>
             <p className="text-muted-foreground text-[14px] md:text-[15px] max-w-xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -216,7 +216,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background border-y border-border/50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 items-end text-center lg:text-left">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground leading-tight tracking-tighter">
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-tight tracking-tighter">
               Why Sky Renewable <br />Solar Solutions?
             </h2>
             <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -245,7 +245,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground leading-tight">Featured Case Studies</h2>
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-tight">Featured Case Studies</h2>
             <p className="text-muted-foreground text-[14px] md:text-[15px]">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
@@ -279,7 +279,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background border-t border-border">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground">Voice of our Clients</h2>
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A]">Voice of our Clients</h2>
             <p className="text-muted-foreground text-[14px] md:text-[15px]">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
           
@@ -336,7 +336,7 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
           <div className="size-12 rounded-xl bg-primary/5 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
             {React.cloneElement(icon, { className: "size-6" })}
           </div>
-          <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{title}</h3>
+          <h3 className="text-lg md:text-xl font-bold text-[#0F172A] mb-3">{title}</h3>
           <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed mb-6">{desc}</p>
           <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
             Explore <ArrowRight className="size-4" />
@@ -351,7 +351,7 @@ function ValueItem({ title, desc }: { title: string, desc: string }) {
   return (
     <div className="space-y-2 md:space-y-3">
       <div className="size-1.5 bg-primary rounded-full" />
-      <h3 className="text-lg md:text-xl font-bold text-foreground">{title}</h3>
+      <h3 className="text-lg md:text-xl font-bold text-[#0F172A]">{title}</h3>
       <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed">{desc}</p>
     </div>
   );
@@ -364,13 +364,13 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
         <div className="flex gap-1 text-accent">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-3.5 fill-current" />)}
         </div>
-        <p className="text-[14px] md:text-[15px] text-foreground font-medium italic leading-relaxed flex-grow">"{review}"</p>
+        <p className="text-[14px] md:text-[15px] text-[#1E293B] font-medium italic leading-relaxed flex-grow">"{review}"</p>
         <div className="flex items-center gap-4 border-t border-muted pt-6">
           <div className="size-10 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-base shrink-0">
             {name[0]}
           </div>
           <div>
-            <h4 className="font-bold text-foreground text-sm">{name}</h4>
+            <h4 className="font-bold text-[#0F172A] text-sm">{name}</h4>
             <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest">{loc}</p>
           </div>
         </div>
