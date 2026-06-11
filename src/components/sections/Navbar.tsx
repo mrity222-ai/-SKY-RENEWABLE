@@ -80,7 +80,7 @@ export function Navbar() {
       <header className={cn(
         "max-w-6xl mx-auto rounded-full transition-all duration-500 border",
         isScrolled 
-          ? "bg-white/90 backdrop-blur-xl border-white/20 shadow-sm py-2 md:py-3 px-4 md:px-6" 
+          ? "bg-white/95 backdrop-blur-xl border-border shadow-sm py-2 md:py-3 px-4 md:px-6" 
           : "bg-transparent backdrop-blur-none border-transparent py-4 px-4 md:px-8"
       )}>
         <div className="flex items-center justify-between gap-4">
@@ -120,7 +120,7 @@ export function Navbar() {
                         align="center" 
                         sideOffset={15} 
                         className={cn(
-                          "rounded-[24px] md:rounded-[32px] p-4 md:p-6 shadow-xl border border-white/40 bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
+                          "rounded-[24px] md:rounded-[32px] p-4 md:p-6 shadow-xl border border-border bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
                           link.isMega ? "min-w-[500px] lg:min-w-[800px]" : "min-w-[240px]"
                         )}
                       >
@@ -137,7 +137,7 @@ export function Navbar() {
                                 <div className="bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300 shrink-0 text-primary">
                                   {sub.icon}
                                 </div>
-                                <span className="font-bold text-[13px] md:text-[14px] tracking-tight text-foreground group-hover/item:text-primary transition-colors">{sub.name}</span>
+                                <span className="font-bold text-[13px] md:text-[14px] tracking-tight text-[#1E293B] group-hover/item:text-primary transition-colors">{sub.name}</span>
                               </Link>
                             </DropdownMenuItem>
                           ))}
@@ -161,7 +161,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex-1 flex justify-end items-center gap-4">
-            <Button asChild className="hidden sm:flex bg-primary text-white rounded-full px-6 hover:shadow-lg transition-all duration-300 font-bold h-9 md:h-10 text-[13px] md:text-[14px] uppercase tracking-wider">
+            <Button asChild className="hidden sm:flex bg-primary text-white rounded-full px-6 hover:bg-primary/90 hover:shadow-lg transition-all duration-300 font-bold h-9 md:h-10 text-[13px] md:text-[14px] uppercase tracking-wider">
               <Link href="/get-quote">Get Quote</Link>
             </Button>
 
@@ -200,7 +200,7 @@ export function Navbar() {
                               {link.name}
                             </Link>
                           ) : (
-                            <span className="text-[10px] font-bold px-4 py-1 block text-muted-foreground uppercase tracking-widest">
+                            <span className="text-[10px] font-bold px-4 py-1 block text-[#64748B] uppercase tracking-widest">
                               {link.name}
                             </span>
                           )}
@@ -212,7 +212,7 @@ export function Navbar() {
                                   href={sub.href} 
                                   className={cn(
                                     "text-[13px] md:text-[14px] font-medium py-1.5 px-3 rounded-lg block transition-all",
-                                    pathname === sub.href ? "bg-primary/5 text-primary" : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                                    pathname === sub.href ? "bg-primary/5 text-primary" : "text-[#64748B] hover:text-primary hover:bg-primary/5"
                                   )}
                                 >
                                   {sub.name}

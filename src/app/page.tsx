@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       {/* HERO SLIDER */}
-      <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-neutral-900">
+      <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-[#0F172A]">
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
@@ -86,7 +86,7 @@ export default function Home() {
                   className="object-cover w-full h-full"
                   priority
                 />
-                <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+                <div className="absolute inset-0 bg-[#0F172A]/30 pointer-events-none" />
               </div>
             </motion.div>
           </AnimatePresence>
@@ -96,7 +96,7 @@ export default function Home() {
           <ScrollReveal direction="up" className="max-w-4xl space-y-6 md:space-y-8">
             <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] tracking-tighter drop-shadow-lg">
               The Future of <br />
-              <span className="text-accent">Clean Energy</span>
+              <span className="text-[#06B6D4]">Clean Energy</span>
             </h1>
             
             <p className="text-[14px] md:text-[15px] lg:text-[16px] text-white/90 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-md px-2">
@@ -104,10 +104,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-5 pt-4 md:pt-6 w-full max-w-md mx-auto sm:max-w-none">
-              <Button asChild size="lg" className="bg-primary text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:shadow-2xl hover:shadow-primary/30 transition-all w-full sm:w-auto">
+              <Button asChild size="lg" className="bg-[#2563EB] text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-[#1D4ED8] hover:shadow-2xl hover:shadow-[#2563EB]/30 transition-all w-full sm:w-auto">
                 <Link href="/get-quote" className="flex items-center gap-2">Get Your Quote <ArrowRight className="size-4" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/40 text-white backdrop-blur-md rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-white hover:text-primary transition-all w-full sm:w-auto">
+              <Button asChild variant="outline" size="lg" className="border-white/40 text-white backdrop-blur-md rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-white hover:text-[#2563EB] transition-all w-full sm:w-auto">
                 <Link href="/get-quote">Book Site Survey</Link>
               </Button>
             </div>
@@ -121,7 +121,7 @@ export default function Home() {
                 className={cn(
                   "size-2 rounded-full transition-all duration-300",
                   currentSlide === idx 
-                    ? "bg-accent w-6 md:w-8" 
+                    ? "bg-[#06B6D4] w-6 md:w-8" 
                     : "bg-white/40 hover:bg-white/60"
                 )}
                 aria-label={`Go to slide ${idx + 1}`}
@@ -161,22 +161,22 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="space-y-6 md:space-y-8 text-center lg:text-left">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-primary/5 text-primary px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">
+                <span className="inline-block bg-[#EFF6FF] text-[#2563EB] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#2563EB]/10">
                   Leading Solar Authority
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
                 <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-[1.2] tracking-tight">
-                  Empowering India <br />Through <span className="text-primary">Smart Solar</span>
+                  Empowering India <br />Through <span className="text-[#2563EB]">Smart Solar</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
-                <p className="text-[14px] md:text-[15px] lg:text-[16px] text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
+                <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#64748B] leading-relaxed max-w-xl mx-auto lg:mx-0">
                   SKY RENEWABLE is redefining how homes and industries harvest the sun. We provide end-to-end EPC services, from custom structural engineering to seamless subsidy approvals.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild variant="outline" className="rounded-full px-6 md:px-8 h-11 md:h-12 border-primary/20 text-primary hover:bg-primary/5 font-bold transition-all text-[13px] md:text-[14px]">
+                <Button asChild variant="outline" className="rounded-full px-6 md:px-8 h-11 md:h-12 border-[#CBD5E1] text-[#0F172A] hover:bg-[#F8FAFC] hover:border-[#2563EB] font-bold transition-all text-[13px] md:text-[14px]">
                   <Link href="/about-us">Our Engineering Legacy</Link>
                 </Button>
               </ScrollReveal>
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center space-y-4 mb-12 md:mb-16">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-tight">Advanced Energy Solutions</h2>
-            <p className="text-muted-foreground text-[14px] md:text-[15px] max-w-xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
+            <p className="text-[#64748B] text-[14px] md:text-[15px] max-w-xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <SolutionCard icon={<HomeIcon />} title="Residential Solar" desc="Slash bills by 90% with subsidized rooftop systems." href="/services/residential-solar" />
@@ -213,13 +213,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-background border-y border-border/50">
+      <section className="py-16 md:py-24 bg-[#F8FAFC] border-y border-[#E2E8F0]">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 items-end text-center lg:text-left">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-tight tracking-tighter">
               Why Sky Renewable <br />Solar Solutions?
             </h2>
-            <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <p className="text-[14px] md:text-[16px] text-[#64748B] leading-relaxed max-w-xl mx-auto lg:mx-0">
               Solar is a strategic asset. We maximize its value through engineering excellence and lifecycle support.
             </p>
           </div>
@@ -235,8 +235,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-foreground text-white overflow-hidden relative border-t border-white/5">
-        <div className="absolute top-0 right-0 size-[300px] md:size-[500px] bg-primary/20 blur-[100px] md:blur-[150px] rounded-full pointer-events-none" />
+      <section className="py-16 md:py-24 bg-[#0F172A] text-white overflow-hidden relative border-t border-white/5">
+        <div className="absolute top-0 right-0 size-[300px] md:size-[500px] bg-[#2563EB]/20 blur-[100px] md:blur-[150px] rounded-full pointer-events-none" />
         <div className="container relative z-10 mx-auto px-4">
           <Calculator />
         </div>
@@ -246,7 +246,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-tight">Featured Case Studies</h2>
-            <p className="text-muted-foreground text-[14px] md:text-[15px]">High-yield solar deployments across India's industrial landscape.</p>
+            <p className="text-[#64748B] text-[14px] md:text-[15px]">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
             {projects.map((p) => (
@@ -254,9 +254,9 @@ export default function Home() {
                 <Link href="/projects" className="group block">
                   <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2 bg-neutral-100">
                     <Image src={p.image} alt={p.name} fill className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/20 to-transparent opacity-80" />
                     <div className="absolute bottom-6 left-6 right-6">
-                      <span className="inline-block bg-primary px-3 py-1 rounded-full text-[9px] font-bold text-white uppercase tracking-widest mb-3">{p.type}</span>
+                      <span className="inline-block bg-[#2563EB] px-3 py-1 rounded-full text-[9px] font-bold text-white uppercase tracking-widest mb-3">{p.type}</span>
                       <h3 className="text-lg md:text-xl font-bold text-white mb-2">{p.name}</h3>
                       <div className="flex flex-wrap items-center gap-3 text-white/70 text-xs">
                         <span className="flex items-center gap-1.5"><Zap className="size-3.5 text-primary" /> {p.capacity}</span>
@@ -269,18 +269,18 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Button asChild variant="outline" className="rounded-full px-8 h-12 md:h-14 border-border hover:bg-muted font-bold transition-all text-[13px] md:text-[14px]">
+            <Button asChild variant="outline" className="rounded-full px-8 h-12 md:h-14 border-[#E2E8F0] text-[#0F172A] hover:bg-[#F8FAFC] font-bold transition-all text-[13px] md:text-[14px]">
               <Link href="/projects">View All Projects</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-background border-t border-border">
+      <section className="py-16 md:py-24 bg-background border-t border-[#E2E8F0]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A]">Voice of our Clients</h2>
-            <p className="text-muted-foreground text-[14px] md:text-[15px]">Trusted by homeowners and industrial leaders alike.</p>
+            <p className="text-[#64748B] text-[14px] md:text-[15px]">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
           
           <div className="relative max-w-7xl mx-auto px-4">
@@ -319,10 +319,10 @@ export default function Home() {
 function StatItem({ val, suffix, label }: { val: number, suffix: string, label: string }) {
   return (
     <div className="space-y-1.5 md:space-y-2">
-      <div className="text-[28px] md:text-[40px] font-bold text-primary leading-none">
+      <div className="text-[28px] md:text-[40px] font-bold text-[#2563EB] leading-none">
         <Counter value={val} suffix={suffix} />
       </div>
-      <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground">{label}</p>
+      <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] text-[#64748B]">{label}</p>
     </div>
   );
 }
@@ -332,13 +332,13 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
     <ScrollReveal direction="up" className="h-full">
       <Link href={href} className="group block h-full">
         <Card className="p-8 md:p-10 h-full rounded-[24px] md:rounded-[32px] border-none bg-background shadow-sm hover:shadow-[0_40px_80px_rgba(37,99,235,0.08)] transition-all duration-500 relative overflow-hidden">
-          <div className="absolute top-0 right-0 size-24 bg-primary/5 blur-[30px] rounded-full group-hover:bg-primary/10 transition-colors" />
-          <div className="size-12 rounded-xl bg-primary/5 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+          <div className="absolute top-0 right-0 size-24 bg-[#2563EB]/5 blur-[30px] rounded-full group-hover:bg-[#2563EB]/10 transition-colors" />
+          <div className="size-12 rounded-xl bg-[#2563EB]/5 flex items-center justify-center mb-6 text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all duration-500">
             {React.cloneElement(icon, { className: "size-6" })}
           </div>
-          <h3 className="text-lg md:text-xl font-bold text-[#0F172A] mb-3">{title}</h3>
-          <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed mb-6">{desc}</p>
-          <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
+          <h3 className="text-lg md:text-xl font-bold text-[#1E293B] mb-3">{title}</h3>
+          <p className="text-[14px] md:text-[15px] text-[#64748B] leading-relaxed mb-6">{desc}</p>
+          <div className="flex items-center gap-2 text-[#2563EB] font-bold text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
             Explore <ArrowRight className="size-4" />
           </div>
         </Card>
@@ -350,9 +350,9 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
 function ValueItem({ title, desc }: { title: string, desc: string }) {
   return (
     <div className="space-y-2 md:space-y-3">
-      <div className="size-1.5 bg-primary rounded-full" />
+      <div className="size-1.5 bg-[#2563EB] rounded-full" />
       <h3 className="text-lg md:text-xl font-bold text-[#0F172A]">{title}</h3>
-      <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed">{desc}</p>
+      <p className="text-[14px] md:text-[15px] text-[#64748B] leading-relaxed">{desc}</p>
     </div>
   );
 }
@@ -361,17 +361,17 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
   return (
     <ScrollReveal direction="up" className="h-full">
       <Card className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border-none bg-white shadow-sm space-y-6 flex flex-col h-full hover-lift">
-        <div className="flex gap-1 text-accent">
+        <div className="flex gap-1 text-[#06B6D4]">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-3.5 fill-current" />)}
         </div>
-        <p className="text-[14px] md:text-[15px] text-[#1E293B] font-medium italic leading-relaxed flex-grow">"{review}"</p>
-        <div className="flex items-center gap-4 border-t border-muted pt-6">
-          <div className="size-10 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-base shrink-0">
+        <p className="text-[14px] md:text-[15px] text-[#334155] font-medium italic leading-relaxed flex-grow">"{review}"</p>
+        <div className="flex items-center gap-4 border-t border-[#E2E8F0] pt-6">
+          <div className="size-10 rounded-full bg-[#2563EB]/5 flex items-center justify-center text-[#2563EB] font-bold text-base shrink-0">
             {name[0]}
           </div>
           <div>
             <h4 className="font-bold text-[#0F172A] text-sm">{name}</h4>
-            <p className="text-[9px] text-muted-foreground font-bold uppercase tracking-widest">{loc}</p>
+            <p className="text-[9px] text-[#94A3B8] font-bold uppercase tracking-widest">{loc}</p>
           </div>
         </div>
       </Card>

@@ -27,14 +27,14 @@ export function ServiceHero({
 }: ServiceHeroProps) {
   return (
     <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-white overflow-hidden">
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 size-1.5 bg-neutral-200 rounded-full hidden md:block" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 size-1.5 bg-[#E2E8F0] rounded-full hidden md:block" />
       
       <div className="container mx-auto px-4 max-w-[1400px]">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Content side */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <ScrollReveal direction="up">
-              <span className="inline-block bg-neutral-100 text-neutral-500 px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">
+              <span className="inline-block bg-[#EFF6FF] text-[#2563EB] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#2563EB]/10">
                 {badge}
               </span>
             </ScrollReveal>
@@ -43,7 +43,7 @@ export function ServiceHero({
               <ScrollReveal direction="up" delay={0.1}>
                 <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold leading-[1.1] tracking-tight text-[#0F172A]">
                   <span className="block">{titleLine1}</span>
-                  <span className="text-[#64748B] block">{titleLine2}</span>
+                  <span className="text-[#2563EB] block">{titleLine2}</span>
                 </h1>
               </ScrollReveal>
               
@@ -56,10 +56,10 @@ export function ServiceHero({
 
             <ScrollReveal direction="up" delay={0.3}>
               <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                <Button asChild size="lg" className="bg-primary text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-primary/90 transition-all w-full sm:w-auto">
+                <Button asChild size="lg" className="bg-[#2563EB] text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-[#1D4ED8] transition-all w-full sm:w-auto shadow-lg shadow-[#2563EB]/20">
                   <Link href="/get-quote">{primaryButtonText}</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-neutral-200 text-[#0F172A] rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-neutral-50 transition-all w-full sm:w-auto">
+                <Button asChild variant="outline" size="lg" className="border-[#CBD5E1] text-[#0F172A] rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-[#F8FAFC] hover:border-[#2563EB] transition-all w-full sm:w-auto">
                   <Link href="/get-quote">{secondaryButtonText}</Link>
                 </Button>
               </div>
@@ -76,7 +76,7 @@ export function ServiceHero({
                 className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0F172A]/5 to-transparent pointer-events-none" />
             </div>
           </ScrollReveal>
         </div>

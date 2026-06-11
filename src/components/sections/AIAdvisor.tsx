@@ -33,15 +33,15 @@ export function AIAdvisor() {
   };
 
   return (
-    <section className="py-24 bg-muted">
+    <section className="py-24 bg-[#F8FAFC]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 bg-[#2563EB] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
               <Sparkles className="size-3" /> AI Driven
             </div>
-            <h2 className="text-4xl font-bold font-headline text-foreground">AI Energy Advisor</h2>
-            <p className="text-muted-foreground">
+            <h2 className="text-4xl font-bold font-headline text-[#0F172A]">AI Energy Advisor</h2>
+            <p className="text-[#64748B]">
               Our advanced AI analyzes your consumption patterns to provide a custom solar blueprint.
             </p>
           </div>
@@ -49,32 +49,32 @@ export function AIAdvisor() {
           <LayoutGroup>
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <motion.div layout>
-                <Card className="rounded-[24px] shadow-xl border-none p-8">
+                <Card className="rounded-[24px] shadow-xl border-none p-8 bg-white">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Monthly Consumption (kWh/Units)</label>
+                      <label className="text-sm font-semibold text-[#0F172A]">Monthly Consumption (kWh/Units)</label>
                       <Input 
                         placeholder="e.g. 450" 
                         type="number" 
                         value={consumption}
                         onChange={(e) => setConsumption(e.target.value)}
-                        className="rounded-xl border-border h-12 focus:ring-primary"
+                        className="rounded-xl border-[#CBD5E1] h-12 focus:ring-[#2563EB] text-[#0F172A]"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Available Roof Area (sq. meters)</label>
+                      <label className="text-sm font-semibold text-[#0F172A]">Available Roof Area (sq. meters)</label>
                       <Input 
                         placeholder="e.g. 50" 
                         type="number" 
                         value={roofArea}
                         onChange={(e) => setRoofArea(e.target.value)}
-                        className="rounded-xl border-border h-12 focus:ring-primary"
+                        className="rounded-xl border-[#CBD5E1] h-12 focus:ring-[#2563EB] text-[#0F172A]"
                       />
                     </div>
                     <Button 
                       disabled={loading} 
                       type="submit" 
-                      className="w-full bg-primary hover:bg-primary/90 text-white rounded-full h-12 text-lg font-bold shadow-lg transition-all active:scale-95"
+                      className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-full h-12 text-lg font-bold shadow-lg shadow-[#2563EB]/20 transition-all active:scale-95"
                     >
                       {loading ? <><Loader2 className="mr-2 animate-spin size-5" /> Analyzing Patterns...</> : "Get AI Recommendation"}
                     </Button>
@@ -93,20 +93,20 @@ export function AIAdvisor() {
                       transition={{ duration: 0.4, type: "spring", bounce: 0.3 }}
                       className="space-y-6"
                     >
-                      <div className="bg-white p-8 rounded-[24px] shadow-lg space-y-4 border border-border">
-                        <div className="flex justify-between items-center pb-4 border-b border-border">
-                          <span className="font-bold text-foreground">System Size:</span>
-                          <span className="text-2xl font-bold text-primary">{recommendation.recommendedSystemSizeKw} kW</span>
+                      <div className="bg-white p-8 rounded-[24px] shadow-lg space-y-4 border border-[#E2E8F0]">
+                        <div className="flex justify-between items-center pb-4 border-b border-[#E2E8F0]">
+                          <span className="font-bold text-[#0F172A]">System Size:</span>
+                          <span className="text-2xl font-bold text-[#2563EB]">{recommendation.recommendedSystemSizeKw} kW</span>
                         </div>
-                        <div className="flex justify-between items-center pb-4 border-b border-border">
-                          <span className="font-bold text-foreground">Est. Subsidy:</span>
-                          <span className="text-2xl font-bold text-secondary">₹{recommendation.estimatedSubsidyAmountRupees.toLocaleString()}</span>
+                        <div className="flex justify-between items-center pb-4 border-b border-[#E2E8F0]">
+                          <span className="font-bold text-[#0F172A]">Est. Subsidy:</span>
+                          <span className="text-2xl font-bold text-[#22C55E]">₹{recommendation.estimatedSubsidyAmountRupees.toLocaleString()}</span>
                         </div>
                         <div className="pt-4">
-                          <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
-                            <AlertCircle className="size-4 text-accent" /> Subsidy Details
+                          <h4 className="font-bold text-[#0F172A] mb-2 flex items-center gap-2">
+                            <AlertCircle className="size-4 text-[#06B6D4]" /> Subsidy Details
                           </h4>
-                          <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                          <p className="text-sm text-[#64748B] leading-relaxed whitespace-pre-line">
                             {recommendation.subsidyDetails}
                           </p>
                         </div>
@@ -114,10 +114,10 @@ export function AIAdvisor() {
                       
                       <motion.div 
                         layout
-                        className="bg-primary/5 border border-primary/10 p-6 rounded-[24px]"
+                        className="bg-[#EFF6FF] border border-[#2563EB]/10 p-6 rounded-[24px]"
                       >
-                        <h4 className="font-bold text-primary mb-2">Our Recommendation</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h4 className="font-bold text-[#2563EB] mb-2">Our Recommendation</h4>
+                        <p className="text-sm text-[#64748B] leading-relaxed">
                           {recommendation.recommendationSummary}
                         </p>
                       </motion.div>
@@ -127,10 +127,10 @@ export function AIAdvisor() {
                       key="placeholder"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="h-full flex flex-col items-center justify-center text-center p-8 bg-white/50 border border-dashed border-border rounded-[24px]"
+                      className="h-full flex flex-col items-center justify-center text-center p-8 bg-white border border-dashed border-[#CBD5E1] rounded-[24px]"
                     >
-                      <Sparkles className="size-12 text-primary/20 mb-4" />
-                      <p className="text-muted-foreground">Enter your electricity consumption and roof area to see your personalized solar recommendation.</p>
+                      <Sparkles className="size-12 text-[#2563EB]/20 mb-4" />
+                      <p className="text-[#64748B]">Enter your electricity consumption and roof area to see your personalized solar recommendation.</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
