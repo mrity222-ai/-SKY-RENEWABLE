@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -69,7 +68,7 @@ export default function Home() {
       {/* HERO SLIDER */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <AnimatePresence initial={false}>
+          <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={currentSlide}
               initial={{ opacity: 0 }}
@@ -95,11 +94,6 @@ export default function Home() {
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
           <ScrollReveal direction="up" className="max-w-5xl space-y-8">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
-              <Zap className="size-4 text-accent" />
-              <span className="text-white text-[10px] font-bold uppercase tracking-[0.2em]">A Complete Solar Solution</span>
-            </div>
-            
             <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-bold text-white leading-[1] tracking-tighter drop-shadow-lg">
               The Future of <br />
               <span className="text-accent">Clean Energy</span>
