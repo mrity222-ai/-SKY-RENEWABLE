@@ -93,21 +93,6 @@ export function SubsidyShowcase() {
                 data-ai-hint="solar finance"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-foreground/20 to-transparent pointer-events-none" />
-              
-              {/* FLOATING ACHIEVEMENT CARD */}
-              <motion.div 
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-[16px] md:rounded-[24px] shadow-2xl border border-white/20 max-w-[160px] md:max-w-[220px]"
-              >
-                <div className="size-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-3">
-                  <Award className="size-5" />
-                </div>
-                <h4 className="text-[13px] md:text-[16px] font-bold text-foreground leading-tight">₹1,08,000 Total Subsidy Available</h4>
-                <p className="text-[9px] md:text-[11px] text-muted-foreground mt-1">Maximum benefits applicable under standard configurations.</p>
-              </motion.div>
             </div>
           </ScrollReveal>
         </div>
