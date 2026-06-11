@@ -11,7 +11,7 @@ const SITE_URL = 'https://skyrenewable.in';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Sky Renewable | Best Solar Company for Residential & Industrial Rooftops',
+    default: 'Sky Renewable | A Complete Solar Solution',
     template: '%s | Sky Renewable Solar Energy',
   },
   description: 'Sky Renewable is a leading solar energy company providing premium residential, commercial, and industrial rooftop solar installation, EPC services, and government subsidy assistance.',
@@ -77,7 +77,7 @@ export default function RootLayout({
               logo: `${SITE_URL}/logo.png`,
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+91-98765-43210',
+                telephone: '+91-88711-05807',
                 contactType: 'customer service',
                 areaServed: 'IN',
                 availableLanguage: ['en', 'Hindi', 'Gujarati'],
@@ -101,7 +101,7 @@ export default function RootLayout({
               image: `${SITE_URL}/og-image.jpg`,
               '@id': SITE_URL,
               url: SITE_URL,
-              telephone: '+91-98765-43210',
+              telephone: '+91-88711-05807',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Solar Plaza, MG Road',

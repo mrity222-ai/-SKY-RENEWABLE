@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -7,11 +6,9 @@ import {
   Mail, 
   MapPin, 
   MessageSquare, 
-  Clock, 
   ArrowRight, 
   Zap, 
   ShieldCheck, 
-  Users,
   Send
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -64,8 +61,8 @@ export default function ContactPage() {
               </div>
 
               <div className="grid gap-6">
-                <ContactInfo icon={<Mail />} text="hello@arkasolar.in" />
-                <ContactInfo icon={<Phone />} text="+91 98765 43210" />
+                <ContactInfo icon={<Mail />} text="skyrenewable06@gmail.com" />
+                <ContactInfo icon={<Phone />} text="+91 88711 05807 / 70002 09519" />
                 <ContactInfo icon={<MapPin />} text="Solar Plaza, MG Road, Ahmedabad - 380001" />
               </div>
 
@@ -96,7 +93,7 @@ export default function ContactPage() {
                       <option>Maintenance (AMC)</option>
                     </select>
                     <Textarea placeholder="Tell us about your roof size or power needs..." className="min-h-[120px] rounded-2xl bg-white border-neutral-100 focus:ring-black" />
-                    <Button type="submit" size="lg" className="w-full bg-black text-white rounded-full py-7 font-bold text-[14px] hover:bg-neutral-800 transition-all">
+                    <Button type="submit" size="lg" className="w-full bg-primary text-white rounded-full py-7 font-bold text-[14px] hover:bg-primary/90 transition-all">
                       Send Inquiry <ArrowRight className="ml-2 size-5" />
                     </Button>
                   </form>
@@ -139,8 +136,10 @@ export default function ContactPage() {
                     <p className="text-[#555] text-[13px]">Mon - Sat: 9:00 AM - 7:00 PM</p>
                   </div>
                 </div>
-                <Button variant="outline" className="rounded-full flex gap-2 border-black/10 hover:bg-black hover:text-white transition-all">
-                  <MessageSquare className="size-4" /> Chat on WhatsApp
+                <Button variant="outline" asChild className="rounded-full flex gap-2 border-black/10 hover:bg-black hover:text-white transition-all">
+                  <a href="https://wa.me/918871105807" target="_blank">
+                    <MessageSquare className="size-4" /> Chat on WhatsApp
+                  </a>
                 </Button>
               </div>
             </div>

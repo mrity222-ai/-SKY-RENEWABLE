@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -9,11 +8,8 @@ import {
   Award, 
   ShieldCheck, 
   Zap, 
-  Building2, 
-  MapPin, 
   TrendingUp, 
   Globe, 
-  BadgeCheck, 
   Star,
   Users,
   Clock,
@@ -84,7 +80,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
               <p className="text-lg text-muted-foreground max-w-2xl font-medium leading-relaxed">
-                SKY RENEWABLE is dedicated to transforming India&apos;s energy landscape through engineering excellence, 
+                SKY RENEWABLE is dedicated to transforming India's energy landscape through engineering excellence, 
                 unwavering integrity, and a commitment to a carbon-free future.
               </p>
             </ScrollReveal>
@@ -134,6 +130,7 @@ export default function AboutPage() {
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Our goal is to help customers reduce electricity costs, improve energy efficiency, and achieve long-term energy independence through high-quality solar solutions.
                 </p>
+                <p className="text-md font-bold text-primary">Owner: Naimesh Chandraker</p>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 pt-6">
                 <div className="flex items-center gap-4 p-5 bg-muted rounded-3xl border border-border">

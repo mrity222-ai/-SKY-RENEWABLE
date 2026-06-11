@@ -36,6 +36,7 @@ export function Footer() {
               <h2 className="text-[40px] md:text-[60px] lg:text-[72px] font-bold leading-[0.95] tracking-tighter max-w-xl">
                 Powering the next <span className="text-secondary">Green Revolution.</span>
               </h2>
+              <p className="text-white/40 text-sm font-bold tracking-widest uppercase">GST: 22BKRPC8874Q1Z9</p>
             </div>
             
             <nav className="flex flex-wrap gap-x-12 gap-y-6">
@@ -63,13 +64,13 @@ export function Footer() {
             <ContactInfoBlock 
               icon={<Phone />} 
               label="Project Assistance" 
-              text="+91 98765 43210" 
+              text="+91 88711 05807" 
+              secondaryText="+91 70002 09519"
             />
             <ContactInfoBlock 
               icon={<Mail />} 
               label="Business Inquiries" 
-              text="hello@skyrenewable.in" 
-              secondaryText="support@skyrenewable.in"
+              text="skyrenewable06@gmail.com" 
             />
           </div>
         </div>
@@ -81,7 +82,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4">
             <p>© 2025 SKY RENEWABLE. ALL RIGHTS RESERVED.</p>
             <span className="hidden md:block opacity-20">|</span>
-            <p>DESIGNED FOR THE FUTURE</p>
+            <p>A COMPLETE SOLAR SOLUTION</p>
           </div>
 
           <div className="flex gap-10">
@@ -103,7 +104,7 @@ export function Footer() {
 
       {/* FLOATING WHATSAPP */}
       <a 
-        href="https://wa.me/919876543210" 
+        href="https://wa.me/918871105807" 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-10 right-10 z-50 bg-[#25D366] text-white p-5 rounded-full shadow-[0_20px_50px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all flex items-center justify-center"

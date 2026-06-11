@@ -6,31 +6,17 @@ import Link from "next/link";
 import { 
   ArrowRight, 
   CheckCircle2, 
-  ShieldCheck, 
   Zap, 
-  Users, 
-  Award, 
-  Sun, 
-  Cpu, 
-  Globe, 
-  Star,
-  ChevronLeft,
-  ChevronRight,
   Home as HomeIcon,
   Factory,
   Wrench,
   BatteryFull,
   Layout,
-  FileText,
-  BadgeCheck,
-  TrendingUp,
-  Leaf,
   Banknote,
   MapPin,
-  Phone,
-  Mail,
-  HelpCircle,
-  MessageCircle
+  ChevronLeft,
+  ChevronRight,
+  Star
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -39,12 +25,6 @@ import { Counter } from "@/components/animations/Counter";
 import { Calculator } from "@/components/sections/Calculator";
 import { CTASection } from "@/components/sections/CTASection";
 import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { 
   Carousel, 
   CarouselContent, 
   CarouselItem, 
@@ -52,7 +32,6 @@ import {
   CarouselNext 
 } from "@/components/ui/carousel";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 const HERO_IMAGES = [
   "https://picsum.photos/seed/arka_hero_1/1920/1080",
@@ -109,7 +88,7 @@ export default function Home() {
           <ScrollReveal direction="up" className="max-w-5xl space-y-8">
             <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-md border border-primary/20 px-4 py-2 rounded-full">
               <Zap className="size-4 text-primary" />
-              <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">Premium Solar Energy Ecosystem</span>
+              <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">A Complete Solar Solution</span>
             </div>
             
             <h1 className="text-[48px] md:text-[80px] lg:text-[110px] font-bold text-foreground leading-[0.95] tracking-tighter">
@@ -118,7 +97,7 @@ export default function Home() {
             </h1>
             
             <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
-              Switch to India's most trusted solar installer. high-yield engineering, smart monitoring, and guaranteed government subsidies.
+              Switch to SKY RENEWABLE. High-yield engineering, smart monitoring, and guaranteed government subsidies.
             </p>
 
             <div className="flex flex-wrap justify-center gap-5 pt-8">
@@ -171,7 +150,7 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                  Sky Renewable is redefining how homes and industries harvest the sun. We provide end-to-end EPC services, from custom structural engineering to seamless subsidy approvals.
+                  SKY RENEWABLE is redefining how homes and industries harvest the sun. We provide end-to-end EPC services, from custom structural engineering to seamless subsidy approvals.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
@@ -184,7 +163,7 @@ export default function Home() {
               <div className="relative aspect-square rounded-[40px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)]">
                 <Image 
                   src="https://picsum.photos/seed/arka_h_about/800/800" 
-                  alt="Sky Renewable Solar Installation Team" 
+                  alt="SKY RENEWABLE Solar Installation Team" 
                   fill 
                   className="object-cover"
                 />
@@ -355,7 +334,7 @@ export default function Home() {
             >
               <CarouselContent className="-ml-4 md:-ml-10">
                 <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
-                  <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Professional execution and visible savings. Sky Renewable is easily the best solar company in Gujarat." />
+                  <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Professional execution and visible savings. SKY RENEWABLE is easily the best solar company in Gujarat." />
                 </CarouselItem>
                 <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
                   <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with PM-Suryodaya subsidy paperwork. Highly recommended for rooftop solar." />
