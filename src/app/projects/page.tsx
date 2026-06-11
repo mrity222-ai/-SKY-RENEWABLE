@@ -39,9 +39,10 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-white selection:bg-black selection:text-white overflow-hidden">
+      {/* Hero Section - Standardized grid and aspect ratio */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
                 <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
@@ -69,14 +70,16 @@ export default function ProjectsPage() {
                 </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/3] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl bg-neutral-100">
-              <Image 
-                src="https://picsum.photos/seed/arka_project_hero/1200/800" 
-                alt="Solar Project Hero" 
-                fill 
-                className="object-cover w-full h-full"
-                priority
-              />
+            <ScrollReveal direction="left" delay={0.4}>
+              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+                <Image 
+                  src="https://picsum.photos/seed/arka_project_hero/1200/800" 
+                  alt="Solar Project Hero" 
+                  fill 
+                  className="object-cover w-full h-full"
+                  priority
+                />
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -188,7 +191,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl bg-neutral-100">
+              <div className="relative w-full aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl bg-neutral-100">
                 <Image src="https://picsum.photos/seed/arka_impact/800/800" alt="Solar Impact" fill className="object-cover w-full h-full" />
               </div>
             </ScrollReveal>

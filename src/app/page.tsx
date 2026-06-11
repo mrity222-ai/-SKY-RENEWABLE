@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LEADING SOLAR AUTHORITY SECTION */}
+      {/* LEADING SOLAR AUTHORITY SECTION - Standardized grid and aspect ratio */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">

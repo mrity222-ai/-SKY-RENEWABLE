@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -31,7 +30,7 @@ export function ServiceHero({
       <div className="absolute top-10 left-1/2 -translate-x-1/2 size-1.5 bg-neutral-200 rounded-full hidden md:block" />
       
       <div className="container mx-auto px-4 max-w-[1400px]">
-        <div className="grid lg:grid-cols-[45%_55%] gap-12 md:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Content side */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <ScrollReveal direction="up">
@@ -67,9 +66,9 @@ export function ServiceHero({
             </ScrollReveal>
           </div>
 
-          {/* Image side - Updated to aspect-video (16:9) */}
+          {/* Image side - Standardized to aspect-[4/3] */}
           <ScrollReveal direction="left" delay={0.4}>
-            <div className="relative aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image 
                 src={image} 
                 alt={titleLine1} 

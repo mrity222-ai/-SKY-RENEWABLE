@@ -68,10 +68,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 2 – ABOUT SKY RENEWABLE */}
+      {/* SECTION 2 – ABOUT SKY RENEWABLE - Standardized grid and aspect ratio */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <ScrollReveal direction="right" className="space-y-6 md:space-y-8">
               <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase">About Us</span>
               <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground leading-tight tracking-tighter">
@@ -102,7 +102,7 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
-              <div className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden group shadow-2xl border border-border bg-neutral-100">
+              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
                 <Image 
                   src="https://picsum.photos/seed/arka_about_story/800/800" 
                   alt="Solar Engineers" 
