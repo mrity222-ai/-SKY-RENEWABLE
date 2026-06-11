@@ -12,15 +12,11 @@ import {
   Home, 
   Factory, 
   Wrench, 
-  BatteryFull, 
-  Layout, 
-  BookOpen, 
-  Calculator as CalcIcon, 
-  ArrowRight,
   Sun,
   Cpu,
   ClipboardCheck,
-  Banknote
+  Banknote,
+  X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -62,7 +58,7 @@ export function Navbar() {
           name: "Solar EPC Solutions", 
           href: "/services/industrial-solar", 
           icon: <Zap className="size-5" />,
-          desc: "Comprehensive Engineering, Procurement, and Construction services for utility-scale and large projects. Learn More"
+          desc: "Comprehensive Engineering, Procurement, and Construction services for utility-scale and large commercial projects. Learn More"
         },
         { 
           name: "Rooftop Solar Installations", 
@@ -113,8 +109,8 @@ export function Navbar() {
       name: "Resources", 
       href: "#",
       submenu: [
-        { name: "Subsidy Guide", href: "/government-solar-subsidy", icon: <BookOpen className="size-4" /> },
-        { name: "Solar Calculator", href: "/solar-calculator", icon: <CalcIcon className="size-4" /> },
+        { name: "Subsidy Guide", href: "/government-solar-subsidy", icon: <Sun className="size-4" /> },
+        { name: "Solar Calculator", href: "/solar-calculator", icon: <Zap className="size-4" /> },
       ]
     },
     { name: "About Us", href: "/about-us" },
@@ -160,7 +156,7 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
                         "relative px-4 py-2 rounded-full text-[13px] font-semibold flex items-center gap-1 transition-all outline-none",
-                        isActive ? "text-primary" : "text-primary hover:bg-primary/5"
+                        isActive ? "text-primary bg-primary/5" : "text-foreground hover:bg-primary/5 hover:text-primary"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -168,31 +164,31 @@ export function Navbar() {
                         align="center" 
                         sideOffset={15} 
                         className={cn(
-                          "rounded-[24px] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-none bg-white/95 backdrop-blur-xl overflow-y-auto max-h-[80vh]",
-                          link.isMega ? "min-w-[700px] lg:min-w-[850px]" : "min-w-[240px]"
+                          "rounded-[32px] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-white/40 bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
+                          link.isMega ? "min-w-[750px] lg:min-w-[900px]" : "min-w-[260px]"
                         )}
                       >
                         <div className={cn(
-                          "grid gap-2",
-                          link.isMega ? "grid-cols-2 md:grid-cols-3" : "grid-cols-1"
+                          "grid gap-4",
+                          link.isMega ? "grid-cols-2 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
                         )}>
                           {link.submenu.map((sub) => (
                             <DropdownMenuItem key={sub.name} asChild>
                               <Link 
                                 href={sub.href} 
                                 className={cn(
-                                  "w-full cursor-pointer p-4 rounded-xl hover:bg-primary/5 flex flex-col gap-1.5 group/item transition-all text-primary",
-                                  !link.isMega && "flex-row items-center gap-3"
+                                  "w-full cursor-pointer p-4 rounded-2xl hover:bg-primary/5 flex flex-col gap-2 group/item transition-all duration-300",
+                                  !link.isMega && "flex-row items-center gap-4"
                                 )}
                               >
-                                <div className="flex items-center gap-3">
-                                  <div className="bg-primary/5 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-colors shrink-0">
+                                <div className="flex items-center gap-4">
+                                  <div className="bg-primary/10 p-2.5 rounded-xl group-hover/item:bg-primary group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-primary/20 transition-all duration-300 shrink-0 text-primary">
                                     {sub.icon}
                                   </div>
-                                  <span className="font-bold text-sm tracking-tight">{sub.name}</span>
+                                  <span className="font-bold text-[15px] tracking-tight text-foreground group-hover/item:text-primary transition-colors">{sub.name}</span>
                                 </div>
                                 {link.isMega && sub.desc && (
-                                  <p className="text-[11px] font-medium leading-relaxed opacity-70 ml-11">
+                                  <p className="text-[12px] font-medium leading-relaxed text-muted-foreground ml-14 line-clamp-2">
                                     {sub.desc}
                                   </p>
                                 )}
@@ -206,16 +202,10 @@ export function Navbar() {
                     <Link 
                       href={link.href}
                       className={cn(
-                        "relative px-4 py-2 rounded-full text-[13px] font-semibold transition-all block text-primary",
-                        isActive ? "bg-primary/5" : "hover:bg-primary/5"
+                        "relative px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-300 block",
+                        isActive ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5 hover:text-primary"
                       )}
                     >
-                      {isActive && (
-                        <motion.div 
-                          layoutId="nav-indicator"
-                          className="absolute inset-0 rounded-full bg-primary/5 -z-10"
-                        />
-                      )}
                       {link.name}
                     </Link>
                   )}
@@ -226,41 +216,55 @@ export function Navbar() {
 
           {/* CTA - RIGHT */}
           <div className="flex-1 flex justify-end items-center gap-4">
-            <Button asChild variant="ghost" className="hidden lg:flex text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/5 rounded-full px-6">
+            <Button asChild variant="ghost" className="hidden lg:flex text-foreground font-bold text-xs uppercase tracking-widest hover:bg-primary/5 rounded-full px-6 transition-all">
               <Link href="/login">Login</Link>
             </Button>
-            <Button asChild className="hidden lg:flex bg-primary text-white rounded-full px-6 hover:shadow-lg hover:shadow-primary/20 transition-all font-bold h-10 text-xs uppercase tracking-wider">
+            <Button asChild className="hidden lg:flex bg-primary text-white rounded-full px-8 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 font-bold h-11 text-xs uppercase tracking-wider">
               <Link href="/get-quote">Get a Quote</Link>
             </Button>
 
             <div className="lg:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-primary hover:bg-muted rounded-full">
+                  <Button variant="ghost" size="icon" className="text-foreground hover:bg-primary/5 rounded-full">
                     <Menu className="size-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-white border-none w-full max-w-[320px] p-8 overflow-y-auto">
-                  <SheetHeader>
-                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                    <SheetDescription className="sr-only">Navigate through Sky Renewable services and resources.</SheetDescription>
-                  </SheetHeader>
-                  <div className="flex flex-col gap-10 pt-8">
-                    <Link href="/" className="flex items-center">
-                      {logoImage && (
-                        <Image src={logoImage.imageUrl} alt="Sky Renewable" width={120} height={32} className="object-contain" />
-                      )}
-                    </Link>
-                    <nav className="flex flex-col gap-6">
+                <SheetContent side="right" className="bg-white border-none w-full max-w-[350px] p-0 overflow-y-auto rounded-l-[40px] shadow-2xl">
+                  <div className="p-8 h-full flex flex-col">
+                    <SheetHeader className="mb-10 text-left">
+                      <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                      <SheetDescription className="sr-only">Navigate through Sky Renewable services and resources.</SheetDescription>
+                      <div className="flex items-center justify-between">
+                        {logoImage && (
+                          <Image src={logoImage.imageUrl} alt="Sky Renewable" width={130} height={36} className="object-contain" />
+                        )}
+                      </div>
+                    </SheetHeader>
+                    
+                    <nav className="flex flex-col gap-2 overflow-y-auto flex-grow pb-8 pr-2 custom-scrollbar">
                       {navLinks.map((link) => (
-                        <div key={link.name} className="space-y-4">
-                          <Link href={link.href} className="text-lg font-bold text-primary hover:opacity-70">
+                        <div key={link.name} className="space-y-2 mb-4">
+                          <Link 
+                            href={link.href} 
+                            className={cn(
+                              "text-[16px] font-bold px-4 py-2 rounded-xl block transition-all",
+                              pathname === link.href ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5"
+                            )}
+                          >
                             {link.name}
                           </Link>
                           {link.submenu && (
-                            <div className="grid gap-3 ml-4 border-l border-muted pl-4">
+                            <div className="grid gap-1 ml-6 border-l-2 border-primary/10 pl-4">
                               {link.submenu.map((sub) => (
-                                <Link key={sub.name} href={sub.href} className="text-sm font-medium text-primary hover:opacity-70 py-1">
+                                <Link 
+                                  key={sub.name} 
+                                  href={sub.href} 
+                                  className={cn(
+                                    "text-[14px] font-medium py-2 px-3 rounded-lg block transition-all",
+                                    pathname === sub.href ? "bg-primary/5 text-primary" : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                                  )}
+                                >
                                   {sub.name}
                                 </Link>
                               ))}
@@ -269,11 +273,12 @@ export function Navbar() {
                         </div>
                       ))}
                     </nav>
-                    <div className="flex flex-col gap-4">
-                      <Button asChild variant="outline" className="w-full border-primary text-primary rounded-full py-6 font-bold">
+                    
+                    <div className="pt-6 border-t border-border flex flex-col gap-4 mt-auto">
+                      <Button asChild variant="outline" className="w-full border-primary text-primary rounded-full py-7 font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
                         <Link href="/login">Login</Link>
                       </Button>
-                      <Button asChild className="w-full bg-primary text-white rounded-full py-6 font-bold shadow-lg shadow-primary/20">
+                      <Button asChild className="w-full bg-primary text-white rounded-full py-7 font-bold shadow-xl shadow-primary/20 text-sm uppercase tracking-widest hover:bg-primary/90 transition-all">
                         <Link href="/get-quote">Get a Quote</Link>
                       </Button>
                     </div>
@@ -287,4 +292,3 @@ export function Navbar() {
     </div>
   );
 }
-
