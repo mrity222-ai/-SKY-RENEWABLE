@@ -1,10 +1,27 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, ChevronDown, Zap, Home, Factory, Wrench, BatteryFull, Layout, BookOpen, Calculator as CalcIcon, ArrowRight } from "lucide-react";
+import { 
+  Menu, 
+  ChevronDown, 
+  Zap, 
+  Home, 
+  Factory, 
+  Wrench, 
+  BatteryFull, 
+  Layout, 
+  BookOpen, 
+  Calculator as CalcIcon, 
+  ArrowRight,
+  Sun,
+  Cpu,
+  ClipboardCheck,
+  Banknote
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import {
@@ -42,40 +59,52 @@ export function Navbar() {
       isMega: true,
       submenu: [
         { 
-          name: "Residential Solar", 
-          href: "/services/residential-solar", 
-          icon: <Home className="size-5" />,
-          desc: "Clean energy for modern homes with subsidy aid."
-        },
-        { 
-          name: "Commercial Solar", 
-          href: "/services/commercial-solar", 
-          icon: <Factory className="size-5" />,
-          desc: "Scale your business with sustainable power solutions."
-        },
-        { 
-          name: "Industrial Solutions", 
+          name: "Solar EPC Solutions", 
           href: "/services/industrial-solar", 
           icon: <Zap className="size-5" />,
-          desc: "High-yield EPC for manufacturing and plants."
+          desc: "Comprehensive Engineering, Procurement, and Construction services for utility-scale and large projects. Learn More"
         },
         { 
-          name: "Rooftop Installation", 
+          name: "Rooftop Solar Installations", 
           href: "/services/rooftop-installation", 
-          icon: <Layout className="size-5" />,
-          desc: "Precision engineering for all rooftop types."
+          icon: <Home className="size-5" />,
+          desc: "Specialized rooftop solar solutions for residential and commercial buildings designed for maximum efficiency. Learn More"
         },
         { 
-          name: "Battery Storage", 
-          href: "/services/battery-storage", 
-          icon: <BatteryFull className="size-5" />,
-          desc: "Smart lithium-ion storage for 24/7 backup."
+          name: "Commercial & Industrial Solar Projects", 
+          href: "/services/commercial-solar", 
+          icon: <Factory className="size-5" />,
+          desc: "Tailored solar power plants for industries and commercial hubs to drastically reduce operational electricity costs. Learn More"
         },
         { 
-          name: "Maintenance & AMC", 
+          name: "Operation & Maintenance Services", 
           href: "/services/solar-maintenance", 
           icon: <Wrench className="size-5" />,
-          desc: "Professional health audits and periodic cleaning."
+          desc: "Complete O&M packages ensuring your solar asset performs at peak capacity throughout its 25-year lifecycle. Learn More"
+        },
+        { 
+          name: "Solar Panel Cleaning Solutions", 
+          href: "/services/solar-maintenance", 
+          icon: <Sun className="size-5" />,
+          desc: "Professional cleaning services using specialized equipment to remove debris and boost generation by up to 15%. Learn More"
+        },
+        { 
+          name: "Performance Monitoring & Optimization", 
+          href: "/services/battery-storage", 
+          icon: <Cpu className="size-5" />,
+          desc: "Advanced IoT-based monitoring to track generation in real-time and optimize energy output through AI analysis. Learn More"
+        },
+        { 
+          name: "Net Metering Assistance", 
+          href: "/services/rooftop-installation", 
+          icon: <ClipboardCheck className="size-5" />,
+          desc: "End-to-end liaison with government DISCOMs for seamless net-metering approvals and grid synchronization. Learn More"
+        },
+        { 
+          name: "PM Surya Ghar Yojana Support", 
+          href: "/government-solar-subsidy", 
+          icon: <Banknote className="size-5" />,
+          desc: "Expert guidance and application support for the latest government subsidy schemes for residential rooftop solar. Learn More"
         },
       ]
     },
@@ -139,7 +168,7 @@ export function Navbar() {
                         align="center" 
                         sideOffset={15} 
                         className={cn(
-                          "rounded-[24px] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-none bg-white/95 backdrop-blur-xl",
+                          "rounded-[24px] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-none bg-white/95 backdrop-blur-xl overflow-y-auto max-h-[80vh]",
                           link.isMega ? "min-w-[700px] lg:min-w-[850px]" : "min-w-[240px]"
                         )}
                       >
@@ -163,7 +192,7 @@ export function Navbar() {
                                   <span className="font-bold text-sm tracking-tight">{sub.name}</span>
                                 </div>
                                 {link.isMega && sub.desc && (
-                                  <p className="text-[11px] font-medium leading-relaxed opacity-70 ml-10">
+                                  <p className="text-[11px] font-medium leading-relaxed opacity-70 ml-11">
                                     {sub.desc}
                                   </p>
                                 )}
@@ -197,6 +226,9 @@ export function Navbar() {
 
           {/* CTA - RIGHT */}
           <div className="flex-1 flex justify-end items-center gap-4">
+            <Button asChild variant="ghost" className="hidden lg:flex text-primary font-bold text-xs uppercase tracking-widest hover:bg-primary/5 rounded-full px-6">
+              <Link href="/login">Login</Link>
+            </Button>
             <Button asChild className="hidden lg:flex bg-primary text-white rounded-full px-6 hover:shadow-lg hover:shadow-primary/20 transition-all font-bold h-10 text-xs uppercase tracking-wider">
               <Link href="/get-quote">Get a Quote</Link>
             </Button>
@@ -208,10 +240,10 @@ export function Navbar() {
                     <Menu className="size-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-white border-none w-full max-w-[320px] p-8">
-                  <SheetHeader className="sr-only">
-                    <SheetTitle>Navigation Menu</SheetTitle>
-                    <SheetDescription>Access site navigation and services</SheetDescription>
+                <SheetContent side="right" className="bg-white border-none w-full max-w-[320px] p-8 overflow-y-auto">
+                  <SheetHeader>
+                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                    <SheetDescription className="sr-only">Navigate through Sky Renewable services and resources.</SheetDescription>
                   </SheetHeader>
                   <div className="flex flex-col gap-10 pt-8">
                     <Link href="/" className="flex items-center">
@@ -237,9 +269,14 @@ export function Navbar() {
                         </div>
                       ))}
                     </nav>
-                    <Button asChild className="w-full bg-primary text-white rounded-full py-6 font-bold shadow-lg shadow-primary/20">
-                      <Link href="/get-quote">Get a Quote</Link>
-                    </Button>
+                    <div className="flex flex-col gap-4">
+                      <Button asChild variant="outline" className="w-full border-primary text-primary rounded-full py-6 font-bold">
+                        <Link href="/login">Login</Link>
+                      </Button>
+                      <Button asChild className="w-full bg-primary text-white rounded-full py-6 font-bold shadow-lg shadow-primary/20">
+                        <Link href="/get-quote">Get a Quote</Link>
+                      </Button>
+                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -250,3 +287,4 @@ export function Navbar() {
     </div>
   );
 }
+
