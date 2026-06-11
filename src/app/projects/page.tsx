@@ -50,7 +50,7 @@ export default function ProjectsPage() {
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-black leading-[1.1] tracking-tight">
+                  <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-primary leading-[1.1] tracking-tight">
                     Transforming Energy Through <br />
                     <span className="text-[#B8B8B8]">Successful Solar Projects</span>
                   </h1>
