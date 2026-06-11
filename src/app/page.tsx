@@ -162,7 +162,7 @@ export default function Home() {
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
-                <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground leading-[1.2] tracking-tight">
+                <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-primary leading-[1.2] tracking-tight">
                   Empowering India <br />Through <span className="text-secondary">Smart Solar</span>
                 </h2>
               </ScrollReveal>
