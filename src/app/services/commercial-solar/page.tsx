@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -18,6 +19,7 @@ import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function CommercialSolarPage() {
   const features = [
@@ -25,6 +27,29 @@ export default function CommercialSolarPage() {
     { icon: <BarChart3 />, title: "Fixed Energy Costs", desc: "Protect your bottom line from rising utility tariffs for the next 25 years." },
     { icon: <ShieldCheck />, title: "ESG Compliance", desc: "Boost your brand value and meet sustainability targets for global corporate standards." },
     { icon: <Zap />, title: "Smart ROI", desc: "Average payback period of 3-5 years followed by 20+ years of free energy." },
+  ];
+
+  const faqs = [
+    {
+      question: "What are the tax benefits for commercial solar in India?",
+      answer: "Businesses can leverage Accelerated Depreciation (AD), allowing them to claim 40% depreciation in the first year. This significantly reduces taxable income and improves cash flow early in the project life."
+    },
+    {
+      question: "How long is the typical payback period for a commercial system?",
+      answer: "Most commercial solar installations achieve a full return on investment (ROI) within 3 to 4 years, depending on the local tariff and tax benefits claimed."
+    },
+    {
+      question: "Can we install solar on a rented commercial property?",
+      answer: "Yes, provided you have a No Objection Certificate (NOC) from the property owner. Many businesses opt for modular installations that can be relocated if needed."
+    },
+    {
+      question: "How does solar affect our corporate sustainability (ESG) reporting?",
+      answer: "Solar directly reduces your Scope 2 emissions. We provide monthly reports on carbon offset and energy saved, which can be directly used in your ESG and annual corporate sustainability reports."
+    },
+    {
+      question: "Does solar energy fluctuate and affect our office equipment?",
+      answer: "No. Modern solar inverters provide a stable, high-quality power output that is synchronized with the grid. It acts as a primary source, and the grid seamlessly compensates for any changes in solar generation."
+    }
   ];
 
   return (
@@ -99,19 +124,9 @@ export default function CommercialSolarPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <CTASection />
-    </div>
-  );
-}
+      <ServiceFAQ serviceName="Commercial Solar" faqs={faqs} />
 
-function StatItem({ value, suffix = "", prefix = "", label }: { value: number, suffix?: string, prefix?: string, label: string }) {
-  return (
-    <div className="space-y-2">
-      <div className="text-[40px] lg:text-[56px] font-semibold text-black leading-none">
-        <Counter value={value} suffix={suffix} prefix={prefix} />
-      </div>
-      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
+      <CTASection />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -16,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function BatteryStoragePage() {
   const benefits = [
@@ -23,6 +25,29 @@ export default function BatteryStoragePage() {
     { icon: <BatteryFull />, title: "Peak Shaving", desc: "Use stored solar energy during peak tariff hours to maximize savings." },
     { icon: <Cpu />, title: "Smart Management", desc: "AI-driven energy management for optimized charging and discharging." },
     { icon: <RotateCcw />, title: "Retrofit Ready", desc: "Add batteries to your existing solar system with our hybrid inverters." },
+  ];
+
+  const faqs = [
+    {
+      question: "What is a hybrid solar system?",
+      answer: "A hybrid solar system combines the benefits of on-grid and off-grid systems. It connects to the grid to export excess energy while also using batteries to store power for use during night-time or power cuts."
+    },
+    {
+      question: "How long is the lifespan of modern solar batteries?",
+      answer: "We exclusively use Tier-1 Lithium Ferro Phosphate (LFP) batteries which typically last for 10 to 12 years (approx. 4000 to 6000 cycles) before needing replacement."
+    },
+    {
+      question: "Can I add batteries to my existing solar system?",
+      answer: "Yes. By using a 'battery-ready' hybrid inverter or an AC-coupled storage system, we can retrofit high-performance battery storage to your existing grid-tie solar installation."
+    },
+    {
+      question: "Are solar batteries safe to install inside my home?",
+      answer: "Yes, our Lithium LFP batteries are significantly safer than traditional lead-acid batteries. They do not emit gases and come with advanced Battery Management Systems (BMS) that protect against overheating and overcharging."
+    },
+    {
+      question: "Can battery storage power heavy loads like ACs during power cuts?",
+      answer: "Yes, depending on the inverter capacity and battery bank size. Our engineers design systems specifically to handle your critical and heavy loads during grid outages."
+    }
   ];
 
   return (
@@ -87,7 +112,8 @@ export default function BatteryStoragePage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      <ServiceFAQ serviceName="Battery Storage" faqs={faqs} />
+
       <CTASection />
     </div>
   );

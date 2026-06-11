@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -23,6 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function SubsidyGuidePage() {
   const overviewCards = [
@@ -41,13 +43,27 @@ export default function SubsidyGuidePage() {
     { title: "Increased Property Value", desc: "Solar-powered homes often command a premium." },
   ];
 
-  const documentCards = [
-    { icon: <FileText />, title: "Aadhaar Card", desc: "Identity proof for the property owner." },
-    { icon: <FileText />, title: "PAN Card", desc: "Required for financial and tax verification." },
-    { icon: <Zap />, title: "Electricity Bill", desc: "Last 6 months' bills for consumption audit." },
-    { icon: <ShieldCheck />, title: "Property Ownership Proof", desc: "Ownership documents for the installation site." },
-    { icon: <UserCheck />, title: "Bank Account Details", desc: "Canceled cheque for direct subsidy transfer." },
-    { icon: <FileText />, title: "Passport Size Photo", desc: "Recent photos for application verification." },
+  const faqs = [
+    {
+      question: "Who is eligible for the PM-Suryodaya Muft Bijli Yojana?",
+      answer: "All residential households in India with a valid electricity connection and sufficient rooftop space are eligible. The scheme primarily targets homes looking to install 1kW to 10kW systems."
+    },
+    {
+      question: "What is the maximum subsidy amount available in 2024?",
+      answer: "Homeowners can get a subsidy of ₹30,000 per kW for the first 2kW, and ₹18,000 for the 3rd kW. For systems 3kW or larger, the total subsidy is capped at ₹78,000."
+    },
+    {
+      question: "How long does it take for the subsidy to be credited?",
+      answer: "Once the system is installed, inspected, and the net-meter is synchronized by the DISCOM, the subsidy is typically credited directly to your bank account within 30 days."
+    },
+    {
+      question: "Does SKY RENEWABLE handle the subsidy paperwork?",
+      answer: "Yes. We provide complete end-to-end liaison support, including portal registration, technical documentation, and coordination with your local electricity board for inspection."
+    },
+    {
+      question: "What documents are required to apply for the solar subsidy?",
+      answer: "You typically need your latest electricity bill, property ownership proof, Aadhaar card, PAN card, and a canceled cheque of the bank account where the subsidy will be credited."
+    }
   ];
 
   return (
@@ -156,6 +172,8 @@ export default function SubsidyGuidePage() {
           </div>
         </div>
       </section>
+
+      <ServiceFAQ serviceName="Government Subsidy" faqs={faqs} />
 
       {/* SECTION 10 – FINAL CTA */}
       <CTASection />

@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -17,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function SolarMaintenancePage() {
   const services = [
@@ -24,6 +26,29 @@ export default function SolarMaintenancePage() {
     { icon: <Wrench />, title: "Periodic Cleaning", desc: "Expert chemical-free cleaning to remove dust and bird droppings for 15% more yield." },
     { icon: <BarChart3 />, title: "IoT Monitoring", desc: "Real-time generation tracking and proactive fault detection through our app." },
     { icon: <Headset />, title: "48-Hour Response", desc: "Guaranteed on-site technical support within 48 hours for AMC customers." },
+  ];
+
+  const faqs = [
+    {
+      question: "How often should I clean my solar panels?",
+      answer: "For optimal generation, we recommend cleaning your panels every 15 to 20 days. In high-dust environments or urban areas, more frequent cleaning may be necessary to prevent generation drops."
+    },
+    {
+      question: "Can I clean my solar panels with regular tap water?",
+      answer: "While tap water can be used, we recommend using purified water or specialized eco-friendly cleaning agents to prevent scale build-up. Our professional team uses soft brushes to ensure no micro-cracks occur on the glass."
+    },
+    {
+      question: "What is covered under an Annual Maintenance Contract (AMC)?",
+      answer: "Our AMC covers periodic panel cleaning, detailed electrical audits, inverter health checks, thermal imaging to detect hot spots, and 24/7 remote monitoring with proactive fault alerts."
+    },
+    {
+      question: "Why has my solar energy generation dropped recently?",
+      answer: "Common causes include dust accumulation, shading from new trees/constructions, or electrical issues like string failures or inverter faults. A professional health audit can pinpoint the exact cause."
+    },
+    {
+      question: "Do you provide maintenance for systems installed by other companies?",
+      answer: "Yes. We offer 'System Rehabilitation' services where we audit, repair, and optimize solar plants installed by other vendors that are underperforming or lack support."
+    }
   ];
 
   return (
@@ -88,7 +113,8 @@ export default function SolarMaintenancePage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      <ServiceFAQ serviceName="Solar Maintenance" faqs={faqs} />
+
       <CTASection />
     </div>
   );

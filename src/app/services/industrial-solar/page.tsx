@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -18,8 +19,32 @@ import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function IndustrialSolarPage() {
+  const faqs = [
+    {
+      question: "What exactly is a Solar EPC contract?",
+      answer: "A Solar EPC (Engineering, Procurement, and Construction) contract is a turnkey solution. SKY RENEWABLE handles the entire lifecycle—from feasibility studies and design to sourcing Tier-1 components and full-scale commissioning."
+    },
+    {
+      question: "Can solar power heavy manufacturing machinery?",
+      answer: "Absolutely. Industrial solar systems are designed to integrate with your existing electrical infrastructure. They can power heavy-duty motors, HVAC systems, and production lines without any drop in voltage or frequency."
+    },
+    {
+      question: "What is the difference between CAPEX and OPEX models?",
+      answer: "In CAPEX, you own the system and reap all tax benefits (like accelerated depreciation). In OPEX (RESCO), SKY RENEWABLE owns the system, and you only pay for the solar energy you use at a rate lower than the grid."
+    },
+    {
+      question: "How long does a MW-scale solar project take to commission?",
+      answer: "Typically, a 1MW scale industrial project takes between 4 to 6 months from the final design stage to full grid synchronization, depending on site complexity and DISCOM approvals."
+    },
+    {
+      question: "Do industrial systems come with performance guarantees?",
+      answer: "Yes, our EPC projects include a guaranteed Performance Ratio (PR). We use high-precision IoT monitoring to ensure the plant meets its projected generation targets throughout its lifecycle."
+    }
+  ];
+
   return (
     <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
       {/* HERO SECTION */}
@@ -100,19 +125,9 @@ export default function IndustrialSolarPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <CTASection />
-    </div>
-  );
-}
+      <ServiceFAQ serviceName="Industrial Solar" faqs={faqs} />
 
-function StatItem({ value, suffix = "", prefix = "", label }: { value: number, suffix?: string, prefix?: string, label: string }) {
-  return (
-    <div className="space-y-2">
-      <div className="text-[40px] lg:text-[56px] font-semibold text-black leading-none">
-        <Counter value={value} suffix={suffix} prefix={prefix} />
-      </div>
-      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
+      <CTASection />
     </div>
   );
 }

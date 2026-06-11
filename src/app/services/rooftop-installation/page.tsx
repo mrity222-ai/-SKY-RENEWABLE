@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -17,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function RooftopInstallationPage() {
   const steps = [
@@ -26,6 +28,29 @@ export default function RooftopInstallationPage() {
     { title: "Installation", desc: "Swift deployment using hot-dip galvanized structures." },
     { title: "Net Metering", desc: "Handling all government liaison and grid connectivity." },
     { title: "Support", desc: "24/7 IoT monitoring and lifecycle maintenance." },
+  ];
+
+  const faqs = [
+    {
+      question: "Is my roof strong enough to hold solar panels?",
+      answer: "We conduct a professional site survey and structural analysis before any installation. Our mounting structures are lightweight yet durable, designed to distribute weight safely across your roof's load-bearing points."
+    },
+    {
+      question: "How long does a standard rooftop installation take?",
+      answer: "For most residential systems, the physical installation takes 3 to 5 days. The entire process, including paperwork for net-metering and grid connection, typically spans 3 to 4 weeks."
+    },
+    {
+      question: "Will solar panels damage my roof or cause leaks?",
+      answer: "No. We use professional non-penetrative mounting techniques where possible, or high-grade waterproofing sealants for penetrative mounts to ensure your roof remains leak-proof and structurally sound."
+    },
+    {
+      question: "How much space do I need for a 1kW solar system?",
+      answer: "A 1kW solar system typically requires about 80 to 100 square feet of shadow-free rooftop area, depending on the efficiency of the panels used."
+    },
+    {
+      question: "What is net metering and how does it benefit me?",
+      answer: "Net metering allows you to export excess solar energy generated during the day back to the grid. Your DISCOM credits this energy against your consumption, effectively reducing your monthly bills by up to 90%."
+    }
   ];
 
   return (
@@ -106,6 +131,8 @@ export default function RooftopInstallationPage() {
           </div>
         </div>
       </section>
+
+      <ServiceFAQ serviceName="Rooftop Installation" faqs={faqs} />
 
       <CTASection />
     </div>
