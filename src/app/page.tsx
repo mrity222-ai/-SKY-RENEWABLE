@@ -23,6 +23,7 @@ import { Counter } from "@/components/animations/Counter";
 import { Calculator } from "@/components/sections/Calculator";
 import { CTASection } from "@/components/sections/CTASection";
 import { SubsidyShowcase } from "@/components/sections/SubsidyShowcase";
+import { PartnerLogos } from "@/components/sections/PartnerLogos";
 import { 
   Carousel, 
   CarouselContent, 
@@ -68,7 +69,7 @@ export default function Home() {
       {/* HERO SLIDER */}
       <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-neutral-900">
         <div className="absolute inset-0 z-0">
-          <AnimatePresence initial={false}>
+          <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={currentSlide}
               initial={{ opacity: 0 }}
@@ -85,7 +86,6 @@ export default function Home() {
                   className="object-cover w-full h-full"
                   priority
                 />
-                {/* Minimal overlay for text legibility while keeping images 100% visible */}
                 <div className="absolute inset-0 bg-black/30 pointer-events-none" />
               </div>
             </motion.div>
@@ -141,6 +141,8 @@ export default function Home() {
       </section>
 
       <SubsidyShowcase />
+      
+      <PartnerLogos />
 
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">

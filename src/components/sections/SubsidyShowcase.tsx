@@ -55,7 +55,7 @@ export function SubsidyShowcase() {
             </ScrollReveal>
           </div>
 
-          {/* RIGHT SIDE IMAGE CARD - Fixed Responsive Heights */}
+          {/* RIGHT SIDE IMAGE CARD - Turn 15 height-based container */}
           <ScrollReveal direction="left">
             <div className="relative w-full h-[350px] md:h-[450px] lg:h-[520px] rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image 
@@ -63,6 +63,7 @@ export function SubsidyShowcase() {
                 alt="Solar Subsidy Assistance" 
                 fill 
                 className="object-cover transition-transform duration-700 hover:scale-105"
+                data-ai-hint="solar finance"
               />
             </div>
           </ScrollReveal>
