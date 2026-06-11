@@ -57,50 +57,42 @@ export function Navbar() {
         { 
           name: "Solar EPC Solutions", 
           href: "/services/industrial-solar", 
-          icon: <Zap className="size-5" />,
-          desc: "Comprehensive Engineering, Procurement, and Construction services for utility-scale and large commercial projects. Learn More"
+          icon: <Zap className="size-5" />
         },
         { 
           name: "Rooftop Solar Installations", 
           href: "/services/rooftop-installation", 
-          icon: <Home className="size-5" />,
-          desc: "Specialized rooftop solar solutions for residential and commercial buildings designed for maximum efficiency. Learn More"
+          icon: <Home className="size-5" />
         },
         { 
           name: "Commercial & Industrial Solar Projects", 
           href: "/services/commercial-solar", 
-          icon: <Factory className="size-5" />,
-          desc: "Tailored solar power plants for industries and commercial hubs to drastically reduce operational electricity costs. Learn More"
+          icon: <Factory className="size-5" />
         },
         { 
           name: "Operation & Maintenance Services", 
           href: "/services/solar-maintenance", 
-          icon: <Wrench className="size-5" />,
-          desc: "Complete O&M packages ensuring your solar asset performs at peak capacity throughout its 25-year lifecycle. Learn More"
+          icon: <Wrench className="size-5" />
         },
         { 
           name: "Solar Panel Cleaning Solutions", 
           href: "/services/solar-maintenance", 
-          icon: <Sun className="size-5" />,
-          desc: "Professional cleaning services using specialized equipment to remove debris and boost generation by up to 15%. Learn More"
+          icon: <Sun className="size-5" />
         },
         { 
           name: "Performance Monitoring & Optimization", 
           href: "/services/battery-storage", 
-          icon: <Cpu className="size-5" />,
-          desc: "Advanced IoT-based monitoring to track generation in real-time and optimize energy output through AI analysis. Learn More"
+          icon: <Cpu className="size-5" />
         },
         { 
           name: "Net Metering Assistance", 
           href: "/services/rooftop-installation", 
-          icon: <ClipboardCheck className="size-5" />,
-          desc: "End-to-end liaison with government DISCOMs for seamless net-metering approvals and grid synchronization. Learn More"
+          icon: <ClipboardCheck className="size-5" />
         },
         { 
           name: "PM Surya Ghar Yojana Support", 
           href: "/government-solar-subsidy", 
-          icon: <Banknote className="size-5" />,
-          desc: "Expert guidance and application support for the latest government subsidy schemes for residential rooftop solar. Learn More"
+          icon: <Banknote className="size-5" />
         },
       ]
     },
@@ -165,33 +157,25 @@ export function Navbar() {
                         sideOffset={15} 
                         className={cn(
                           "rounded-[32px] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-white/40 bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
-                          link.isMega ? "min-w-[750px] lg:min-w-[900px]" : "min-w-[260px]"
+                          link.isMega ? "min-w-[700px] lg:min-w-[850px]" : "min-w-[260px]"
                         )}
                       >
                         <div className={cn(
-                          "grid gap-4",
-                          link.isMega ? "grid-cols-2 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+                          "grid gap-3",
+                          link.isMega ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
                         )}>
                           {link.submenu.map((sub) => (
                             <DropdownMenuItem key={sub.name} asChild>
                               <Link 
                                 href={sub.href} 
                                 className={cn(
-                                  "w-full cursor-pointer p-4 rounded-2xl hover:bg-primary/5 flex flex-col gap-2 group/item transition-all duration-300",
-                                  !link.isMega && "flex-row items-center gap-4"
+                                  "w-full cursor-pointer p-4 rounded-2xl hover:bg-primary/5 flex items-center gap-4 group/item transition-all duration-300"
                                 )}
                               >
-                                <div className="flex items-center gap-4">
-                                  <div className="bg-primary/10 p-2.5 rounded-xl group-hover/item:bg-primary group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-primary/20 transition-all duration-300 shrink-0 text-primary">
-                                    {sub.icon}
-                                  </div>
-                                  <span className="font-bold text-[15px] tracking-tight text-foreground group-hover/item:text-primary transition-colors">{sub.name}</span>
+                                <div className="bg-primary/10 p-2.5 rounded-xl group-hover/item:bg-primary group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-primary/20 transition-all duration-300 shrink-0 text-primary">
+                                  {sub.icon}
                                 </div>
-                                {link.isMega && sub.desc && (
-                                  <p className="text-[12px] font-medium leading-relaxed text-muted-foreground ml-14 line-clamp-2">
-                                    {sub.desc}
-                                  </p>
-                                )}
+                                <span className="font-bold text-[14px] tracking-tight text-foreground group-hover/item:text-primary transition-colors">{sub.name}</span>
                               </Link>
                             </DropdownMenuItem>
                           ))}
