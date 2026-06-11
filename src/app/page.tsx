@@ -177,11 +177,7 @@ export default function Home() {
               </ScrollReveal>
             </div>
             <ScrollReveal direction="left">
-              <motion.div 
-                animate={{ y: [0, -10, 0], rotate: [0, 1, 0, -1, 0] }} 
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} 
-                className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100"
-              >
+              <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
                 <Image 
                   src="https://picsum.photos/seed/arka_h_about/800/800" 
                   alt="SKY RENEWABLE Solar Installation Team" 
@@ -189,7 +185,7 @@ export default function Home() {
                   className="object-cover w-full h-full"
                   data-ai-hint="solar installation"
                 />
-              </motion.div>
+              </div>
             </ScrollReveal>
           </div>
         </div>
