@@ -23,7 +23,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Calculator } from "@/components/sections/Calculator";
 
 export default function SubsidyGuidePage() {
   const overviewCards = [
@@ -155,13 +154,6 @@ export default function SubsidyGuidePage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* SECTION 7 – SOLAR SAVINGS CALCULATOR */}
-      <section className="py-32 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <Calculator />
         </div>
       </section>
 
