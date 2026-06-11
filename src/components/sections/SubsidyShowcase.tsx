@@ -56,14 +56,14 @@ export function SubsidyShowcase() {
             </ScrollReveal>
           </div>
 
-          {/* RIGHT SIDE IMAGE CARD - Updated to aspect-video (16:9) */}
+          {/* RIGHT SIDE IMAGE CARD */}
           <ScrollReveal direction="left">
-            <div className="relative aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
-              <Image 
-                src="https://picsum.photos/seed/arka_subsidy_showcase/1200/1500" 
-                alt="Solar Subsidy Assistance" 
-                fill 
-                className="object-cover transition-transform duration-700 hover:scale-105"
+            <div className="relative w-full aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <Image
+                src="https://picsum.photos/seed/arka_subsidy_showcase/1280/720"
+                alt="Solar Subsidy Assistance"
+                fill
+                className="object-cover object-center"
                 data-ai-hint="solar finance"
               />
             </div>
