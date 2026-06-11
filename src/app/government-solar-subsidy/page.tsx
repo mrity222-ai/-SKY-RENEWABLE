@@ -1,28 +1,11 @@
 'use client';
 
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { 
-  ShieldCheck, 
-  Banknote, 
-  CheckCircle2, 
-  FileText,
-  UserCheck,
-  Zap,
-  TrendingUp,
-  Leaf
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Banknote, TrendingUp, Leaf, Zap, CheckCircle2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { ServiceHero } from "@/components/sections/ServiceHero";
 import { CTASection } from "@/components/sections/CTASection";
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function SubsidyGuidePage() {
@@ -67,63 +50,18 @@ export default function SubsidyGuidePage() {
 
   return (
     <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
-      {/* SECTION 1 – HERO SECTION */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
+      <ServiceHero 
+        badge="GOVERNMENT SCHEME"
+        titleLine1="Solar Subsidy"
+        titleLine2="PM-Suryodaya Guide"
+        description="Reduce your solar installation cost significantly with government financial assistance. We provide end-to-end liaison support for seamless bank transfers."
+        image="https://picsum.photos/seed/arka_subsidy_hero_v2/1200/1500"
+        primaryButtonText="Check Eligibility"
+        secondaryButtonText="Book Site Survey"
+      />
+
+      <section className="relative py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8">
-              <ScrollReveal direction="up">
-                <span className="inline-block bg-secondary text-white px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
-                  Government Solar Subsidy
-                </span>
-              </ScrollReveal>
-              <div className="space-y-6">
-                <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
-                    Save More With Government <br />
-                    <span className="text-[#B8B8B8]">Solar Subsidy Programs</span>
-                  </h1>
-                </ScrollReveal>
-                <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
-                    Reduce Your Solar Installation Cost With Official Subsidy Benefits.
-                  </p>
-                </ScrollReveal>
-              </div>
-              <ScrollReveal direction="up" delay={0.3}>
-                <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
-                    <Link href="/get-quote">Check Subsidy Eligibility</Link>
-                  </Button>
-                </div>
-              </ScrollReveal>
-            </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/5] max-w-[500px] lg:max-w-none mx-auto lg:mx-0 rounded-[40px] overflow-hidden shadow-2xl">
-              <Image 
-                src="https://picsum.photos/seed/arka_subsidy_hero_v2/1200/1500" 
-                alt="Solar Subsidy Overview" 
-                fill 
-                className="object-cover"
-                priority
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2 – SUBSIDY OVERVIEW */}
-      <section className="relative py-32 bg-[#F9F9F9] overflow-hidden">
-        {/* Background Image Overlay */}
-        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
-          <Image 
-            src="https://picsum.photos/seed/arka_subsidy_bg/1920/1080" 
-            alt="Solar Subsidy Background" 
-            fill 
-            className="object-cover"
-          />
-        </div>
-
-        <div className="container relative z-10 mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-24">
             <ScrollReveal direction="right">
               <div className="space-y-6">
@@ -150,7 +88,6 @@ export default function SubsidyGuidePage() {
         </div>
       </section>
 
-      {/* SECTION 3 – SUBSIDY BENEFITS */}
       <section className="py-32">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20">
@@ -173,8 +110,6 @@ export default function SubsidyGuidePage() {
       </section>
 
       <ServiceFAQ serviceName="Government Subsidy" faqs={faqs} />
-
-      {/* SECTION 10 – FINAL CTA */}
       <CTASection />
     </div>
   );

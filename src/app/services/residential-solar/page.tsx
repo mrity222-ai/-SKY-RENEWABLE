@@ -1,18 +1,10 @@
 'use client';
 
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { 
-  Banknote, 
-  ShieldCheck, 
-  Zap, 
-  ArrowRight,
-  Sun
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Banknote, ShieldCheck, Zap, Sun } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { ServiceHero } from "@/components/sections/ServiceHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
@@ -49,54 +41,16 @@ export default function ResidentialSolarPage() {
 
   return (
     <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8">
-              <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
-                  Home Solutions
-                </span>
-              </ScrollReveal>
-              <div className="space-y-6">
-                <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
-                    Residential Solar: <br />
-                    <span className="text-[#B8B8B8]">Zero Bill Homes Made Easy</span>
-                  </h1>
-                </ScrollReveal>
-                <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
-                    Custom rooftop systems for modern homes. Reduce your electricity bills by up to 90% while benefiting from central government subsidies.
-                  </p>
-                </ScrollReveal>
-              </div>
-              <ScrollReveal direction="up" delay={0.3}>
-                <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
-                    <Link href="/get-quote">Get Free Quote</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
-                    <Link href="/government-solar-subsidy">Check Subsidy</Link>
-                  </Button>
-                </div>
-              </ScrollReveal>
-            </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl">
-              <Image 
-                src="https://picsum.photos/seed/arka_res_hero/1200/1500" 
-                alt="Residential Solar Installation" 
-                fill 
-                className="object-cover"
-                priority
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <ServiceHero 
+        badge="OUR SERVICES"
+        titleLine1="Residential Solar"
+        titleLine2="Zero Bill Homes"
+        description="Custom rooftop systems for modern Indian households. Reduce your electricity bills by up to 90% while benefiting from seamless central government subsidy handling."
+        image="https://picsum.photos/seed/arka_res_hero/1200/1500"
+        primaryButtonText="Check Eligibility"
+        secondaryButtonText="Book Site Survey"
+      />
 
-      {/* BENEFITS GRID */}
       <section className="py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
@@ -120,8 +74,6 @@ export default function ResidentialSolarPage() {
       </section>
 
       <ServiceFAQ serviceName="Residential Solar" faqs={faqs} />
-
-      {/* FINAL CTA */}
       <CTASection />
     </div>
   );

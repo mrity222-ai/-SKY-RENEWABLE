@@ -1,19 +1,10 @@
 'use client';
 
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { 
-  Building2, 
-  TrendingUp, 
-  BarChart3, 
-  ShieldCheck, 
-  ArrowRight,
-  Zap
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { TrendingUp, BarChart3, ShieldCheck, Zap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { ServiceHero } from "@/components/sections/ServiceHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
@@ -50,54 +41,16 @@ export default function CommercialSolarPage() {
 
   return (
     <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8">
-              <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
-                  Business Solutions
-                </span>
-              </ScrollReveal>
-              <div className="space-y-6">
-                <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
-                    Commercial Solar: <br />
-                    <span className="text-[#B8B8B8]">Reduce Operational Overheads</span>
-                  </h1>
-                </ScrollReveal>
-                <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
-                    Strategic solar investments for offices, shops, and hospitals. Lock in your energy costs and boost your business profitability.
-                  </p>
-                </ScrollReveal>
-              </div>
-              <ScrollReveal direction="up" delay={0.3}>
-                <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
-                    <Link href="/get-quote">Request Proposal</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
-                    <Link href="/get-quote">Book Site Audit</Link>
-                  </Button>
-                </div>
-              </ScrollReveal>
-            </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl">
-              <Image 
-                src="https://picsum.photos/seed/arka_comm_hero/1200/1500" 
-                alt="Commercial Solar Installation" 
-                fill 
-                className="object-cover"
-                priority
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+      <ServiceHero 
+        badge="OUR SERVICES"
+        titleLine1="Commercial Solar"
+        titleLine2="Strategic Savings"
+        description="Slash operational overheads for offices, hospitals, and shops. Strategic solar investments that insulate your business from rising energy tariffs while boosting ESG metrics."
+        image="https://picsum.photos/seed/arka_comm_hero/1200/1500"
+        primaryButtonText="Request Proposal"
+        secondaryButtonText="Book Site Audit"
+      />
 
-      {/* FEATURES GRID */}
       <section className="py-32 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-4">
@@ -121,7 +74,6 @@ export default function CommercialSolarPage() {
       </section>
 
       <ServiceFAQ serviceName="Commercial Solar" faqs={faqs} />
-
       <CTASection />
     </div>
   );
