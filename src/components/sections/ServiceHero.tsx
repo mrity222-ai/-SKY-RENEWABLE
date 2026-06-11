@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -68,12 +69,12 @@ export function ServiceHero({
 
           {/* Image side - Enforced 1:1 Ratio & Containment */}
           <ScrollReveal direction="left" delay={0.4}>
-            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl group bg-neutral-50">
+            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image 
                 src={image} 
                 alt={titleLine1} 
                 fill 
-                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />

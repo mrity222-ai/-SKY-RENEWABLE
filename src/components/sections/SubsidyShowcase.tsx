@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -55,9 +56,9 @@ export function SubsidyShowcase() {
             </ScrollReveal>
           </div>
 
-          {/* RIGHT SIDE IMAGE CARD - Turn 15 height-based container */}
+          {/* RIGHT SIDE IMAGE CARD - Enforced 1:1 Aspect Ratio */}
           <ScrollReveal direction="left">
-            <div className="relative w-full h-[350px] md:h-[450px] lg:h-[520px] rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image 
                 src="https://picsum.photos/seed/arka_subsidy_showcase/1200/1500" 
                 alt="Solar Subsidy Assistance" 
