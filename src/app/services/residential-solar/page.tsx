@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 
 export default function ResidentialSolarPage() {
   const benefits = [
@@ -23,45 +24,68 @@ export default function ResidentialSolarPage() {
     { icon: <Sun />, title: "Eco-Friendly Living", desc: "Reduce your carbon footprint and contribute to a greener planet." },
   ];
 
+  const faqs = [
+    {
+      question: "How much space do I need on my roof for solar?",
+      answer: "A standard 3kW residential system requires approximately 250-300 square feet of shadow-free area."
+    },
+    {
+      question: "Is there a maintenance cost for residential solar?",
+      answer: "Residential systems are very low maintenance. Periodic cleaning of panels (every 15 days) is usually sufficient."
+    },
+    {
+      question: "What is the lifespan of solar panels?",
+      answer: "Most Tier-1 solar panels come with a 25-year performance warranty and can last over 30 years."
+    },
+    {
+      question: "Can I power my AC with solar?",
+      answer: "Yes, once synchronized with the grid via net-metering, solar energy can power all home appliances, including ACs and geysers."
+    },
+    {
+      question: "What happens if it's a cloudy day?",
+      answer: "Solar panels still generate electricity on cloudy days, though at a reduced output. Your home will seamlessly draw power from the grid if solar generation is insufficient."
+    }
+  ];
+
   return (
     <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Home Solutions
                 </span>
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight">
+                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
                     Residential Solar: <br />
                     <span className="text-[#B8B8B8]">Zero Bill Homes Made Easy</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Custom rooftop systems for modern homes. Reduce your electricity bills by up to 90%.
+                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
+                    Custom rooftop systems for modern homes. Reduce your electricity bills by up to 90% while benefiting from central government subsidies.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-800 transition-all">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Get Free Quote</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 py-7 text-[14px] font-semibold hover:bg-neutral-50">
-                    <Link href="/get-quote">Check Subsidy</Link>
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
+                    <Link href="/government-solar-subsidy">Check Subsidy</Link>
                   </Button>
                 </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl">
               <Image 
-                src="https://picsum.photos/seed/arka_res_hero/1200/800" 
+                src="https://picsum.photos/seed/arka_res_hero/1200/1500" 
                 alt="Residential Solar Installation" 
                 fill 
                 className="object-cover"
@@ -94,6 +118,8 @@ export default function ResidentialSolarPage() {
           </div>
         </div>
       </section>
+
+      <ServiceFAQ serviceName="Residential Solar" faqs={faqs} />
 
       {/* FINAL CTA */}
       <CTASection />

@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -8,9 +7,6 @@ import {
   Zap, 
   BatteryFull, 
   RotateCcw, 
-  ShieldCheck, 
-  CheckCircle2, 
-  ArrowRight,
   Cpu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,23 +26,23 @@ export default function BatteryStoragePage() {
   const faqs = [
     {
       question: "What is a hybrid solar system?",
-      answer: "A hybrid solar system combines the benefits of on-grid and off-grid systems. It connects to the grid to export excess energy while also using batteries to store power for use during night-time or power cuts."
+      answer: "A system that connects to the grid to export excess energy while using batteries for backup power."
     },
     {
       question: "How long is the lifespan of modern solar batteries?",
-      answer: "We exclusively use Tier-1 Lithium Ferro Phosphate (LFP) batteries which typically last for 10 to 12 years (approx. 4000 to 6000 cycles) before needing replacement."
+      answer: "Tier-1 Lithium LFP batteries typically last for 10 to 12 years before needing replacement."
     },
     {
       question: "Can I add batteries to my existing solar system?",
-      answer: "Yes. By using a 'battery-ready' hybrid inverter or an AC-coupled storage system, we can retrofit high-performance battery storage to your existing grid-tie solar installation."
+      answer: "Yes, by retrofitting high-performance battery storage with hybrid inverters."
     },
     {
       question: "Are solar batteries safe to install inside my home?",
-      answer: "Yes, our Lithium LFP batteries are significantly safer than traditional lead-acid batteries. They do not emit gases and come with advanced Battery Management Systems (BMS) that protect against overheating and overcharging."
+      answer: "Yes, Lithium LFP batteries do not emit gases and have advanced protection systems."
     },
     {
-      question: "Can battery storage power heavy loads like ACs during power cuts?",
-      answer: "Yes, depending on the inverter capacity and battery bank size. Our engineers design systems specifically to handle your critical and heavy loads during grid outages."
+      question: "Can battery storage power heavy loads like ACs?",
+      answer: "Yes, our engineers design systems specifically to handle heavy loads during outages."
     }
   ];
 
@@ -55,38 +51,44 @@ export default function BatteryStoragePage() {
       {/* HERO */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Energy Independence
                 </span>
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight">
+                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
                     Battery Storage: <br />
                     <span className="text-[#B8B8B8]">Smart Backup & Independence</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Take control of your energy. Store your solar power during the day.
+                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
+                    Take control of your energy. Store your solar power during the day and power your life through the night or during outages.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold">
-                  <Link href="/get-quote">Get Backup Quote</Link>
-                </Button>
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
+                    <Link href="/get-quote">Get Backup Quote</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
+                    <Link href="/get-quote">Book Site Survey</Link>
+                  </Button>
+                </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl">
               <Image 
-                src="https://picsum.photos/seed/arka_batt_hero/1200/800" 
+                src="https://picsum.photos/seed/arka_batt_hero/1200/1500" 
                 alt="Battery Storage System" 
                 fill 
                 className="object-cover"
+                priority
               />
             </ScrollReveal>
           </div>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -8,10 +7,6 @@ import {
   Wrench, 
   Search, 
   BarChart3, 
-  ShieldCheck, 
-  CheckCircle2, 
-  ArrowRight,
-  ClipboardCheck,
   Headset
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,23 +26,23 @@ export default function SolarMaintenancePage() {
   const faqs = [
     {
       question: "How often should I clean my solar panels?",
-      answer: "For optimal generation, we recommend cleaning your panels every 15 to 20 days. In high-dust environments or urban areas, more frequent cleaning may be necessary to prevent generation drops."
+      answer: "We recommend cleaning every 15 to 20 days for optimal generation."
     },
     {
       question: "Can I clean my solar panels with regular tap water?",
-      answer: "While tap water can be used, we recommend using purified water or specialized eco-friendly cleaning agents to prevent scale build-up. Our professional team uses soft brushes to ensure no micro-cracks occur on the glass."
+      answer: "We recommend purified water or specialized eco-friendly agents to prevent scale build-up."
     },
     {
       question: "What is covered under an Annual Maintenance Contract (AMC)?",
-      answer: "Our AMC covers periodic panel cleaning, detailed electrical audits, inverter health checks, thermal imaging to detect hot spots, and 24/7 remote monitoring with proactive fault alerts."
+      answer: "Periodic cleaning, electrical audits, health checks, and 24/7 monitoring."
     },
     {
       question: "Why has my solar energy generation dropped recently?",
-      answer: "Common causes include dust accumulation, shading from new trees/constructions, or electrical issues like string failures or inverter faults. A professional health audit can pinpoint the exact cause."
+      answer: "Common causes include dust accumulation, shading, or electrical faults."
     },
     {
-      question: "Do you provide maintenance for systems installed by other companies?",
-      answer: "Yes. We offer 'System Rehabilitation' services where we audit, repair, and optimize solar plants installed by other vendors that are underperforming or lack support."
+      question: "Do you provide maintenance for systems installed by others?",
+      answer: "Yes, we offer 'System Rehabilitation' services to optimize underperforming plants."
     }
   ];
 
@@ -56,38 +51,44 @@ export default function SolarMaintenancePage() {
       {/* HERO */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Asset Management
                 </span>
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight">
+                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
                     Solar Maintenance: <br />
                     <span className="text-[#B8B8B8]">Protect Your Energy Assets</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
-                    Your solar system is a long-term investment. AMC services ensure panels generate maximum power.
+                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
+                    Your solar system is a long-term investment. AMC services ensure panels generate maximum power for their entire 25-year lifecycle.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild size="lg" className="bg-black text-white rounded-full px-10 py-7 text-[14px] font-semibold">
-                  <Link href="/contact-us">Book Maintenance</Link>
-                </Button>
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
+                    <Link href="/contact-us">Book Maintenance</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
+                    <Link href="/get-quote">Get Service Quote</Link>
+                  </Button>
+                </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl">
               <Image 
-                src="https://picsum.photos/seed/arka_maint_hero/1200/800" 
+                src="https://picsum.photos/seed/arka_maint_hero/1200/1500" 
                 alt="Solar Maintenance Team" 
                 fill 
                 className="object-cover"
+                priority
               />
             </ScrollReveal>
           </div>
