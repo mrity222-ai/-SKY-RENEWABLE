@@ -200,9 +200,6 @@ export function Navbar() {
 
           {/* CTA - RIGHT */}
           <div className="flex-1 flex justify-end items-center gap-4">
-            <Button asChild variant="ghost" className="hidden lg:flex text-foreground font-bold text-xs uppercase tracking-widest hover:bg-primary/5 rounded-full px-6 transition-all">
-              <Link href="/login">Login</Link>
-            </Button>
             <Button asChild className="hidden lg:flex bg-primary text-white rounded-full px-8 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 font-bold h-11 text-xs uppercase tracking-wider">
               <Link href="/get-quote">Get a Quote</Link>
             </Button>
@@ -259,9 +256,6 @@ export function Navbar() {
                     </nav>
                     
                     <div className="pt-6 border-t border-border flex flex-col gap-4 mt-auto">
-                      <Button asChild variant="outline" className="w-full border-primary text-primary rounded-full py-7 font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
-                        <Link href="/login">Login</Link>
-                      </Button>
                       <Button asChild className="w-full bg-primary text-white rounded-full py-7 font-bold shadow-xl shadow-primary/20 text-sm uppercase tracking-widest hover:bg-primary/90 transition-all">
                         <Link href="/get-quote">Get a Quote</Link>
                       </Button>
