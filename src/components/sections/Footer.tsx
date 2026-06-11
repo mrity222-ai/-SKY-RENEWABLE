@@ -28,15 +28,15 @@ export function Footer() {
         {/* TOP FOOTER */}
         <div className="grid lg:grid-cols-2 gap-12 md:gap-24 mb-12 md:mb-24">
           {/* LEFT SIDE */}
-          <div className="space-y-8 md:space-y-14">
-            <div className="space-y-4 md:space-y-8">
-              <span className="text-primary font-bold text-[11px] md:text-[12px] uppercase tracking-[0.3em] md:tracking-[0.4em]">
+          <div className="space-y-8 md:space-y-12">
+            <div className="space-y-4 md:space-y-6">
+              <span className="text-primary font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.4em]">
                 CONTACT US
               </span>
-              <h2 className="text-[32px] md:text-[60px] lg:text-[72px] font-bold leading-[1] tracking-tighter max-w-xl">
+              <h2 className="text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-[1.1] tracking-tighter max-w-xl">
                 Powering the next <span className="text-secondary">Green Revolution.</span>
               </h2>
-              <p className="text-white/40 text-[10px] md:text-sm font-bold tracking-widest uppercase">GST: 22BKRPC8874Q1Z9</p>
+              <p className="text-white/40 text-[9px] md:text-[10px] font-bold tracking-widest uppercase">GST: 22BKRPC8874Q1Z9</p>
             </div>
             
             <nav className="flex flex-wrap gap-x-6 md:gap-x-12 gap-y-4">
@@ -55,7 +55,7 @@ export function Footer() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="grid gap-8 md:gap-16 self-center lg:pl-20">
+          <div className="grid gap-8 md:gap-12 self-center lg:pl-20">
             <ContactInfoBlock 
               icon={<MapPin />} 
               label="HQ Location" 
@@ -124,8 +124,8 @@ function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, lab
       </div>
       <div className="space-y-1 md:space-y-2">
         <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-muted-foreground/60">{label}</p>
-        <p className="text-lg md:text-xl font-bold leading-tight">{text}</p>
-        {secondaryText && <p className="text-lg md:text-xl font-bold opacity-60 leading-tight">{secondaryText}</p>}
+        <p className="text-base md:text-lg font-bold leading-tight">{text}</p>
+        {secondaryText && <p className="text-base md:text-lg font-bold opacity-60 leading-tight">{secondaryText}</p>}
       </div>
     </div>
   );

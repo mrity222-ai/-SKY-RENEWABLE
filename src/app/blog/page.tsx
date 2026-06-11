@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
@@ -31,10 +30,10 @@ export default function BlogPage() {
 
   return (
     <div className="bg-white">
-      <section className="py-24 bg-primary text-white text-center">
+      <section className="py-24 md:py-32 bg-primary text-white text-center">
         <div className="container mx-auto px-4 space-y-6">
-          <h1 className="text-5xl md:text-6xl font-bold font-headline">Solar <span className="text-accent">Knowledge Hub</span></h1>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">Stay updated with the latest trends, policy changes, and maintenance tips in the world of solar energy.</p>
+          <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold font-headline">Solar <span className="text-accent">Knowledge Hub</span></h1>
+          <p className="text-[15px] md:text-[17px] text-white/70 max-w-2xl mx-auto">Stay updated with the latest trends, policy changes, and maintenance tips in the world of solar energy.</p>
         </div>
       </section>
 
@@ -46,13 +45,13 @@ export default function BlogPage() {
                 <div className="relative aspect-video rounded-[32px] overflow-hidden shadow-xl">
                   <Image src={post.image} alt={post.title} fill className="object-cover transition-transform group-hover:scale-105 duration-500" />
                 </div>
-                <div className="flex gap-6 text-xs text-muted-foreground uppercase font-bold tracking-widest">
+                <div className="flex gap-6 text-[11px] text-muted-foreground uppercase font-bold tracking-widest">
                   <span className="flex items-center gap-1.5"><Calendar className="size-3" /> {post.date}</span>
                   <span className="flex items-center gap-1.5"><User className="size-3" /> {post.author}</span>
                 </div>
-                <h3 className="text-2xl font-bold font-headline text-primary group-hover:text-accent transition-colors leading-tight">{post.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{post.excerpt}</p>
-                <Button variant="link" className="p-0 text-primary font-bold justify-start group-hover:gap-2 transition-all">
+                <h3 className="text-[20px] md:text-[24px] font-bold font-headline text-primary group-hover:text-primary transition-colors leading-tight">{post.title}</h3>
+                <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed">{post.excerpt}</p>
+                <Button variant="link" className="p-0 text-primary font-bold justify-start group-hover:gap-2 transition-all h-auto text-[14px]">
                   Read Article <ArrowRight className="ml-2 size-4" />
                 </Button>
               </article>

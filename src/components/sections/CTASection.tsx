@@ -23,12 +23,12 @@ export function CTASection() {
             </div>
 
             <div className="relative z-10 max-w-4xl mx-auto space-y-6 md:space-y-8">
-              <h2 className="text-[30px] md:text-[44px] lg:text-[52px] font-black leading-[1.1] tracking-tighter">
+              <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-black leading-[1.1] tracking-tighter">
                 <span className="text-primary block">Predictable Power for a</span>
                 <span className="text-accent">Sustainable Future</span>
               </h2>
               
-              <p className="text-muted-foreground text-[14px] md:text-[16px] font-medium max-w-2xl mx-auto leading-relaxed">
+              <p className="text-muted-foreground text-[14px] md:text-[15px] lg:text-[16px] font-medium max-w-2xl mx-auto leading-relaxed">
                 Join homeowners and businesses who have already transitioned to affordable solar energy solutions.
               </p>
 

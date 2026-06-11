@@ -125,29 +125,29 @@ export default function ProjectsPage() {
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[34px] md:text-[48px] lg:text-[60px] font-bold text-black leading-[1.1] tracking-tight">
+                  <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-black leading-[1.1] tracking-tight">
                     Transforming Energy Through <br />
                     <span className="text-[#B8B8B8]">Successful Solar Projects</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[17px] lg:text-[18px] text-[#555] max-w-xl leading-[1.7]">
+                  <p className="text-[15px] lg:text-[17px] text-[#555] max-w-xl leading-[1.7]">
                     Real Installations. Real Savings. Real Impact. Explore our portfolio of solar projects completed across multiple locations.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-[15px] font-bold hover:bg-neutral-800 transition-all">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Get Free Quote</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-[15px] font-bold hover:bg-neutral-50">
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-neutral-50">
                     <Link href="/get-quote">Book Site Survey</Link>
                   </Button>
                 </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/3] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl">
               <Image 
                 src="https://picsum.photos/seed/arka_project_hero/1200/800" 
                 alt="Solar Project Hero" 
@@ -161,9 +161,9 @@ export default function ProjectsPage() {
       </section>
 
       {/* SECTION 2 – PROJECT STATISTICS */}
-      <section className="py-24 border-y border-neutral-100 bg-white">
+      <section className="py-20 md:py-24 border-y border-neutral-100 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
             <StatCard value={500} suffix="+" label="Projects Completed" />
             <StatCard value={10} suffix="MW+" label="Installed Capacity" />
             <StatCard value={98} suffix="%" label="Customer Satisfaction" />
@@ -176,13 +176,13 @@ export default function ProjectsPage() {
       <section className="py-24 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <LayoutGroup>
-            <div className="flex flex-wrap justify-center gap-2 mb-20">
+            <div className="flex flex-wrap justify-center gap-2 mb-16 md:mb-20">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={cn(
-                    "relative px-8 py-3 rounded-full text-[14px] font-bold transition-all outline-none",
+                    "relative px-6 md:px-8 py-2 md:py-3 rounded-full text-[13px] md:text-[14px] font-bold transition-all outline-none",
                     activeCategory === cat ? "text-white" : "text-[#777] hover:text-black"
                   )}
                 >
@@ -200,7 +200,7 @@ export default function ProjectsPage() {
 
             <motion.div 
               layout 
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
             >
               <AnimatePresence mode="popLayout">
                 {filteredProjects.map((project, i) => (
@@ -212,7 +212,7 @@ export default function ProjectsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
-                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
+                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-white">
                       <Image 
                         src={project.image} 
                         alt={project.title} 
@@ -220,13 +220,13 @@ export default function ProjectsPage() {
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       
-                      <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                        <div className="text-[34px] md:text-[40px] font-black text-foreground tracking-tighter leading-none">
+                      <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-10 md:pr-12 py-5 md:py-6 flex items-center gap-4 md:gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                        <div className="text-[30px] md:text-[40px] font-black text-foreground tracking-tighter leading-none">
                           {project.id < 10 ? `0${project.id}` : project.id}
                         </div>
                         <div className="flex flex-col gap-0.5">
-                          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">{project.type}</span>
-                          <h3 className="text-[16px] md:text-[18px] font-bold text-foreground leading-tight max-w-[180px]">
+                          <span className="text-[9px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">{project.type}</span>
+                          <h3 className="text-[14px] md:text-[16px] font-bold text-foreground leading-tight max-w-[180px]">
                             {project.title}
                           </h3>
                         </div>
@@ -249,16 +249,16 @@ export default function ProjectsPage() {
       </section>
 
       {/* SECTION 5 – PROJECT IMPACT */}
-      <section className="py-32">
+      <section className="py-24 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-12">
-              <ScrollReveal direction="up" className="space-y-6">
-                <span className="text-[#B8B8B8] font-bold text-[11px] uppercase tracking-[0.3em]">Our Impact</span>
-                <h2 className="text-[30px] lg:text-[40px] font-bold text-black leading-tight">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
+            <div className="space-y-10 md:space-y-12">
+              <ScrollReveal direction="up" className="space-y-4 md:space-y-6">
+                <span className="text-[#B8B8B8] font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em]">Our Impact</span>
+                <h2 className="text-[26px] md:text-[34px] lg:text-[40px] font-bold text-black leading-tight">
                   Driving The Green <br /> Revolution Forward
                 </h2>
-                <p className="text-[17px] text-[#555] leading-[1.7] max-w-lg">
+                <p className="text-[15px] md:text-[17px] text-[#555] leading-[1.7] max-w-lg">
                   Every project we complete contributes to a larger goal of carbon neutrality and energy independence for our clients.
                 </p>
               </ScrollReveal>
@@ -270,7 +270,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-[60px] overflow-hidden shadow-2xl">
+              <div className="relative aspect-square rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl">
                 <Image src="https://picsum.photos/seed/arka_impact/800/800" alt="Solar Impact" fill className="object-cover" />
               </div>
             </ScrollReveal>
@@ -287,10 +287,10 @@ export default function ProjectsPage() {
 function StatCard({ value, suffix, label }: { value: number, suffix: string, label: string }) {
   return (
     <ScrollReveal direction="up" className="space-y-2">
-      <div className="text-[34px] md:text-[48px] font-bold text-black leading-none">
+      <div className="text-[30px] md:text-[40px] lg:text-[48px] font-bold text-black leading-none">
         <Counter value={value} suffix={suffix} />
       </div>
-      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
+      <p className="text-[10px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
     </ScrollReveal>
   );
 }
