@@ -88,7 +88,6 @@ export default function Home() {
               </div>
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-black/10 z-10" />
         </div>
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
@@ -178,14 +177,19 @@ export default function Home() {
               </ScrollReveal>
             </div>
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <motion.div 
+                animate={{ y: [0, -10, 0], rotate: [0, 1, 0, -1, 0] }} 
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} 
+                className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100"
+              >
                 <Image 
                   src="https://picsum.photos/seed/arka_h_about/800/800" 
                   alt="SKY RENEWABLE Solar Installation Team" 
                   fill 
                   className="object-cover w-full h-full"
+                  data-ai-hint="solar installation"
                 />
-              </div>
+              </motion.div>
             </ScrollReveal>
           </div>
         </div>
