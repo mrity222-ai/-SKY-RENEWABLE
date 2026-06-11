@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -99,9 +98,9 @@ export default function SubsidyGuidePage() {
                 </div>
               </ScrollReveal>
             </div>
-            <ScrollReveal direction="left" delay={0.4} className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+            <ScrollReveal direction="left" delay={0.4} className="relative aspect-[4/5] max-w-[500px] lg:max-w-none mx-auto lg:mx-0 rounded-[40px] overflow-hidden shadow-2xl">
               <Image 
-                src="https://picsum.photos/seed/arka_subsidy_hero/1200/800" 
+                src="https://picsum.photos/seed/arka_subsidy_hero_v2/1200/1500" 
                 alt="Solar Subsidy Overview" 
                 fill 
                 className="object-cover"
