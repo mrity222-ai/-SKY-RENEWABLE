@@ -111,10 +111,10 @@ export function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 pt-6">
       <header className={cn(
-        "max-w-7xl mx-auto rounded-full transition-all duration-500 border border-white/20",
+        "max-w-7xl mx-auto rounded-full transition-all duration-500 border",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] py-3 px-6" 
-          : "bg-white/40 backdrop-blur-md py-4 px-8"
+          ? "bg-white/80 backdrop-blur-xl border-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.05)] py-3 px-6" 
+          : "bg-transparent backdrop-blur-none border-transparent py-4 px-8"
       )}>
         <div className="flex items-center justify-between">
           {/* LOGO */}
