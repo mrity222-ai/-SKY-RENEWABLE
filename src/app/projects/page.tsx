@@ -125,23 +125,23 @@ export default function ProjectsPage() {
               </ScrollReveal>
               <div className="space-y-6">
                 <ScrollReveal direction="up" delay={0.1}>
-                  <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight">
+                  <h1 className="text-[34px] md:text-[48px] lg:text-[60px] font-bold text-black leading-[1.1] tracking-tight">
                     Transforming Energy Through <br />
                     <span className="text-[#B8B8B8]">Successful Solar Projects</span>
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[14px] lg:text-[16px] text-[#555] max-w-xl leading-[1.8]">
+                  <p className="text-[17px] lg:text-[18px] text-[#555] max-w-xl leading-[1.7]">
                     Real Installations. Real Savings. Real Impact. Explore our portfolio of solar projects completed across multiple locations.
                   </p>
                 </ScrollReveal>
               </div>
               <ScrollReveal direction="up" delay={0.3}>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-800 transition-all">
+                  <Button asChild size="lg" className="bg-black text-white rounded-full px-10 h-16 text-[15px] font-bold hover:bg-neutral-800 transition-all">
                     <Link href="/get-quote">Get Free Quote</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-sm font-semibold hover:bg-neutral-50">
+                  <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-10 h-16 text-[15px] font-bold hover:bg-neutral-50">
                     <Link href="/get-quote">Book Site Survey</Link>
                   </Button>
                 </div>
@@ -182,7 +182,7 @@ export default function ProjectsPage() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={cn(
-                    "relative px-8 py-3 rounded-full text-[12px] font-bold transition-all outline-none",
+                    "relative px-8 py-3 rounded-full text-[14px] font-bold transition-all outline-none",
                     activeCategory === cat ? "text-white" : "text-[#777] hover:text-black"
                   )}
                 >
@@ -221,7 +221,7 @@ export default function ProjectsPage() {
                       />
                       
                       <div className="absolute bottom-0 left-0 bg-white pl-8 pr-12 py-6 flex items-center gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                        <div className="text-[40px] md:text-[48px] font-black text-foreground tracking-tighter leading-none">
+                        <div className="text-[34px] md:text-[40px] font-black text-foreground tracking-tighter leading-none">
                           {project.id < 10 ? `0${project.id}` : project.id}
                         </div>
                         <div className="flex flex-col gap-0.5">
@@ -255,10 +255,10 @@ export default function ProjectsPage() {
             <div className="space-y-12">
               <ScrollReveal direction="up" className="space-y-6">
                 <span className="text-[#B8B8B8] font-bold text-[11px] uppercase tracking-[0.3em]">Our Impact</span>
-                <h2 className="text-[30px] lg:text-[40px] font-semibold text-black leading-tight">
+                <h2 className="text-[30px] lg:text-[40px] font-bold text-black leading-tight">
                   Driving The Green <br /> Revolution Forward
                 </h2>
-                <p className="text-[14px] text-[#555] leading-[1.8] max-w-lg">
+                <p className="text-[17px] text-[#555] leading-[1.7] max-w-lg">
                   Every project we complete contributes to a larger goal of carbon neutrality and energy independence for our clients.
                 </p>
               </ScrollReveal>
@@ -278,27 +278,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* SECTION 7 – MAP COVERAGE */}
-      <section className="py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <ScrollReveal className="space-y-4">
-              <span className="text-[#B8B8B8] font-bold text-[11px] uppercase tracking-[0.3em]">Coverage</span>
-              <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Our Project Presence</h2>
-              <p className="text-[#777] text-[14px]">Serving major hubs with dedicated local service teams.</p>
-            </ScrollReveal>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {["Lucknow", "Noida", "Kanpur", "Prayagraj", "Varanasi", "Ghaziabad", "Meerut", "Gorakhpur"].map((city, i) => (
-                <ScrollReveal key={i} delay={i * 0.05} direction="up" className="p-6 bg-[#F9F9F9] rounded-[24px] border border-neutral-100 text-center hover:bg-black hover:text-white transition-all cursor-default group">
-                  <MapPin className="size-4 mx-auto mb-3 text-[#B8B8B8] group-hover:text-accent transition-colors" />
-                  <span className="text-[13px] font-bold">{city}</span>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 8 – FINAL CTA */}
       <CTASection />
     </div>
@@ -308,10 +287,10 @@ export default function ProjectsPage() {
 function StatCard({ value, suffix, label }: { value: number, suffix: string, label: string }) {
   return (
     <ScrollReveal direction="up" className="space-y-2">
-      <div className="text-[34px] md:text-[56px] font-semibold text-black leading-none">
+      <div className="text-[34px] md:text-[48px] font-bold text-black leading-none">
         <Counter value={value} suffix={suffix} />
       </div>
-      <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
+      <p className="text-[11px] font-bold uppercase tracking-widest text-[#B8B8B8]">{label}</p>
     </ScrollReveal>
   );
 }

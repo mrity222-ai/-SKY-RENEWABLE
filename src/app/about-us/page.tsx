@@ -74,22 +74,22 @@ export default function AboutPage() {
               </span>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.1}>
-              <h1 className="text-[34px] md:text-[56px] lg:text-[72px] font-bold text-foreground leading-[1] tracking-tighter max-w-4xl">
+              <h1 className="text-[34px] md:text-[48px] lg:text-[60px] font-bold text-foreground leading-[1.1] tracking-tighter max-w-4xl">
                 Empowering India With <br /><span className="text-primary">Smart Solar Solutions</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
-              <p className="text-lg text-muted-foreground max-w-2xl font-medium leading-relaxed">
+              <p className="text-[17px] lg:text-[19px] text-muted-foreground max-w-2xl font-medium leading-relaxed">
                 SKY RENEWABLE is dedicated to transforming India's energy landscape through engineering excellence, 
                 unwavering integrity, and a commitment to a carbon-free future.
               </p>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.3}>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button asChild size="lg" className="bg-primary text-white rounded-full px-10 h-16 text-sm font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all">
+                <Button asChild size="lg" className="bg-primary text-white rounded-full px-10 h-16 text-[15px] font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all">
                   <Link href="/get-quote">Get Free Quote</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-border text-foreground rounded-full px-10 h-16 text-sm font-bold hover:bg-muted transition-all">
+                <Button asChild variant="outline" size="lg" className="border-border text-foreground rounded-full px-10 h-16 text-[15px] font-bold hover:bg-muted transition-all">
                   <Link href="/get-quote">Book Site Survey</Link>
                 </Button>
               </div>
@@ -117,17 +117,17 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <ScrollReveal direction="right" className="space-y-8">
               <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase">About Us</span>
-              <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground leading-tight tracking-tighter">
+              <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-tight tracking-tighter">
                 Trusted Partners In <br /><span className="text-secondary">Clean Energy</span>
               </h2>
               <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-[17px] text-muted-foreground leading-relaxed">
                   SKY RENEWABLE is a trusted solar energy solutions company committed to delivering clean, sustainable, and affordable power solutions for homes, businesses, industries, and institutions.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-[17px] text-muted-foreground leading-relaxed">
                   We specialize in complete Solar EPC Services, Rooftop Solar Installations, Operation & Maintenance, and Solar Panel Cleaning Solutions. From site survey and system design to installation, commissioning, maintenance, and performance optimization, we handle every stage with professionalism and precision.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-[17px] text-muted-foreground leading-relaxed">
                   Our goal is to help customers reduce electricity costs, improve energy efficiency, and achieve long-term energy independence through high-quality solar solutions.
                 </p>
                 <p className="text-md font-bold text-primary">Owner: Naimesh Chandraker</p>
@@ -162,46 +162,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 3 – VISION & MISSION */}
-      <section className="py-32 bg-foreground text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 size-[600px] bg-primary/20 blur-[150px] rounded-full pointer-events-none" />
-        <div className="container relative z-10 mx-auto px-4 space-y-40">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <ScrollReveal direction="right" className="space-y-8">
-              <span className="inline-block bg-primary/20 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-primary/20">Our Vision</span>
-              <h2 className="text-[40px] lg:text-[56px] font-bold leading-tight tracking-tighter">
-                Most Trusted <br /><span className="text-primary">Energy Partner</span>
-              </h2>
-              <p className="text-xl text-white/60 leading-relaxed max-w-xl font-medium">
-                To become the most trusted solar energy partner by delivering innovative, efficient, and sustainable renewable energy solutions.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal direction="left">
-              <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl border border-white/10">
-                <Image src="https://picsum.photos/seed/arka_vision/800/600" alt="Sustainable Future" fill className="object-cover opacity-80" data-ai-hint="sustainable energy" />
-              </div>
-            </ScrollReveal>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <ScrollReveal direction="right" className="lg:order-2 space-y-8">
-              <span className="inline-block bg-secondary/20 text-secondary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-secondary/20">Our Mission</span>
-              <h2 className="text-[40px] lg:text-[56px] font-bold leading-tight text-white tracking-tighter">
-                Saving Money & <br /><span className="text-secondary">Cleaner Future</span>
-              </h2>
-              <p className="text-xl text-white/60 leading-relaxed max-w-xl font-medium">
-                To provide high-quality solar solutions that help customers save money, achieve energy independence, and contribute to a cleaner and brighter future.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal direction="left" className="lg:order-1">
-              <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl border border-white/10">
-                <Image src="https://picsum.photos/seed/arka_mission/800/600" alt="Making Solar Simple" fill className="object-cover opacity-80" data-ai-hint="solar home" />
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 4 – COMPANY ACHIEVEMENTS */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
@@ -210,42 +170,6 @@ export default function AboutPage() {
             <AchievementItem count={120} suffix=" MW+" label="Installed Capacity" />
             <AchievementItem count={98} suffix="%" label="Customer Satisfaction" />
             <AchievementItem count={25} suffix="Y" label="Warranty Support" />
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5 – WHY CHOOSE US */}
-      <section className="py-32 bg-muted relative">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-24 space-y-4">
-            <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-primary/10">The SKY RENEWABLE Advantage</span>
-            <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground tracking-tighter leading-tight">Why Choose SKY RENEWABLE?</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {valueProps.map((prop, i) => (
-              <FeatureCard 
-                key={i} 
-                icon={prop.icon} 
-                title={prop.title} 
-                desc={prop.desc} 
-                delay={i * 0.1}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6 – CORE VALUES */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-20">
-            <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground tracking-tighter">Our Core Values</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-            <ValueCard icon={<ShieldCheck />} title="Integrity" desc="Transparency and ethical business practices in every interaction." />
-            <ValueCard icon={<TrendingUp />} title="Innovation" desc="Adopting modern solar technologies for maximum harvest." />
-            <ValueCard icon={<Award />} title="Quality" desc="Unwavering commitment to engineering excellence and reliability." />
-            <ValueCard icon={<Globe />} title="Sustainability" desc="Building a greener tomorrow for future generations." />
           </div>
         </div>
       </section>
@@ -259,38 +183,10 @@ export default function AboutPage() {
 function AchievementItem({ count, suffix, label }: { count: number, suffix: string, label: string }) {
   return (
     <div className="space-y-4">
-      <div className="text-[48px] lg:text-[64px] font-bold text-primary leading-none">
+      <div className="text-[40px] lg:text-[56px] font-bold text-primary leading-none">
         <Counter value={count} suffix={suffix} />
       </div>
-      <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
     </div>
-  );
-}
-
-function FeatureCard({ icon, title, desc, delay }: { icon: any, title: string, desc: string, delay: number }) {
-  return (
-    <ScrollReveal direction="up" delay={delay} className="h-full">
-      <Card className="p-10 h-full rounded-[32px] border-none shadow-[0_10px_40px_rgba(0,0,0,0.03)] bg-white hover:shadow-[0_30px_60px_rgba(37,99,235,0.08)] transition-all duration-500 group">
-        <div className="size-14 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-           {React.cloneElement(icon, { className: "size-7" })}
-        </div>
-        <h3 className="text-xl font-bold text-foreground mb-4 leading-tight">{title}</h3>
-        <p className="text-[14px] text-muted-foreground leading-relaxed">{desc}</p>
-      </Card>
-    </ScrollReveal>
-  );
-}
-
-function ValueCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
-  return (
-    <ScrollReveal direction="up" className="text-center space-y-6 group">
-      <div className="size-20 bg-primary/5 rounded-[24px] flex items-center justify-center mx-auto text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-        {React.cloneElement(icon, { className: "size-8" })}
-      </div>
-      <div className="space-y-3">
-        <h4 className="text-xl font-bold text-foreground">{title}</h4>
-        <p className="text-[14px] text-muted-foreground leading-relaxed">{desc}</p>
-      </div>
-    </ScrollReveal>
   );
 }

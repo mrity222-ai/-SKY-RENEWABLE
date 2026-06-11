@@ -5,14 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { 
   ArrowRight, 
-  CheckCircle2, 
   Zap, 
   Home as HomeIcon,
   Factory,
   Wrench,
   BatteryFull,
   Layout,
-  Banknote,
   MapPin,
   ChevronLeft,
   ChevronRight,
@@ -92,20 +90,20 @@ export default function Home() {
               <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">A Complete Solar Solution</span>
             </div>
             
-            <h1 className="text-[48px] md:text-[80px] lg:text-[110px] font-bold text-foreground leading-[0.95] tracking-tighter">
+            <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-bold text-foreground leading-[1] tracking-tighter">
               The Future of <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Clean Energy</span>
             </h1>
             
-            <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
               Switch to SKY RENEWABLE. High-yield engineering, smart monitoring, and guaranteed government subsidies.
             </p>
 
             <div className="flex flex-wrap justify-center gap-5 pt-8">
-              <Button asChild size="lg" className="bg-primary text-white rounded-full px-12 h-16 text-sm font-bold hover:shadow-2xl hover:shadow-primary/30 transition-all">
+              <Button asChild size="lg" className="bg-primary text-white rounded-full px-12 h-16 text-[15px] font-bold hover:shadow-2xl hover:shadow-primary/30 transition-all">
                 <Link href="/get-quote" className="flex items-center gap-2">Get Your Quote <ArrowRight className="size-4" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-border text-foreground backdrop-blur-md rounded-full px-12 h-16 text-sm font-bold hover:bg-white transition-all">
+              <Button asChild variant="outline" size="lg" className="border-border text-foreground backdrop-blur-md rounded-full px-12 h-16 text-[15px] font-bold hover:bg-white transition-all">
                 <Link href="/get-quote">Book Site Survey</Link>
               </Button>
             </div>
@@ -148,17 +146,17 @@ export default function Home() {
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
-                <h2 className="text-[40px] lg:text-[60px] font-bold text-foreground leading-[1.1] tracking-tight">
+                <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-[1.2] tracking-tight">
                   Empowering India <br />Through <span className="text-secondary">Smart Solar</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                <p className="text-[17px] text-muted-foreground leading-relaxed max-w-xl">
                   SKY RENEWABLE is redefining how homes and industries harvest the sun. We provide end-to-end EPC services, from custom structural engineering to seamless subsidy approvals.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild variant="outline" className="rounded-full px-10 h-14 border-primary/20 text-primary hover:bg-primary/5 font-bold transition-all">
+                <Button asChild variant="outline" className="rounded-full px-10 h-14 border-primary/20 text-primary hover:bg-primary/5 font-bold transition-all text-[15px]">
                   <Link href="/about-us">Our Engineering Legacy</Link>
                 </Button>
               </ScrollReveal>
@@ -181,7 +179,7 @@ export default function Home() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center space-y-6 mb-24">
-            <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground leading-tight">Advanced Energy Solutions</h2>
+            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-tight">Advanced Energy Solutions</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -199,10 +197,10 @@ export default function Home() {
       <section className="py-32 bg-background border-y border-border/50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 mb-24 items-end">
-            <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground leading-tight tracking-tighter">
+            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-tight tracking-tighter">
               Why Sky Renewable <br />Solar Solutions?
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-[18px] text-muted-foreground leading-relaxed max-w-xl">
               Solar is a strategic asset. We maximize its value through engineering excellence and lifecycle support.
             </p>
           </div>
@@ -230,7 +228,7 @@ export default function Home() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-24 space-y-6">
-            <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground leading-tight">Featured Case Studies</h2>
+            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-tight">Featured Case Studies</h2>
             <p className="text-muted-foreground text-lg">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-10 mb-16">
@@ -254,7 +252,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Button asChild variant="outline" className="rounded-full px-12 h-16 border-border hover:bg-muted font-bold transition-all">
+            <Button asChild variant="outline" className="rounded-full px-12 h-16 border-border hover:bg-muted font-bold transition-all text-[15px]">
               <Link href="/projects">View All Projects</Link>
             </Button>
           </div>
@@ -265,7 +263,7 @@ export default function Home() {
       <section className="py-32 bg-background border-t border-border">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-24 space-y-6">
-            <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground">Voice of our Clients</h2>
+            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground">Voice of our Clients</h2>
             <p className="text-muted-foreground text-lg">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
           
@@ -306,10 +304,10 @@ export default function Home() {
 function StatItem({ val, suffix, label }: { val: number, suffix: string, label: string }) {
   return (
     <div className="space-y-3">
-      <div className="text-[48px] md:text-[64px] font-bold text-primary leading-none">
+      <div className="text-[40px] md:text-[56px] font-bold text-primary leading-none">
         <Counter value={val} suffix={suffix} />
       </div>
-      <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
+      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
     </div>
   );
 }
@@ -323,8 +321,8 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
           <div className="size-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
             {React.cloneElement(icon, { className: "size-8" })}
           </div>
-          <h3 className="text-2xl font-bold text-foreground mb-4">{title}</h3>
-          <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">{desc}</p>
+          <h3 className="text-xl font-bold text-foreground mb-4">{title}</h3>
+          <p className="text-[15px] text-muted-foreground leading-relaxed mb-8 flex-grow">{desc}</p>
           <div className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider group-hover:gap-4 transition-all">
             Explore <ArrowRight className="size-4" />
           </div>
@@ -339,7 +337,7 @@ function ValueItem({ title, desc }: { title: string, desc: string }) {
     <div className="space-y-4">
       <div className="size-1.5 bg-primary rounded-full" />
       <h3 className="text-xl font-bold text-foreground">{title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{desc}</p>
+      <p className="text-[15px] text-muted-foreground leading-relaxed">{desc}</p>
     </div>
   );
 }
@@ -351,7 +349,7 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
         <div className="flex gap-1.5 text-accent">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-4 fill-current" />)}
         </div>
-        <p className="text-lg text-foreground font-medium italic leading-relaxed flex-grow">"{review}"</p>
+        <p className="text-[17px] text-foreground font-medium italic leading-relaxed flex-grow">"{review}"</p>
         <div className="flex items-center gap-5 border-t border-muted pt-8">
           <div className="size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-lg">
             {name[0]}

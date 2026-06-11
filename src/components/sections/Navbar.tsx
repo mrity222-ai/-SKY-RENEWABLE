@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -27,7 +26,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Navbar() {
@@ -147,7 +145,7 @@ export function Navbar() {
                   {link.submenu ? (
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
-                        "relative px-4 py-2 rounded-full text-[13px] font-semibold flex items-center gap-1 transition-all outline-none",
+                        "relative px-4 py-2 rounded-full text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
                         isActive ? "text-primary bg-primary/5" : "text-foreground hover:bg-primary/5 hover:text-primary"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
@@ -186,7 +184,7 @@ export function Navbar() {
                     <Link 
                       href={link.href}
                       className={cn(
-                        "relative px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-300 block",
+                        "relative px-4 py-2 rounded-full text-[15px] font-semibold transition-all duration-300 block",
                         isActive ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5 hover:text-primary"
                       )}
                     >
@@ -200,7 +198,7 @@ export function Navbar() {
 
           {/* CTA - RIGHT */}
           <div className="flex-1 flex justify-end items-center gap-4">
-            <Button asChild className="hidden lg:flex bg-primary text-white rounded-full px-8 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 font-bold h-11 text-xs uppercase tracking-wider">
+            <Button asChild className="hidden lg:flex bg-primary text-white rounded-full px-8 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 font-bold h-11 text-[15px] uppercase tracking-wider">
               <Link href="/get-quote">Get a Quote</Link>
             </Button>
 
@@ -229,7 +227,7 @@ export function Navbar() {
                           <Link 
                             href={link.href} 
                             className={cn(
-                              "text-[16px] font-bold px-4 py-2 rounded-xl block transition-all",
+                              "text-[18px] font-bold px-4 py-2 rounded-xl block transition-all",
                               pathname === link.href ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5"
                             )}
                           >
@@ -242,7 +240,7 @@ export function Navbar() {
                                   key={sub.name} 
                                   href={sub.href} 
                                   className={cn(
-                                    "text-[14px] font-medium py-2 px-3 rounded-lg block transition-all",
+                                    "text-[16px] font-medium py-2 px-3 rounded-lg block transition-all",
                                     pathname === sub.href ? "bg-primary/5 text-primary" : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                                   )}
                                 >
