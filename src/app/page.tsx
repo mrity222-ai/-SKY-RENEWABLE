@@ -50,7 +50,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 4000); // Rotates every 4 seconds
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -64,9 +64,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-hidden">
+    <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       {/* HERO SLIDER */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[90vh] md:h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
@@ -88,41 +88,40 @@ export default function Home() {
               </div>
             </motion.div>
           </AnimatePresence>
-          {/* Subtle overlay for text readability - very light to keep images "100% visible" */}
-          <div className="absolute inset-0 bg-black/10 z-10" />
+          <div className="absolute inset-0 bg-black/20 z-10" />
         </div>
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
-          <ScrollReveal direction="up" className="max-w-5xl space-y-8">
-            <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-bold text-white leading-[1] tracking-tighter drop-shadow-lg">
+          <ScrollReveal direction="up" className="max-w-5xl space-y-6 md:space-y-8">
+            <h1 className="text-[32px] sm:text-[42px] md:text-[64px] lg:text-[80px] font-bold text-white leading-[1.1] tracking-tighter drop-shadow-lg">
               The Future of <br />
               <span className="text-accent">Clean Energy</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed font-medium drop-shadow-md">
+            <p className="text-base md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed font-medium drop-shadow-md px-2">
               Switch to SKY RENEWABLE. High-yield engineering, smart monitoring, and guaranteed government subsidies.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-5 pt-8">
-              <Button asChild size="lg" className="bg-primary text-white rounded-full px-12 h-16 text-[15px] font-bold hover:shadow-2xl hover:shadow-primary/30 transition-all">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-5 pt-4 md:pt-8 w-full max-w-md mx-auto sm:max-w-none">
+              <Button asChild size="lg" className="bg-primary text-white rounded-full px-8 md:px-12 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:shadow-2xl hover:shadow-primary/30 transition-all w-full sm:w-auto">
                 <Link href="/get-quote" className="flex items-center gap-2">Get Your Quote <ArrowRight className="size-4" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/40 text-white backdrop-blur-md rounded-full px-12 h-16 text-[15px] font-bold hover:bg-white hover:text-primary transition-all">
+              <Button asChild variant="outline" size="lg" className="border-white/40 text-white backdrop-blur-md rounded-full px-8 md:px-12 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-white hover:text-primary transition-all w-full sm:w-auto">
                 <Link href="/get-quote">Book Site Survey</Link>
               </Button>
             </div>
           </ScrollReveal>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-24 flex gap-2">
+          <div className="absolute bottom-16 md:bottom-24 flex gap-2">
             {HERO_IMAGES.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 className={cn(
-                  "size-2.5 rounded-full transition-all duration-300",
+                  "size-2 md:size-2.5 rounded-full transition-all duration-300",
                   currentSlide === idx 
-                    ? "bg-accent w-8" 
+                    ? "bg-accent w-6 md:w-8" 
                     : "bg-white/40 hover:bg-white/60"
                 )}
                 aria-label={`Go to slide ${idx + 1}`}
@@ -130,7 +129,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 hidden md:flex gap-4">
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex gap-4">
             <button onClick={prevSlide} className="size-12 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
               <ChevronLeft className="size-5" />
             </button>
@@ -145,9 +144,9 @@ export default function Home() {
       <SubsidyShowcase />
 
       {/* SECTION 2 – TRUST & ACHIEVEMENTS */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             <StatItem val={500} suffix="+" label="Solar Projects" />
             <StatItem val={10} suffix="MW+" label="Installed Capacity" />
             <StatItem val={98} suffix="%" label="Client Satisfaction" />
@@ -157,33 +156,33 @@ export default function Home() {
       </section>
 
       {/* SECTION 3 – ABOUT COMPANY */}
-      <section className="py-32">
+      <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <div className="space-y-10">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
+            <div className="space-y-6 md:space-y-10 text-center lg:text-left">
               <ScrollReveal direction="up">
                 <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase">
                   Leading Solar Authority
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
-                <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-[1.2] tracking-tight">
+                <h2 className="text-[28px] sm:text-[34px] lg:text-[48px] font-bold text-foreground leading-[1.2] tracking-tight">
                   Empowering India <br />Through <span className="text-secondary">Smart Solar</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
-                <p className="text-[17px] text-muted-foreground leading-relaxed max-w-xl">
+                <p className="text-[16px] md:text-[17px] text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
                   SKY RENEWABLE is redefining how homes and industries harvest the sun. We provide end-to-end EPC services, from custom structural engineering to seamless subsidy approvals.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild variant="outline" className="rounded-full px-10 h-14 border-primary/20 text-primary hover:bg-primary/5 font-bold transition-all text-[15px]">
+                <Button asChild variant="outline" className="rounded-full px-8 md:px-10 h-12 md:h-14 border-primary/20 text-primary hover:bg-primary/5 font-bold transition-all text-[14px] md:text-[15px]">
                   <Link href="/about-us">Our Engineering Legacy</Link>
                 </Button>
               </ScrollReveal>
             </div>
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-[40px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)]">
+              <div className="relative aspect-square rounded-[32px] md:rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] md:shadow-[0_40px_80px_rgba(0,0,0,0.1)]">
                 <Image 
                   src="https://picsum.photos/seed/arka_h_about/800/800" 
                   alt="SKY RENEWABLE Solar Installation Team" 
@@ -197,13 +196,13 @@ export default function Home() {
       </section>
 
       {/* SECTION 4 – OUR SOLAR SOLUTIONS */}
-      <section className="py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center space-y-6 mb-24">
-            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-tight">Advanced Energy Solutions</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
+          <ScrollReveal className="text-center space-y-4 md:space-y-6 mb-12 md:mb-24">
+            <h2 className="text-[28px] sm:text-[34px] lg:text-[48px] font-bold text-foreground leading-tight">Advanced Energy Solutions</h2>
+            <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             <SolutionCard icon={<HomeIcon />} title="Residential Solar" desc="Slash bills by 90% with subsidized rooftop systems." href="/services/residential-solar" />
             <SolutionCard icon={<Factory />} title="Commercial Solar" desc="Boost ROI with tax benefits and fixed energy costs." href="/services/commercial-solar" />
             <SolutionCard icon={<Zap />} title="Industrial EPC" desc="Mega-watt scale solar plants for heavy manufacturing." href="/services/industrial-solar" />
@@ -215,18 +214,18 @@ export default function Home() {
       </section>
 
       {/* SECTION 5 – WHY CHOOSE SOLAR ENERGY? */}
-      <section className="py-32 bg-background border-y border-border/50">
+      <section className="py-20 md:py-32 bg-background border-y border-border/50">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 mb-24 items-end">
-            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-tight tracking-tighter">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 mb-12 md:mb-24 items-end text-center lg:text-left">
+            <h2 className="text-[28px] sm:text-[34px] lg:text-[48px] font-bold text-foreground leading-tight tracking-tighter">
               Why Sky Renewable <br />Solar Solutions?
             </h2>
-            <p className="text-[18px] text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-[16px] md:text-[18px] text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
               Solar is a strategic asset. We maximize its value through engineering excellence and lifecycle support.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-16 gap-y-10 md:gap-y-16">
             <ValueItem title="Significant Savings" desc="Lock in your electricity tariff for 25 years and insulate your business from rising utility costs." />
             <ValueItem title="ESG Compliance" desc="Meet your sustainability mandates and boost your corporate brand value through clean energy." />
             <ValueItem title="Energy Security" desc="Eliminate production downtime with smart hybrid backup systems and stable voltage profiles." />
@@ -238,31 +237,31 @@ export default function Home() {
       </section>
 
       {/* SECTION 6 – SOLAR SAVINGS CALCULATOR */}
-      <section className="py-32 bg-foreground text-white overflow-hidden relative border-t border-white/5">
-        <div className="absolute top-0 right-0 size-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none" />
+      <section className="py-20 md:py-32 bg-foreground text-white overflow-hidden relative border-t border-white/5">
+        <div className="absolute top-0 right-0 size-[300px] md:size-[500px] bg-primary/20 blur-[100px] md:blur-[150px] rounded-full pointer-events-none" />
         <div className="container relative z-10 mx-auto px-4">
           <Calculator />
         </div>
       </section>
 
       {/* SECTION 7 – FEATURED PROJECTS */}
-      <section className="py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-24 space-y-6">
-            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground leading-tight">Featured Case Studies</h2>
-            <p className="text-muted-foreground text-lg">High-yield solar deployments across India's industrial landscape.</p>
+          <ScrollReveal className="text-center mb-12 md:mb-24 space-y-4 md:space-y-6">
+            <h2 className="text-[28px] sm:text-[34px] lg:text-[48px] font-bold text-foreground leading-tight">Featured Case Studies</h2>
+            <p className="text-muted-foreground text-base md:text-lg">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-10 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mb-12 md:mb-16">
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <Link href="/projects" className="group block">
-                  <div className="relative h-[600px] rounded-[32px] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-2">
+                  <div className="relative h-[450px] md:h-[600px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl md:shadow-2xl transition-all duration-700 hover:-translate-y-2">
                     <Image src={p.image} alt={p.name} fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-80" />
-                    <div className="absolute bottom-10 left-10 right-10">
-                      <span className="inline-block bg-primary px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-widest mb-4">{p.type}</span>
-                      <h3 className="text-2xl font-bold text-white mb-2">{p.name}</h3>
-                      <div className="flex items-center gap-4 text-white/70 text-sm">
+                    <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 right-6 md:right-10">
+                      <span className="inline-block bg-primary px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-widest mb-3 md:mb-4">{p.type}</span>
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{p.name}</h3>
+                      <div className="flex flex-wrap items-center gap-3 md:gap-4 text-white/70 text-xs md:text-sm">
                         <span className="flex items-center gap-1.5"><Zap className="size-4 text-primary" /> {p.capacity}</span>
                         <span className="flex items-center gap-1.5"><MapPin className="size-4" /> {p.location}</span>
                       </div>
@@ -273,7 +272,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Button asChild variant="outline" className="rounded-full px-12 h-16 border-border hover:bg-muted font-bold transition-all text-[15px]">
+            <Button asChild variant="outline" className="rounded-full px-10 md:px-12 h-14 md:h-16 border-border hover:bg-muted font-bold transition-all text-[14px] md:text-[15px]">
               <Link href="/projects">View All Projects</Link>
             </Button>
           </div>
@@ -281,11 +280,11 @@ export default function Home() {
       </section>
 
       {/* SECTION 11 – TESTIMONIALS */}
-      <section className="py-32 bg-background border-t border-border">
+      <section className="py-20 md:py-32 bg-background border-t border-border">
         <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-24 space-y-6">
-            <h2 className="text-[34px] lg:text-[48px] font-bold text-foreground">Voice of our Clients</h2>
-            <p className="text-muted-foreground text-lg">Trusted by homeowners and industrial leaders alike.</p>
+          <ScrollReveal className="text-center mb-12 md:mb-24 space-y-4 md:space-y-6">
+            <h2 className="text-[28px] sm:text-[34px] lg:text-[48px] font-bold text-foreground">Voice of our Clients</h2>
+            <p className="text-muted-foreground text-base md:text-lg">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
           
           <div className="relative max-w-7xl mx-auto px-4">
@@ -297,17 +296,17 @@ export default function Home() {
               className="w-full"
             >
               <CarouselContent className="-ml-4 md:-ml-10">
-                <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
+                <CarouselItem className="pl-4 md:pl-10 basis-full sm:basis-1/2 md:basis-1/3">
                   <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Professional execution and visible savings. SKY RENEWABLE is easily the best solar company in Gujarat." />
                 </CarouselItem>
-                <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
+                <CarouselItem className="pl-4 md:pl-10 basis-full sm:basis-1/2 md:basis-1/3">
                   <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with PM-Suryodaya paperwork. Highly recommended for rooftop solar." />
                 </CarouselItem>
-                <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
+                <CarouselItem className="pl-4 md:pl-10 basis-full sm:basis-1/2 md:basis-1/3">
                   <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="Our hospital's electricity bill dropped by 85%. Excellent engineering and technical support." />
                 </CarouselItem>
               </CarouselContent>
-              <div className="flex justify-center gap-4 mt-12 md:hidden">
+              <div className="flex justify-center gap-4 mt-8 md:mt-12">
                 <CarouselPrevious className="relative static translate-y-0 translate-x-0" />
                 <CarouselNext className="relative static translate-y-0 translate-x-0" />
               </div>
@@ -324,11 +323,11 @@ export default function Home() {
 
 function StatItem({ val, suffix, label }: { val: number, suffix: string, label: string }) {
   return (
-    <div className="space-y-3">
-      <div className="text-[40px] md:text-[56px] font-bold text-primary leading-none">
+    <div className="space-y-2 md:space-y-3">
+      <div className="text-[32px] md:text-[56px] font-bold text-primary leading-none">
         <Counter value={val} suffix={suffix} />
       </div>
-      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
+      <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-muted-foreground">{label}</p>
     </div>
   );
 }
@@ -337,13 +336,13 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
   return (
     <ScrollReveal direction="up" className="h-full">
       <Link href={href} className="group block h-full">
-        <Card className="p-12 h-full rounded-[32px] border-none bg-background shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.08)] transition-all duration-500 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 size-32 bg-primary/5 blur-[40px] rounded-full group-hover:bg-primary/10 transition-colors" />
-          <div className="size-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-            {React.cloneElement(icon, { className: "size-8" })}
+        <Card className="p-8 md:p-12 h-full rounded-[24px] md:rounded-[32px] border-none bg-background shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.08)] transition-all duration-500 relative overflow-hidden">
+          <div className="absolute top-0 right-0 size-24 md:size-32 bg-primary/5 blur-[30px] md:blur-[40px] rounded-full group-hover:bg-primary/10 transition-colors" />
+          <div className="size-12 md:size-16 rounded-xl md:rounded-2xl bg-primary/5 flex items-center justify-center mb-6 md:mb-10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+            {React.cloneElement(icon, { className: "size-6 md:size-8" })}
           </div>
-          <h3 className="text-xl font-bold text-foreground mb-4">{title}</h3>
-          <p className="text-[15px] text-muted-foreground leading-relaxed mb-8 flex-grow">{desc}</p>
+          <h3 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4">{title}</h3>
+          <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed mb-6 md:mb-8">{desc}</p>
           <div className="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider group-hover:gap-4 transition-all">
             Explore <ArrowRight className="size-4" />
           </div>
@@ -355,29 +354,29 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
 
 function ValueItem({ title, desc }: { title: string, desc: string }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-3 md:space-y-4">
       <div className="size-1.5 bg-primary rounded-full" />
-      <h3 className="text-xl font-bold text-foreground">{title}</h3>
-      <p className="text-[15px] text-muted-foreground leading-relaxed">{desc}</p>
+      <h3 className="text-lg md:text-xl font-bold text-foreground">{title}</h3>
+      <p className="text-[14px] md:text-[15px] text-muted-foreground leading-relaxed">{desc}</p>
     </div>
   );
 }
 
 function TestimonialCard({ name, loc, review }: { name: string, loc: string, review: string }) {
   return (
-    <ScrollReveal direction="up">
-      <Card className="p-12 rounded-[32px] border-none bg-white shadow-xl shadow-foreground/5 space-y-10 flex flex-col h-full hover-lift">
+    <ScrollReveal direction="up" className="h-full">
+      <Card className="p-8 md:p-12 rounded-[24px] md:rounded-[32px] border-none bg-white shadow-xl shadow-foreground/5 space-y-6 md:space-y-10 flex flex-col h-full hover-lift">
         <div className="flex gap-1.5 text-accent">
-          {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-4 fill-current" />)}
+          {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-3 md:size-4 fill-current" />)}
         </div>
-        <p className="text-[17px] text-foreground font-medium italic leading-relaxed flex-grow">"{review}"</p>
-        <div className="flex items-center gap-5 border-t border-muted pt-8">
-          <div className="size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-lg">
+        <p className="text-[15px] md:text-[17px] text-foreground font-medium italic leading-relaxed flex-grow">"{review}"</p>
+        <div className="flex items-center gap-4 md:gap-5 border-t border-muted pt-6 md:pt-8">
+          <div className="size-10 md:size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary font-bold text-base md:text-lg shrink-0">
             {name[0]}
           </div>
           <div>
-            <h4 className="font-bold text-foreground">{name}</h4>
-            <p className="text-[11px] text-muted-foreground font-bold uppercase tracking-widest">{loc}</p>
+            <h4 className="font-bold text-foreground text-sm md:text-base">{name}</h4>
+            <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest">{loc}</p>
           </div>
         </div>
       </Card>

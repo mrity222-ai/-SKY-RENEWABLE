@@ -19,8 +19,8 @@ export function Calculator() {
     const subsidy = systemSize <= 3 ? 18000 * systemSize : (systemSize > 3 && systemSize <= 10 ? 54000 + (systemSize - 3) * 9000 : 78000);
     const grossCost = systemSize * 65000;
     const netCost = grossCost - subsidy;
-    const lifetimeSavings = yearlySavings * 25;
-    const payback = netCost / yearlySavings;
+    const yearlySavingsVal = yearlySavings;
+    const payback = netCost / yearlySavingsVal;
     const co2Offset = systemSize * 1.5;
 
     return {
@@ -28,72 +28,69 @@ export function Calculator() {
       monthlySavings,
       yearlySavings,
       netCost,
-      lifetimeSavings,
       payback: payback.toFixed(1),
       co2Offset: co2Offset.toFixed(1),
     };
   }, [bill]);
 
   return (
-    <div className="grid lg:grid-cols-2 gap-20 items-center">
-      <div className="space-y-12">
-        <div className="space-y-4">
-          <span className="text-[12px] font-bold text-primary uppercase tracking-[0.3em]">Smart ROI Tool</span>
-          <h2 className="text-[30px] lg:text-[48px] font-semibold text-white leading-tight">Calculate Your <br />Solar Potential</h2>
-          <p className="text-white/40 text-[14px] max-w-sm">Estimate your monthly savings and environmental impact instantly.</p>
+    <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div className="space-y-8 md:space-y-12">
+        <div className="space-y-4 text-center lg:text-left">
+          <span className="text-[11px] md:text-[12px] font-bold text-primary uppercase tracking-[0.2em] md:tracking-[0.3em]">Smart ROI Tool</span>
+          <h2 className="text-[28px] md:text-[48px] font-semibold text-white leading-tight">Calculate Your <br />Solar Potential</h2>
+          <p className="text-white/40 text-[14px] max-w-sm mx-auto lg:mx-0">Estimate your monthly savings and environmental impact instantly.</p>
         </div>
 
-        <Card className="rounded-[40px] border-none bg-white/5 backdrop-blur-xl p-10 space-y-12">
-          <div className="space-y-8">
+        <Card className="rounded-[24px] md:rounded-[40px] border-none bg-white/5 backdrop-blur-xl p-6 md:p-10 space-y-8 md:space-y-12">
+          <div className="space-y-6 md:space-y-8">
             <div className="flex justify-between items-center">
-              <label className="text-[14px] font-medium text-white/60">Monthly Electricity Bill</label>
-              <span className="text-[20px] font-bold text-white">₹{bill.toLocaleString()}</span>
+              <label className="text-[13px] md:text-[14px] font-medium text-white/60">Monthly Bill</label>
+              <span className="text-[18px] md:text-[20px] font-bold text-white">₹{bill.toLocaleString()}</span>
             </div>
             <Slider 
               value={[bill]} 
               onValueChange={(v) => setBill(v[0])} 
               max={20000} 
               step={100}
-              className="accent-white"
             />
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div className="flex justify-between items-center">
-              <label className="text-[14px] font-medium text-white/60">Usable Roof Area (sq. ft.)</label>
-              <span className="text-[20px] font-bold text-white">{area} sq.ft.</span>
+              <label className="text-[13px] md:text-[14px] font-medium text-white/60">Roof Area (sq. ft.)</label>
+              <span className="text-[18px] md:text-[20px] font-bold text-white">{area} sq.ft.</span>
             </div>
             <Slider 
               value={[area]} 
               onValueChange={(v) => setArea(v[0])} 
               max={2000} 
               step={10}
-              className="accent-white"
             />
           </div>
           
-          <Button asChild className="w-full h-16 rounded-full bg-white text-primary font-bold hover:bg-muted transition-all">
+          <Button asChild className="w-full h-14 md:h-16 rounded-full bg-white text-primary font-bold hover:bg-muted transition-all">
             <a href="/get-quote">Book Free Site Survey</a>
           </Button>
         </Card>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-4 md:gap-6">
         <ResultCard icon={<Zap />} label="System Size" value={`${stats.systemSize} kW`} />
         <ResultCard icon={<Banknote />} label="Monthly Saving" value={`₹${stats.monthlySavings.toLocaleString()}`} />
-        <ResultCard icon={<CalendarCheck />} label="Payback Period" value={`${stats.payback} Yrs`} />
-        <ResultCard icon={<RotateCcw />} label="Net Investment" value={`₹${(stats.netCost / 1000).toFixed(0)}k`} />
-        <div className="col-span-2 p-10 bg-white/5 rounded-[40px] flex items-center justify-between">
-           <div className="flex items-center gap-6">
-              <div className="size-14 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary">
-                <TreeDeciduous className="size-6" />
+        <ResultCard icon={<CalendarCheck />} label="Payback" value={`${stats.payback} Yrs`} />
+        <ResultCard icon={<RotateCcw />} label="Net Invest" value={`₹${(stats.netCost / 1000).toFixed(0)}k`} />
+        <div className="col-span-2 p-6 md:p-10 bg-white/5 rounded-[24px] md:rounded-[40px] flex items-center justify-between">
+           <div className="flex items-center gap-4 md:gap-6">
+              <div className="size-12 md:size-14 bg-secondary/20 rounded-xl md:rounded-2xl flex items-center justify-center text-secondary shrink-0">
+                <TreeDeciduous className="size-5 md:size-6" />
               </div>
               <div>
-                <p className="text-[11px] font-bold text-white/40 uppercase tracking-widest">CO2 Offset</p>
-                <p className="text-[24px] font-bold text-accent">{stats.co2Offset} Tons / Yr</p>
+                <p className="text-[9px] md:text-[11px] font-bold text-white/40 uppercase tracking-widest">CO2 Offset</p>
+                <p className="text-[18px] md:text-[24px] font-bold text-accent">{stats.co2Offset} Tons / Yr</p>
               </div>
            </div>
-           <Info className="size-5 text-white/20" />
+           <Info className="size-4 md:size-5 text-white/20 hidden sm:block" />
         </div>
       </div>
     </div>
@@ -102,13 +99,13 @@ export function Calculator() {
 
 function ResultCard({ icon, label, value }: { icon: any, label: string, value: string }) {
   return (
-    <div className="p-10 bg-white/5 rounded-[40px] space-y-6 hover:bg-white/10 transition-colors">
-      <div className="size-12 bg-white/10 rounded-xl flex items-center justify-center text-primary">
-        {React.cloneElement(icon, { className: "size-5" })}
+    <div className="p-6 md:p-10 bg-white/5 rounded-[24px] md:rounded-[40px] space-y-4 md:space-y-6 hover:bg-white/10 transition-colors">
+      <div className="size-10 md:size-12 bg-white/10 rounded-lg md:rounded-xl flex items-center justify-center text-primary shrink-0">
+        {React.cloneElement(icon, { className: "size-4 md:size-5" })}
       </div>
       <div>
-        <p className="text-[11px] font-bold text-white/40 uppercase tracking-widest">{label}</p>
-        <p className="text-[24px] font-bold text-accent">{value}</p>
+        <p className="text-[9px] md:text-[11px] font-bold text-white/40 uppercase tracking-widest leading-tight">{label}</p>
+        <p className="text-[18px] md:text-[24px] font-bold text-accent">{value}</p>
       </div>
     </div>
   );

@@ -28,58 +28,58 @@ export function SubsidyShowcase() {
   ];
 
   return (
-    <section className="py-24 bg-[#F8FAFC] overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1400px]">
-        <div className="grid lg:grid-cols-[45%_55%] gap-16 items-center">
+        <div className="grid lg:grid-cols-[45%_55%] gap-12 md:gap-16 items-center">
           {/* LEFT CONTENT */}
-          <div className="space-y-10">
-            <ScrollReveal direction="up" className="space-y-6">
+          <div className="space-y-6 md:space-y-10 text-center lg:text-left">
+            <ScrollReveal direction="up" className="space-y-4 md:space-y-6">
               <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-primary/20">
                 PM Surya Ghar Yojana
               </span>
-              <h2 className="text-[34px] md:text-[40px] lg:text-[48px] font-bold text-foreground leading-[1.2] tracking-tighter">
+              <h2 className="text-[28px] sm:text-[34px] lg:text-[48px] font-bold text-foreground leading-[1.2] tracking-tighter">
                 Get Maximum Solar Subsidy <br />
                 <span className="text-primary">With Expert Assistance</span>
               </h2>
-              <p className="text-[17px] text-muted-foreground leading-relaxed max-w-xl">
-                Navigating government incentives shouldn't be complicated. We provide a turnkey experience for the PM-Suryodaya Yojana, handling everything from eligibility audits to direct bank transfers. Our engineers ensure your system is compliant with all central and state norms for seamless approvals.
+              <p className="text-[15px] md:text-[17px] text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Navigating government incentives shouldn't be complicated. We provide a turnkey experience for the PM-Suryodaya Yojana, handling everything from eligibility audits to direct bank transfers.
               </p>
             </ScrollReveal>
 
             {/* FEATURE LIST */}
-            <ScrollReveal direction="up" delay={0.2} className="grid sm:grid-cols-2 gap-y-4 gap-x-8">
+            <ScrollReveal direction="up" delay={0.2} className="grid sm:grid-cols-2 gap-y-4 gap-x-8 text-left max-w-lg mx-auto lg:mx-0">
               {features.map((feature, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="shrink-0 bg-white shadow-sm border border-border p-1.5 rounded-lg">
                     {feature.icon}
                   </div>
-                  <span className="text-[15px] font-semibold text-foreground/80">{feature.text}</span>
+                  <span className="text-[14px] md:text-[15px] font-semibold text-foreground/80">{feature.text}</span>
                 </div>
               ))}
             </ScrollReveal>
 
             {/* STATISTICS ROW */}
-            <ScrollReveal direction="up" delay={0.3} className="grid grid-cols-3 gap-6 pt-4 border-t border-border">
+            <ScrollReveal direction="up" delay={0.3} className="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-border">
               <div className="space-y-1">
-                <p className="text-[22px] font-bold text-primary">₹78,000</p>
-                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Central Subsidy</p>
+                <p className="text-[18px] md:text-[22px] font-bold text-primary">₹78,000</p>
+                <p className="text-[9px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest leading-tight">Central Subsidy</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[22px] font-bold text-primary">₹30,000</p>
-                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">State Benefit</p>
+                <p className="text-[18px] md:text-[22px] font-bold text-primary">₹30,000</p>
+                <p className="text-[9px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest leading-tight">State Benefit</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[22px] font-bold text-primary">100%</p>
-                <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Doc Support</p>
+                <p className="text-[18px] md:text-[22px] font-bold text-primary">100%</p>
+                <p className="text-[9px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-widest leading-tight">Doc Support</p>
               </div>
             </ScrollReveal>
 
             {/* CTA BUTTONS */}
-            <ScrollReveal direction="up" delay={0.4} className="flex flex-wrap gap-5 pt-4">
-              <Button asChild size="lg" className="bg-primary text-white rounded-full px-10 h-16 text-[15px] font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all">
-                <Link href="/government-solar-subsidy">Check Subsidy Eligibility</Link>
+            <ScrollReveal direction="up" delay={0.4} className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+              <Button asChild size="lg" className="bg-primary text-white rounded-full px-8 md:px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all w-full sm:w-auto">
+                <Link href="/government-solar-subsidy">Check Eligibility</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-border text-foreground rounded-full px-10 h-16 text-[15px] font-bold hover:bg-white transition-all">
+              <Button asChild variant="outline" size="lg" className="border-border text-foreground rounded-full px-8 md:px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-white transition-all w-full sm:w-auto">
                 <Link href="/contact-us">Talk To Expert</Link>
               </Button>
             </ScrollReveal>
@@ -87,7 +87,7 @@ export function SubsidyShowcase() {
 
           {/* RIGHT SIDE IMAGE CARD */}
           <ScrollReveal direction="left" className="relative">
-            <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group">
+            <div className="relative aspect-[4/5] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group">
               <Image 
                 src="https://picsum.photos/seed/arka_subsidy_showcase/1200/1500" 
                 alt="Solar Subsidy Assistance" 
@@ -103,19 +103,15 @@ export function SubsidyShowcase() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-[24px] shadow-2xl border border-white/20 max-w-[240px]"
+                className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-[16px] md:rounded-[24px] shadow-2xl border border-white/20 max-w-[180px] md:max-w-[240px]"
               >
-                <div className="size-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                  <Award className="size-6" />
+                <div className="size-8 md:size-10 bg-primary/10 rounded-lg md:rounded-xl flex items-center justify-center text-primary mb-3 md:mb-4">
+                  <Award className="size-5 md:size-6" />
                 </div>
-                <h4 className="text-[18px] font-bold text-foreground leading-tight">₹1,08,000 Total Subsidy Available</h4>
-                <p className="text-[12px] text-muted-foreground mt-2">Maximum benefits applicable under standard residential configurations.</p>
+                <h4 className="text-[14px] md:text-[18px] font-bold text-foreground leading-tight">₹1,08,000 Total Subsidy Available</h4>
+                <p className="text-[10px] md:text-[12px] text-muted-foreground mt-1 md:mt-2">Maximum benefits applicable under standard configurations.</p>
               </motion.div>
             </div>
-            
-            {/* SUBTLE DECORATIVE ELEMENT */}
-            <div className="absolute -top-6 -left-6 size-24 bg-accent/20 blur-[50px] rounded-full -z-10" />
-            <div className="absolute -bottom-10 -right-10 size-48 bg-primary/10 blur-[80px] rounded-full -z-10" />
           </ScrollReveal>
         </div>
       </div>
