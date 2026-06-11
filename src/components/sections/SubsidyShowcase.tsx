@@ -4,26 +4,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { 
-  CheckCircle2, 
-  Banknote, 
-  Zap, 
-  FileText, 
-  Clock, 
-  Award
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+  Button 
+} from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { motion } from "framer-motion";
 
 export function SubsidyShowcase() {
-  const features = [
-    { icon: <Banknote className="size-4.5 text-primary" />, text: "Subsidy Application Support" },
-    { icon: <Zap className="size-4.5 text-primary" />, text: "Net Metering Assistance" },
-    { icon: <FileText className="size-4.5 text-primary" />, text: "Documentation Guidance" },
-    { icon: <Clock className="size-4.5 text-primary" />, text: "Fast Approval Process" },
-    { icon: <CheckCircle2 className="size-4.5 text-primary" />, text: "End-to-End Solar Installation" },
-  ];
-
   return (
     <section className="py-16 md:py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1400px]">
@@ -41,18 +26,6 @@ export function SubsidyShowcase() {
               <p className="text-[14px] md:text-[15px] lg:text-[16px] text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Navigating government incentives shouldn't be complicated. We provide a turnkey experience for the PM-Suryodaya Yojana, handling everything from eligibility audits to direct bank transfers.
               </p>
-            </ScrollReveal>
-
-            {/* FEATURE LIST */}
-            <ScrollReveal direction="up" delay={0.2} className="grid sm:grid-cols-2 gap-y-3.5 gap-x-8 text-left max-w-lg mx-auto lg:mx-0">
-              {features.map((feature, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="shrink-0 bg-white shadow-sm border border-border p-1.5 rounded-lg">
-                    {feature.icon}
-                  </div>
-                  <span className="text-[13px] md:text-[14px] font-semibold text-foreground/80">{feature.text}</span>
-                </div>
-              ))}
             </ScrollReveal>
 
             {/* STATISTICS ROW */}
