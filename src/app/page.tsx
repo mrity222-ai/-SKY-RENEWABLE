@@ -62,7 +62,6 @@ const HERO_IMAGES = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeFaqCategory, setActiveFaqCategory] = useState<'basics' | 'support'>('basics');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -73,10 +72,6 @@ export default function Home() {
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
-
-  const partners = [
-    "Tata Power Solar", "Waaree", "Adani Solar", "Havells", "Luminous", "Exide", "Microtek"
-  ];
 
   const projects = [
     { id: 1, name: "Skyline Villa", capacity: "10kW", location: "Ahmedabad", type: "Residential", image: "https://picsum.photos/seed/arka_h_p1/800/1200" },
@@ -240,8 +235,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECTION: GOVERNMENT SUBSIDY HIGHLIGHT */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="bg-primary/5 rounded-[48px] p-12 lg:p-20 overflow-hidden relative border border-primary/10">
+            <div className="absolute top-0 right-0 size-96 bg-secondary/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <ScrollReveal direction="up">
+                  <span className="inline-block bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase">
+                    Financial Assistance
+                  </span>
+                </ScrollReveal>
+                <ScrollReveal direction="up" delay={0.1}>
+                  <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground leading-tight tracking-tighter">
+                    Save More With <br />
+                    <span className="text-primary">Government Solar Subsidy</span>
+                  </h2>
+                </ScrollReveal>
+                <ScrollReveal direction="up" delay={0.2}>
+                  <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                    Reduce your rooftop solar installation cost significantly under the PM-Suryodaya Yojana and other central government schemes. We handle all the paperwork for you.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal direction="up" delay={0.3}>
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="flex items-center gap-4">
+                      <div className="size-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-secondary">
+                        <Banknote className="size-5" />
+                      </div>
+                      <span className="text-sm font-bold text-foreground">Up to ₹78,000 Subsidy</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="size-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-secondary">
+                        <CheckCircle2 className="size-5" />
+                      </div>
+                      <span className="text-sm font-bold text-foreground">Direct Bank Transfer</span>
+                    </div>
+                  </div>
+                </ScrollReveal>
+                <ScrollReveal direction="up" delay={0.4}>
+                  <Button asChild size="lg" className="rounded-full px-10 h-14 bg-primary text-white font-bold transition-all">
+                    <Link href="/government-solar-subsidy">Learn About Subsidies <ArrowRight className="ml-2 size-4" /></Link>
+                  </Button>
+                </ScrollReveal>
+              </div>
+              <ScrollReveal direction="left" className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+                <Image 
+                  src="https://picsum.photos/seed/sky_subsidy_h/800/600" 
+                  alt="Government Solar Subsidy" 
+                  fill 
+                  className="object-cover"
+                  data-ai-hint="solar finance"
+                />
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 6 – SOLAR SAVINGS CALCULATOR */}
-      <section className="py-32 bg-foreground text-white overflow-hidden relative">
+      <section className="py-32 bg-foreground text-white overflow-hidden relative border-t border-white/5">
         <div className="absolute top-0 right-0 size-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none" />
         <div className="container relative z-10 mx-auto px-4">
           <Calculator />
