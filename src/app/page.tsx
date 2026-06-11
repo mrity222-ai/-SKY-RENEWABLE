@@ -31,11 +31,17 @@ import {
   CarouselNext 
 } from "@/components/ui/carousel";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const HERO_IMAGES = [
-  "https://picsum.photos/seed/arka_hero_1/1920/1080",
-  "https://picsum.photos/seed/arka_hero_2/1920/1080",
-  "https://picsum.photos/seed/arka_hero_3/1920/1080",
+  "https://picsum.photos/seed/arka_hero_res/1920/1080", // Residential
+  "https://picsum.photos/seed/arka_hero_comm/1920/1080", // Commercial
+  "https://picsum.photos/seed/arka_hero_ind/1920/1080", // Industrial
+  "https://picsum.photos/seed/arka_hero_clean/1920/1080", // Cleaning
+  "https://picsum.photos/seed/arka_hero_maint/1920/1080", // Maintenance
+  "https://picsum.photos/seed/arka_hero_roof/1920/1080", // Rooftop
+  "https://picsum.photos/seed/arka_hero_yojana/1920/1080", // PM Surya Ghar
+  "https://picsum.photos/seed/arka_hero_tech/1920/1080", // Technician
 ];
 
 export default function Home() {
@@ -44,7 +50,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
+    }, 4000); // Rotates every 4 seconds
     return () => clearInterval(timer);
   }, []);
 
@@ -68,16 +74,23 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               className="relative h-full w-full"
             >
-              <Image
-                src={HERO_IMAGES[currentSlide]}
-                alt="Sky Renewable Solar Energy Solutions"
-                fill
-                className="object-cover scale-105 animate-slow-zoom"
-                priority
-              />
+              <motion.div 
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.1 }}
+                transition={{ duration: 8, ease: "linear" }}
+                className="relative h-full w-full"
+              >
+                <Image
+                  src={HERO_IMAGES[currentSlide]}
+                  alt="Sky Renewable Solar Energy Solutions"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10" />
             </motion.div>
           </AnimatePresence>
@@ -109,7 +122,24 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-4">
+          {/* Pagination Dots */}
+          <div className="absolute bottom-24 flex gap-2">
+            {HERO_IMAGES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={cn(
+                  "size-2.5 rounded-full transition-all duration-300",
+                  currentSlide === idx 
+                    ? "bg-primary w-8" 
+                    : "bg-foreground/20 hover:bg-foreground/40"
+                )}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 hidden md:flex gap-4">
             <button onClick={prevSlide} className="size-12 rounded-full border border-border backdrop-blur-md flex items-center justify-center text-foreground hover:bg-white transition-all group">
               <ChevronLeft className="size-5" />
             </button>
@@ -280,7 +310,7 @@ export default function Home() {
                   <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Professional execution and visible savings. SKY RENEWABLE is easily the best solar company in Gujarat." />
                 </CarouselItem>
                 <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
-                  <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with PM-Suryodaya subsidy paperwork. Highly recommended for rooftop solar." />
+                  <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with PM-Suryodaya paperwork. Highly recommended for rooftop solar." />
                 </CarouselItem>
                 <CarouselItem className="pl-4 md:pl-10 basis-full md:basis-1/3">
                   <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="Our hospital's electricity bill dropped by 85%. Excellent engineering and technical support." />
