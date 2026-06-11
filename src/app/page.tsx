@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -180,13 +181,14 @@ export default function Home() {
                 </Button>
               </ScrollReveal>
             </div>
+            {/* Updated About section image with aspect-video (16:9) */}
             <ScrollReveal direction="left">
-              <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <div className="relative aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
                 <Image 
-                  src="https://picsum.photos/seed/arka_h_about/800/800" 
+                  src="https://picsum.photos/seed/arka_h_about/1280/720" 
                   alt="SKY RENEWABLE Solar Installation Team" 
                   fill 
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
                   data-ai-hint="solar installation"
                 />
               </div>

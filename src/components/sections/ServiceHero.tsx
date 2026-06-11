@@ -67,9 +67,9 @@ export function ServiceHero({
             </ScrollReveal>
           </div>
 
-          {/* Image side - Enforced 1:1 Ratio & Containment */}
+          {/* Image side - Updated to aspect-video (16:9) */}
           <ScrollReveal direction="left" delay={0.4}>
-            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+            <div className="relative aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image 
                 src={image} 
                 alt={titleLine1} 
