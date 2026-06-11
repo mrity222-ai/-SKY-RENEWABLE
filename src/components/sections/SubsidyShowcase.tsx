@@ -55,17 +55,15 @@ export function SubsidyShowcase() {
             </ScrollReveal>
           </div>
 
-          {/* RIGHT SIDE IMAGE CARD - Enforced 1:1 Ratio & Containment */}
-          <ScrollReveal direction="left" className="relative">
-            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+          {/* RIGHT SIDE IMAGE CARD - Fixed Responsive Heights */}
+          <ScrollReveal direction="left">
+            <div className="relative w-full h-[350px] md:h-[450px] lg:h-[520px] rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image 
                 src="https://picsum.photos/seed/arka_subsidy_showcase/1200/1500" 
                 alt="Solar Subsidy Assistance" 
                 fill 
-                className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
-                data-ai-hint="solar finance"
+                className="object-cover transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-foreground/20 to-transparent pointer-events-none" />
             </div>
           </ScrollReveal>
         </div>
