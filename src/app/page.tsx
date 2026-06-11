@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -156,6 +155,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* LEADING SOLAR AUTHORITY SECTION */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -181,15 +181,14 @@ export default function Home() {
                 </Button>
               </ScrollReveal>
             </div>
-            {/* Updated About section image with aspect-video (16:9) */}
+            
             <ScrollReveal direction="left">
-              <div className="relative aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
                 <Image 
-                  src="https://picsum.photos/seed/arka_h_about/1280/720" 
-                  alt="SKY RENEWABLE Solar Installation Team" 
+                  src="https://picsum.photos/seed/arka_subsidy_showcase/1200/900" 
+                  alt="Solar Subsidy Assistance" 
                   fill 
-                  className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
-                  data-ai-hint="solar installation"
+                  className="object-cover object-center"
                 />
               </div>
             </ScrollReveal>
