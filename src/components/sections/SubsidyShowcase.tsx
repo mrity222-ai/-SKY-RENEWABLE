@@ -87,9 +87,9 @@ export function SubsidyShowcase() {
 
           {/* RIGHT SIDE IMAGE CARD */}
           <ScrollReveal direction="left" className="relative">
-            <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group">
+            <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group">
               <Image 
-                src="https://picsum.photos/seed/arka_subsidy_showcase/1200/900" 
+                src="https://picsum.photos/seed/arka_subsidy_showcase/1200/1500" 
                 alt="Solar Subsidy Assistance" 
                 fill 
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
