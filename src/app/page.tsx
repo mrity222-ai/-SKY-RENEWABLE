@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -68,18 +69,18 @@ export default function Home() {
       {/* HERO SLIDER */}
       <section className="relative h-[95vh] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="wait">
+          <AnimatePresence initial={false}>
             <motion.div
               key={currentSlide}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="relative h-full w-full"
+              className="absolute inset-0"
             >
               <motion.div 
-                initial={{ scale: 1 }}
-                animate={{ scale: 1.1 }}
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1.2 }}
                 transition={{ duration: 8, ease: "linear" }}
                 className="relative h-full w-full"
               >
