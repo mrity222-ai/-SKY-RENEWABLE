@@ -1,8 +1,8 @@
+
 'use client';
 
 import React from "react";
 import Image from "next/image";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const PARTNERS = [
   { name: "Tata Power", logo: "https://picsum.photos/seed/tata_solar/200/100" },
@@ -18,12 +18,6 @@ const PARTNERS = [
 export function PartnerLogos() {
   return (
     <section className="py-12 md:py-16 bg-white border-b border-border/50">
-      <div className="container mx-auto px-4 mb-8">
-        <ScrollReveal direction="up" className="text-center">
-          <p className="text-[10px] md:text-[11px] font-bold text-muted-foreground uppercase tracking-[0.3em] mb-2">Our Technology Partners</p>
-        </ScrollReveal>
-      </div>
-      
       <div className="relative overflow-hidden flex flex-nowrap">
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {[...PARTNERS, ...PARTNERS].map((partner, idx) => (
