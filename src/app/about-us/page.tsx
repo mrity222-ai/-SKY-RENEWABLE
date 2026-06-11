@@ -28,10 +28,6 @@ import { Counter } from "@/components/animations/Counter";
 import { CTASection } from "@/components/sections/CTASection";
 
 export default function AboutPage() {
-  const partners = [
-    "Tata Power Solar", "Waaree", "Adani Solar", "Luminous", "Havells", "Exide", "Microtek"
-  ];
-
   const valueProps = [
     {
       icon: <Users />,
@@ -119,21 +115,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 2 – OUR STORY */}
+      {/* SECTION 2 – ABOUT SKY RENEWABLE */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <ScrollReveal direction="right" className="space-y-8">
-              <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase">Our Story</span>
+              <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase">About Us</span>
               <h2 className="text-[40px] lg:text-[56px] font-bold text-foreground leading-tight tracking-tighter">
-                A Journey Rooted In <br /><span className="text-secondary">Innovation & Integrity</span>
+                Trusted Partners In <br /><span className="text-secondary">Clean Energy</span>
               </h2>
               <div className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Founded with a core belief that solar energy is the most democratized form of power, SKY RENEWABLE started as a specialized team of engineers. Today, we have successfully installed over 5,000+ rooftop systems across India.
+                  SKY RENEWABLE is a trusted solar energy solutions company committed to delivering clean, sustainable, and affordable power solutions for homes, businesses, industries, and institutions.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our focus has always been on quality components and hassle-free customer experience. We don&apos;t just sell panels; we build long-term relationships through performance monitoring and maintenance.
+                  We specialize in complete Solar EPC Services, Rooftop Solar Installations, Operation & Maintenance, and Solar Panel Cleaning Solutions. From site survey and system design to installation, commissioning, maintenance, and performance optimization, we handle every stage with professionalism and precision.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Our goal is to help customers reduce electricity costs, improve energy efficiency, and achieve long-term energy independence through high-quality solar solutions.
                 </p>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 pt-6">
