@@ -12,7 +12,7 @@ export function SubsidyShowcase() {
   return (
     <section className="py-16 md:py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1400px]">
-        <div className="grid lg:grid-cols-[45%_55%] gap-12 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* LEFT CONTENT */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <ScrollReveal direction="up" className="space-y-4 md:space-y-6">
