@@ -39,28 +39,28 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.1}>
               <h1 className="text-[28px] md:text-[34px] lg:text-[48px] font-semibold text-black leading-[1.05] tracking-tight max-w-4xl">
-                Empowering Homes, Businesses & Industries With <span className="text-[#B8B8B8]">Smart Solar Energy Solutions</span>
+                Empowering Homes, Businesses & Industries With <span className="text-primary">Smart Solar Energy Solutions</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
               <p className="text-[13px] lg:text-[14px] text-[#555] max-w-2xl font-normal leading-[1.6]">
-                Arkā Solar is dedicated to transforming India's energy landscape through engineering excellence, 
+                Arkā Solar is dedicated to transforming India&apos;s energy landscape through engineering excellence, 
                 unwavering integrity, and a commitment to a carbon-free future.
               </p>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.3}>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" className="bg-black text-white rounded-full px-8 py-6 text-[14px] font-semibold transition-all hover:bg-neutral-800">
+                <Button asChild size="lg" className="bg-primary text-white rounded-full px-8 py-6 text-[14px] font-semibold transition-all hover:bg-primary/90">
                   <Link href="/get-quote">Get Free Quote</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-black/10 text-black rounded-full px-8 py-6 text-[14px] font-semibold hover:bg-neutral-50">
+                <Button asChild variant="outline" size="lg" className="border-primary/10 text-primary rounded-full px-8 py-6 text-[14px] font-semibold hover:bg-primary/5">
                   <Link href="/get-quote">Book Site Survey</Link>
                 </Button>
               </div>
             </ScrollReveal>
           </div>
           <ScrollReveal direction="up" delay={0.4} className="mt-20">
-            <div className="relative aspect-[21/9] rounded-[32px] overflow-hidden">
+            <div className="relative aspect-[21/9] rounded-[32px] overflow-hidden shadow-2xl">
               <Image 
                 src="https://picsum.photos/seed/arka_about_hero/1600/700" 
                 alt="Solar Field" 
@@ -88,22 +88,22 @@ export default function AboutPage() {
                   Founded with a core belief that solar energy is the most democratized form of power, Arkā Solar started as a small team of engineers. Today, we have successfully installed over 5,000+ rooftop systems across India.
                 </p>
                 <p className="text-[13px] lg:text-[14px] text-[#555] leading-[1.6]">
-                  Our focus has always been on quality components and hassle-free customer experience. We don't just sell panels; we build long-term relationships through performance monitoring and maintenance.
+                  Our focus has always been on quality components and hassle-free customer experience. We don&apos;t just sell panels; we build long-term relationships through performance monitoring and maintenance.
                 </p>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 pt-4">
                 <div className="flex items-center gap-3 p-4 bg-[#F9F9F9] rounded-2xl">
-                  <CheckCircle2 className="text-black size-5" />
+                  <CheckCircle2 className="text-secondary size-5" />
                   <span className="text-[13px] font-semibold text-black">Certified Engineers</span>
                 </div>
                 <div className="flex items-center gap-3 p-4 bg-[#F9F9F9] rounded-2xl">
-                  <CheckCircle2 className="text-black size-5" />
+                  <CheckCircle2 className="text-secondary size-5" />
                   <span className="text-[13px] font-semibold text-black">MNRE Registered</span>
                 </div>
               </div>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
-              <div className="relative aspect-square rounded-[32px] overflow-hidden group">
+              <div className="relative aspect-square rounded-[32px] overflow-hidden group shadow-xl">
                 <Image 
                   src="https://picsum.photos/seed/arka_about_story/800/800" 
                   alt="Solar Engineers" 
@@ -118,31 +118,20 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 3 – VISION & MISSION */}
-      <section className="py-24 bg-[#0A0A0A] text-white">
+      <section className="py-32 bg-[#0A0A0A] text-white">
         <div className="container mx-auto px-4 space-y-40">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <ScrollReveal direction="right" className="space-y-8">
-              <span className="inline-block bg-white/10 text-white/70 px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">Our Vision</span>
-              <h2 className="text-[30px] lg:text-[40px] font-semibold leading-tight">
-                Creating A Sustainable Future Through Clean Energy
+              <span className="inline-block bg-primary/20 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-primary/20">Our Vision</span>
+              <h2 className="text-[34px] lg:text-[48px] font-bold leading-tight">
+                Innovative & Sustainable <br />Energy Solutions
               </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  "Promote adoption",
-                  "Reduce footprint",
-                  "Affordable solutions",
-                  "Energy independence",
-                  "Environmental support"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[13px] text-white/60">
-                    <div className="size-1.5 rounded-full bg-[#B8B8B8]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-[16px] lg:text-[18px] text-white/70 leading-[1.8] max-w-xl">
+                To become the most trusted solar energy partner by delivering innovative, efficient, and sustainable renewable energy solutions.
+              </p>
             </ScrollReveal>
             <ScrollReveal direction="left">
-              <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden">
+              <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl border border-white/5">
                 <Image src="https://picsum.photos/seed/arka_vision/800/600" alt="Sustainable Future" fill className="object-cover opacity-80" data-ai-hint="sustainable energy" />
               </div>
             </ScrollReveal>
@@ -150,27 +139,16 @@ export default function AboutPage() {
 
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <ScrollReveal direction="right" className="lg:order-2 space-y-8">
-              <span className="inline-block bg-white/10 text-white/70 px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">Our Mission</span>
-              <h2 className="text-[30px] lg:text-[40px] font-semibold leading-tight text-white">
-                Making Solar Energy Simple, Accessible & Affordable
+              <span className="inline-block bg-secondary/20 text-secondary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-secondary/20">Our Mission</span>
+              <h2 className="text-[34px] lg:text-[48px] font-bold leading-tight text-white">
+                Cleaner & Brighter <br />Future For All
               </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  "Premium Tier-1 installs",
-                  "Expert professional consultation",
-                  "Government subsidy aid",
-                  "Financing support",
-                  "24/7 After-sales service"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[13px] text-white/60">
-                    <div className="size-1.5 rounded-full bg-[#B8B8B8]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-[16px] lg:text-[18px] text-white/70 leading-[1.8] max-w-xl">
+                To provide high-quality solar solutions that help customers save money, achieve energy independence, and contribute to a cleaner and brighter future.
+              </p>
             </ScrollReveal>
             <ScrollReveal direction="left" className="lg:order-1">
-              <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden">
+              <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl border border-white/5">
                 <Image src="https://picsum.photos/seed/arka_mission/800/600" alt="Making Solar Simple" fill className="object-cover opacity-80" data-ai-hint="solar home" />
               </div>
             </ScrollReveal>
@@ -194,7 +172,7 @@ export default function AboutPage() {
       <section className="py-24 bg-[#F9F9F9]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-16 space-y-4">
-            <span className="inline-block bg-[#E5E5E5] text-[#777] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">The Arkā Advantage</span>
+            <span className="inline-block bg-[#E5E5E5] text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase">The Arkā Advantage</span>
             <h2 className="text-[30px] lg:text-[40px] font-semibold text-black">Why Customers Trust Us</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-6">
@@ -227,8 +205,8 @@ export default function AboutPage() {
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-20 space-y-2">
-            <span className="text-[#B8B8B8] font-semibold text-[12px] uppercase tracking-widest">Workflow</span>
-            <h2 className="text-[30px] lg:text-[40px] font-semibold">The 6-Step Installation</h2>
+            <span className="text-primary font-bold text-[12px] uppercase tracking-[0.3em]">Workflow</span>
+            <h2 className="text-[30px] lg:text-[40px] font-bold">The 6-Step Installation</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-6 gap-8">
             <ProcessItem number="01" title="Consultation" desc="Energy audit." />
@@ -269,10 +247,10 @@ export default function AboutPage() {
 function AchievementItem({ count, suffix, label }: { count: number, suffix: string, label: string }) {
   return (
     <div className="space-y-2">
-      <div className="text-[40px] lg:text-[56px] font-semibold text-black leading-none">
+      <div className="text-[40px] lg:text-[56px] font-bold text-primary leading-none">
         <Counter value={count} suffix={suffix} />
       </div>
-      <p className="text-[12px] font-medium uppercase tracking-wider text-[#777]">{label}</p>
+      <p className="text-[12px] font-bold uppercase tracking-wider text-muted-foreground">{label}</p>
     </div>
   );
 }
@@ -280,12 +258,12 @@ function AchievementItem({ count, suffix, label }: { count: number, suffix: stri
 function FeatureCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
     <ScrollReveal direction="up" className="h-full">
-      <Card className="p-8 h-full rounded-[24px] border-none shadow-none bg-white hover:bg-neutral-50 transition-all group">
-        <div className="size-10 rounded-xl bg-black/5 flex items-center justify-center mb-6 text-black group-hover:bg-black group-hover:text-white transition-colors">
+      <Card className="p-8 h-full rounded-[24px] border-none shadow-sm bg-white hover:bg-neutral-50 transition-all group">
+        <div className="size-10 rounded-xl bg-primary/5 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
            {React.cloneElement(icon, { className: "size-5" })}
         </div>
-        <h3 className="text-[20px] lg:text-[22px] font-semibold text-black mb-3">{title}</h3>
-        <p className="text-[13px] lg:text-[14px] text-[#555] leading-[1.6]">{desc}</p>
+        <h3 className="text-[20px] lg:text-[22px] font-bold text-black mb-3">{title}</h3>
+        <p className="text-[13px] lg:text-[14px] text-muted-foreground leading-[1.6]">{desc}</p>
       </Card>
     </ScrollReveal>
   );
@@ -294,11 +272,11 @@ function FeatureCard({ icon, title, desc }: { icon: any, title: string, desc: st
 function ValueCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
     <ScrollReveal direction="up" className="text-center space-y-4">
-      <div className="size-14 bg-[#F5F5F5] rounded-2xl flex items-center justify-center mx-auto text-black">
+      <div className="size-14 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto text-primary">
         {React.cloneElement(icon, { className: "size-6" })}
       </div>
-      <h4 className="text-[18px] lg:text-[20px] font-semibold text-black">{title}</h4>
-      <p className="text-[13px] text-[#555] leading-[1.6]">{desc}</p>
+      <h4 className="text-[18px] lg:text-[20px] font-bold text-black">{title}</h4>
+      <p className="text-[13px] text-muted-foreground leading-[1.6]">{desc}</p>
     </ScrollReveal>
   );
 }
