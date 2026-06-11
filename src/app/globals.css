@@ -57,8 +57,11 @@
     @apply bg-background text-foreground font-body antialiased;
     scroll-behavior: smooth;
   }
+  h1, h2, h3, h4, h5, h6, button {
+    @apply font-headline tracking-tight;
+  }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline tracking-tight font-semibold;
+    @apply font-semibold;
   }
 }
 
