@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-hidden">
       {/* HERO SLIDER */}
-      <section className="relative h-[95vh] w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <AnimatePresence initial={false}>
             <motion.div
@@ -78,12 +78,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeInOut" }}
               className="absolute inset-0"
             >
-              <motion.div 
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1.2 }}
-                transition={{ duration: 8, ease: "linear" }}
-                className="relative h-full w-full"
-              >
+              <div className="relative h-full w-full">
                 <Image
                   src={HERO_IMAGES[currentSlide]}
                   alt="Sky Renewable Solar Energy Solutions"
@@ -91,25 +86,26 @@ export default function Home() {
                   className="object-cover"
                   priority
                 />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10" />
+              </div>
             </motion.div>
           </AnimatePresence>
+          {/* Subtle overlay for text readability - very light to keep images "100% visible" */}
+          <div className="absolute inset-0 bg-black/10 z-10" />
         </div>
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
           <ScrollReveal direction="up" className="max-w-5xl space-y-8">
-            <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-md border border-primary/20 px-4 py-2 rounded-full">
-              <Zap className="size-4 text-primary" />
-              <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em]">A Complete Solar Solution</span>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
+              <Zap className="size-4 text-accent" />
+              <span className="text-white text-[10px] font-bold uppercase tracking-[0.2em]">A Complete Solar Solution</span>
             </div>
             
-            <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-bold text-foreground leading-[1] tracking-tighter">
+            <h1 className="text-[42px] md:text-[64px] lg:text-[80px] font-bold text-white leading-[1] tracking-tighter drop-shadow-lg">
               The Future of <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Clean Energy</span>
+              <span className="text-accent">Clean Energy</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed font-medium drop-shadow-md">
               Switch to SKY RENEWABLE. High-yield engineering, smart monitoring, and guaranteed government subsidies.
             </p>
 
@@ -117,7 +113,7 @@ export default function Home() {
               <Button asChild size="lg" className="bg-primary text-white rounded-full px-12 h-16 text-[15px] font-bold hover:shadow-2xl hover:shadow-primary/30 transition-all">
                 <Link href="/get-quote" className="flex items-center gap-2">Get Your Quote <ArrowRight className="size-4" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-border text-foreground backdrop-blur-md rounded-full px-12 h-16 text-[15px] font-bold hover:bg-white transition-all">
+              <Button asChild variant="outline" size="lg" className="border-white/40 text-white backdrop-blur-md rounded-full px-12 h-16 text-[15px] font-bold hover:bg-white hover:text-primary transition-all">
                 <Link href="/get-quote">Book Site Survey</Link>
               </Button>
             </div>
@@ -132,8 +128,8 @@ export default function Home() {
                 className={cn(
                   "size-2.5 rounded-full transition-all duration-300",
                   currentSlide === idx 
-                    ? "bg-primary w-8" 
-                    : "bg-foreground/20 hover:bg-foreground/40"
+                    ? "bg-accent w-8" 
+                    : "bg-white/40 hover:bg-white/60"
                 )}
                 aria-label={`Go to slide ${idx + 1}`}
               />
@@ -141,10 +137,10 @@ export default function Home() {
           </div>
 
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2 hidden md:flex gap-4">
-            <button onClick={prevSlide} className="size-12 rounded-full border border-border backdrop-blur-md flex items-center justify-center text-foreground hover:bg-white transition-all group">
+            <button onClick={prevSlide} className="size-12 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
               <ChevronLeft className="size-5" />
             </button>
-            <button onClick={nextSlide} className="size-12 rounded-full border border-border backdrop-blur-md flex items-center justify-center text-foreground hover:bg-white transition-all group">
+            <button onClick={nextSlide} className="size-12 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
               <ChevronRight className="size-5" />
             </button>
           </div>
