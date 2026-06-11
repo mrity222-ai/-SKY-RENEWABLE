@@ -67,9 +67,9 @@ export function ServiceHero({
             </ScrollReveal>
           </div>
 
-          {/* Image side */}
+          {/* Image side - Updated to aspect-square */}
           <ScrollReveal direction="left" delay={0.4}>
-            <div className="relative h-[300px] sm:h-[400px] lg:h-[430px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl group">
+            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl group">
               <Image 
                 src={image} 
                 alt={titleLine1} 

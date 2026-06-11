@@ -82,9 +82,9 @@ export function SubsidyShowcase() {
             </ScrollReveal>
           </div>
 
-          {/* RIGHT SIDE IMAGE CARD */}
+          {/* RIGHT SIDE IMAGE CARD - Updated to aspect-square */}
           <ScrollReveal direction="left" className="relative">
-            <div className="relative aspect-[4/5] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl group">
+            <div className="relative aspect-square rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl group">
               <Image 
                 src="https://picsum.photos/seed/arka_subsidy_showcase/1200/1500" 
                 alt="Solar Subsidy Assistance" 
