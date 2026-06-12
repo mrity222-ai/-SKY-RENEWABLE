@@ -195,7 +195,7 @@ export default function SolarCleaningSolutionsPage() {
             <ScrollReveal direction="right">
               <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
                  <img 
-                   src="https://picsum.photos/seed/sky_clean_industrial/1200/900" 
+                   src="/servie/5.png" 
                    alt="Industrial solar plant" 
                    className="object-cover w-full h-full"
                  />
