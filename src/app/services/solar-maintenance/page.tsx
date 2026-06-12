@@ -46,7 +46,7 @@ export default function SolarMaintenancePage() {
         titleLine1="Solar Maintenance"
         titleLine2="Asset Protection"
         description="Your solar system is a long-term investment. Our AMC services ensure your panels generate maximum power for their entire 25-year lifecycle through IoT monitoring and expert cleaning."
-        image="https://picsum.photos/seed/arka_maint_hero/1200/1500"
+        image="/servie/5.png"
         primaryButtonText="Book Maintenance"
         secondaryButtonText="Get Service Quote"
       />
