@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/battery-storage',
     '/services/solar-maintenance',
     '/net-metering-assistance',
+    '/solar-panel-cleaning-solutions',
     '/projects',
     '/government-solar-subsidy',
     '/solar-calculator',

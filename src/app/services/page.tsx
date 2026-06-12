@@ -54,7 +54,7 @@ export default function ServicesPage() {
       title: "Solar Panel Cleaning Solutions",
       desc: "Professional cleaning services using specialized equipment to remove debris and boost generation by up to 15%.",
       icon: <Sun className="size-6" />,
-      href: "/services/solar-maintenance",
+      href: "/solar-panel-cleaning-solutions",
       image: "https://picsum.photos/seed/sky_cleaning/800/600"
     },
     {

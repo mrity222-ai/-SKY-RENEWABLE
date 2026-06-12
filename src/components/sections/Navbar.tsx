@@ -56,7 +56,7 @@ export function Navbar() {
         { name: "Rooftop Solar Installations", href: "/services/rooftop-installation", icon: <Home className="size-4" /> },
         { name: "Commercial & Industrial Projects", href: "/services/commercial-solar", icon: <Factory className="size-4" /> },
         { name: "Operation & Maintenance", href: "/services/solar-maintenance", icon: <Wrench className="size-4" /> },
-        { name: "Solar Panel Cleaning", href: "/services/solar-maintenance", icon: <Sun className="size-4" /> },
+        { name: "Solar Panel Cleaning", href: "/solar-panel-cleaning-solutions", icon: <Sun className="size-4" /> },
         { name: "Storage & Optimization", href: "/services/battery-storage", icon: <Cpu className="size-4" /> },
         { name: "Net Metering Assistance", href: "/net-metering-assistance", icon: <ClipboardCheck className="size-4" /> },
         { name: "PM Surya Ghar Support", href: "/government-solar-subsidy", icon: <Banknote className="size-4" /> },
