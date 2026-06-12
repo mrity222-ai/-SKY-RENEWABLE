@@ -17,11 +17,10 @@ export function SubsidyShowcase() {
           <ScrollReveal direction="right" className="order-2 lg:order-1">
             <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
               <Image
-                src="https://picsum.photos/seed/arka_subsidy_showcase/1200/900"
+                src="/servie/8.png"
                 alt="Solar Subsidy Assistance"
                 fill
                 className="object-cover object-center"
-                data-ai-hint="solar finance"
               />
             </div>
           </ScrollReveal>
