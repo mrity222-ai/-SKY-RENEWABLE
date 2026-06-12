@@ -239,7 +239,7 @@ export default function NetMeteringAssistancePage() {
             <ScrollReveal direction="left">
                <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
                  <img 
-                   src="https://picsum.photos/seed/sky_liaison/1200/900" 
+                   src="/servie/7.png" 
                    alt="Net Metering Support" 
                    className="object-cover w-full h-full"
                  />
