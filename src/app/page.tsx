@@ -60,9 +60,9 @@ export default function Home() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
 
   const projects = [
-    { id: 1, name: "Skyline Villa", capacity: "10kW", location: "Ahmedabad", type: "Residential", image: "https://picsum.photos/seed/arka_h_p1/800/1200" },
-    { id: 2, name: "GIDC Industrial Park", capacity: "250kW", location: "Sanand", type: "Industrial", image: "https://picsum.photos/seed/arka_h_p2/800/1200" },
-    { id: 3, name: "Emerald Heights", capacity: "50kW", location: "Surat", type: "Commercial", image: "https://picsum.photos/seed/arka_h_p3/800/1200" },
+    { id: 1, name: "Skyline Villa", image: "https://picsum.photos/seed/arka_h_p1/800/1200" },
+    { id: 2, name: "GIDC Industrial Park", image: "https://picsum.photos/seed/arka_h_p2/800/1200" },
+    { id: 3, name: "Emerald Heights", image: "https://picsum.photos/seed/arka_h_p3/800/1200" },
   ];
 
   return (
@@ -156,7 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LEADING SOLAR AUTHORITY SECTION - SWAPPED Image (Left) / Text (Right) */}
+      {/* LEADING SOLAR AUTHORITY SECTION */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -255,13 +255,11 @@ export default function Home() {
                 <Link href="/projects" className="group block">
                   <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2 bg-neutral-100">
                     <Image src={p.image} alt={p.name} fill className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/20 to-transparent opacity-80" />
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <span className="inline-block bg-[#2563EB] px-3 py-1 rounded-full text-[9px] font-bold text-white uppercase tracking-widest mb-3">{p.type}</span>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">{p.name}</h3>
-                      <div className="flex flex-wrap items-center gap-3 text-white/70 text-xs">
-                        <span className="flex items-center gap-1.5"><Zap className="size-3.5 text-primary" /> {p.capacity}</span>
-                        <span className="flex items-center gap-1.5"><MapPin className="size-3.5" /> {p.location}</span>
+                    
+                    {/* Minimalist Numbering Box */}
+                    <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] border-r-[6px] border-[#3B82F6] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                      <div className="text-[30px] md:text-[40px] font-black text-[#0F172A] tracking-tighter leading-none">
+                        {p.id < 10 ? `0${p.id}` : p.id}
                       </div>
                     </div>
                   </div>
