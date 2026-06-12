@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { Counter } from "@/components/animations/Counter";
 import { CTASection } from "@/components/sections/CTASection";
 
 export default function AboutPage() {
@@ -116,29 +115,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
-            <AchievementItem count={5000} suffix="+" label="Projects Completed" />
-            <AchievementItem count={120} suffix=" MW+" label="Installed Capacity" />
-            <AchievementItem count={98} suffix="%" label="Customer Satisfaction" />
-            <AchievementItem count={25} suffix="Y" label="Warranty Support" />
-          </div>
-        </div>
-      </section>
-
       <CTASection />
-    </div>
-  );
-}
-
-function AchievementItem({ count, suffix, label }: { count: number, suffix: string, label: string }) {
-  return (
-    <div className="space-y-4">
-      <div className="text-[32px] md:text-[44px] lg:text-[52px] font-bold text-primary leading-none">
-        <Counter value={count} suffix={suffix} />
-      </div>
-      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
     </div>
   );
 }
