@@ -93,7 +93,7 @@ export default function SolarCleaningSolutionsPage() {
         titleLine1="Professional Solar Panel"
         titleLine2="Cleaning Solutions"
         description="Dust, dirt, bird droppings, and environmental pollutants can significantly reduce solar panel efficiency. SKY RENEWABLE provides professional cleaning to maintain peak system performance and maximize your power generation."
-        image="https://picsum.photos/seed/sky_panel_cleaning/1200/900"
+        image="/servie/6.png"
         primaryButtonText="Book Cleaning Service"
         secondaryButtonText="Get Free Inspection"
       />
