@@ -143,25 +143,13 @@ export default function ProjectsPage() {
                         className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                       />
                       
-                      <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-10 md:pr-12 py-5 md:py-6 flex items-center gap-4 md:gap-6 rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                      <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                         <div className="text-[30px] md:text-[40px] font-black text-[#0F172A] tracking-tighter leading-none">
                           {project.id < 10 ? `0${project.id}` : project.id}
                         </div>
-                        <div className="flex flex-col gap-0.5">
-                          <span className="text-[9px] md:text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">{project.type}</span>
-                          <h3 className="text-[14px] md:text-[16px] font-bold text-[#0F172A] leading-tight max-w-[180px]">
-                            {project.title}
-                          </h3>
-                        </div>
                       </div>
 
-                      <div className="absolute top-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <Badge className="bg-white/90 backdrop-blur-md text-[#0F172A] border-none px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
-                          <MapPin className="size-3 mr-1" /> {project.location}
-                        </Badge>
-                      </div>
-
-                      <Link href={`/get-quote`} className="absolute inset-0 z-10" aria-label={`View ${project.title}`} />
+                      <Link href={`/get-quote`} className="absolute inset-0 z-10" aria-label={`View Project ${project.id}`} />
                     </Card>
                   </motion.div>
                 ))}
