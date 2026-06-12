@@ -141,7 +141,7 @@ export default function SolarCleaningSolutionsPage() {
             <ScrollReveal direction="left">
                <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
                  <img 
-                   src="https://picsum.photos/seed/sky_cleaning_action/1200/900" 
+                   src="/servie/7.png" 
                    alt="Technician cleaning solar panels" 
                    className="object-cover w-full h-full"
                  />
