@@ -48,7 +48,7 @@ export default function RooftopInstallationPage() {
         titleLine1="Rooftop Installation"
         titleLine2="Precision Engineering"
         description="Engineered solar deployments for all rooftop types. Our structures are wind-tested for 180kmph and built with hot-dip galvanized steel for extreme durability."
-        image="https://picsum.photos/seed/arka_roof_hero/1200/1500"
+        image="/servie/4.png"
         primaryButtonText="Book Site Survey"
         secondaryButtonText="Get Free Quote"
       />
