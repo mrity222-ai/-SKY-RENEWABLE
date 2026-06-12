@@ -5,10 +5,10 @@ import { MapPin, CheckCircle2 } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const AREAS = [
-  { state: "Chhattisgarh", cities: ["Balod", "Raipur", "Durg", "Bhilai", "Bilaspur"] },
-  { state: "Gujarat", cities: ["Ahmedabad", "Surat", "Vadodara", "Rajkot"] },
-  { state: "Uttar Pradesh", cities: ["Lucknow", "Kanpur", "Noida", "Varanasi"] },
-  { state: "Madhya Pradesh", cities: ["Bhopal", "Indore", "Jabalpur"] },
+  { 
+    state: "Chhattisgarh", 
+    cities: ["Balod", "Durg", "Rajnandgaon", "Raipur", "Dhamtari", "Kanker", "Bemetara", "Korba"] 
+  }
 ];
 
 export function WorkingArea() {
@@ -24,12 +24,12 @@ export function WorkingArea() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.1}>
               <h2 className="text-[30px] md:text-[34px] lg:text-[40px] font-bold text-[#0F172A] leading-tight tracking-tight">
-                Powering Communities <br /><span className="text-primary">Across India</span>
+                Powering Communities <br /><span className="text-primary">Across Chhattisgarh</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
               <p className="text-[14px] md:text-[16px] text-[#64748B] leading-relaxed max-w-xl">
-                With our headquarters in Chhattisgarh, SKY RENEWABLE has expanded its high-yield solar engineering services to multiple states, delivering clean energy to thousands of households and industrial units.
+                With our headquarters in Balod, SKY RENEWABLE provides high-yield solar engineering services across the state, delivering clean energy to thousands of households and industrial units.
               </p>
             </ScrollReveal>
             
@@ -48,24 +48,24 @@ export function WorkingArea() {
                   <CheckCircle2 className="size-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Operational States</p>
-                  <p className="text-sm font-bold text-foreground">5+ States Covered</p>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Operational Districts</p>
+                  <p className="text-sm font-bold text-foreground">Core Coverage</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {AREAS.map((area, idx) => (
               <ScrollReveal key={area.state} delay={idx * 0.1} direction="up">
-                <div className="p-8 rounded-[32px] bg-white border border-border hover:shadow-xl hover:border-primary/20 transition-all group">
-                  <h3 className="text-lg font-bold text-[#0F172A] mb-4 flex items-center justify-between">
+                <div className="p-10 rounded-[40px] bg-white border border-border hover:shadow-xl hover:border-primary/20 transition-all group">
+                  <h3 className="text-2xl font-bold text-[#0F172A] mb-8 flex items-center justify-between">
                     {area.state}
-                    <div className="size-2 rounded-full bg-primary" />
+                    <div className="size-3 rounded-full bg-primary" />
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {area.cities.map(city => (
-                      <span key={city} className="text-[11px] font-medium bg-muted text-muted-foreground px-3 py-1 rounded-full group-hover:bg-primary/5 group-hover:text-primary transition-colors">
+                      <span key={city} className="text-[13px] font-bold bg-muted text-muted-foreground px-4 py-2.5 rounded-2xl group-hover:bg-primary/5 group-hover:text-primary transition-colors text-center">
                         {city}
                       </span>
                     ))}
