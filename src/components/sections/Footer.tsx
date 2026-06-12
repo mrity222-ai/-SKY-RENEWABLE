@@ -59,7 +59,7 @@ export function Footer() {
             <ContactInfoBlock 
               icon={<MapPin />} 
               label="HQ Location" 
-              text="Solar Plaza, MG Road, Ahmedabad - 380001" 
+              text="Bazar Chowk Complex , Kachandur, Gunderdehi, Balod C.G. 491223" 
             />
             <ContactInfoBlock 
               icon={<Phone />} 

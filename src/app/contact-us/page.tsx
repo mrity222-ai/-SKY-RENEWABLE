@@ -63,7 +63,7 @@ export default function ContactPage() {
               <div className="grid gap-4 md:gap-6">
                 <ContactInfo icon={<Mail />} text="skyrenewable06@gmail.com" />
                 <ContactInfo icon={<Phone />} text="+91 88711 05807 / 70002 09519" />
-                <ContactInfo icon={<MapPin />} text="Solar Plaza, MG Road, Ahmedabad - 380001" />
+                <ContactInfo icon={<MapPin />} text="Bazar Chowk Complex , Kachandur, Gunderdehi, Balod C.G. 491223" />
               </div>
 
               <div className="grid gap-4 pt-4">
@@ -111,7 +111,7 @@ export default function ContactPage() {
             <ScrollReveal direction="right">
               <div className="h-[300px] md:h-[500px] w-full rounded-[24px] md:rounded-[40px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-xl">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117506.38243177652!2d72.50766345820313!3d23.022505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fccd1170aff2f4!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1714000000000!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.753366917637!2d81.2587888!3d20.9624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU3JzQ0LjYiTiA4McKwMTUnMzEuNiJF!5e0!3m2!1sen!2sin!4v1714000000000!5m2!1sen!2sin" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -123,13 +123,13 @@ export default function ContactPage() {
             <div className="space-y-8 md:space-y-10 lg:pl-12 text-center lg:text-left">
               <ScrollReveal direction="up" className="space-y-4">
                 <h2 className="text-[28px] md:text-[40px] font-semibold text-black leading-tight">Visit Our Headquarters</h2>
-                <p className="text-[15px] text-[#555] leading-[1.6]">Our engineers are available for in-person consultations at our main facility in Ahmedabad.</p>
+                <p className="text-[15px] text-[#555] leading-[1.6]">Our engineers are available for in-person consultations at our main facility in Balod.</p>
               </ScrollReveal>
               <div className="grid sm:grid-cols-2 gap-8 md:gap-12 text-left">
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <h4 className="font-bold text-black text-[15px] md:text-[16px]">Head Office</h4>
-                    <p className="text-[#555] text-[13px] leading-[1.6]">Solar Plaza, 4th Floor, Ahmedabad, Gujarat - 380001</p>
+                    <p className="text-[#555] text-[13px] leading-[1.6]">Bazar Chowk Complex , Kachandur, Gunderdehi, Balod, Chhattisgarh - 491223</p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="font-bold text-black text-[15px] md:text-[16px]">Working Hours</h4>

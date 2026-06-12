@@ -104,16 +104,16 @@ export default function RootLayout({
               telephone: '+91-88711-05807',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Solar Plaza, MG Road',
-                addressLocality: 'Ahmedabad',
-                addressRegion: 'Gujarat',
-                postalCode: '380001',
+                streetAddress: 'Bazar Chowk Complex, Kachandur, Gunderdehi',
+                addressLocality: 'Balod',
+                addressRegion: 'Chhattisgarh',
+                postalCode: '491223',
                 addressCountry: 'IN',
               },
               geo: {
                 '@type': 'GeoCoordinates',
-                latitude: 23.0225,
-                longitude: 72.5714,
+                latitude: 20.9624,
+                longitude: 81.2587,
               },
               openingHoursSpecification: {
                 '@type': 'OpeningHoursSpecification',
