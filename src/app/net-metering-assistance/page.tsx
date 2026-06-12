@@ -94,7 +94,7 @@ export default function NetMeteringAssistancePage() {
         titleLine1="Net Metering Assistance"
         titleLine2="Save More With Export Benefits"
         description="SKY RENEWABLE helps residential, commercial, and industrial solar customers complete the net metering process smoothly. From documentation and application submission to approval coordination and meter installation support, our team guides you at every step."
-        image="https://picsum.photos/seed/sky_meter_consult/1200/900"
+        image="/servie/1.png"
         primaryButtonText="Apply for Net Metering"
         secondaryButtonText="Talk to Solar Expert"
       />
