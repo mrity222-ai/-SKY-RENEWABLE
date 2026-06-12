@@ -46,7 +46,7 @@ export default function BatteryStoragePage() {
         titleLine1="Battery Storage"
         titleLine2="Energy Independence"
         description="Take control of your energy ecosystem. Store your harvested solar power for night-time use or critical backup during grid outages."
-        image="https://picsum.photos/seed/arka_batt_hero/1200/1500"
+        image="/servie/7.png"
         primaryButtonText="Get Backup Quote"
         secondaryButtonText="Book Site Survey"
       />
