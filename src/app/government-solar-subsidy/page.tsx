@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -51,13 +50,12 @@ export default function SubsidyGuidePage() {
 
   return (
     <div className="bg-white overflow-hidden selection:bg-black selection:text-white">
-      {/* Updated with 16:9 optimized image seed */}
       <ServiceHero 
         badge="GOVERNMENT SCHEME"
         titleLine1="Solar Subsidy"
         titleLine2="PM-Suryodaya Guide"
         description="Reduce your solar installation cost significantly with government financial assistance. We provide end-to-end liaison support for seamless bank transfers."
-        image="https://picsum.photos/seed/arka_h_about/1280/720"
+        image="/servie/9.png"
         primaryButtonText="Check Eligibility"
         secondaryButtonText="Book Site Survey"
       />
