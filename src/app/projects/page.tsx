@@ -179,7 +179,7 @@ export default function ProjectsPage() {
             </div>
             <ScrollReveal direction="left">
               <div className="relative w-full aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl bg-neutral-100">
-                <Image src="https://picsum.photos/seed/arka_impact/800/800" alt="Solar Impact" fill className="object-cover w-full h-full" />
+                <Image src="/servie/6.png" alt="Solar Impact" fill className="object-cover w-full h-full" />
               </div>
             </ScrollReveal>
           </div>
