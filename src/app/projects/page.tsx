@@ -19,9 +19,9 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const projects = [
-  { id: 1, title: "Skyline Residential Villa", type: "Residential", location: "Lucknow, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr1/800/1200" },
-  { id: 2, title: "TechPark Commercial Complex", type: "Commercial", location: "Noida, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr2/800/1200" },
-  { id: 3, title: "Eco Manufacturing Unit", type: "Industrial", location: "Kanpur, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr3/800/1200" }
+  { id: 1, title: "Skyline Residential Villa", type: "Residential", location: "Lucknow, Uttar Pradesh", video: "/project/1.mp4" },
+  { id: 2, title: "TechPark Commercial Complex", type: "Commercial", location: "Noida, Uttar Pradesh", video: "/project/2.mp4" },
+  { id: 3, title: "Eco Manufacturing Unit", type: "Industrial", location: "Kanpur, Uttar Pradesh", video: "/project/4.mp4" }
 ];
 
 const categories = ["All Projects", "Residential", "Commercial", "Industrial"];
@@ -132,12 +132,15 @@ export default function ProjectsPage() {
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
                     <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-neutral-100">
-                      <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        fill 
-                        className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-                      />
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      >
+                        <source src={project.video} type="video/mp4" />
+                      </video>
                       
                       <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                         <div className="text-[30px] md:text-[40px] font-black text-[#0F172A] tracking-tighter leading-none">
