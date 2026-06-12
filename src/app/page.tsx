@@ -23,6 +23,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { SubsidyShowcase } from "@/components/sections/SubsidyShowcase";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
 import { WorkingArea } from "@/components/sections/WorkingArea";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { 
   Carousel, 
   CarouselContent, 
@@ -38,9 +39,11 @@ export default function Home() {
     { id: 3, name: "Emerald Heights", image: "https://picsum.photos/seed/arka_h_p3/800/1200" },
   ];
 
+  const mainServiceImg = PlaceHolderImages.find(img => img.id === 'main-service-feature')?.imageUrl || "/servie/8.png";
+
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
-      {/* HERO SECTION WITH VIDEO BACKGROUND - Set to h-screen for full size */}
+      {/* HERO SECTION WITH VIDEO BACKGROUND */}
       <section className="relative h-screen w-full overflow-hidden bg-[#0F172A]">
         <div className="absolute inset-0 z-0">
           <video
@@ -97,18 +100,7 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-            <ScrollReveal direction="right" className="order-2 lg:order-1">
-              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
-                <Image 
-                  src="https://picsum.photos/seed/arka_subsidy_showcase/1200/900" 
-                  alt="Solar Subsidy Assistance" 
-                  fill 
-                  className="object-cover object-center"
-                />
-              </div>
-            </ScrollReveal>
-
-            <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-2">
+            <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
               <ScrollReveal direction="up">
                 <span className="inline-block bg-[#EFF6FF] text-[#2563EB] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#2563EB]/10">
                   Leading Solar Authority
@@ -130,6 +122,17 @@ export default function Home() {
                 </Button>
               </ScrollReveal>
             </div>
+
+            <ScrollReveal direction="left" className="order-2 lg:order-2">
+              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+                <Image 
+                  src={mainServiceImg} 
+                  alt="Solar Authority illustration" 
+                  fill 
+                  className="object-cover object-center"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

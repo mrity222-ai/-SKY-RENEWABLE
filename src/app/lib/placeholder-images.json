@@ -40,8 +40,14 @@
     {
       "id": "company-logo-icon",
       "description": "Modern professional solar energy logo",
-      "imageUrl": "https://picsum.photos/seed/sky_logo_1/400/120-blue",
+      "imageUrl": "/servie/8.png",
       "imageHint": "solar logo"
+    },
+    {
+      "id": "main-service-feature",
+      "description": "Main solar service illustration",
+      "imageUrl": "/servie/8.png",
+      "imageHint": "solar service"
     }
   ]
 }
