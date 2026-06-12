@@ -24,6 +24,7 @@ import { Calculator } from "@/components/sections/Calculator";
 import { CTASection } from "@/components/sections/CTASection";
 import { SubsidyShowcase } from "@/components/sections/SubsidyShowcase";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
+import { WorkingArea } from "@/components/sections/WorkingArea";
 import { 
   Carousel, 
   CarouselContent, 
@@ -310,6 +311,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <WorkingArea />
 
       <CTASection />
     </div>
