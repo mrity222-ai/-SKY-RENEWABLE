@@ -93,74 +93,74 @@ export function Navbar() {
                     alt="Sky Renewable Logo" 
                     fill
                     className="object-contain w-full h-full transition-transform group-hover:scale-105"
-                    data-ai-hint={logoImage.imageHint}
                   />
                 </div>
               )}
             </Link>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const isActive = link.submenu 
-                ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname === link.href)
-                : pathname === link.href;
+          {/* Moved Navigation to the Right Side (next to button) */}
+          <div className="flex-1 flex justify-end items-center gap-6">
+            <nav className="hidden lg:flex items-center gap-1">
+              {navLinks.map((link) => {
+                const isActive = link.submenu 
+                  ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname === link.href)
+                  : pathname === link.href;
 
-              return (
-                <div key={link.name} className="relative group/nav">
-                  {link.submenu ? (
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className={cn(
-                        "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
-                        isActive ? "text-primary bg-primary/5" : "text-foreground hover:bg-primary/5 hover:text-primary"
-                      )}>
-                        {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent 
-                        align="center" 
-                        sideOffset={15} 
+                return (
+                  <div key={link.name} className="relative group/nav">
+                    {link.submenu ? (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger className={cn(
+                          "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
+                          isActive ? "text-primary bg-primary/5" : "text-foreground hover:bg-primary/5 hover:text-primary"
+                        )}>
+                          {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent 
+                          align="end" 
+                          sideOffset={15} 
+                          className={cn(
+                            "rounded-[24px] md:rounded-[32px] p-4 md:p-6 shadow-xl border border-border bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
+                            link.isMega ? "min-w-[500px] lg:min-w-[800px]" : "min-w-[240px]"
+                          )}
+                        >
+                          <div className={cn(
+                            "grid gap-2",
+                            link.isMega ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+                          )}>
+                            {link.submenu.map((sub) => (
+                              <DropdownMenuItem key={sub.name} asChild>
+                                <Link 
+                                  href={sub.href} 
+                                  className="w-full cursor-pointer p-3 rounded-xl hover:bg-primary/5 flex items-center gap-3 group/item transition-all duration-300"
+                                >
+                                  <div className="bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300 shrink-0 text-primary">
+                                    {sub.icon}
+                                  </div>
+                                  <span className="font-bold text-[13px] md:text-[14px] tracking-tight text-[#1E293B] group-hover/item:text-primary transition-colors">{sub.name}</span>
+                                </Link>
+                              </DropdownMenuItem>
+                            ))}
+                          </div>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    ) : (
+                      <Link 
+                        href={link.href}
                         className={cn(
-                          "rounded-[24px] md:rounded-[32px] p-4 md:p-6 shadow-xl border border-border bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
-                          link.isMega ? "min-w-[500px] lg:min-w-[800px]" : "min-w-[240px]"
+                          "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 block",
+                          isActive ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5 hover:text-primary"
                         )}
                       >
-                        <div className={cn(
-                          "grid gap-2",
-                          link.isMega ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
-                        )}>
-                          {link.submenu.map((sub) => (
-                            <DropdownMenuItem key={sub.name} asChild>
-                              <Link 
-                                href={sub.href} 
-                                className="w-full cursor-pointer p-3 rounded-xl hover:bg-primary/5 flex items-center gap-3 group/item transition-all duration-300"
-                              >
-                                <div className="bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300 shrink-0 text-primary">
-                                  {sub.icon}
-                                </div>
-                                <span className="font-bold text-[13px] md:text-[14px] tracking-tight text-[#1E293B] group-hover/item:text-primary transition-colors">{sub.name}</span>
-                              </Link>
-                            </DropdownMenuItem>
-                          ))}
-                        </div>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  ) : (
-                    <Link 
-                      href={link.href}
-                      className={cn(
-                        "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 block",
-                        isActive ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5 hover:text-primary"
-                      )}
-                    >
-                      {link.name}
-                    </Link>
-                  )}
-                </div>
-              );
-            })}
-          </nav>
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
+            </nav>
 
-          <div className="flex-1 flex justify-end items-center gap-4">
             <Button asChild className="hidden sm:flex bg-primary text-white rounded-full px-6 hover:bg-primary/90 hover:shadow-lg transition-all duration-300 font-bold h-9 md:h-10 text-[13px] md:text-[14px] uppercase tracking-wider">
               <Link href="/get-quote">Get Quote</Link>
             </Button>

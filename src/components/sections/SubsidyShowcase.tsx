@@ -13,8 +13,21 @@ export function SubsidyShowcase() {
     <section className="py-16 md:py-24 bg-[#F8FAFC] overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1400px]">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-          {/* LEFT CONTENT */}
-          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+          {/* LEFT SIDE IMAGE CARD */}
+          <ScrollReveal direction="right" className="order-2 lg:order-1">
+            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <Image
+                src="https://picsum.photos/seed/arka_subsidy_showcase/1200/900"
+                alt="Solar Subsidy Assistance"
+                fill
+                className="object-cover object-center"
+                data-ai-hint="solar finance"
+              />
+            </div>
+          </ScrollReveal>
+
+          {/* RIGHT CONTENT */}
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-2">
             <ScrollReveal direction="up" className="space-y-4 md:space-y-6">
               <span className="inline-block bg-[#EFF6FF] text-[#2563EB] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#2563EB]/10">
                 PM Surya Ghar Yojana
@@ -30,15 +43,15 @@ export function SubsidyShowcase() {
 
             {/* STATISTICS ROW */}
             <ScrollReveal direction="up" delay={0.3} className="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-[#E2E8F0]">
-              <div className="space-y-1">
+              <div className="space-y-1 text-center lg:text-left">
                 <p className="text-[18px] md:text-[22px] font-bold text-[#2563EB]">₹78,000</p>
                 <p className="text-[9px] font-bold text-[#94A3B8] uppercase tracking-widest leading-tight">Central Subsidy</p>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 text-center lg:text-left">
                 <p className="text-[18px] md:text-[22px] font-bold text-[#06B6D4]">₹30,000</p>
                 <p className="text-[9px] font-bold text-[#94A3B8] uppercase tracking-widest leading-tight">State Benefit</p>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 text-center lg:text-left">
                 <p className="text-[18px] md:text-[22px] font-bold text-[#22C55E]">100%</p>
                 <p className="text-[9px] font-bold text-[#94A3B8] uppercase tracking-widest leading-tight">Doc Support</p>
               </div>
@@ -54,19 +67,6 @@ export function SubsidyShowcase() {
               </Button>
             </ScrollReveal>
           </div>
-
-          {/* RIGHT SIDE IMAGE CARD */}
-          <ScrollReveal direction="left">
-            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
-              <Image
-                src="https://picsum.photos/seed/arka_subsidy_showcase/1200/900"
-                alt="Solar Subsidy Assistance"
-                fill
-                className="object-cover object-center"
-                data-ai-hint="solar finance"
-              />
-            </div>
-          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -31,8 +31,22 @@ export function ServiceHero({
       
       <div className="container mx-auto px-4 max-w-[1400px]">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-          {/* Content side */}
-          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+          {/* Image side - Now on the LEFT for desktop */}
+          <ScrollReveal direction="right" delay={0.4} className="order-2 lg:order-1">
+            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <Image 
+                src={image} 
+                alt={titleLine1} 
+                fill 
+                className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0F172A]/5 to-transparent pointer-events-none" />
+            </div>
+          </ScrollReveal>
+
+          {/* Content side - Now on the RIGHT for desktop */}
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-2">
             <ScrollReveal direction="up">
               <span className="inline-block bg-[#EFF6FF] text-[#2563EB] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#2563EB]/10">
                 {badge}
@@ -65,20 +79,6 @@ export function ServiceHero({
               </div>
             </ScrollReveal>
           </div>
-
-          {/* Image side */}
-          <ScrollReveal direction="left" delay={0.4}>
-            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
-              <Image 
-                src={image} 
-                alt={titleLine1} 
-                fill 
-                className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0F172A]/5 to-transparent pointer-events-none" />
-            </div>
-          </ScrollReveal>
         </div>
       </div>
     </section>
