@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -69,7 +68,7 @@ export default function ServicesPage() {
       title: "Net Metering Assistance",
       desc: "End-to-end liaison with government DISCOMs for seamless net-metering approvals and grid synchronization.",
       icon: <ClipboardCheck className="size-6" />,
-      href: "/services/rooftop-installation",
+      href: "/net-metering-assistance",
       image: "https://picsum.photos/seed/sky_metering/800/600"
     },
     {

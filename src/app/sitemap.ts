@@ -1,4 +1,3 @@
-
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/rooftop-installation',
     '/services/battery-storage',
     '/services/solar-maintenance',
+    '/net-metering-assistance',
     '/projects',
     '/government-solar-subsidy',
     '/solar-calculator',
