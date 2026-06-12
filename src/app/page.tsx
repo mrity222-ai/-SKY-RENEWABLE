@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -47,11 +48,11 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            className="absolute inset-0 w-full h-full object-cover opacity-100"
           >
             <source src="/vio/1.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/40 via-transparent to-[#0F172A]/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/20 via-transparent to-[#0F172A]/40 pointer-events-none" />
         </div>
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
