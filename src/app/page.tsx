@@ -1,6 +1,7 @@
+
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -11,9 +12,6 @@ import {
   Wrench,
   BatteryFull,
   Layout,
-  MapPin,
-  ChevronLeft,
-  ChevronRight,
   Star
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -32,33 +30,8 @@ import {
   CarouselPrevious, 
   CarouselNext 
 } from "@/components/ui/carousel";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
-
-const HERO_IMAGES = [
-  "https://picsum.photos/seed/arka_hero_res/1920/1080",
-  "https://picsum.photos/seed/arka_hero_comm/1920/1080",
-  "https://picsum.photos/seed/arka_hero_ind/1920/1080",
-  "https://picsum.photos/seed/arka_hero_clean/1920/1080",
-  "https://picsum.photos/seed/arka_hero_maint/1920/1080",
-  "https://picsum.photos/seed/arka_hero_roof/1920/1080",
-  "https://picsum.photos/seed/arka_hero_yojana/1920/1080",
-  "https://picsum.photos/seed/arka_hero_tech/1920/1080",
-];
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
-
   const projects = [
     { id: 1, name: "Skyline Villa", image: "https://picsum.photos/seed/arka_h_p1/800/1200" },
     { id: 2, name: "GIDC Industrial Park", image: "https://picsum.photos/seed/arka_h_p2/800/1200" },
@@ -67,30 +40,19 @@ export default function Home() {
 
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
-      {/* HERO SLIDER */}
+      {/* HERO SECTION WITH VIDEO BACKGROUND */}
       <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-[#0F172A]">
         <div className="absolute inset-0 z-0">
-          <AnimatePresence initial={false} mode="wait">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full"
-            >
-              <div className="relative h-full w-full overflow-hidden">
-                <Image
-                  src={HERO_IMAGES[currentSlide]}
-                  alt="Sky Renewable Solar Energy Solutions"
-                  fill
-                  className="object-cover w-full h-full"
-                  priority
-                />
-                <div className="absolute inset-0 bg-[#0F172A]/30 pointer-events-none" />
-              </div>
-            </motion.div>
-          </AnimatePresence>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+          >
+            <source src="/vio/1.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/40 via-transparent to-[#0F172A]/60 pointer-events-none" />
         </div>
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
@@ -113,31 +75,6 @@ export default function Home() {
               </Button>
             </div>
           </ScrollReveal>
-
-          <div className="absolute bottom-12 md:bottom-16 flex gap-2">
-            {HERO_IMAGES.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                className={cn(
-                  "size-2 rounded-full transition-all duration-300",
-                  currentSlide === idx 
-                    ? "bg-[#06B6D4] w-6 md:w-8" 
-                    : "bg-white/40 hover:bg-white/60"
-                )}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex gap-4">
-            <button onClick={prevSlide} className="size-10 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
-              <ChevronLeft className="size-4" />
-            </button>
-            <button onClick={nextSlide} className="size-10 rounded-full border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all group">
-              <ChevronRight className="size-4" />
-            </button>
-          </div>
         </div>
       </section>
 
