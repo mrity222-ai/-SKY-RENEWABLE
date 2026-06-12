@@ -83,20 +83,34 @@ export default function ServicesPage() {
   return (
     <div className="bg-white overflow-hidden selection:bg-primary/20 selection:text-primary">
       {/* HERO */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#F9F9F9]">
-        <div className="container mx-auto px-4 text-center space-y-8">
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#0F172A] overflow-hidden">
+        {/* VIDEO BACKGROUND */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/vio/1.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 text-center space-y-8">
           <ScrollReveal direction="up">
-            <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-primary/10">
+            <span className="inline-block bg-primary/20 text-white px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-white/20 backdrop-blur-sm">
               Our Expertise
             </span>
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.1}>
-            <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-black leading-[1.05] tracking-tight max-w-4xl mx-auto">
-              Our <span className="text-primary">Solar Services</span> <br /><span className="text-[#B8B8B8]">Built for Performance</span>
+            <h1 className="text-[34px] md:text-[48px] lg:text-[64px] font-semibold text-white leading-[1.05] tracking-tight max-w-4xl mx-auto drop-shadow-lg">
+              Our <span className="text-primary">Solar Services</span> <br /><span className="text-white/70">Built for Performance</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.2}>
-            <p className="text-[14px] lg:text-[16px] text-[#555] max-w-2xl mx-auto leading-[1.6]">
+            <p className="text-[14px] lg:text-[16px] text-white/90 max-w-2xl mx-auto leading-[1.6] font-medium">
               From concept to commissioning and beyond, SKY RENEWABLE provides engineered solar solutions for every energy requirement.
             </p>
           </ScrollReveal>
