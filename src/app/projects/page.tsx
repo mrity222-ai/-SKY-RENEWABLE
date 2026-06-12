@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from "react";
@@ -6,13 +7,11 @@ import Link from "next/link";
 import { 
   Zap, 
   MapPin, 
-  TreeDeciduous, 
   Globe, 
   TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Counter } from "@/components/animations/Counter";
 import { CTASection } from "@/components/sections/CTASection";
@@ -22,13 +21,10 @@ import { cn } from "@/lib/utils";
 const projects = [
   { id: 1, title: "Skyline Residential Villa", type: "Residential", location: "Lucknow, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr1/800/1200" },
   { id: 2, title: "TechPark Commercial Complex", type: "Commercial", location: "Noida, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr2/800/1200" },
-  { id: 3, title: "Eco Manufacturing Unit", type: "Industrial", location: "Kanpur, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr3/800/1200" },
-  { id: 4, title: "Municipal Office Block", type: "Government", location: "Prayagraj, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr4/800/1200" },
-  { id: 5, title: "Riverfront Modern Estate", type: "Residential", location: "Varanasi, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr5/800/1200" },
-  { id: 6, title: "Logistics Hub Warehouse", type: "Industrial", location: "Ghaziabad, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr6/800/1200" }
+  { id: 3, title: "Eco Manufacturing Unit", type: "Industrial", location: "Kanpur, Uttar Pradesh", image: "https://picsum.photos/seed/arka_pr3/800/1200" }
 ];
 
-const categories = ["All Projects", "Residential", "Commercial", "Industrial", "Government"];
+const categories = ["All Projects", "Residential", "Commercial", "Industrial"];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All Projects");
