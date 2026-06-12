@@ -27,56 +27,56 @@ export default function ServicesPage() {
       desc: "Comprehensive Engineering, Procurement, and Construction services for utility-scale and large commercial projects.",
       icon: <Zap className="size-6" />,
       href: "/services/industrial-solar",
-      image: "https://picsum.photos/seed/sky_epc/800/600"
+      image: "/servie/2.png"
     },
     {
       title: "Rooftop Solar Installations",
       desc: "Specialized rooftop solar solutions for residential and commercial buildings designed for maximum efficiency.",
       icon: <Home className="size-6" />,
       href: "/services/rooftop-installation",
-      image: "https://picsum.photos/seed/sky_rooftop/800/600"
+      image: "/servie/4.png"
     },
     {
       title: "Commercial & Industrial Solar Projects",
       desc: "Tailored solar power plants for industries and commercial hubs to drastically reduce operational electricity costs.",
       icon: <Factory className="size-6" />,
       href: "/services/commercial-solar",
-      image: "https://picsum.photos/seed/sky_comm_ind/800/600"
+      image: "/servie/3.png"
     },
     {
       title: "Operation & Maintenance Services",
       desc: "Complete O&M packages ensuring your solar asset performs at peak capacity throughout its 25-year lifecycle.",
       icon: <Wrench className="size-6" />,
       href: "/services/solar-maintenance",
-      image: "https://picsum.photos/seed/sky_om/800/600"
+      image: "/servie/5.png"
     },
     {
       title: "Solar Panel Cleaning Solutions",
       desc: "Professional cleaning services using specialized equipment to remove debris and boost generation by up to 15%.",
       icon: <Sun className="size-6" />,
       href: "/solar-panel-cleaning-solutions",
-      image: "https://picsum.photos/seed/sky_cleaning/800/600"
+      image: "/servie/6.png"
     },
     {
       title: "Performance Monitoring & Optimization",
       desc: "Advanced IoT-based monitoring to track generation in real-time and optimize energy output through AI analysis.",
       icon: <Cpu className="size-6" />,
       href: "/services/battery-storage",
-      image: "https://picsum.photos/seed/sky_monitoring/800/600"
+      image: "/servie/7.png"
     },
     {
       title: "Net Metering Assistance",
       desc: "End-to-end liaison with government DISCOMs for seamless net-metering approvals and grid synchronization.",
       icon: <ClipboardCheck className="size-6" />,
       href: "/net-metering-assistance",
-      image: "https://picsum.photos/seed/sky_metering/800/600"
+      image: "/servie/1.png"
     },
     {
       title: "PM Surya Ghar Yojana Support",
       desc: "Expert guidance and application support for the latest government subsidy schemes for residential rooftop solar.",
       icon: <Banknote className="size-6" />,
       href: "/government-solar-subsidy",
-      image: "https://picsum.photos/seed/sky_yojana/800/600"
+      image: "/servie/9.png"
     }
   ];
 
