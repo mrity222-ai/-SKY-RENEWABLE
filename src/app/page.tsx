@@ -125,12 +125,15 @@ export default function Home() {
 
             <ScrollReveal direction="left" className="order-2 lg:order-2">
               <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
-                <Image 
-                  src={mainServiceImg} 
-                  alt="Solar Authority illustration" 
-                  fill 
-                  className="object-cover object-center"
-                />
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src="/vio/2.mp4" type="video/mp4" />
+                </video>
               </div>
             </ScrollReveal>
           </div>
