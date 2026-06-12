@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -16,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTASection } from "@/components/sections/CTASection";
+import { PartnerLogos } from "@/components/sections/PartnerLogos";
 
 export default function AboutPage() {
   return (
@@ -67,7 +69,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION 2 – ABOUT SKY RENEWABLE - Standardized grid and aspect ratio */}
+      {/* TECHNOLOGY PARTNERS SECTION */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <ScrollReveal direction="up" className="text-center mb-8">
+            <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-2 block">Our Technology Partners</span>
+          </ScrollReveal>
+          <PartnerLogos />
+        </div>
+      </section>
+
+      {/* SECTION 2 – ABOUT SKY RENEWABLE */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
