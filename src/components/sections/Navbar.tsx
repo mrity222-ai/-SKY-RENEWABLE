@@ -15,6 +15,7 @@ import {
   Cpu,
   ClipboardCheck,
   Banknote,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -68,6 +69,7 @@ export function Navbar() {
       submenu: [
         { name: "Subsidy Guide", href: "/government-solar-subsidy", icon: <Sun className="size-3.5" /> },
         { name: "Solar Calculator", href: "/solar-calculator", icon: <Zap className="size-3.5" /> },
+        { name: "Contact Us", href: "/contact-us", icon: <Phone className="size-3.5" /> },
       ]
     },
     { name: "About Us", href: "/about-us" },
