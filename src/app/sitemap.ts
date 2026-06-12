@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +19,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solar-calculator',
     '/contact-us',
     '/legal/privacy',
+    '/solar-company-in-balod',
+    '/solar-company-in-durg',
+    '/solar-company-in-rajnandgaon',
+    '/solar-company-in-raipur',
+    '/solar-company-in-dhamtari',
+    '/solar-company-in-kanker',
+    '/solar-company-in-bemetara',
+    '/solar-company-in-korba',
   ];
 
   return pages.map((page) => ({

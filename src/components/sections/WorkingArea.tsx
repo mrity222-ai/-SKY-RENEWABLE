@@ -1,13 +1,24 @@
+
 'use client';
 
 import React from "react";
+import Link from "next/link";
 import { MapPin, CheckCircle2 } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const AREAS = [
   { 
     state: "Chhattisgarh", 
-    cities: ["Balod", "Durg", "Rajnandgaon", "Raipur", "Dhamtari", "Kanker", "Bemetara", "Korba"] 
+    cities: [
+      { name: "Balod", slug: "balod" },
+      { name: "Durg", slug: "durg" },
+      { name: "Rajnandgaon", slug: "rajnandgaon" },
+      { name: "Raipur", slug: "raipur" },
+      { name: "Dhamtari", slug: "dhamtari" },
+      { name: "Kanker", slug: "kanker" },
+      { name: "Bemetara", slug: "bemetara" },
+      { name: "Korba", slug: "korba" }
+    ] 
   }
 ];
 
@@ -65,9 +76,13 @@ export function WorkingArea() {
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {area.cities.map(city => (
-                      <span key={city} className="text-[13px] font-bold bg-muted text-muted-foreground px-4 py-2.5 rounded-2xl group-hover:bg-primary/5 group-hover:text-primary transition-colors text-center">
-                        {city}
-                      </span>
+                      <Link 
+                        key={city.slug} 
+                        href={`/solar-company-in-${city.slug}`}
+                        className="text-[13px] font-bold bg-muted text-muted-foreground px-4 py-2.5 rounded-2xl group-hover:bg-primary/5 group-hover:text-primary transition-colors text-center hover:bg-primary/10"
+                      >
+                        {city.name}
+                      </Link>
                     ))}
                   </div>
                 </div>
