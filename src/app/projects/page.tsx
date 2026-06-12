@@ -69,7 +69,7 @@ export default function ProjectsPage() {
             <ScrollReveal direction="left" delay={0.4}>
               <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
                 <Image 
-                  src="https://picsum.photos/seed/arka_project_hero/1200/800" 
+                  src="/project/5.png" 
                   alt="Solar Project Hero" 
                   fill 
                   className="object-cover w-full h-full"
