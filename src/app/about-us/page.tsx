@@ -127,6 +127,32 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* MISSION & VISION SECTION */}
+      <section className="py-24 bg-[#F8FAFC]">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+            <ScrollReveal direction="up" className="p-10 md:p-12 bg-white rounded-[40px] shadow-sm border border-border space-y-6">
+              <div className="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                <Target className="size-8" />
+              </div>
+              <h3 className="text-[24px] md:text-[30px] font-bold text-foreground">Our Mission</h3>
+              <p className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed">
+                To accelerate India's transition to sustainable energy by providing reliable, high-yield solar solutions and exceptional engineering services that deliver long-term value to our customers and the environment.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.2} className="p-10 md:p-12 bg-white rounded-[40px] shadow-sm border border-border space-y-6">
+              <div className="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                <TrendingUp className="size-8" />
+              </div>
+              <h3 className="text-[24px] md:text-[30px] font-bold text-foreground">Our Vision</h3>
+              <p className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed">
+                To be the most trusted solar energy authority in India, empowering every homeowner and business to achieve energy independence through smart, clean, and affordable technology.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </div>
   );
