@@ -34,12 +34,10 @@ import {
 
 export default function Home() {
   const projects = [
-    { id: 1, name: "Skyline Villa", image: "https://picsum.photos/seed/arka_h_p1/800/1200" },
-    { id: 2, name: "GIDC Industrial Park", image: "https://picsum.photos/seed/arka_h_p2/800/1200" },
-    { id: 3, name: "Emerald Heights", image: "https://picsum.photos/seed/arka_h_p3/800/1200" },
+    { id: 1, name: "Skyline Villa", video: "/project/1.mp4" },
+    { id: 2, name: "GIDC Industrial Park", video: "/project/2.mp4" },
+    { id: 3, name: "Emerald Heights", video: "/project/4.mp4" },
   ];
-
-  const mainServiceImg = PlaceHolderImages.find(img => img.id === 'main-service-feature')?.imageUrl || "/servie/8.png";
 
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
@@ -197,7 +195,15 @@ export default function Home() {
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <Link href="/projects" className="group block">
                   <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2 bg-neutral-100">
-                    <Image src={p.image} alt={p.name} fill className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-110" />
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    >
+                      <source src={p.video} type="video/mp4" />
+                    </video>
                     
                     {/* Minimalist Numbering Box */}
                     <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] border-r-[6px] border-[#3B82F6] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
