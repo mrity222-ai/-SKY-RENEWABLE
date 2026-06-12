@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -40,8 +39,8 @@ export default function Home() {
 
   return (
     <div className="bg-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
-      {/* HERO SECTION WITH VIDEO BACKGROUND */}
-      <section className="relative h-[80vh] md:h-[90vh] w-full overflow-hidden bg-[#0F172A]">
+      {/* HERO SECTION WITH VIDEO BACKGROUND - Set to h-screen for full size */}
+      <section className="relative h-screen w-full overflow-hidden bg-[#0F172A]">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
