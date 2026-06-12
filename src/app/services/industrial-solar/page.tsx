@@ -39,7 +39,7 @@ export default function IndustrialSolarPage() {
         titleLine1="Industrial Solar"
         titleLine2="Energy Ecosystems"
         description="Large-scale high-yield solar arrays for factories and production units. Engineering-first approach for maximum generation and tax-efficient depreciation."
-        image="https://picsum.photos/seed/arka_ind_hero/1200/1500"
+        image="/servie/2.png"
         primaryButtonText="Get Industrial Proposal"
         secondaryButtonText="Book Site Audit"
       />
