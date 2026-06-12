@@ -46,7 +46,7 @@ export default function CommercialSolarPage() {
         titleLine1="Commercial Solar"
         titleLine2="Strategic Savings"
         description="Slash operational overheads for offices, hospitals, and shops. Strategic solar investments that insulate your business from rising energy tariffs while boosting ESG metrics."
-        image="https://picsum.photos/seed/arka_comm_hero/1200/1500"
+        image="/servie/3.png"
         primaryButtonText="Request Proposal"
         secondaryButtonText="Book Site Audit"
       />
