@@ -5,14 +5,12 @@ import React from "react";
 import Image from "next/image";
 
 const PARTNERS = [
-  { name: "Tata Power", logo: "https://picsum.photos/seed/tata_solar/200/100" },
-  { name: "Adani Solar", logo: "https://picsum.photos/seed/adani_solar/200/100" },
-  { name: "Vikram Solar", logo: "https://picsum.photos/seed/vikram_solar/200/100" },
-  { name: "Waaree", logo: "https://picsum.photos/seed/waaree_solar/200/100" },
-  { name: "Luminous", logo: "https://picsum.photos/seed/luminous_solar/200/100" },
-  { name: "Microtek", logo: "https://picsum.photos/seed/microtek_solar/200/100" },
-  { name: "Growatt", logo: "https://picsum.photos/seed/growatt_solar/200/100" },
-  { name: "Sungrow", logo: "https://picsum.photos/seed/sungrow_solar/200/100" },
+  { name: "Partner A", logo: "/par/A.jpg" },
+  { name: "Partner B", logo: "/par/B.jpg" },
+  { name: "Partner C", logo: "/par/C.jpg" },
+  { name: "Partner D", logo: "/par/D.png" },
+  { name: "Partner E", logo: "/par/E.png" },
+  { name: "Partner F", logo: "/par/F.png" },
 ];
 
 export function PartnerLogos() {
