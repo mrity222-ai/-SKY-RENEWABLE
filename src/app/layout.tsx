@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Navbar } from '@/components/sections/Navbar';
@@ -6,6 +5,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { ScrollProgress } from '@/components/animations/ScrollProgress';
 import { CustomCursor } from '@/components/ui/custom-cursor';
+import { LoadingScreen } from '@/components/ui/loading-screen';
 
 const SITE_URL = 'https://skyrenewable.in';
 
@@ -127,6 +127,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased flex flex-col min-h-screen">
+        <LoadingScreen />
         <CustomCursor />
         <ScrollProgress />
         <Navbar />
