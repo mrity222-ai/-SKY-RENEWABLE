@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -150,7 +149,7 @@ export function LocationLanding({ city, nearbyAreas }: LocationLandingProps) {
             <ScrollReveal direction="right">
                <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
                  <Image 
-                   src="https://picsum.photos/seed/sky_why/1200/900" 
+                   src="/ab/1.jpg" 
                    alt={`Solar Experts in ${city}`} 
                    fill 
                    className="object-cover" 
