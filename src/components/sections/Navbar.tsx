@@ -89,7 +89,7 @@ export function Navbar() {
             <Link href="/" className="flex items-center group shrink-0 relative">
               <div className="relative h-8 md:h-10 w-32 md:w-40">
                 <Image 
-                  src="/Logo.jpeg" 
+                  src="/ab/lo.png" 
                   alt="Sky Renewable Logo" 
                   fill
                   className="object-contain w-full h-full transition-transform group-hover:scale-105"
@@ -112,7 +112,7 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
                         "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
-                        isActive ? "text-primary bg-primary/5" : "text-primary hover:bg-primary/5"
+                        "text-primary hover:bg-primary/5"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -149,7 +149,7 @@ export function Navbar() {
                       href={link.href}
                       className={cn(
                         "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 block",
-                        isActive ? "bg-primary/5 text-primary" : "text-primary hover:bg-primary/5"
+                        "text-primary hover:bg-primary/5"
                       )}
                     >
                       {link.name}
@@ -180,7 +180,7 @@ export function Navbar() {
                       <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
                       <div className="flex items-center justify-between">
                         <div className="relative h-8 w-32">
-                          <Image src="/Logo.jpeg" alt="Sky Renewable" fill className="object-contain" />
+                          <Image src="/ab/lo.png" alt="Sky Renewable" fill className="object-contain" />
                         </div>
                       </div>
                     </SheetHeader>

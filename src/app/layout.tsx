@@ -75,7 +75,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'Sky Renewable',
               url: SITE_URL,
-              logo: `${SITE_URL}/Logo.jpeg`,
+              logo: `${SITE_URL}/ab/lo.png`,
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+91-88711-05807',
