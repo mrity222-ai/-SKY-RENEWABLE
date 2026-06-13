@@ -71,7 +71,7 @@ export function Navbar() {
     <div className="fixed top-0 left-0 right-0 z-[100] flex justify-center p-4 md:p-6 pointer-events-none">
       <header 
         className={cn(
-          "pointer-events-auto w-full max-w-[1400px] rounded-full transition-all duration-500 border flex items-center justify-between px-6 md:px-10 h-[60px] md:h-[72px] bg-white/85 backdrop-blur-xl border-primary/10 shadow-lg"
+          "pointer-events-auto w-full max-w-[1400px] rounded-full transition-all duration-500 border flex items-center justify-between px-6 md:px-10 h-[60px] md:h-[72px] bg-white/78 backdrop-blur-[18px] border-[#E6EEF8]/90 shadow-lg"
         )}
       >
         <div className="flex items-center">
@@ -99,8 +99,8 @@ export function Navbar() {
                     <DropdownMenuTrigger className={cn(
                       "relative px-4 py-2 rounded-full text-[14px] font-semibold flex items-center gap-1.5 transition-all outline-none",
                       isActive 
-                        ? "bg-[#91C8FF] text-[#1D2348]" 
-                        : "text-[#1D2348] hover:bg-[#91C8FF]/10"
+                        ? "bg-white text-[#1D2348] shadow-sm" 
+                        : "text-[#1D2348] hover:text-[#91C8FF]"
                     )}>
                       {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                     </DropdownMenuTrigger>
@@ -144,8 +144,8 @@ export function Navbar() {
                     className={cn(
                       "relative px-5 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 block",
                       isActive 
-                        ? "bg-[#91C8FF] text-[#1D2348]" 
-                        : "text-[#1D2348] hover:bg-[#91C8FF]/10"
+                        ? "bg-white text-[#1D2348] shadow-sm" 
+                        : "text-[#1D2348] hover:text-[#91C8FF]"
                     )}
                   >
                     {link.name}
@@ -192,7 +192,7 @@ export function Navbar() {
                             href={link.href} 
                             className={cn(
                               "text-[16px] font-bold px-4 py-2.5 rounded-2xl block transition-all",
-                              pathname === link.href ? "bg-[#91C8FF] text-[#1D2348]" : "text-[#4B587C] hover:text-[#91C8FF]"
+                              pathname === link.href ? "bg-white text-[#1D2348] shadow-sm" : "text-[#1D2348] hover:text-[#91C8FF]"
                             )}
                           >
                             {link.name}
@@ -210,7 +210,7 @@ export function Navbar() {
                                 href={sub.href} 
                                 className={cn(
                                   "text-[14px] font-semibold py-2.5 px-3 rounded-xl block transition-all",
-                                  pathname === sub.href ? "text-[#91C8FF] bg-[#EEF7FF]" : "text-[#4B587C] hover:text-[#91C8FF]"
+                                  pathname === sub.href ? "text-[#91C8FF] bg-[#EEF7FF]" : "text-[#1D2348] hover:text-[#91C8FF]"
                                 )}
                               >
                                 {sub.name}
@@ -226,7 +226,7 @@ export function Navbar() {
                     <Button 
                       asChild 
                       variant="default"
-                      className="w-full rounded-full py-7 font-bold text-[15px] transition-all border-none text-white bg-[#FF9800]"
+                      className="w-full rounded-full py-7 font-bold text-[15px] transition-all border-none text-white bg-[#FF9800] hover:bg-[#F59E0B]"
                     >
                       <Link href="/get-quote">Request Proposal</Link>
                     </Button>
