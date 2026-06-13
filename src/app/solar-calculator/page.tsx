@@ -1,9 +1,7 @@
-
 'use client';
 
 import React from "react";
 import { Calculator } from "@/components/sections/Calculator";
-import { AIAdvisor } from "@/components/sections/AIAdvisor";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 export default function CalculatorPage() {
@@ -47,11 +45,6 @@ export default function CalculatorPage() {
             </p>
           </ScrollReveal>
         </div>
-      </section>
-
-      {/* AI ADVISOR */}
-      <section className="pb-32">
-        <AIAdvisor />
       </section>
     </div>
   );
