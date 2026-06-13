@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -31,7 +32,7 @@ export function FinancePartners() {
         
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
           {FINANCE_PARTNERS.map((partner, idx) => (
-            <ScrollReveal key={idx} delay={idx * 0.1} direction="up" className="shrink-0 grayscale hover:grayscale-0 transition-all duration-500 opacity-50 hover:opacity-100">
+            <ScrollReveal key={idx} delay={idx * 0.1} direction="up" className="shrink-0 transition-all duration-500">
               <div className="relative w-28 h-10 md:w-36 md:h-14">
                 <Image
                   src={partner.logo}

@@ -21,7 +21,7 @@ export function PartnerLogos() {
           {[...PARTNERS, ...PARTNERS].map((partner, idx) => (
             <div 
               key={idx} 
-              className="mx-8 md:mx-12 shrink-0 grayscale hover:grayscale-0 transition-all duration-500 opacity-50 hover:opacity-100"
+              className="mx-8 md:mx-12 shrink-0 transition-all duration-500"
             >
               <div className="relative w-32 h-12 md:w-40 md:h-16">
                 <Image
