@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import Link from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { 
   Phone, 
@@ -139,9 +139,6 @@ export function Footer() {
 }
 
 function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, label: string, text: string, secondaryText?: string }) {
-  const isMounted = useMounted();
-  if (!isMounted) return null;
-
   return (
     <div className="flex gap-6 md:gap-8 items-start">
       <div className="size-12 md:size-14 rounded-xl md:rounded-2xl bg-[#EEF7FF] flex items-center justify-center shrink-0 border border-[#2563EB]/10 shadow-sm">
@@ -157,18 +154,9 @@ function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, lab
 }
 
 function SocialLink({ icon }: { icon: any }) {
-  const isMounted = useMounted();
-  if (!isMounted) return null;
-
   return (
     <Link href="#" className="size-10 md:size-12 bg-[#EEF7FF] border border-[#2563EB]/10 rounded-full flex items-center justify-center hover:bg-[rgba(255,152,0,0.12)] hover:border-[#FF9800]/20 transition-all duration-500 text-[#2563EB] hover:text-[#FF9800] shadow-sm">
       {icon}
     </Link>
   );
-}
-
-function useMounted() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  return mounted;
 }
