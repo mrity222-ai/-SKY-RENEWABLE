@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Navbar } from '@/components/sections/Navbar';
@@ -74,7 +75,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'Sky Renewable',
               url: SITE_URL,
-              logo: `${SITE_URL}/logo.png`,
+              logo: `${SITE_URL}/Logo.jpeg`,
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+91-88711-05807',

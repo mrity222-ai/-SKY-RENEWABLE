@@ -1,7 +1,9 @@
+
 'use client';
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Phone, 
   Mail, 
@@ -30,13 +32,23 @@ export function Footer() {
           {/* LEFT SIDE */}
           <div className="space-y-8 md:space-y-12">
             <div className="space-y-4 md:space-y-6">
-              <span className="text-[#3B82F6] font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.4em]">
-                CONTACT US
-              </span>
-              <h2 className="text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-[1.1] tracking-tighter max-w-xl text-white">
-                Powering the next <span className="text-secondary">Green Revolution.</span>
-              </h2>
-              <p className="text-[#94A3B8] text-[9px] md:text-[10px] font-bold tracking-widest uppercase">GST: 22BKRPC8874Q1Z9</p>
+              <Link href="/" className="inline-block relative h-10 w-40 mb-2">
+                <Image 
+                  src="/Logo.jpeg" 
+                  alt="Sky Renewable Logo" 
+                  fill
+                  className="object-contain object-left"
+                />
+              </Link>
+              <div className="space-y-4">
+                <span className="text-[#3B82F6] font-bold text-[10px] md:text-[11px] uppercase tracking-[0.3em] md:tracking-[0.4em]">
+                  CONTACT US
+                </span>
+                <h2 className="text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-[1.1] tracking-tighter max-w-xl text-white">
+                  Powering the next <span className="text-secondary">Green Revolution.</span>
+                </h2>
+                <p className="text-[#94A3B8] text-[9px] md:text-[10px] font-bold tracking-widest uppercase">GST: 22BKRPC8874Q1Z9</p>
+              </div>
             </div>
             
             <nav className="flex flex-wrap gap-x-6 md:gap-x-12 gap-y-4">

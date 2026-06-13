@@ -89,7 +89,7 @@ export function Navbar() {
             <Link href="/" className="flex items-center group shrink-0 relative">
               <div className="relative h-8 md:h-10 w-32 md:w-40">
                 <Image 
-                  src="/LOGO.JPEG" 
+                  src="/Logo.jpeg" 
                   alt="Sky Renewable Logo" 
                   fill
                   className="object-contain w-full h-full transition-transform group-hover:scale-105"
@@ -180,7 +180,7 @@ export function Navbar() {
                       <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
                       <div className="flex items-center justify-between">
                         <div className="relative h-8 w-32">
-                          <Image src="/LOGO.JPEG" alt="Sky Renewable" fill className="object-contain" />
+                          <Image src="/Logo.jpeg" alt="Sky Renewable" fill className="object-contain" />
                         </div>
                       </div>
                     </SheetHeader>
