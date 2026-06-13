@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -60,7 +59,7 @@ export default function ProjectsPage() {
               </div>
               <ScrollReveal direction="up" delay={0.3}>
                 <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-[#0F172A] text-white rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-neutral-800 transition-all">
+                  <Button asChild variant="secondary" size="lg" className="rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold transition-all">
                     <Link href="/get-quote">Get Free Quote</Link>
                   </Button>
                 </div>

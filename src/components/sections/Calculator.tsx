@@ -68,7 +68,7 @@ export function Calculator() {
             />
           </div>
           
-          <Button asChild className="w-full h-12 md:h-14 rounded-full bg-white text-[#2563EB] font-bold hover:bg-[#F8FAFC] transition-all text-[14px]">
+          <Button asChild variant="outline" className="w-full h-12 md:h-14 rounded-full font-bold transition-all text-[14px]">
             <a href="/get-quote">Book Free Site Survey</a>
           </Button>
         </Card>

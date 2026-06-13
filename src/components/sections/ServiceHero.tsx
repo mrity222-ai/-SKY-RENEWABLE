@@ -70,10 +70,10 @@ export function ServiceHero({
 
             <ScrollReveal direction="up" delay={0.3}>
               <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 pt-2">
-                <Button asChild size="lg" className="bg-[#2563EB] text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-[#1D4ED8] transition-all w-full sm:w-auto shadow-lg shadow-[#2563EB]/20">
+                <Button asChild variant="default" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto">
                   <Link href="/get-quote">{primaryButtonText}</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-[#CBD5E1] text-[#0F172A] rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-[#F8FAFC] hover:border-[#2563EB] transition-all w-full sm:w-auto">
+                <Button asChild variant="outline" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto">
                   <Link href="/get-quote">{secondaryButtonText}</Link>
                 </Button>
               </div>

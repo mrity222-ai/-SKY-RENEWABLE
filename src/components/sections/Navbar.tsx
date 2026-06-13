@@ -28,18 +28,11 @@ import {
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
@@ -160,10 +153,8 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <Button 
             asChild 
-            className="hidden sm:flex rounded-full px-8 font-bold h-[42px] text-[14px] transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20 border-none text-white"
-            style={{
-              background: 'linear-gradient(135deg, #0EA5E9, #22C55E)',
-            }}
+            variant="default"
+            className="hidden sm:flex rounded-full px-8 font-bold h-[42px] text-[14px] transition-all hover:scale-105 active:scale-95 border-none text-white"
           >
             <Link href="/get-quote">Get Quote</Link>
           </Button>
@@ -228,10 +219,8 @@ export function Navbar() {
                   <div className="pt-8 border-t border-primary/10 mt-auto">
                     <Button 
                       asChild 
+                      variant="default"
                       className="w-full rounded-full py-7 font-bold text-[15px] transition-all border-none text-white"
-                      style={{
-                        background: 'linear-gradient(135deg, #0EA5E9, #22C55E)',
-                      }}
                     >
                       <Link href="/get-quote">Request Proposal</Link>
                     </Button>

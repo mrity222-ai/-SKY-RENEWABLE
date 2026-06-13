@@ -66,10 +66,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-5 pt-4 md:pt-6 w-full max-w-md mx-auto sm:max-w-none">
-              <Button asChild size="lg" className="bg-[#0EA5E9] text-white rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-[#1D4ED8] hover:shadow-2xl hover:shadow-[#0EA5E9]/30 transition-all w-full sm:w-auto">
+              <Button asChild variant="default" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto">
                 <Link href="/get-quote" className="flex items-center gap-2">Get Your Quote <ArrowRight className="size-4" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary/40 text-[#1E3A8A] backdrop-blur-md rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold hover:bg-white hover:text-[#0EA5E9] transition-all w-full sm:w-auto">
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto">
                 <Link href="/get-quote">Book Site Survey</Link>
               </Button>
             </div>
@@ -113,7 +113,7 @@ export default function Home() {
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild variant="outline" className="rounded-full px-6 md:px-8 h-11 md:h-12 border-primary/20 text-[#1E3A8A] hover:bg-white hover:border-[#0EA5E9] font-bold transition-all text-[13px] md:text-[14px]">
+                <Button asChild variant="outline" className="rounded-full px-6 md:px-8 h-11 md:h-12 font-bold transition-all text-[13px] md:text-[14px]">
                   <Link href="/about-us">Our Engineering Legacy</Link>
                 </Button>
               </ScrollReveal>

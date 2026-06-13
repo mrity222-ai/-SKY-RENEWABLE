@@ -36,10 +36,10 @@ export function CTASection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 md:pt-6">
-                  <Button asChild size="lg" className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-full px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold shadow-lg shadow-[#2563EB]/20 transition-all active:scale-95">
+                  <Button asChild variant="default" size="lg" className="w-full sm:w-auto rounded-full px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all active:scale-95">
                     <Link href="/get-quote">Request Energy Audit</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="w-full sm:w-auto bg-transparent border-2 border-[#CBD5E1] text-[#0F172A] hover:bg-[#F8FAFC] hover:border-[#2563EB] rounded-full px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all active:scale-95">
+                  <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all active:scale-95">
                     <Link href="/get-quote">Consult Solar Experts</Link>
                   </Button>
                 </div>

@@ -37,7 +37,7 @@ export function AIAdvisor() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 bg-[#2563EB] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 bg-[#1D2348] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
               <Sparkles className="size-3" /> AI Driven
             </div>
             <h2 className="text-4xl font-bold font-headline text-[#0F172A]">AI Energy Advisor</h2>
@@ -58,7 +58,7 @@ export function AIAdvisor() {
                         type="number" 
                         value={consumption}
                         onChange={(e) => setConsumption(e.target.value)}
-                        className="rounded-xl border-[#CBD5E1] h-12 focus:ring-[#2563EB] text-[#0F172A]"
+                        className="rounded-xl border-[#CBD5E1] h-12 focus:ring-[#FF9800] text-[#0F172A]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -68,13 +68,14 @@ export function AIAdvisor() {
                         type="number" 
                         value={roofArea}
                         onChange={(e) => setRoofArea(e.target.value)}
-                        className="rounded-xl border-[#CBD5E1] h-12 focus:ring-[#2563EB] text-[#0F172A]"
+                        className="rounded-xl border-[#CBD5E1] h-12 focus:ring-[#FF9800] text-[#0F172A]"
                       />
                     </div>
                     <Button 
                       disabled={loading} 
                       type="submit" 
-                      className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-full h-12 text-lg font-bold shadow-lg shadow-[#2563EB]/20 transition-all active:scale-95"
+                      variant="default"
+                      className="w-full rounded-full h-12 text-lg font-bold transition-all active:scale-95"
                     >
                       {loading ? <><Loader2 className="mr-2 animate-spin size-5" /> Analyzing Patterns...</> : "Get AI Recommendation"}
                     </Button>
@@ -96,7 +97,7 @@ export function AIAdvisor() {
                       <div className="bg-white p-8 rounded-[24px] shadow-lg space-y-4 border border-[#E2E8F0]">
                         <div className="flex justify-between items-center pb-4 border-b border-[#E2E8F0]">
                           <span className="font-bold text-[#0F172A]">System Size:</span>
-                          <span className="text-2xl font-bold text-[#2563EB]">{recommendation.recommendedSystemSizeKw} kW</span>
+                          <span className="text-2xl font-bold text-[#FF9800]">{recommendation.recommendedSystemSizeKw} kW</span>
                         </div>
                         <div className="flex justify-between items-center pb-4 border-b border-[#E2E8F0]">
                           <span className="font-bold text-[#0F172A]">Est. Subsidy:</span>
@@ -114,9 +115,9 @@ export function AIAdvisor() {
                       
                       <motion.div 
                         layout
-                        className="bg-[#EFF6FF] border border-[#2563EB]/10 p-6 rounded-[24px]"
+                        className="bg-[#EFF6FF] border border-[#FF9800]/10 p-6 rounded-[24px]"
                       >
-                        <h4 className="font-bold text-[#2563EB] mb-2">Our Recommendation</h4>
+                        <h4 className="font-bold text-[#FF9800] mb-2">Our Recommendation</h4>
                         <p className="text-sm text-[#64748B] leading-relaxed">
                           {recommendation.recommendationSummary}
                         </p>
@@ -129,7 +130,7 @@ export function AIAdvisor() {
                       animate={{ opacity: 1 }}
                       className="h-full flex flex-col items-center justify-center text-center p-8 bg-white border border-dashed border-[#CBD5E1] rounded-[24px]"
                     >
-                      <Sparkles className="size-12 text-[#2563EB]/20 mb-4" />
+                      <Sparkles className="size-12 text-[#FF9800]/20 mb-4" />
                       <p className="text-[#64748B]">Enter your electricity consumption and roof area to see your personalized solar recommendation.</p>
                     </motion.div>
                   )}

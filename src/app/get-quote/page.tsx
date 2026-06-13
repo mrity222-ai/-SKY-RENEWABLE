@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -84,7 +83,7 @@ export default function GetQuotePage() {
                       </select>
                     </div>
                     <Textarea placeholder="Share details about your average monthly bill or roof area..." className="min-h-[120px] rounded-2xl bg-white border-neutral-100 focus:ring-black" />
-                    <Button type="submit" size="lg" className="w-full bg-black text-white rounded-full py-7 font-bold text-[14px] hover:bg-neutral-800 transition-all">
+                    <Button type="submit" variant="default" size="lg" className="w-full rounded-full py-7 font-bold text-[14px] transition-all">
                       Request Proposal <ArrowRight className="ml-2 size-5" />
                     </Button>
                   </form>

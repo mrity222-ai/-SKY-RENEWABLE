@@ -93,7 +93,7 @@ export default function ContactPage() {
                       <option>Maintenance (AMC)</option>
                     </select>
                     <Textarea placeholder="Tell us about your roof size or power needs..." className="min-h-[100px] md:min-h-[120px] rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" />
-                    <Button type="submit" size="lg" className="w-full bg-primary text-white rounded-full py-6 md:py-7 font-bold text-[14px] hover:bg-primary/90 transition-all">
+                    <Button type="submit" variant="default" size="lg" className="w-full rounded-full py-6 md:py-7 font-bold text-[14px] transition-all">
                       Send Inquiry <ArrowRight className="ml-2 size-5" />
                     </Button>
                   </form>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="flex justify-center lg:justify-start">
-                  <Button variant="outline" asChild className="rounded-full flex gap-2 border-black/10 hover:bg-black hover:text-white transition-all h-12 px-8">
+                  <Button variant="outline" asChild className="rounded-full flex gap-2 transition-all h-12 px-8">
                     <a href="https://wa.me/918871105807" target="_blank">
                       <MessageSquare className="size-4" /> Chat on WhatsApp
                     </a>

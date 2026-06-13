@@ -43,10 +43,10 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.3}>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button asChild size="lg" className="bg-primary text-white rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all">
+                <Button asChild variant="default" size="lg" className="rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold transition-all">
                   <Link href="/get-quote">Get Free Quote</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-border text-foreground rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold hover:bg-muted transition-all">
+                <Button asChild variant="outline" size="lg" className="rounded-full px-10 h-14 md:h-16 text-[14px] md:text-[15px] font-bold transition-all">
                   <Link href="/get-quote">Book Site Survey</Link>
                 </Button>
               </div>
