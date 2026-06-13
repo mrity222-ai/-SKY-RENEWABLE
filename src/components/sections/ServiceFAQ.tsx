@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -9,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { Plus, Minus } from "lucide-react";
 
 interface FAQ {
   question: string;
@@ -21,7 +21,6 @@ interface ServiceFAQProps {
 }
 
 export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
-  // Generate SEO-friendly JSON-LD Schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -36,42 +35,48 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
   };
 
   return (
-    <section className="py-32 bg-white">
-      {/* FAQ Schema for SEO */}
+    <section className="py-24 md:py-32 bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
       <div className="container mx-auto px-4 max-w-4xl">
-        <ScrollReveal direction="up" className="text-center mb-20 space-y-4">
-          <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase">
-            Questions & Answers
-          </span>
-          <h2 className="text-[30px] lg:text-[40px] font-semibold text-black tracking-tight">
-            Frequently Asked Questions
+        <ScrollReveal direction="up" className="text-center mb-16 md:mb-20 space-y-4">
+          <div className="inline-flex items-center px-4 py-1 rounded-full bg-white border border-border shadow-sm">
+            <span className="text-[12px] font-medium text-[#64748B] uppercase tracking-wider">FAQ</span>
+          </div>
+          <h2 className="text-[32px] md:text-[52px] font-bold text-[#1E3A8A] tracking-tight leading-[1.1]">
+            Your Solar Questions, <br />Answered Clearly
           </h2>
-          <p className="text-[#555] text-[14px] max-w-xl mx-auto">
+          <p className="text-[#64748B] text-[16px] md:text-[18px] max-w-[700px] mx-auto leading-relaxed">
             Everything you need to know about our {serviceName.toLowerCase()}. If you have other questions, feel free to reach out.
           </p>
         </ScrollReveal>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="bg-[#F9F9F9] rounded-[24px] border-none px-8 transition-all hover:shadow-md"
-            >
-              <AccordionTrigger className="text-left py-6 font-bold text-black hover:no-underline text-[16px]">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-[#555] text-[14px] pb-6 leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
+            <ScrollReveal key={index} delay={index * 0.05} direction="up">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="bg-white rounded-[24px] border border-[#0F172A]/5 px-7 md:px-8 py-2 shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+                >
+                  <AccordionTrigger className="text-left py-6 font-medium text-[#1E3A8A] hover:no-underline text-[18px] md:text-[24px] group">
+                    <span className="flex-1">{faq.question}</span>
+                    <div className="size-[38px] rounded-full border border-[#0F172A]/10 flex items-center justify-center shrink-0 ml-4 group-data-[state=open]:text-[#0EA5E9] group-data-[state=open]:border-[#0EA5E9]/20 transition-colors">
+                      <div className="group-data-[state=open]:hidden"><Plus className="size-5" /></div>
+                      <div className="hidden group-data-[state=open]:block"><Minus className="size-5" /></div>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-[#64748B] text-[16px] pb-6 leading-[1.8] pt-2">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </ScrollReveal>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
