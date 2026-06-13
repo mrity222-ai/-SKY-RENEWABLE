@@ -277,13 +277,13 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
   return (
     <ScrollReveal direction="up" className="h-full">
       <Link href={href} className="group block h-full">
-        <Card className="p-8 md:p-10 h-full rounded-[24px] md:rounded-[32px] border-none bg-white shadow-sm hover:shadow-[0_40px_80px_rgba(14,165,233,0.08)] transition-all duration-500 relative overflow-hidden">
+        <Card className="p-8 md:p-10 h-full rounded-[24px] md:rounded-[32px] border-[#E6EEF8] bg-white shadow-[0_20px_60px_rgba(145,200,255,0.18)] hover:shadow-[0_25px_70px_rgba(145,200,255,0.22)] transition-all duration-500 relative overflow-hidden">
           <div className="absolute top-0 right-0 size-24 bg-[#EEF7FF] blur-[30px] rounded-full group-hover:bg-[rgba(255,152,0,0.12)] transition-colors" />
           <div className="size-12 rounded-xl bg-[#EEF7FF] flex items-center justify-center mb-6 text-[#91C8FF] group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-all duration-500">
             {React.cloneElement(icon, { className: "size-6" })}
           </div>
           <h3 className="text-lg md:text-xl font-bold text-[#1D2348] mb-3">{title}</h3>
-          <p className="text-[14px] md:text-[15px] text-[#475569] leading-relaxed mb-6">{desc}</p>
+          <p className="text-[14px] md:text-[15px] text-[#4B587C] leading-relaxed mb-6">{desc}</p>
           <div className="flex items-center gap-2 text-[#0EA5E9] font-bold text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
             Explore <ArrowRight className="size-4" />
           </div>
@@ -306,18 +306,18 @@ function ValueItem({ title, desc }: { title: string, desc: string }) {
 function TestimonialCard({ name, loc, review }: { name: string, loc: string, review: string }) {
   return (
     <ScrollReveal direction="up" className="h-full">
-      <Card className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border-none bg-white shadow-sm space-y-6 flex flex-col h-full hover-lift">
+      <Card className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border-[#E6EEF8] bg-white shadow-[0_20px_60px_rgba(145,200,255,0.18)] space-y-6 flex flex-col h-full hover-lift">
         <div className="flex gap-1 text-[#0EA5E9]">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-3.5 fill-current" />)}
         </div>
-        <p className="text-[14px] md:text-[15px] text-[#475569] font-medium italic leading-relaxed flex-grow">"{review}"</p>
+        <p className="text-[14px] md:text-[15px] text-[#4B587C] font-medium italic leading-relaxed flex-grow">"{review}"</p>
         <div className="flex items-center gap-4 border-t border-border pt-6">
           <div className="size-10 rounded-full bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF] font-bold text-base shrink-0">
             {name[0]}
           </div>
           <div>
             <h4 className="font-bold text-[#1D2348] text-sm">{name}</h4>
-            <p className="text-[9px] text-[#94A3B8] font-bold uppercase tracking-widest">{loc}</p>
+            <p className="text-[9px] text-[#8A98B8] font-bold uppercase tracking-widest">{loc}</p>
           </div>
         </div>
       </Card>

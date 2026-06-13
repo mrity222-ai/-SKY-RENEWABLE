@@ -36,7 +36,7 @@ export default function AboutPage() {
               </h1>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
-              <p className="text-[15px] lg:text-[17px] text-muted-foreground max-w-2xl font-medium leading-relaxed">
+              <p className="text-[15px] lg:text-[17px] text-[#475569] max-w-2xl font-medium leading-relaxed">
                 SKY RENEWABLE is dedicated to transforming India's energy landscape through engineering excellence, 
                 unwavering integrity, and a commitment to a carbon-free future.
               </p>
@@ -88,22 +88,22 @@ export default function AboutPage() {
                 Trusted Partners In <br /><span className="text-[#91C8FF]">Clean Energy</span>
               </h2>
               <div className="space-y-4 md:space-y-6">
-                <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed">
+                <p className="text-[14px] md:text-[16px] text-[#475569] leading-relaxed">
                   SKY RENEWABLE is a trusted solar energy solutions company committed to delivering clean, sustainable, and affordable power solutions for homes, businesses, industries, and institutions.
                 </p>
-                <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed">
+                <p className="text-[14px] md:text-[16px] text-[#475569] leading-relaxed">
                   We specialize in complete Solar EPC Services, Rooftop Solar Installations, Operation & Maintenance, and Solar Panel Cleaning Solutions.
                 </p>
                 <p className="text-sm font-bold text-[#1D2348]">Owner: Naimesh Chandraker</p>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 pt-6">
-                <div className="flex items-center gap-4 p-4 md:p-5 bg-muted rounded-2xl md:rounded-3xl border border-border">
+                <div className="flex items-center gap-4 p-4 md:p-5 bg-white rounded-2xl md:rounded-3xl border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)]">
                   <div className="size-9 md:size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
                   <span className="text-[13px] md:text-sm font-bold text-[#1D2348]">Certified Engineers</span>
                 </div>
-                <div className="flex items-center gap-4 p-4 md:p-5 bg-muted rounded-2xl md:rounded-3xl border border-border">
+                <div className="flex items-center gap-4 p-4 md:p-5 bg-white rounded-2xl md:rounded-3xl border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)]">
                   <div className="size-9 md:size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
@@ -130,21 +130,21 @@ export default function AboutPage() {
       <section className="py-24 bg-[#F8FAFC]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            <ScrollReveal direction="up" className="p-10 md:p-12 bg-white rounded-[40px] shadow-sm border border-border space-y-6">
+            <ScrollReveal direction="up" className="p-10 md:p-12 bg-white rounded-[40px] shadow-[0_20px_60px_rgba(145,200,255,0.18)] border border-[#E6EEF8] space-y-6">
               <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
                 <Target className="size-8" />
               </div>
               <h3 className="text-[24px] md:text-[30px] font-bold text-[#1D2348]">Our Mission</h3>
-              <p className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed">
+              <p className="text-[15px] md:text-[16px] text-[#4B587C] leading-relaxed">
                 To accelerate India's transition to sustainable energy by providing reliable, high-yield solar solutions and exceptional engineering services that deliver long-term value to our customers and the environment.
               </p>
             </ScrollReveal>
-            <ScrollReveal direction="up" delay={0.2} className="p-10 md:p-12 bg-white rounded-[40px] shadow-sm border border-border space-y-6">
+            <ScrollReveal direction="up" delay={0.2} className="p-10 md:p-12 bg-white rounded-[40px] shadow-[0_20px_60px_rgba(145,200,255,0.18)] border border-[#E6EEF8] space-y-6">
               <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
                 <TrendingUp className="size-8" />
               </div>
               <h3 className="text-[24px] md:text-[30px] font-bold text-[#1D2348]">Our Vision</h3>
-              <p className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed">
+              <p className="text-[15px] md:text-[16px] text-[#4B587C] leading-relaxed">
                 To be the most trusted solar energy authority in India, empowering every homeowner and business to achieve energy independence through smart, clean, and affordable technology.
               </p>
             </ScrollReveal>

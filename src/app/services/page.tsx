@@ -123,7 +123,7 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {services.map((service, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                <div className="group flex flex-col h-full bg-white rounded-[40px] border border-neutral-100 overflow-hidden hover:shadow-[0_40px_80px_rgba(37,99,235,0.08)] hover:-translate-y-2 transition-all duration-500">
+                <div className="group flex flex-col h-full bg-white rounded-[40px] border border-[#E6EEF8] overflow-hidden hover:shadow-[0_20px_60px_rgba(145,200,255,0.18)] hover:-translate-y-2 transition-all duration-500 shadow-sm">
                   <div className="relative aspect-video overflow-hidden">
                     <Image 
                       src={service.image} 
@@ -139,10 +139,10 @@ export default function ServicesPage() {
                       {service.icon}
                     </div>
                     <div className="space-y-3">
-                      <h3 className="text-xl font-bold text-black group-hover:text-primary transition-colors">{service.title}</h3>
-                      <p className="text-[13px] text-[#555] leading-[1.6] line-clamp-3">{service.desc}</p>
+                      <h3 className="text-xl font-bold text-[#1D2348] group-hover:text-primary transition-colors">{service.title}</h3>
+                      <p className="text-[13px] text-[#4B587C] leading-[1.6] line-clamp-3">{service.desc}</p>
                     </div>
-                    <Button asChild variant="link" className="p-0 h-auto text-black font-bold justify-start group-hover:gap-2 transition-all mt-auto hover:text-primary">
+                    <Button asChild variant="link" className="p-0 h-auto text-[#1D2348] font-bold justify-start group-hover:gap-2 transition-all mt-auto hover:text-primary">
                       <Link href={service.href}>
                         Learn More <ArrowRight className="ml-2 size-4" />
                       </Link>

@@ -54,15 +54,15 @@
 }
 
 .glass-card {
-  @apply bg-white/85 backdrop-blur-md border border-primary/10 shadow-[0_10px_40px_rgba(14,165,233,0.08)];
+  @apply bg-white border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)];
 }
 
 .premium-shadow {
-  @apply shadow-[0_20px_50px_rgba(14,165,233,0.08)];
+  @apply shadow-[0_20px_60px_rgba(145,200,255,0.18)];
 }
 
 .hover-lift {
-  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(14,165,233,0.12)];
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(145,200,255,0.22)];
 }
 
 .hero-gradient {

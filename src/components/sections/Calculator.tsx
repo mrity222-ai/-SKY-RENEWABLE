@@ -41,11 +41,11 @@ export function Calculator() {
           <p className="text-[#CBD5E1] text-[13px] md:text-[14px] max-w-sm mx-auto lg:mx-0">Estimate your monthly savings and environmental impact instantly.</p>
         </div>
 
-        <Card className="rounded-[24px] md:rounded-[32px] border-none bg-white/5 backdrop-blur-xl p-6 md:p-8 space-y-8">
+        <Card className="rounded-[24px] md:rounded-[32px] border-[#E6EEF8] bg-white shadow-[0_20px_60px_rgba(145,200,255,0.18)] p-6 md:p-8 space-y-8">
           <div className="space-y-6">
             <div className="flex justify-between items-center">
-              <label className="text-[13px] md:text-[14px] font-medium text-white/60">Monthly Bill</label>
-              <span className="text-[16px] md:text-[18px] font-bold text-white">₹{bill.toLocaleString()}</span>
+              <label className="text-[13px] md:text-[14px] font-medium text-[#1D2348]/60">Monthly Bill</label>
+              <span className="text-[16px] md:text-[18px] font-bold text-[#1D2348]">₹{bill.toLocaleString()}</span>
             </div>
             <Slider 
               value={[bill]} 
@@ -57,8 +57,8 @@ export function Calculator() {
 
           <div className="space-y-6">
             <div className="flex justify-between items-center">
-              <label className="text-[13px] md:text-[14px] font-medium text-white/60">Roof Area (sq. ft.)</label>
-              <span className="text-[16px] md:text-[18px] font-bold text-white">{area} sq.ft.</span>
+              <label className="text-[13px] md:text-[14px] font-medium text-[#1D2348]/60">Roof Area (sq. ft.)</label>
+              <span className="text-[16px] md:text-[18px] font-bold text-[#1D2348]">{area} sq.ft.</span>
             </div>
             <Slider 
               value={[area]} 
@@ -79,17 +79,17 @@ export function Calculator() {
         <ResultCard icon={<Banknote />} label="Monthly Saving" value={`₹${stats.monthlySavings.toLocaleString()}`} />
         <ResultCard icon={<CalendarCheck />} label="Payback" value={`${stats.payback} Yrs`} />
         <ResultCard icon={<RotateCcw />} label="Net Invest" value={`₹${(stats.netCost / 1000).toFixed(0)}k`} />
-        <div className="col-span-2 p-6 md:p-8 bg-white/5 rounded-[24px] md:rounded-[32px] flex items-center justify-between">
+        <div className="col-span-2 p-6 md:p-8 bg-white border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)] rounded-[24px] md:rounded-[32px] flex items-center justify-between">
            <div className="flex items-center gap-4 md:gap-6">
-              <div className="size-10 md:size-12 bg-[#EEF7FF]/20 rounded-xl flex items-center justify-center text-[#22C55E] shrink-0">
+              <div className="size-10 md:size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#22C55E] shrink-0">
                 <TreeDeciduous className="size-5 md:size-5" />
               </div>
               <div>
-                <p className="text-[9px] md:text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest">CO2 Offset</p>
+                <p className="text-[9px] md:text-[10px] font-bold text-[#8A98B8] uppercase tracking-widest">CO2 Offset</p>
                 <p className="text-[18px] md:text-[22px] font-bold text-[#06B6D4]">{stats.co2Offset} Tons / Yr</p>
               </div>
            </div>
-           <Info className="size-4 text-white/20 hidden sm:block" />
+           <Info className="size-4 text-[#1D2348]/20 hidden sm:block" />
         </div>
       </div>
     </div>
@@ -98,13 +98,13 @@ export function Calculator() {
 
 function ResultCard({ icon, label, value }: { icon: any, label: string, value: string }) {
   return (
-    <div className="p-6 md:p-8 bg-white/5 rounded-[24px] md:rounded-[32px] space-y-4 hover:bg-white/10 transition-colors">
-      <div className="size-9 md:size-10 bg-[#EEF7FF]/20 rounded-lg flex items-center justify-center text-[#91C8FF] shrink-0">
+    <div className="p-6 md:p-8 bg-white border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)] rounded-[24px] md:rounded-[32px] space-y-4 hover:shadow-[0_25px_70px_rgba(145,200,255,0.22)] transition-all">
+      <div className="size-9 md:size-10 bg-[#EEF7FF] rounded-lg flex items-center justify-center text-[#91C8FF] shrink-0">
         {React.cloneElement(icon, { className: "size-4.5" })}
       </div>
       <div>
-        <p className="text-[9px] md:text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest leading-tight">{label}</p>
-        <p className="text-[18px] md:text-[22px] font-bold text-[#3B82F6]">{value}</p>
+        <p className="text-[9px] md:text-[10px] font-bold text-[#8A98B8] uppercase tracking-widest leading-tight">{label}</p>
+        <p className="text-[18px] md:text-[22px] font-bold text-[#0EA5E9]">{value}</p>
       </div>
     </div>
   );

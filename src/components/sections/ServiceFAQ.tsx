@@ -49,7 +49,7 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
           <h2 className="text-[32px] md:text-[52px] font-bold text-[#1D2348] tracking-tight leading-[1.1]">
             Your Solar Questions, <br />Answered Clearly
           </h2>
-          <p className="text-[#64748B] text-[16px] md:text-[18px] max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-[#475569] text-[16px] md:text-[18px] max-w-[700px] mx-auto leading-relaxed">
             Everything you need to know about our {serviceName.toLowerCase()}. If you have other questions, feel free to reach out.
           </p>
         </ScrollReveal>
@@ -60,16 +60,16 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem
                   value={`item-${index}`}
-                  className="bg-white rounded-[24px] border border-[#0F172A]/5 px-7 md:px-8 py-2 shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
+                  className="bg-white rounded-[24px] border border-[#E6EEF8] px-7 md:px-8 py-2 shadow-[0_20px_60px_rgba(145,200,255,0.18)] transition-all hover:shadow-[0_25px_70px_rgba(145,200,255,0.22)] data-[state=open]:shadow-[0_25px_70px_rgba(145,200,255,0.25)]"
                 >
                   <AccordionTrigger className="text-left py-6 font-medium text-[#1D2348] hover:no-underline text-[18px] md:text-[24px] group">
                     <span className="flex-1">{faq.question}</span>
-                    <div className="size-[38px] rounded-full border border-[#0F172A]/10 flex items-center justify-center shrink-0 ml-4 group-data-[state=open]:text-[#0EA5E9] group-data-[state=open]:border-[#0EA5E9]/20 transition-colors">
+                    <div className="size-[38px] rounded-full border border-[#1D2348]/10 flex items-center justify-center shrink-0 ml-4 group-data-[state=open]:text-[#0EA5E9] group-data-[state=open]:border-[#0EA5E9]/20 transition-colors">
                       <div className="group-data-[state=open]:hidden"><Plus className="size-5" /></div>
                       <div className="hidden group-data-[state=open]:block"><Minus className="size-5" /></div>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="text-[#64748B] text-[16px] pb-6 leading-[1.8] pt-2">
+                  <AccordionContent className="text-[#4B587C] text-[16px] pb-6 leading-[1.8] pt-2">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

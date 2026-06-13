@@ -54,7 +54,7 @@ export default function ContactPage() {
                   </h1>
                 </ScrollReveal>
                 <ScrollReveal direction="up" delay={0.2}>
-                  <p className="text-[15px] lg:text-[16px] text-[#555] max-w-xl leading-[1.6]">
+                  <p className="text-[15px] lg:text-[16px] text-[#475569] max-w-xl leading-[1.6]">
                     Whether you're looking to slash your home electricity bills or power your entire industrial complex, our experts are here to guide you.
                   </p>
                 </ScrollReveal>
@@ -73,11 +73,11 @@ export default function ContactPage() {
             </div>
 
             <ScrollReveal direction="left" delay={0.3}>
-              <Card className="rounded-[30px] md:rounded-[40px] border-none bg-[#F9F9F9] shadow-sm overflow-hidden">
+              <Card className="rounded-[30px] md:rounded-[40px] border-[#E6EEF8] bg-white shadow-[0_20px_60px_rgba(145,200,255,0.18)] overflow-hidden">
                 <CardContent className="p-6 md:p-12 space-y-6 md:space-y-8">
                   <div className="space-y-2">
                     <h3 className="text-[20px] md:text-[22px] font-semibold text-[#1D2348]">Request a Quote</h3>
-                    <p className="text-[13px] md:text-[14px] text-[#777]">Fill out the form and we'll get back to you within 24 hours.</p>
+                    <p className="text-[13px] md:text-[14px] text-[#8A98B8]">Fill out the form and we'll get back to you within 24 hours.</p>
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -123,17 +123,17 @@ export default function ContactPage() {
             <div className="space-y-8 md:space-y-10 lg:pl-12 text-center lg:text-left">
               <ScrollReveal direction="up" className="space-y-4">
                 <h2 className="text-[28px] md:text-[40px] font-semibold text-[#1D2348] leading-tight">Visit Our Headquarters</h2>
-                <p className="text-[15px] text-[#555] leading-[1.6]">Our engineers are available for in-person consultations at our main facility in Balod.</p>
+                <p className="text-[15px] text-[#475569] leading-[1.6]">Our engineers are available for in-person consultations at our main facility in Balod.</p>
               </ScrollReveal>
               <div className="grid sm:grid-cols-2 gap-8 md:gap-12 text-left">
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <h4 className="font-bold text-[#1D2348] text-[15px] md:text-[16px]">Head Office</h4>
-                    <p className="text-[#555] text-[13px] leading-[1.6]">Bazar Chowk Complex , Kachandur, Gunderdehi, Balod, Chhattisgarh - 491223</p>
+                    <p className="text-[#475569] text-[13px] leading-[1.6]">Bazar Chowk Complex , Kachandur, Gunderdehi, Balod, Chhattisgarh - 491223</p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="font-bold text-[#1D2348] text-[15px] md:text-[16px]">Working Hours</h4>
-                    <p className="text-[#555] text-[13px]">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                    <p className="text-[#475569] text-[13px]">Mon - Sat: 9:00 AM - 7:00 PM</p>
                   </div>
                 </div>
                 <div className="flex justify-center lg:justify-start">
@@ -156,13 +156,13 @@ export default function ContactPage() {
             <h2 className="text-[28px] md:text-[40px] font-semibold text-[#1D2348]">Common Questions</h2>
           </ScrollReveal>
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="q1" className="bg-[#F9F9F9] rounded-[20px] md:rounded-[24px] border-none px-6 md:px-8">
+            <AccordionItem value="q1" className="bg-white rounded-[20px] md:rounded-[24px] border-[#E6EEF8] px-6 md:px-8 shadow-[0_20px_60px_rgba(145,200,255,0.18)]">
               <AccordionTrigger className="text-left py-4 md:py-6 font-bold text-[#1D2348] hover:no-underline text-sm md:text-base">How much can I save with solar?</AccordionTrigger>
-              <AccordionContent className="text-[#555] text-[13px] md:text-[14px] pb-6 leading-relaxed">Most residential customers reduce their electricity bills by 80-90%.</AccordionContent>
+              <AccordionContent className="text-[#4B587C] text-[13px] md:text-[14px] pb-6 leading-relaxed">Most residential customers reduce their electricity bills by 80-90%.</AccordionContent>
             </AccordionItem>
-            <AccordionItem value="q2" className="bg-[#F9F9F9] rounded-[20px] md:rounded-[24px] border-none px-6 md:px-8">
+            <AccordionItem value="q2" className="bg-white rounded-[20px] md:rounded-[24px] border-[#E6EEF8] px-6 md:px-8 shadow-[0_20px_60px_rgba(145,200,255,0.18)]">
               <AccordionTrigger className="text-left py-4 md:py-6 font-bold text-[#1D2348] hover:no-underline text-sm md:text-base">What subsidy is available?</AccordionTrigger>
-              <AccordionContent className="text-[#555] text-[13px] md:text-[14px] pb-6 leading-relaxed">Homeowners can get up to ₹78,000 under current government schemes.</AccordionContent>
+              <AccordionContent className="text-[#4B587C] text-[13px] md:text-[14px] pb-6 leading-relaxed">Homeowners can get up to ₹78,000 under current government schemes.</AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
@@ -182,13 +182,13 @@ function ContactInfo({ icon, text }: { icon: any, text: string }) {
 
 function SmallFeatureCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
-    <div className="flex gap-4 md:gap-6 p-6 md:p-8 bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] border border-neutral-50">
+    <div className="flex gap-4 md:gap-6 p-6 md:p-8 bg-white rounded-[24px] md:rounded-[32px] border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)]">
       <div className="size-10 md:size-12 bg-[#EEF7FF] text-[#91C8FF] rounded-lg md:rounded-xl flex items-center justify-center shrink-0">
         {React.cloneElement(icon, { className: "size-5 md:size-6" })}
       </div>
       <div className="space-y-1">
         <h4 className="font-bold text-[#1D2348] text-[15px] md:text-[16px] leading-tight">{title}</h4>
-        <p className="text-[#555] text-[12px] md:text-[13px] leading-[1.6]">{desc}</p>
+        <p className="text-[#4B587C] text-[12px] md:text-[13px] leading-[1.6]">{desc}</p>
       </div>
     </div>
   );
