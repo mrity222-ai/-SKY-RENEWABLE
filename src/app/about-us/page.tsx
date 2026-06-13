@@ -53,7 +53,7 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
           <ScrollReveal direction="up" delay={0.4} className="mt-20">
-            <div className="relative aspect-[21/9] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border border-border bg-neutral-100">
+            <div className="relative aspect-[21/9] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl border border-border">
               <Image 
                 src="https://picsum.photos/seed/arka_about_hero/1600/700" 
                 alt="Solar Field" 
@@ -112,7 +112,7 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
-              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
                 <Image 
                   src="/ab/6.jpg" 
                   alt="Solar Engineers" 
