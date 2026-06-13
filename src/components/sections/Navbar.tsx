@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -26,14 +27,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-
-  const logoImage = PlaceHolderImages.find(img => img.id === 'company-logo-icon');
 
   useEffect(() => {
     setMounted(true);
@@ -89,16 +87,15 @@ export function Navbar() {
           {/* Left: Logo */}
           <div className="flex-1 flex justify-start">
             <Link href="/" className="flex items-center group shrink-0 relative">
-              {logoImage && (
-                <div className="relative h-6 md:h-7 w-32">
-                  <Image 
-                    src={logoImage.imageUrl} 
-                    alt="Sky Renewable Logo" 
-                    fill
-                    className="object-contain w-full h-full transition-transform group-hover:scale-105"
-                  />
-                </div>
-              )}
+              <div className="relative h-8 md:h-10 w-32 md:w-40">
+                <Image 
+                  src="/LOGO.JPEG" 
+                  alt="Sky Renewable Logo" 
+                  fill
+                  className="object-contain w-full h-full transition-transform group-hover:scale-105"
+                  priority
+                />
+              </div>
             </Link>
           </div>
 
@@ -182,11 +179,9 @@ export function Navbar() {
                       <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                       <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
                       <div className="flex items-center justify-between">
-                        {logoImage && (
-                          <div className="relative h-7 w-28">
-                            <Image src={logoImage.imageUrl} alt="Sky Renewable" fill className="object-contain" />
-                          </div>
-                        )}
+                        <div className="relative h-8 w-32">
+                          <Image src="/LOGO.JPEG" alt="Sky Renewable" fill className="object-contain" />
+                        </div>
                       </div>
                     </SheetHeader>
                     
