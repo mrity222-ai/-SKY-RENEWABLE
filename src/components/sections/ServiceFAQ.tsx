@@ -44,9 +44,9 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
       <div className="container mx-auto px-4 max-w-4xl">
         <ScrollReveal direction="up" className="text-center mb-16 md:mb-20 space-y-4">
           <div className="inline-flex items-center px-4 py-1 rounded-full bg-white border border-border shadow-sm">
-            <span className="text-[12px] font-medium text-[#64748B] uppercase tracking-wider">FAQ</span>
+            <span className="text-[12px] font-medium text-[#1D2348] uppercase tracking-wider">FAQ</span>
           </div>
-          <h2 className="text-[32px] md:text-[52px] font-bold text-[#1E3A8A] tracking-tight leading-[1.1]">
+          <h2 className="text-[32px] md:text-[52px] font-bold text-[#1D2348] tracking-tight leading-[1.1]">
             Your Solar Questions, <br />Answered Clearly
           </h2>
           <p className="text-[#64748B] text-[16px] md:text-[18px] max-w-[700px] mx-auto leading-relaxed">
@@ -62,7 +62,7 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
                   value={`item-${index}`}
                   className="bg-white rounded-[24px] border border-[#0F172A]/5 px-7 md:px-8 py-2 shadow-sm transition-all hover:shadow-md data-[state=open]:shadow-lg"
                 >
-                  <AccordionTrigger className="text-left py-6 font-medium text-[#1E3A8A] hover:no-underline text-[18px] md:text-[24px] group">
+                  <AccordionTrigger className="text-left py-6 font-medium text-[#1D2348] hover:no-underline text-[18px] md:text-[24px] group">
                     <span className="flex-1">{faq.question}</span>
                     <div className="size-[38px] rounded-full border border-[#0F172A]/10 flex items-center justify-center shrink-0 ml-4 group-data-[state=open]:text-[#0EA5E9] group-data-[state=open]:border-[#0EA5E9]/20 transition-colors">
                       <div className="group-data-[state=open]:hidden"><Plus className="size-5" /></div>

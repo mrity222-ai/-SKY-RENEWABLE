@@ -26,13 +26,13 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl text-left space-y-8">
             <ScrollReveal direction="up">
-              <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-[#91C8FF]/10">
+              <span className="inline-block bg-white text-[#1D2348] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">
                 Who We Are
               </span>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.1}>
-              <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-foreground leading-[1.1] tracking-tighter max-w-4xl">
-                Empowering India With <br /><span className="text-primary">Smart Solar Solutions</span>
+              <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-[#1D2348] leading-[1.1] tracking-tighter max-w-4xl">
+                Empowering India With <br /><span className="text-[#91C8FF]">Smart Solar Solutions</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
@@ -72,7 +72,7 @@ export default function AboutPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal direction="up" className="text-center mb-8">
-            <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em] mb-2 block">Our Technology Partners</span>
+            <span className="text-[10px] font-bold text-[#1D2348] uppercase tracking-[0.3em] mb-2 block">Our Technology Partners</span>
           </ScrollReveal>
           <PartnerLogos />
         </div>
@@ -83,9 +83,9 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <ScrollReveal direction="right" className="space-y-6 md:space-y-8">
-              <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase">About Us</span>
-              <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground leading-tight tracking-tighter">
-                Trusted Partners In <br /><span className="text-secondary">Clean Energy</span>
+              <span className="inline-block bg-white text-[#1D2348] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">About Us</span>
+              <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight tracking-tighter">
+                Trusted Partners In <br /><span className="text-[#91C8FF]">Clean Energy</span>
               </h2>
               <div className="space-y-4 md:space-y-6">
                 <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed">
@@ -94,27 +94,27 @@ export default function AboutPage() {
                 <p className="text-[14px] md:text-[16px] text-muted-foreground leading-relaxed">
                   We specialize in complete Solar EPC Services, Rooftop Solar Installations, Operation & Maintenance, and Solar Panel Cleaning Solutions.
                 </p>
-                <p className="text-sm font-bold text-primary">Owner: Naimesh Chandraker</p>
+                <p className="text-sm font-bold text-[#1D2348]">Owner: Naimesh Chandraker</p>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 pt-6">
                 <div className="flex items-center gap-4 p-4 md:p-5 bg-muted rounded-2xl md:rounded-3xl border border-border">
                   <div className="size-9 md:size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
-                  <span className="text-[13px] md:text-sm font-bold text-foreground">Certified Engineers</span>
+                  <span className="text-[13px] md:text-sm font-bold text-[#1D2348]">Certified Engineers</span>
                 </div>
                 <div className="flex items-center gap-4 p-4 md:p-5 bg-muted rounded-2xl md:rounded-3xl border border-border">
                   <div className="size-9 md:size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
-                  <span className="text-[13px] md:text-sm font-bold text-foreground">MNRE Registered</span>
+                  <span className="text-[13px] md:text-sm font-bold text-[#1D2348]">MNRE Registered</span>
                 </div>
               </div>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
               <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
                 <Image 
-                  src="/ab/5.png" 
+                  src="https://picsum.photos/seed/arka_engineers/800/600" 
                   alt="Solar Engineers" 
                   fill 
                   className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
@@ -134,7 +134,7 @@ export default function AboutPage() {
               <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
                 <Target className="size-8" />
               </div>
-              <h3 className="text-[24px] md:text-[30px] font-bold text-foreground">Our Mission</h3>
+              <h3 className="text-[24px] md:text-[30px] font-bold text-[#1D2348]">Our Mission</h3>
               <p className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed">
                 To accelerate India's transition to sustainable energy by providing reliable, high-yield solar solutions and exceptional engineering services that deliver long-term value to our customers and the environment.
               </p>
@@ -143,7 +143,7 @@ export default function AboutPage() {
               <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
                 <TrendingUp className="size-8" />
               </div>
-              <h3 className="text-[24px] md:text-[30px] font-bold text-foreground">Our Vision</h3>
+              <h3 className="text-[24px] md:text-[30px] font-bold text-[#1D2348]">Our Vision</h3>
               <p className="text-[15px] md:text-[16px] text-muted-foreground leading-relaxed">
                 To be the most trusted solar energy authority in India, empowering every homeowner and business to achieve energy independence through smart, clean, and affordable technology.
               </p>

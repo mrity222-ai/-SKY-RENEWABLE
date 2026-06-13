@@ -28,12 +28,12 @@ export function SubsidyShowcase() {
           {/* RIGHT CONTENT */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-2">
             <ScrollReveal direction="up" className="space-y-4 md:space-y-6">
-              <span className="inline-block bg-[#EFF6FF] text-[#2563EB] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#2563EB]/10">
+              <span className="inline-block bg-white text-[#1D2348] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">
                 PM Surya Ghar Yojana
               </span>
-              <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#0F172A] leading-[1.2] tracking-tighter">
+              <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-[1.2] tracking-tighter">
                 Get Maximum Solar Subsidy <br />
-                <span className="text-[#2563EB]">With Expert Assistance</span>
+                <span className="text-[#91C8FF]">With Expert Assistance</span>
               </h2>
               <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#64748B] leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Navigating government incentives shouldn't be complicated. We provide a turnkey experience for the PM-Suryodaya Yojana, handling everything from eligibility audits to direct bank transfers.
@@ -43,7 +43,7 @@ export function SubsidyShowcase() {
             {/* STATISTICS ROW */}
             <ScrollReveal direction="up" delay={0.3} className="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-[#E2E8F0]">
               <div className="space-y-1 text-center lg:text-left">
-                <p className="text-[18px] md:text-[22px] font-bold text-[#2563EB]">₹78,000</p>
+                <p className="text-[18px] md:text-[22px] font-bold text-[#91C8FF]">₹78,000</p>
                 <p className="text-[9px] font-bold text-[#94A3B8] uppercase tracking-widest leading-tight">Central Subsidy</p>
               </div>
               <div className="space-y-1 text-center lg:text-left">

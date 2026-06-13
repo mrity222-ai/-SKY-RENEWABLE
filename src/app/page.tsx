@@ -56,9 +56,9 @@ export default function Home() {
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
           <ScrollReveal direction="up" className="max-w-4xl space-y-6 md:space-y-8">
-            <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-[#1E3A8A] leading-[1.1] tracking-tighter drop-shadow-sm">
+            <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-[#1D2348] leading-[1.1] tracking-tighter drop-shadow-sm">
               The Future of <br />
-              <span className="text-[#0EA5E9]">Clean Energy</span>
+              <span className="text-[#91C8FF]">Clean Energy</span>
             </h1>
             
             <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#475569] max-w-2xl mx-auto leading-relaxed font-medium px-2">
@@ -98,13 +98,13 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#91C8FF]/20">
+                <span className="inline-block bg-white text-[#1D2348] px-4 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">
                   Leading Solar Authority
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
-                <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1E3A8A] leading-[1.2] tracking-tight">
-                  Empowering India <br />Through <span className="text-[#0EA5E9]">Smart Solar</span>
+                <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-[1.2] tracking-tight">
+                  Empowering India <br />Through <span className="text-[#91C8FF]">Smart Solar</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
@@ -139,7 +139,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center space-y-4 mb-12 md:mb-16">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1E3A8A] leading-tight">Advanced Energy Solutions</h2>
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight">Advanced Energy Solutions</h2>
             <p className="text-[#64748B] text-[14px] md:text-[15px] max-w-xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -156,7 +156,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-[#F8FAFC] border-y border-border">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 items-end text-center lg:text-left">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1E3A8A] leading-tight tracking-tighter">
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight tracking-tighter">
               Why Sky Renewable <br />Solar Solutions?
             </h2>
             <p className="text-[14px] md:text-[16px] text-[#475569] leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1E3A8A] leading-tight">Featured Case Studies</h2>
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight">Featured Case Studies</h2>
             <p className="text-[#64748B] text-[14px] md:text-[15px]">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
@@ -203,7 +203,7 @@ export default function Home() {
                     </video>
                     
                     <div className="absolute bottom-2 left-2 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] rounded-bl-[22px] border-r-[6px] border-[#0EA5E9] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                      <div className="text-[30px] md:text-[40px] font-black text-[#1E3A8A] tracking-tighter leading-none">
+                      <div className="text-[30px] md:text-[40px] font-black text-[#1D2348] tracking-tighter leading-none">
                         {p.id < 10 ? `0${p.id}` : p.id}
                       </div>
                     </div>
@@ -213,7 +213,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Button asChild variant="outline" className="rounded-full px-8 h-12 md:h-14 border-border text-[#1E3A8A] hover:bg-[#F8FAFC] font-bold transition-all text-[13px] md:text-[14px]">
+            <Button asChild variant="outline" className="rounded-full px-8 h-12 md:h-14 border-border text-[#1D2348] hover:bg-[#F8FAFC] font-bold transition-all text-[13px] md:text-[14px]">
               <Link href="/projects">View All Projects</Link>
             </Button>
           </div>
@@ -223,7 +223,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-[#F3F8FC] border-t border-border">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
-            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1E3A8A]">Voice of our Clients</h2>
+            <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348]">Voice of our Clients</h2>
             <p className="text-[#64748B] text-[14px] md:text-[15px]">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
           
@@ -247,8 +247,8 @@ export default function Home() {
                 </CarouselItem>
               </CarouselContent>
               <div className="flex justify-center gap-3 mt-8">
-                <CarouselPrevious className="relative static translate-y-0 translate-x-0 border-primary/20 text-[#1E3A8A]" />
-                <CarouselNext className="relative static translate-y-0 translate-x-0 border-primary/20 text-[#1E3A8A]" />
+                <CarouselPrevious className="relative static translate-y-0 translate-x-0 border-primary/20 text-[#1D2348]" />
+                <CarouselNext className="relative static translate-y-0 translate-x-0 border-primary/20 text-[#1D2348]" />
               </div>
             </Carousel>
           </div>
@@ -278,11 +278,11 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
     <ScrollReveal direction="up" className="h-full">
       <Link href={href} className="group block h-full">
         <Card className="p-8 md:p-10 h-full rounded-[24px] md:rounded-[32px] border-none bg-white shadow-sm hover:shadow-[0_40px_80px_rgba(14,165,233,0.08)] transition-all duration-500 relative overflow-hidden">
-          <div className="absolute top-0 right-0 size-24 bg-[#EEF7FF] blur-[30px] rounded-full group-hover:bg-[#rgba(255,152,0,0.12)] transition-colors" />
+          <div className="absolute top-0 right-0 size-24 bg-[#EEF7FF] blur-[30px] rounded-full group-hover:bg-[rgba(255,152,0,0.12)] transition-colors" />
           <div className="size-12 rounded-xl bg-[#EEF7FF] flex items-center justify-center mb-6 text-[#91C8FF] group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-all duration-500">
             {React.cloneElement(icon, { className: "size-6" })}
           </div>
-          <h3 className="text-lg md:text-xl font-bold text-[#1E3A8A] mb-3">{title}</h3>
+          <h3 className="text-lg md:text-xl font-bold text-[#1D2348] mb-3">{title}</h3>
           <p className="text-[14px] md:text-[15px] text-[#475569] leading-relaxed mb-6">{desc}</p>
           <div className="flex items-center gap-2 text-[#0EA5E9] font-bold text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
             Explore <ArrowRight className="size-4" />
@@ -297,7 +297,7 @@ function ValueItem({ title, desc }: { title: string, desc: string }) {
   return (
     <div className="space-y-2 md:space-y-3">
       <div className="size-1.5 bg-[#0EA5E9] rounded-full" />
-      <h3 className="text-lg md:text-xl font-bold text-[#1E3A8A]">{title}</h3>
+      <h3 className="text-lg md:text-xl font-bold text-[#1D2348]">{title}</h3>
       <p className="text-[14px] md:text-[15px] text-[#475569] leading-relaxed">{desc}</p>
     </div>
   );
@@ -316,7 +316,7 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
             {name[0]}
           </div>
           <div>
-            <h4 className="font-bold text-[#1E3A8A] text-sm">{name}</h4>
+            <h4 className="font-bold text-[#1D2348] text-sm">{name}</h4>
             <p className="text-[9px] text-[#94A3B8] font-bold uppercase tracking-widest">{loc}</p>
           </div>
         </div>
