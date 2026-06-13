@@ -6,12 +6,15 @@ import Image from "next/image";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const FINANCE_PARTNERS = [
-  { name: "SBI", logo: "https://picsum.photos/seed/bank_sbi/200/100" },
-  { name: "HDFC", logo: "https://picsum.photos/seed/bank_hdfc/200/100" },
-  { name: "ICICI", logo: "https://picsum.photos/seed/bank_icici/200/100" },
-  { name: "Axis Bank", logo: "https://picsum.photos/seed/bank_axis/200/100" },
-  { name: "Bank of Baroda", logo: "https://picsum.photos/seed/bank_bob/200/100" },
-  { name: "Union Bank", logo: "https://picsum.photos/seed/bank_union/200/100" },
+  { name: "Partner 1", logo: "/par/1.jpg" },
+  { name: "Partner 2", logo: "/par/2.jpg" },
+  { name: "Partner 3", logo: "/par/3.jpg" },
+  { name: "Partner 4", logo: "/par/4.jpg" },
+  { name: "Partner 5", logo: "/par/5.jpg" },
+  { name: "Partner 6", logo: "/par/6.jpg" },
+  { name: "Partner 7", logo: "/par/7.jpg" },
+  { name: "Partner 8", logo: "/par/8.jpg" },
+  { name: "Partner 9", logo: "/par/9.jpg" },
 ];
 
 export function FinancePartners() {
