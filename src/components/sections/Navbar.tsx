@@ -78,10 +78,10 @@ export function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 pt-4 md:pt-6">
       <header className={cn(
-        "max-w-6xl mx-auto rounded-full transition-all duration-500 border",
+        "max-w-6xl mx-auto rounded-full transition-all duration-500 border shadow-sm",
         isScrolled 
-          ? "bg-white/95 backdrop-blur-xl border-border shadow-sm py-2 md:py-3 px-4 md:px-6" 
-          : "bg-transparent backdrop-blur-none border-transparent py-4 px-4 md:px-8"
+          ? "bg-white/95 backdrop-blur-xl border-border py-2 md:py-3 px-4 md:px-6" 
+          : "bg-white border-border py-4 px-4 md:px-8"
       )}>
         <div className="flex items-center justify-between gap-4">
           {/* Left: Logo */}
