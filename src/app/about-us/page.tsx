@@ -114,7 +114,7 @@ export default function AboutPage() {
             <ScrollReveal direction="left" delay={0.2}>
               <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
                 <Image 
-                  src="/ab/6.png" 
+                  src="/ab/5.png" 
                   alt="Solar Engineers" 
                   fill 
                   className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105"
