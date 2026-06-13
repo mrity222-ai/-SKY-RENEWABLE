@@ -76,162 +76,176 @@ export function Navbar() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 pt-4 md:pt-6">
-      <header className={cn(
-        "max-w-6xl mx-auto rounded-full transition-all duration-500 border shadow-sm",
-        isScrolled 
-          ? "bg-white/95 backdrop-blur-xl border-border py-2 md:py-3 px-4 md:px-6" 
-          : "bg-white border-border py-4 px-4 md:px-8"
-      )}>
-        <div className="flex items-center justify-between gap-4">
-          {/* Left: Logo */}
-          <div className="flex-1 flex justify-start">
-            <Link href="/" className="flex items-center group shrink-0 relative">
-              <div className="relative h-16 md:h-20 w-64 md:w-80">
-                <Image 
-                  src="/ab/lo.png" 
-                  alt="Sky Renewable Logo" 
-                  fill
-                  className="object-contain w-full h-full transition-transform group-hover:scale-105"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
+    <div className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 py-4 md:py-6 flex justify-center pointer-events-none">
+      <header 
+        className={cn(
+          "pointer-events-auto w-[90%] max-w-[1400px] rounded-full transition-all duration-500 border flex items-center justify-between px-6 md:px-10 h-[60px] md:h-[72px]",
+          isScrolled 
+            ? "bg-white/15 backdrop-blur-2xl border-white/20 shadow-2xl" 
+            : "bg-white/10 backdrop-blur-xl border-white/15 shadow-lg"
+        )}
+      >
+        {/* Left: Logo */}
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center group relative h-10 md:h-14 w-40 md:w-56">
+            <Image 
+              src="/ab/lo.png" 
+              alt="Sky Renewable Logo" 
+              fill
+              className="object-contain w-full h-full transition-transform group-hover:scale-105"
+              priority
+            />
+          </Link>
+        </div>
 
-          {/* Center: Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const isActive = link.submenu 
-                ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname === link.href)
-                : pathname === link.href;
+        {/* Center: Navigation */}
+        <nav className="hidden lg:flex items-center gap-1.5 bg-white/5 p-1 rounded-full border border-white/5">
+          {navLinks.map((link) => {
+            const isActive = link.submenu 
+              ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname === link.href)
+              : pathname === link.href;
 
-              return (
-                <div key={link.name} className="relative group/nav">
-                  {link.submenu ? (
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className={cn(
-                        "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
-                        "text-primary hover:bg-primary/5"
-                      )}>
-                        {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent 
-                        align="center" 
-                        sideOffset={15} 
-                        className={cn(
-                          "rounded-[24px] md:rounded-[32px] p-4 md:p-6 shadow-xl border border-border bg-white/95 backdrop-blur-2xl overflow-y-auto max-h-[85vh]",
-                          link.isMega ? "min-w-[500px] lg:min-w-[800px]" : "min-w-[240px]"
-                        )}
-                      >
-                        <div className={cn(
-                          "grid gap-2",
-                          link.isMega ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
-                        )}>
-                          {link.submenu.map((sub) => (
-                            <DropdownMenuItem key={sub.name} asChild>
-                              <Link 
-                                href={sub.href} 
-                                className="w-full cursor-pointer p-3 rounded-xl hover:bg-primary/5 flex items-center gap-3 group/item transition-all duration-300"
-                              >
-                                <div className="bg-primary/10 p-2 rounded-lg group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300 shrink-0 text-primary">
-                                  {sub.icon}
-                                </div>
-                                <span className="font-bold text-[13px] md:text-[14px] tracking-tight text-[#1E293B] group-hover/item:text-primary transition-colors">{sub.name}</span>
-                              </Link>
-                            </DropdownMenuItem>
-                          ))}
-                        </div>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  ) : (
-                    <Link 
-                      href={link.href}
+            return (
+              <div key={link.name} className="relative group/nav">
+                {link.submenu ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className={cn(
+                      "relative px-5 py-2 rounded-full text-[14px] font-semibold flex items-center gap-1.5 transition-all outline-none",
+                      isActive 
+                        ? "bg-white text-[#0F172A] shadow-md" 
+                        : "text-white hover:bg-white/15"
+                    )}>
+                      {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent 
+                      align="center" 
+                      sideOffset={15} 
                       className={cn(
-                        "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 block",
-                        "text-primary hover:bg-primary/5"
+                        "rounded-[28px] p-4 shadow-2xl border border-white/10 bg-[#0F172A]/90 backdrop-blur-3xl overflow-hidden",
+                        link.isMega ? "min-w-[560px]" : "min-w-[240px]"
                       )}
                     >
-                      {link.name}
-                    </Link>
-                  )}
-                </div>
-              );
-            })}
-          </nav>
-
-          {/* Right: Actions */}
-          <div className="flex-1 flex justify-end items-center gap-6">
-            <Button asChild className="hidden sm:flex bg-primary text-white rounded-full px-6 hover:bg-primary/90 hover:shadow-lg transition-all duration-300 font-bold h-9 md:h-10 text-[13px] md:text-[14px] uppercase tracking-wider">
-              <Link href="/get-quote">Get Quote</Link>
-            </Button>
-
-            <div className="lg:hidden">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-foreground hover:bg-primary/5 rounded-full">
-                    <Menu className="size-5" />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="bg-white border-none w-[85%] sm:max-w-[320px] p-0 overflow-y-auto rounded-l-[24px] shadow-2xl">
-                  <div className="p-6 md:p-8 h-full flex flex-col">
-                    <SheetHeader className="mb-6 text-left">
-                      <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                      <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
-                      <div className="flex items-center justify-between">
-                        <div className="relative h-16 w-64">
-                          <Image src="/ab/lo.png" alt="Sky Renewable" fill className="object-contain" />
-                        </div>
-                      </div>
-                    </SheetHeader>
-                    
-                    <nav className="flex flex-col gap-1.5 overflow-y-auto flex-grow pb-8 pr-1">
-                      {navLinks.map((link) => (
-                        <div key={link.name} className="space-y-1 mb-3">
-                          {link.href !== "#" ? (
+                      <div className={cn(
+                        "grid gap-1",
+                        link.isMega ? "grid-cols-2" : "grid-cols-1"
+                      )}>
+                        {link.submenu.map((sub) => (
+                          <DropdownMenuItem key={sub.name} asChild>
                             <Link 
-                              href={link.href} 
-                              className={cn(
-                                "text-[15px] md:text-[16px] font-bold px-4 py-1.5 rounded-lg block transition-all",
-                                pathname === link.href ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5"
-                              )}
+                              href={sub.href} 
+                              className="w-full cursor-pointer p-3 rounded-2xl hover:bg-white/10 flex items-center gap-4 group/item transition-all"
                             >
-                              {link.name}
+                              <div className="bg-white/5 p-2 rounded-xl group-hover/item:bg-white group-hover/item:text-[#0F172A] transition-all text-white">
+                                {sub.icon}
+                              </div>
+                              <span className="font-bold text-[14px] tracking-tight text-white group-hover/item:text-white transition-colors">{sub.name}</span>
                             </Link>
-                          ) : (
-                            <span className="text-[10px] font-bold px-4 py-1 block text-[#64748B] uppercase tracking-widest">
-                              {link.name}
-                            </span>
-                          )}
-                          {link.submenu && (
-                            <div className="grid gap-1 ml-6 border-l-2 border-primary/10 pl-3">
-                              {link.submenu.map((sub) => (
-                                <Link 
-                                  key={sub.name} 
-                                  href={sub.href} 
-                                  className={cn(
-                                    "text-[13px] md:text-[14px] font-medium py-1.5 px-3 rounded-lg block transition-all",
-                                    pathname === sub.href ? "bg-primary/5 text-primary" : "text-[#64748B] hover:text-primary hover:bg-primary/5"
-                                  )}
-                                >
-                                  {sub.name}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </nav>
-                    
-                    <div className="pt-6 border-t border-border flex flex-col gap-4 mt-auto">
-                      <Button asChild className="w-full bg-primary text-white rounded-full py-6 font-bold text-[13px] uppercase tracking-widest hover:bg-primary/90 transition-all">
-                        <Link href="/get-quote">Get a Quote</Link>
-                      </Button>
+                          </DropdownMenuItem>
+                        ))}
+                      </div>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link 
+                    href={link.href}
+                    className={cn(
+                      "relative px-5 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 block",
+                      isActive 
+                        ? "bg-white text-[#0F172A] shadow-md" 
+                        : "text-white hover:bg-white/15"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+
+        {/* Right: Actions */}
+        <div className="flex items-center gap-4">
+          <Button 
+            asChild 
+            className="hidden sm:flex rounded-full px-7 font-bold h-[44px] text-[14px] transition-all hover:scale-105 active:scale-95 hover:shadow-[0_8px_30px_rgba(14,165,233,0.4)] border-none text-white"
+            style={{
+              background: 'linear-gradient(135deg, #0EA5E9, #22C55E)',
+            }}
+          >
+            <Link href="/get-quote">Get Quote</Link>
+          </Button>
+
+          <div className="lg:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 rounded-full">
+                  <Menu className="size-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-[#0F172A]/98 backdrop-blur-3xl border-none w-[85%] sm:max-w-[340px] p-0 text-white shadow-2xl">
+                <div className="p-8 h-full flex flex-col">
+                  <SheetHeader className="mb-12 text-left">
+                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                    <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
+                    <div className="flex items-center justify-between">
+                      <div className="relative h-12 w-48">
+                        <Image src="/ab/lo.png" alt="Sky Renewable" fill className="object-contain" />
+                      </div>
                     </div>
+                  </SheetHeader>
+                  
+                  <nav className="flex flex-col gap-3 flex-grow overflow-y-auto">
+                    {navLinks.map((link) => (
+                      <div key={link.name} className="space-y-2">
+                        {link.href !== "#" ? (
+                          <Link 
+                            href={link.href} 
+                            className={cn(
+                              "text-[16px] font-bold px-4 py-2.5 rounded-2xl block transition-all",
+                              pathname === link.href ? "bg-white text-[#0F172A]" : "text-white/70 hover:text-white"
+                            )}
+                          >
+                            {link.name}
+                          </Link>
+                        ) : (
+                          <span className="text-[11px] font-black px-4 py-2 block text-white/30 uppercase tracking-[0.2em] pt-4">
+                            {link.name}
+                          </span>
+                        )}
+                        {link.submenu && (
+                          <div className="grid gap-1 ml-6 border-l-2 border-white/5 pl-4">
+                            {link.submenu.map((sub) => (
+                              <Link 
+                                key={sub.name} 
+                                href={sub.href} 
+                                className={cn(
+                                  "text-[14px] font-semibold py-2.5 px-3 rounded-xl block transition-all",
+                                  pathname === sub.href ? "text-white bg-white/5" : "text-white/50 hover:text-white"
+                                )}
+                              >
+                                {sub.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </nav>
+                  
+                  <div className="pt-8 border-t border-white/5 mt-auto">
+                    <Button 
+                      asChild 
+                      className="w-full rounded-full py-7 font-bold text-[15px] transition-all border-none text-white"
+                      style={{
+                        background: 'linear-gradient(135deg, #0EA5E9, #22C55E)',
+                      }}
+                    >
+                      <Link href="/get-quote">Request Proposal</Link>
+                    </Button>
                   </div>
-                </SheetContent>
-              </Sheet>
-            </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
