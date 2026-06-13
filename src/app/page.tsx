@@ -58,7 +58,7 @@ export default function Home() {
           <ScrollReveal direction="up" className="max-w-4xl space-y-6 md:space-y-8">
             <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] tracking-tighter drop-shadow-lg">
               The Future of <br />
-              <span className="bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent">Clean Energy</span>
+              <span className="text-[#14213D]">Clean Energy</span>
             </h1>
             
             <p className="text-[14px] md:text-[15px] lg:text-[16px] text-white/85 max-w-2xl mx-auto leading-relaxed font-medium px-2">
@@ -303,7 +303,7 @@ function ValueItem({ title, desc }: { title: string, desc: string }) {
   );
 }
 
-function TestimonialCard({ name, loc, review }: { name: string, loc: string, review: string }) {
+function TestimonialCard({ name, review, loc }: { name: string, review: string, loc: string }) {
   return (
     <ScrollReveal direction="up" className="h-full">
       <Card className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border-[#DCE7F5] bg-white shadow-[0_20px_60px_rgba(20,33,61,0.08)] space-y-6 flex flex-col h-full hover-lift">
@@ -312,7 +312,7 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
         </div>
         <p className="text-[14px] md:text-[15px] text-[#475569] font-medium italic leading-relaxed flex-grow">"{review}"</p>
         <div className="flex items-center gap-4 border-t border-[#DCE7F5] pt-6">
-          <div className="size-10 rounded-full bg-[#EEF6FF] flex items-center justify-center text-[#2563EB] font-bold text-base shrink-0">
+          <div className="size-10 rounded-full bg-[#EEF7FF] flex items-center justify-center text-[#2563EB] font-bold text-base shrink-0">
             {name[0]}
           </div>
           <div>
