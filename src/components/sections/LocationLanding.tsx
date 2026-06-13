@@ -114,7 +114,7 @@ export function LocationLanding({ city, nearbyAreas }: LocationLandingProps) {
         titleLine1={`Best Solar Company in`}
         titleLine2={`${city}, Chhattisgarh`}
         description={`SKY RENEWABLE provides professional rooftop solar installation, solar EPC solutions, maintenance, panel cleaning, net metering assistance, and PM Surya Ghar Yojana support in ${city}.`}
-        image="https://picsum.photos/seed/sky_location/1200/900"
+        image="/ab/4.jpg"
         primaryButtonText="Get Free Site Survey"
         secondaryButtonText="Call Solar Expert"
       />
