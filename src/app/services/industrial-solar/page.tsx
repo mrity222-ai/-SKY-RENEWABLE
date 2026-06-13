@@ -49,7 +49,7 @@ export default function IndustrialSolarPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             <ScrollReveal direction="right">
               <Card className="p-12 rounded-[60px] border-none bg-white shadow-sm space-y-6">
-                <div className="size-16 rounded-2xl bg-[#EEF7FF] text-[#91C8FF] flex items-center justify-center">
+                <div className="size-16 rounded-2xl bg-[#EEF7FF] text-[#2563EB] flex items-center justify-center">
                   <Factory className="size-8" />
                 </div>
                 <h3 className="text-[28px] font-semibold text-black">CAPEX Model</h3>

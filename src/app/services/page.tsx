@@ -135,7 +135,7 @@ export default function ServicesPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                   <div className="p-8 flex flex-col flex-grow space-y-6">
-                    <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#91C8FF] group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-all duration-500">
+                    <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#2563EB] group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-all duration-500">
                       {service.icon}
                     </div>
                     <div className="space-y-3">

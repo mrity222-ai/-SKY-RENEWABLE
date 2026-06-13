@@ -174,7 +174,7 @@ export default function ContactPage() {
 function ContactInfo({ icon, text }: { icon: any, text: string }) {
   return (
     <div className="flex items-center gap-4 text-[#1D2348]">
-      <div className="bg-[#EEF7FF] p-3 rounded-xl shrink-0">{React.cloneElement(icon, { className: "size-5 text-[#91C8FF]" })}</div>
+      <div className="bg-[#EEF7FF] p-3 rounded-xl shrink-0">{React.cloneElement(icon, { className: "size-5 text-[#2563EB]" })}</div>
       <span className="text-[14px] md:text-[16px] font-medium leading-tight">{text}</span>
     </div>
   );
@@ -183,7 +183,7 @@ function ContactInfo({ icon, text }: { icon: any, text: string }) {
 function SmallFeatureCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
     <div className="flex gap-4 md:gap-6 p-6 md:p-8 bg-white rounded-[24px] md:rounded-[32px] border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)]">
-      <div className="size-10 md:size-12 bg-[#EEF7FF] text-[#91C8FF] rounded-lg md:rounded-xl flex items-center justify-center shrink-0">
+      <div className="size-10 md:size-12 bg-[#EEF7FF] text-[#2563EB] rounded-lg md:rounded-xl flex items-center justify-center shrink-0">
         {React.cloneElement(icon, { className: "size-5 md:size-6" })}
       </div>
       <div className="space-y-1">

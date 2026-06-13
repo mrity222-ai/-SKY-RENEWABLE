@@ -34,7 +34,7 @@ export function WorkingArea() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.1}>
               <h2 className="text-[30px] md:text-[34px] lg:text-[40px] font-bold text-[#1D2348] leading-tight tracking-tight">
-                Powering Communities <br /><span className="text-[#91C8FF]">Across Chhattisgarh</span>
+                Powering Communities <br /><span className="text-[#2563EB]">Across Chhattisgarh</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
@@ -45,7 +45,7 @@ export function WorkingArea() {
             
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
               <div className="flex items-center gap-4 p-5 bg-muted rounded-3xl border border-border">
-                <div className="size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
+                <div className="size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#2563EB]">
                   <MapPin className="size-5" />
                 </div>
                 <div>

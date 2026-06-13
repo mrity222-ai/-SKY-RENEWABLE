@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import Link from "next/navigation";
 import Image from "next/image";
 import { 
   Phone, 
@@ -62,10 +62,10 @@ export function Footer() {
             </div>
             
             <nav className="flex flex-wrap gap-x-6 md:gap-x-12 gap-y-4">
-              <Link href="/" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#60A5FA] transition-colors">Home</Link>
-              <Link href="/about-us" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#60A5FA] transition-colors">About Us</Link>
-              <Link href="/services" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#60A5FA] transition-colors">Services</Link>
-              <Link href="/projects" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#60A5FA] transition-colors">Projects</Link>
+              <Link href="/" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#2563EB] transition-colors">Home</Link>
+              <Link href="/about-us" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#2563EB] transition-colors">About Us</Link>
+              <Link href="/services" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#2563EB] transition-colors">Services</Link>
+              <Link href="/projects" className="text-[13px] md:text-[14px] font-semibold text-white hover:text-[#2563EB] transition-colors">Projects</Link>
             </nav>
             
             <div className="flex gap-4">
@@ -117,7 +117,7 @@ export function Footer() {
             className="flex items-center gap-3 hover:text-white transition-all group font-bold tracking-widest uppercase text-[10px]"
           >
             Scroll to Top 
-            <div className="size-8 md:size-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#60A5FA] group-hover:text-white group-hover:border-[#60A5FA] transition-all">
+            <div className="size-8 md:size-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#2563EB] group-hover:text-white group-hover:border-[#2563EB] transition-all">
               <ArrowUp className="size-3 md:size-4" />
             </div>
           </button>
@@ -139,10 +139,13 @@ export function Footer() {
 }
 
 function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, label: string, text: string, secondaryText?: string }) {
+  const isMounted = useMounted();
+  if (!isMounted) return null;
+
   return (
     <div className="flex gap-6 md:gap-8 items-start">
-      <div className="size-12 md:size-14 rounded-xl md:rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border border-white/10 shadow-sm">
-        {React.cloneElement(icon as React.ReactElement, { className: "size-5 md:size-6 text-[#60A5FA]" })}
+      <div className="size-12 md:size-14 rounded-xl md:rounded-2xl bg-[#EEF7FF] flex items-center justify-center shrink-0 border border-[#2563EB]/10 shadow-sm">
+        {React.cloneElement(icon as React.ReactElement, { className: "size-5 md:size-6 text-[#2563EB]" })}
       </div>
       <div className="space-y-1 md:space-y-2">
         <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/40">{label}</p>
@@ -154,9 +157,18 @@ function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, lab
 }
 
 function SocialLink({ icon }: { icon: any }) {
+  const isMounted = useMounted();
+  if (!isMounted) return null;
+
   return (
-    <Link href="#" className="size-10 md:size-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#60A5FA]/20 hover:border-[#60A5FA]/30 transition-all duration-500 text-white/60 hover:text-[#60A5FA] shadow-sm">
+    <Link href="#" className="size-10 md:size-12 bg-[#EEF7FF] border border-[#2563EB]/10 rounded-full flex items-center justify-center hover:bg-[rgba(255,152,0,0.12)] hover:border-[#FF9800]/20 transition-all duration-500 text-[#2563EB] hover:text-[#FF9800] shadow-sm">
       {icon}
     </Link>
   );
+}
+
+function useMounted() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted;
 }

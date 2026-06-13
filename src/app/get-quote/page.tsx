@@ -35,7 +35,7 @@ export default function GetQuotePage() {
           <div className="grid lg:grid-cols-2 gap-24 items-start">
             <div className="space-y-12">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-[#EEF7FF] text-[#2563EB] px-4 py-1.5 rounded-full text-[12px] font-medium tracking-wider uppercase">
                   Proposal Request
                 </span>
               </ScrollReveal>
@@ -100,7 +100,7 @@ export default function GetQuotePage() {
 function FeatureItem({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
     <div className="flex gap-6">
-      <div className="size-12 bg-[#EEF7FF] text-[#91C8FF] rounded-xl flex items-center justify-center shrink-0">
+      <div className="size-12 bg-[#EEF7FF] text-[#2563EB] rounded-xl flex items-center justify-center shrink-0">
         {React.cloneElement(icon, { className: "size-6" })}
       </div>
       <div className="space-y-1">

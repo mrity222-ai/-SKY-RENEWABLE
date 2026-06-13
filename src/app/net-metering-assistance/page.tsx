@@ -121,7 +121,7 @@ export default function NetMeteringAssistancePage() {
             {supportItems.map((item, i) => (
               <ScrollReveal key={i} delay={i * 0.05} direction="up">
                 <Card className="p-6 md:p-8 h-full rounded-[32px] border-none bg-[#F8FAFC] shadow-sm flex flex-col items-center text-center space-y-4 hover:shadow-md transition-all">
-                  <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#91C8FF]">
+                  <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#2563EB]">
                     {React.cloneElement(item.icon as React.ReactElement, { className: "size-6" })}
                   </div>
                   <h3 className="text-sm md:text-base font-bold text-[#0F172A] leading-tight">{item.title}</h3>
@@ -161,7 +161,7 @@ export default function NetMeteringAssistancePage() {
                   "Passport-size photo"
                 ].map((doc, i) => (
                   <li key={i} className="flex items-center gap-4 text-[#64748B] text-[15px] font-medium border-b border-black/5 pb-2">
-                    <div className="size-2 bg-[#91C8FF] rounded-full shrink-0" />
+                    <div className="size-2 bg-[#2563EB] rounded-full shrink-0" />
                     {doc}
                   </li>
                 ))}
@@ -181,7 +181,7 @@ export default function NetMeteringAssistancePage() {
             {benefits.map((benefit, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up">
                 <Card className="p-10 h-full rounded-[40px] border-none bg-[#F8FAFC] shadow-sm hover:shadow-xl transition-all group">
-                  <div className="size-12 rounded-full bg-[#EEF7FF] text-[#91C8FF] flex items-center justify-center mb-6 group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-colors">
+                  <div className="size-12 rounded-full bg-[#EEF7FF] text-[#2563EB] flex items-center justify-center mb-6 group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-colors">
                     <TrendingUp className="size-6" />
                   </div>
                   <h3 className="text-xl font-bold text-[#0F172A] mb-3">{benefit.title}</h3>
@@ -203,7 +203,7 @@ export default function NetMeteringAssistancePage() {
             {steps.map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up" className="space-y-4 text-center">
                 <div className="text-[40px] md:text-[48px] font-bold text-white/10 leading-none">0{i + 1}</div>
-                <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#91C8FF]">{step.title}</h4>
+                <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#2563EB]">{step.title}</h4>
                 <p className="text-[12px] text-white/60 leading-relaxed">{step.desc}</p>
               </ScrollReveal>
             ))}

@@ -32,7 +32,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.1}>
               <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-[#1D2348] leading-[1.1] tracking-tighter max-w-4xl">
-                Empowering India With <br /><span className="text-[#91C8FF]">Smart Solar Solutions</span>
+                Empowering India With <br /><span className="text-[#2563EB]">Smart Solar Solutions</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
@@ -85,7 +85,7 @@ export default function AboutPage() {
             <ScrollReveal direction="right" className="space-y-6 md:space-y-8">
               <span className="inline-block bg-white text-[#1D2348] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">About Us</span>
               <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight tracking-tighter">
-                Trusted Partners In <br /><span className="text-[#91C8FF]">Clean Energy</span>
+                Trusted Partners In <br /><span className="text-[#2563EB]">Clean Energy</span>
               </h2>
               <div className="space-y-4 md:space-y-6">
                 <p className="text-[14px] md:text-[16px] text-[#475569] leading-relaxed">
@@ -131,7 +131,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <ScrollReveal direction="up" className="p-10 md:p-12 bg-white rounded-[40px] shadow-[0_20px_60px_rgba(145,200,255,0.18)] border border-[#E6EEF8] space-y-6">
-              <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
+              <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#2563EB]">
                 <Target className="size-8" />
               </div>
               <h3 className="text-[24px] md:text-[30px] font-bold text-[#1D2348]">Our Mission</h3>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               </p>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2} className="p-10 md:p-12 bg-white rounded-[40px] shadow-[0_20px_60px_rgba(145,200,255,0.18)] border border-[#E6EEF8] space-y-6">
-              <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
+              <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#2563EB]">
                 <TrendingUp className="size-8" />
               </div>
               <h3 className="text-[24px] md:text-[30px] font-bold text-[#1D2348]">Our Vision</h3>

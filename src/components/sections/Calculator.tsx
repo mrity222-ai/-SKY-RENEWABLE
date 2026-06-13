@@ -86,7 +86,7 @@ export function Calculator() {
               </div>
               <div>
                 <p className="text-[9px] md:text-[10px] font-bold text-[#8A98B8] uppercase tracking-widest">CO2 Offset</p>
-                <p className="text-[18px] md:text-[22px] font-bold text-[#06B6D4]">{stats.co2Offset} Tons / Yr</p>
+                <p className="text-[18px] md:text-[22px] font-bold text-[#2563EB]">{stats.co2Offset} Tons / Yr</p>
               </div>
            </div>
            <Info className="size-4 text-[#1D2348]/20 hidden sm:block" />
@@ -99,12 +99,12 @@ export function Calculator() {
 function ResultCard({ icon, label, value }: { icon: any, label: string, value: string }) {
   return (
     <div className="p-6 md:p-8 bg-white border border-[#E6EEF8] shadow-[0_20px_60px_rgba(145,200,255,0.18)] rounded-[24px] md:rounded-[32px] space-y-4 hover:shadow-[0_25px_70px_rgba(145,200,255,0.22)] transition-all">
-      <div className="size-9 md:size-10 bg-[#EEF7FF] rounded-lg flex items-center justify-center text-[#91C8FF] shrink-0">
+      <div className="size-9 md:size-10 bg-[#EEF7FF] rounded-lg flex items-center justify-center text-[#2563EB] shrink-0">
         {React.cloneElement(icon, { className: "size-4.5" })}
       </div>
       <div>
         <p className="text-[9px] md:text-[10px] font-bold text-[#8A98B8] uppercase tracking-widest leading-tight">{label}</p>
-        <p className="text-[18px] md:text-[22px] font-bold text-[#0EA5E9]">{value}</p>
+        <p className="text-[18px] md:text-[22px] font-bold text-[#2563EB]">{value}</p>
       </div>
     </div>
   );
