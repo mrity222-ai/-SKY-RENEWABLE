@@ -1,6 +1,7 @@
+
 'use client';
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { 
@@ -16,9 +17,23 @@ import {
 } from "lucide-react";
 
 export function Footer() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
+
+  if (!mounted) {
+    return (
+      <footer className="bg-[#F3F8FC] border-t border-primary/10 h-20" />
+    );
+  }
 
   return (
     <footer className="bg-[#F3F8FC] text-[#475569] pt-16 md:pt-24 pb-8 md:pb-12 relative overflow-hidden border-t border-primary/10">
