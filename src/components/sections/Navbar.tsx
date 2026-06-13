@@ -76,30 +76,30 @@ export function Navbar() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] px-4 md:px-6 py-4 md:py-6 flex justify-center pointer-events-none">
+    <div className="fixed top-0 left-0 right-0 z-[100] pointer-events-none">
       <header 
         className={cn(
-          "pointer-events-auto w-[90%] max-w-[1400px] rounded-full transition-all duration-500 border flex items-center justify-between px-6 md:px-10 h-[60px] md:h-[72px]",
+          "pointer-events-auto w-full transition-all duration-500 border-b flex items-center justify-between px-6 md:px-12 h-[72px] md:h-[80px]",
           isScrolled 
-            ? "bg-white/15 backdrop-blur-2xl border-white/20 shadow-2xl" 
-            : "bg-white/10 backdrop-blur-xl border-white/15 shadow-lg"
+            ? "bg-white/80 backdrop-blur-2xl border-white/20 shadow-lg" 
+            : "bg-white/10 backdrop-blur-xl border-white/15"
         )}
       >
         {/* Left: Logo */}
         <div className="flex items-center">
-          <Link href="/" className="flex items-center group relative h-10 md:h-14 w-40 md:w-56">
+          <Link href="/" className="flex items-center group relative h-10 md:h-14 w-44 md:w-60">
             <Image 
               src="/ab/lo.png" 
               alt="Sky Renewable Logo" 
               fill
-              className="object-contain w-full h-full transition-transform group-hover:scale-105"
+              className="object-contain object-left transition-transform group-hover:scale-105"
               priority
             />
           </Link>
         </div>
 
         {/* Center: Navigation */}
-        <nav className="hidden lg:flex items-center gap-1.5 bg-white/5 p-1 rounded-full border border-white/5">
+        <nav className="hidden lg:flex items-center gap-2">
           {navLinks.map((link) => {
             const isActive = link.submenu 
               ? link.submenu.some(sub => pathname === sub.href) || (link.href !== "#" && pathname === link.href)
@@ -110,10 +110,10 @@ export function Navbar() {
                 {link.submenu ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger className={cn(
-                      "relative px-5 py-2 rounded-full text-[14px] font-semibold flex items-center gap-1.5 transition-all outline-none",
+                      "relative px-4 py-2 rounded-full text-[14px] font-semibold flex items-center gap-1.5 transition-all outline-none",
                       isActive 
-                        ? "bg-white text-[#0F172A] shadow-md" 
-                        : "text-white hover:bg-white/15"
+                        ? "bg-white text-primary shadow-sm" 
+                        : "text-white hover:bg-white/10"
                     )}>
                       {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                     </DropdownMenuTrigger>
@@ -121,7 +121,7 @@ export function Navbar() {
                       align="center" 
                       sideOffset={15} 
                       className={cn(
-                        "rounded-[28px] p-4 shadow-2xl border border-white/10 bg-[#0F172A]/90 backdrop-blur-3xl overflow-hidden",
+                        "rounded-[24px] p-4 shadow-2xl border border-white/10 bg-[#0F172A]/90 backdrop-blur-3xl overflow-hidden",
                         link.isMega ? "min-w-[560px]" : "min-w-[240px]"
                       )}
                     >
@@ -135,7 +135,7 @@ export function Navbar() {
                               href={sub.href} 
                               className="w-full cursor-pointer p-3 rounded-2xl hover:bg-white/10 flex items-center gap-4 group/item transition-all"
                             >
-                              <div className="bg-white/5 p-2 rounded-xl group-hover/item:bg-white group-hover/item:text-[#0F172A] transition-all text-white">
+                              <div className="bg-white/5 p-2 rounded-xl group-hover/item:bg-white group-hover/item:text-primary transition-all text-white">
                                 {sub.icon}
                               </div>
                               <span className="font-bold text-[14px] tracking-tight text-white group-hover/item:text-white transition-colors">{sub.name}</span>
@@ -151,8 +151,8 @@ export function Navbar() {
                     className={cn(
                       "relative px-5 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 block",
                       isActive 
-                        ? "bg-white text-[#0F172A] shadow-md" 
-                        : "text-white hover:bg-white/15"
+                        ? "bg-white text-primary shadow-sm" 
+                        : "text-white hover:bg-white/10"
                     )}
                   >
                     {link.name}
@@ -167,7 +167,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <Button 
             asChild 
-            className="hidden sm:flex rounded-full px-7 font-bold h-[44px] text-[14px] transition-all hover:scale-105 active:scale-95 hover:shadow-[0_8px_30px_rgba(14,165,233,0.4)] border-none text-white"
+            className="hidden sm:flex rounded-full px-8 font-bold h-[44px] text-[14px] transition-all hover:scale-105 active:scale-95 hover:shadow-[0_8px_30px_rgba(14,165,233,0.4)] border-none text-white"
             style={{
               background: 'linear-gradient(135deg, #0EA5E9, #22C55E)',
             }}
@@ -202,7 +202,7 @@ export function Navbar() {
                             href={link.href} 
                             className={cn(
                               "text-[16px] font-bold px-4 py-2.5 rounded-2xl block transition-all",
-                              pathname === link.href ? "bg-white text-[#0F172A]" : "text-white/70 hover:text-white"
+                              pathname === link.href ? "bg-white text-primary" : "text-white/70 hover:text-white"
                             )}
                           >
                             {link.name}
