@@ -112,7 +112,7 @@ export function Navbar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
                         "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold flex items-center gap-1 transition-all outline-none",
-                        isActive ? "text-primary bg-primary/5" : "text-foreground hover:bg-primary/5 hover:text-primary"
+                        isActive ? "text-primary bg-primary/5" : "text-primary hover:bg-primary/5"
                       )}>
                         {link.name} <ChevronDown className="size-3 opacity-50 group-hover/nav:rotate-180 transition-transform" />
                       </DropdownMenuTrigger>
@@ -149,7 +149,7 @@ export function Navbar() {
                       href={link.href}
                       className={cn(
                         "relative px-4 py-1.5 rounded-full text-[14px] md:text-[15px] font-semibold transition-all duration-300 block",
-                        isActive ? "bg-primary/5 text-primary" : "text-foreground hover:bg-primary/5 hover:text-primary"
+                        isActive ? "bg-primary/5 text-primary" : "text-primary hover:bg-primary/5"
                       )}
                     >
                       {link.name}
