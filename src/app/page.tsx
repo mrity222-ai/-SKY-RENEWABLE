@@ -58,7 +58,7 @@ export default function Home() {
           <ScrollReveal direction="up" className="max-w-4xl space-y-6 md:space-y-8">
             <h1 className="text-[30px] md:text-[44px] lg:text-[52px] font-bold text-white leading-[1.1] tracking-tighter drop-shadow-lg">
               The Future of <br />
-              <span className="text-[#14213D]">Clean Energy</span>
+              <span className="text-[#2563EB]">Clean Energy</span>
             </h1>
             
             <p className="text-[14px] md:text-[15px] lg:text-[16px] text-white/85 max-w-2xl mx-auto leading-relaxed font-medium px-2">
