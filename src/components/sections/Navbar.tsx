@@ -87,7 +87,7 @@ export function Navbar() {
           {/* Left: Logo */}
           <div className="flex-1 flex justify-start">
             <Link href="/" className="flex items-center group shrink-0 relative">
-              <div className="relative h-10 md:h-12 w-40 md:w-56">
+              <div className="relative h-16 md:h-20 w-64 md:w-80">
                 <Image 
                   src="/ab/lo.png" 
                   alt="Sky Renewable Logo" 
@@ -179,7 +179,7 @@ export function Navbar() {
                       <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                       <SheetDescription className="sr-only">Navigate Sky Renewable services.</SheetDescription>
                       <div className="flex items-center justify-between">
-                        <div className="relative h-10 w-40">
+                        <div className="relative h-16 w-64">
                           <Image src="/ab/lo.png" alt="Sky Renewable" fill className="object-contain" />
                         </div>
                       </div>
