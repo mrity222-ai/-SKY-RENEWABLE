@@ -98,7 +98,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#0EA5E9]/10 text-[#0EA5E9] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#0EA5E9]/20">
+                <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#91C8FF]/20">
                   Leading Solar Authority
                 </span>
               </ScrollReveal>
@@ -278,8 +278,8 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
     <ScrollReveal direction="up" className="h-full">
       <Link href={href} className="group block h-full">
         <Card className="p-8 md:p-10 h-full rounded-[24px] md:rounded-[32px] border-none bg-white shadow-sm hover:shadow-[0_40px_80px_rgba(14,165,233,0.08)] transition-all duration-500 relative overflow-hidden">
-          <div className="absolute top-0 right-0 size-24 bg-[#0EA5E9]/5 blur-[30px] rounded-full group-hover:bg-[#0EA5E9]/10 transition-colors" />
-          <div className="size-12 rounded-xl bg-[#0EA5E9]/5 flex items-center justify-center mb-6 text-[#0EA5E9] group-hover:bg-[#0EA5E9] group-hover:text-white transition-all duration-500">
+          <div className="absolute top-0 right-0 size-24 bg-[#EEF7FF] blur-[30px] rounded-full group-hover:bg-[#rgba(255,152,0,0.12)] transition-colors" />
+          <div className="size-12 rounded-xl bg-[#EEF7FF] flex items-center justify-center mb-6 text-[#91C8FF] group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-all duration-500">
             {React.cloneElement(icon, { className: "size-6" })}
           </div>
           <h3 className="text-lg md:text-xl font-bold text-[#1E3A8A] mb-3">{title}</h3>
@@ -312,7 +312,7 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
         </div>
         <p className="text-[14px] md:text-[15px] text-[#475569] font-medium italic leading-relaxed flex-grow">"{review}"</p>
         <div className="flex items-center gap-4 border-t border-border pt-6">
-          <div className="size-10 rounded-full bg-[#0EA5E9]/5 flex items-center justify-center text-[#0EA5E9] font-bold text-base shrink-0">
+          <div className="size-10 rounded-full bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF] font-bold text-base shrink-0">
             {name[0]}
           </div>
           <div>

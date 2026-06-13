@@ -127,8 +127,8 @@ export function Footer() {
 function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, label: string, text: string, secondaryText?: string }) {
   return (
     <div className="flex gap-6 md:gap-8 items-start">
-      <div className="size-12 md:size-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center shrink-0 border border-primary/10 shadow-sm">
-        {React.cloneElement(icon as React.ReactElement, { className: "size-5 md:size-6 text-[#0EA5E9]" })}
+      <div className="size-12 md:size-14 rounded-xl md:rounded-2xl bg-[#EEF7FF] flex items-center justify-center shrink-0 border border-[#91C8FF]/10 shadow-sm">
+        {React.cloneElement(icon as React.ReactElement, { className: "size-5 md:size-6 text-[#91C8FF]" })}
       </div>
       <div className="space-y-1 md:space-y-2">
         <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[#64748B]">{label}</p>
@@ -141,7 +141,7 @@ function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, lab
 
 function SocialLink({ icon }: { icon: any }) {
   return (
-    <Link href="#" className="size-10 md:size-12 bg-white border border-primary/10 rounded-full flex items-center justify-center hover:bg-[#0EA5E9] hover:border-[#0EA5E9] transition-all duration-500 text-[#0EA5E9] hover:text-white shadow-sm">
+    <Link href="#" className="size-10 md:size-12 bg-[#EEF7FF] border border-[#91C8FF]/10 rounded-full flex items-center justify-center hover:bg-[rgba(255,152,0,0.12)] hover:border-[#FF9800]/20 transition-all duration-500 text-[#91C8FF] hover:text-[#FF9800] shadow-sm">
       {icon}
     </Link>
   );

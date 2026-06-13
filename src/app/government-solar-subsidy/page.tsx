@@ -75,7 +75,7 @@ export default function SubsidyGuidePage() {
               {overviewCards.map((card, i) => (
                 <ScrollReveal key={i} delay={i * 0.1} direction="up">
                   <div className="p-8 bg-white rounded-[32px] shadow-sm space-y-4 h-full">
-                    <div className="size-12 bg-[#F5F5F5] rounded-xl flex items-center justify-center text-black">
+                    <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#91C8FF]">
                       {React.cloneElement(card.icon as React.ReactElement, { className: "size-6" })}
                     </div>
                     <h3 className="text-[16px] font-bold text-black">{card.title}</h3>
@@ -97,7 +97,7 @@ export default function SubsidyGuidePage() {
             {benefitCards.map((benefit, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up">
                 <Card className="p-10 h-full rounded-[40px] border-none bg-[#F9F9F9] shadow-sm hover:shadow-xl transition-all group">
-                  <div className="size-10 rounded-full bg-black text-white flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-primary transition-colors">
+                  <div className="size-10 rounded-full bg-[#EEF7FF] text-[#91C8FF] flex items-center justify-center mb-6 group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-colors">
                     <CheckCircle2 className="size-5" />
                   </div>
                   <h3 className="text-[20px] font-semibold text-black mb-4">{benefit.title}</h3>

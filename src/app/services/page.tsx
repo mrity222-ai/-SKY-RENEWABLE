@@ -100,7 +100,7 @@ export default function ServicesPage() {
 
         <div className="container relative z-10 mx-auto px-4 text-center space-y-8">
           <ScrollReveal direction="up">
-            <span className="inline-block bg-primary/20 text-white px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-white/20 backdrop-blur-sm">
+            <span className="inline-block bg-[#EEF7FF]/20 text-white px-4 py-1.5 rounded-full text-[12px] font-bold tracking-wider uppercase border border-white/20 backdrop-blur-sm">
               Our Expertise
             </span>
           </ScrollReveal>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                   <div className="p-8 flex flex-col flex-grow space-y-6">
-                    <div className="size-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#91C8FF] group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-all duration-500">
                       {service.icon}
                     </div>
                     <div className="space-y-3">

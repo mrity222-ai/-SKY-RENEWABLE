@@ -122,10 +122,16 @@ export function Navbar() {
                               href={sub.href} 
                               className="w-full cursor-pointer p-3 rounded-2xl hover:bg-primary/5 flex items-center gap-4 group/item transition-all"
                             >
-                              <div className="bg-primary/5 p-2 rounded-xl group-hover/item:bg-primary group-hover/item:text-white transition-all text-primary">
+                              <div className={cn(
+                                "p-2 rounded-xl transition-all",
+                                pathname === sub.href ? "bg-[rgba(255,152,0,0.12)] text-[#FF9800]" : "bg-[#EEF7FF] text-[#91C8FF] group-hover/item:bg-[rgba(255,152,0,0.12)] group-hover/item:text-[#FF9800]"
+                              )}>
                                 {sub.icon}
                               </div>
-                              <span className="font-bold text-[14px] tracking-tight text-[#1E3A8A] group-hover/item:text-primary transition-colors">{sub.name}</span>
+                              <span className={cn(
+                                "font-bold text-[14px] tracking-tight transition-colors",
+                                pathname === sub.href ? "text-[#FF9800]" : "text-[#1E3A8A] group-hover/item:text-[#FF9800]"
+                              )}>{sub.name}</span>
                             </Link>
                           </DropdownMenuItem>
                         ))}

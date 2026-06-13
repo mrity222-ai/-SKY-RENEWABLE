@@ -43,7 +43,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-start">
             <div className="space-y-8 md:space-y-12">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-[#F5F5F5] text-[#777] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
+                <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1.5 rounded-full text-[11px] font-medium tracking-wider uppercase">
                   Contact Us
                 </span>
               </ScrollReveal>
@@ -174,7 +174,7 @@ export default function ContactPage() {
 function ContactInfo({ icon, text }: { icon: any, text: string }) {
   return (
     <div className="flex items-center gap-4 text-black">
-      <div className="bg-[#F5F5F5] p-3 rounded-xl shrink-0">{React.cloneElement(icon, { className: "size-5" })}</div>
+      <div className="bg-[#EEF7FF] p-3 rounded-xl shrink-0">{React.cloneElement(icon, { className: "size-5 text-[#91C8FF]" })}</div>
       <span className="text-[14px] md:text-[16px] font-medium leading-tight">{text}</span>
     </div>
   );
@@ -183,7 +183,7 @@ function ContactInfo({ icon, text }: { icon: any, text: string }) {
 function SmallFeatureCard({ icon, title, desc }: { icon: any, title: string, desc: string }) {
   return (
     <div className="flex gap-4 md:gap-6 p-6 md:p-8 bg-[#F9F9F9] rounded-[24px] md:rounded-[32px] border border-neutral-50">
-      <div className="size-10 md:size-12 bg-black text-white rounded-lg md:rounded-xl flex items-center justify-center shrink-0">
+      <div className="size-10 md:size-12 bg-[#EEF7FF] text-[#91C8FF] rounded-lg md:rounded-xl flex items-center justify-center shrink-0">
         {React.cloneElement(icon, { className: "size-5 md:size-6" })}
       </div>
       <div className="space-y-1">

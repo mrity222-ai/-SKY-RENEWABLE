@@ -81,7 +81,7 @@ export function Calculator() {
         <ResultCard icon={<RotateCcw />} label="Net Invest" value={`₹${(stats.netCost / 1000).toFixed(0)}k`} />
         <div className="col-span-2 p-6 md:p-8 bg-white/5 rounded-[24px] md:rounded-[32px] flex items-center justify-between">
            <div className="flex items-center gap-4 md:gap-6">
-              <div className="size-10 md:size-12 bg-[#22C55E]/20 rounded-xl flex items-center justify-center text-[#22C55E] shrink-0">
+              <div className="size-10 md:size-12 bg-[#EEF7FF]/20 rounded-xl flex items-center justify-center text-[#22C55E] shrink-0">
                 <TreeDeciduous className="size-5 md:size-5" />
               </div>
               <div>
@@ -99,7 +99,7 @@ export function Calculator() {
 function ResultCard({ icon, label, value }: { icon: any, label: string, value: string }) {
   return (
     <div className="p-6 md:p-8 bg-white/5 rounded-[24px] md:rounded-[32px] space-y-4 hover:bg-white/10 transition-colors">
-      <div className="size-9 md:size-10 bg-white/10 rounded-lg flex items-center justify-center text-[#2563EB] shrink-0">
+      <div className="size-9 md:size-10 bg-[#EEF7FF]/20 rounded-lg flex items-center justify-center text-[#91C8FF] shrink-0">
         {React.cloneElement(icon, { className: "size-4.5" })}
       </div>
       <div>

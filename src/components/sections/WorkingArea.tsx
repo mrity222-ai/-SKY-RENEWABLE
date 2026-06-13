@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -29,7 +28,7 @@ export function WorkingArea() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <ScrollReveal direction="up">
-              <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-primary/10">
+              <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-[#91C8FF]/10">
                 Our Presence
               </span>
             </ScrollReveal>
@@ -46,7 +45,7 @@ export function WorkingArea() {
             
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
               <div className="flex items-center gap-4 p-5 bg-muted rounded-3xl border border-border">
-                <div className="size-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                <div className="size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
                   <MapPin className="size-5" />
                 </div>
                 <div>
@@ -55,7 +54,7 @@ export function WorkingArea() {
                 </div>
               </div>
               <div className="flex items-center gap-4 p-5 bg-muted rounded-3xl border border-border">
-                <div className="size-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                <div className="size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#22C55E]">
                   <CheckCircle2 className="size-5" />
                 </div>
                 <div>
@@ -79,7 +78,7 @@ export function WorkingArea() {
                       <Link 
                         key={city.slug} 
                         href={`/solar-company-in-${city.slug}`}
-                        className="text-[13px] font-bold bg-muted text-muted-foreground px-4 py-2.5 rounded-2xl group-hover:bg-primary/5 group-hover:text-primary transition-colors text-center hover:bg-primary/10"
+                        className="text-[13px] font-bold bg-muted text-muted-foreground px-4 py-2.5 rounded-2xl group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-colors text-center hover:bg-primary/10"
                       >
                         {city.name}
                       </Link>

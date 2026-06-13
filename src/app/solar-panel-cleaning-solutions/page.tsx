@@ -111,7 +111,7 @@ export default function SolarCleaningSolutionsPage() {
             {benefits.map((benefit, i) => (
               <ScrollReveal key={i} delay={i * 0.05} direction="up">
                 <Card className="p-8 h-full rounded-[32px] border-none shadow-sm bg-white hover:shadow-md transition-all flex flex-col items-center text-center space-y-4">
-                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-[#91C8FF]">
                     {React.cloneElement(benefit.icon as React.ReactElement, { className: "size-6" })}
                   </div>
                   <h3 className="text-base font-bold text-[#0F172A]">{benefit.title}</h3>
@@ -132,7 +132,7 @@ export default function SolarCleaningSolutionsPage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {services.map((service, i) => (
                   <div key={i} className="flex items-center gap-3 p-4 bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0]">
-                    <CheckCircle2 className="size-5 text-primary shrink-0" />
+                    <CheckCircle2 className="size-5 text-[#22C55E] shrink-0" />
                     <span className="text-[14px] font-bold text-[#0F172A]">{service}</span>
                   </div>
                 ))}
@@ -161,7 +161,7 @@ export default function SolarCleaningSolutionsPage() {
             {problems.map((problem, i) => (
               <ScrollReveal key={i} delay={i * 0.05} direction="up">
                 <div className="p-8 bg-white rounded-[32px] border border-[#E2E8F0] shadow-sm hover:border-primary/20 transition-all group">
-                  <h4 className="text-lg font-bold text-[#0F172A] mb-3 group-hover:text-primary transition-colors">{problem.title}</h4>
+                  <h4 className="text-lg font-bold text-[#0F172A] mb-3 group-hover:text-[#FF9800] transition-colors">{problem.title}</h4>
                   <p className="text-[14px] text-[#64748B] leading-relaxed">{problem.desc}</p>
                 </div>
               </ScrollReveal>
@@ -180,7 +180,7 @@ export default function SolarCleaningSolutionsPage() {
             {steps.map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up" className="space-y-4 text-center">
                 <div className="text-[48px] font-bold text-white/10 leading-none">0{i + 1}</div>
-                <h4 className="text-[13px] font-bold uppercase tracking-widest text-primary">{step.title}</h4>
+                <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#91C8FF]">{step.title}</h4>
                 <p className="text-[12px] text-white/60 leading-relaxed">{step.desc}</p>
               </ScrollReveal>
             ))}
@@ -210,7 +210,7 @@ export default function SolarCleaningSolutionsPage() {
                     "Commercial Buildings", "Warehouses", "Hospitals", "Solar Farm Operators"
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <div className="size-2 bg-primary rounded-full shrink-0" />
+                      <div className="size-2 bg-[#91C8FF] rounded-full shrink-0" />
                       <span className="text-[15px] font-bold text-[#0F172A]">{item}</span>
                     </div>
                   ))}

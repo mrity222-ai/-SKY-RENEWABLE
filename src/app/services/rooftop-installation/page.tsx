@@ -74,14 +74,14 @@ export default function RooftopInstallationPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             <Card className="p-12 rounded-[40px] border-none bg-[#F9F9F9] shadow-sm space-y-6">
-              <div className="size-14 rounded-2xl bg-black text-white flex items-center justify-center">
+              <div className="size-14 rounded-2xl bg-[#EEF7FF] text-[#91C8FF] flex items-center justify-center">
                 <ShieldCheck className="size-6" />
               </div>
               <h3 className="text-[22px] font-semibold text-black">Wind Tested Structure</h3>
               <p className="text-[14px] text-[#555] leading-relaxed">Our hot-dip galvanized mounting structures are wind-tested for extreme weather conditions.</p>
             </Card>
             <Card className="p-12 rounded-[40px] border-none bg-[#F9F9F9] shadow-sm space-y-6">
-              <div className="size-14 rounded-2xl bg-black text-white flex items-center justify-center">
+              <div className="size-14 rounded-2xl bg-[#rgba(255,152,0,0.12)] text-[#FF9800] flex items-center justify-center">
                 <Zap className="size-6" />
               </div>
               <h3 className="text-[22px] font-semibold text-black">Fast Deployment</h3>

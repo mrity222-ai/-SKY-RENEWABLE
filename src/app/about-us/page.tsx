@@ -26,7 +26,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl text-left space-y-8">
             <ScrollReveal direction="up">
-              <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-primary/10">
+              <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-[#91C8FF]/10">
                 Who We Are
               </span>
             </ScrollReveal>
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <ScrollReveal direction="right" className="space-y-6 md:space-y-8">
-              <span className="inline-block bg-primary/5 text-primary px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase">About Us</span>
+              <span className="inline-block bg-[#EEF7FF] text-[#91C8FF] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase">About Us</span>
               <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-foreground leading-tight tracking-tighter">
                 Trusted Partners In <br /><span className="text-secondary">Clean Energy</span>
               </h2>
@@ -98,13 +98,13 @@ export default function AboutPage() {
               </div>
               <div className="grid sm:grid-cols-2 gap-4 pt-6">
                 <div className="flex items-center gap-4 p-4 md:p-5 bg-muted rounded-2xl md:rounded-3xl border border-border">
-                  <div className="size-9 md:size-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  <div className="size-9 md:size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
                   <span className="text-[13px] md:text-sm font-bold text-foreground">Certified Engineers</span>
                 </div>
                 <div className="flex items-center gap-4 p-4 md:p-5 bg-muted rounded-2xl md:rounded-3xl border border-border">
-                  <div className="size-9 md:size-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                  <div className="size-9 md:size-10 rounded-xl bg-[#EEF7FF] flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
                   <span className="text-[13px] md:text-sm font-bold text-foreground">MNRE Registered</span>
@@ -131,7 +131,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <ScrollReveal direction="up" className="p-10 md:p-12 bg-white rounded-[40px] shadow-sm border border-border space-y-6">
-              <div className="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+              <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
                 <Target className="size-8" />
               </div>
               <h3 className="text-[24px] md:text-[30px] font-bold text-foreground">Our Mission</h3>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               </p>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2} className="p-10 md:p-12 bg-white rounded-[40px] shadow-sm border border-border space-y-6">
-              <div className="size-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+              <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF]">
                 <TrendingUp className="size-8" />
               </div>
               <h3 className="text-[24px] md:text-[30px] font-bold text-foreground">Our Vision</h3>

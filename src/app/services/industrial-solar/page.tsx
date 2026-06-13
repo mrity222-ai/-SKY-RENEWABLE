@@ -49,27 +49,27 @@ export default function IndustrialSolarPage() {
           <div className="grid lg:grid-cols-2 gap-12">
             <ScrollReveal direction="right">
               <Card className="p-12 rounded-[60px] border-none bg-white shadow-sm space-y-6">
-                <div className="size-16 rounded-2xl bg-black text-white flex items-center justify-center">
+                <div className="size-16 rounded-2xl bg-[#EEF7FF] text-[#91C8FF] flex items-center justify-center">
                   <Factory className="size-8" />
                 </div>
                 <h3 className="text-[28px] font-semibold text-black">CAPEX Model</h3>
                 <p className="text-[#555] text-[15px] leading-[1.7]">Own the system directly. Maximize your tax benefits and enjoy 100% of the energy savings.</p>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> 100% Ownership</li>
-                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4" /> Full Tax Credits</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4 text-[#22C55E]" /> 100% Ownership</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium text-black"><CheckCircle2 className="size-4 text-[#22C55E]" /> Full Tax Credits</li>
                 </ul>
               </Card>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={0.2}>
               <Card className="p-12 rounded-[60px] border-none bg-black text-white shadow-sm space-y-6">
-                <div className="size-16 rounded-2xl bg-white text-black flex items-center justify-center">
+                <div className="size-16 rounded-2xl bg-[#rgba(255,152,0,0.12)] text-[#FF9800] flex items-center justify-center">
                   <Globe className="size-8" />
                 </div>
                 <h3 className="text-[28px] font-semibold text-white">RESCO / OPEX Model</h3>
                 <p className="text-white/60 text-[15px] leading-[1.7]">Zero investment. Pay only for the energy you consume at a rate significantly lower than the grid.</p>
                 <ul className="space-y-3 text-white/80">
-                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Zero Upfront Cost</li>
-                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-accent" /> Maintenance Included</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-[#22C55E]" /> Zero Upfront Cost</li>
+                  <li className="flex items-center gap-2 text-[14px] font-medium"><CheckCircle2 className="size-4 text-[#22C55E]" /> Maintenance Included</li>
                 </ul>
               </Card>
             </ScrollReveal>

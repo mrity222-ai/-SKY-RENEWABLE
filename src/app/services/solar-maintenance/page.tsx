@@ -57,7 +57,7 @@ export default function SolarMaintenancePage() {
             {services.map((service, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up">
                 <Card className="p-10 h-full rounded-[40px] border-none bg-white shadow-sm hover:shadow-xl transition-all group">
-                  <div className="size-14 rounded-2xl bg-[#F5F5F5] flex items-center justify-center mb-8 text-black group-hover:bg-black group-hover:text-white transition-colors">
+                  <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center mb-8 text-[#91C8FF] group-hover:bg-[rgba(255,152,0,0.12)] group-hover:text-[#FF9800] transition-colors">
                     {React.cloneElement(service.icon as React.ReactElement, { className: "size-6" })}
                   </div>
                   <h3 className="text-[20px] font-semibold text-black mb-4">{service.title}</h3>
