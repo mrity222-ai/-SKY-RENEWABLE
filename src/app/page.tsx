@@ -38,7 +38,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-white selection:bg-primary/20 selection:text-primary overflow-x-hidden">
+    <div className="bg-[#F5FAFF] selection:bg-primary/20 selection:text-[#1D2348] overflow-x-hidden">
       {/* HERO SECTION */}
       <section className="relative h-screen w-full overflow-hidden hero-gradient">
         <div className="absolute inset-0 z-0">
@@ -61,15 +61,15 @@ export default function Home() {
               <span className="text-[#91C8FF]">Clean Energy</span>
             </h1>
             
-            <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#475569] max-w-2xl mx-auto leading-relaxed font-medium px-2">
+            <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#4B587C] max-w-2xl mx-auto leading-relaxed font-medium px-2">
               Switch to SKY RENEWABLE. High-yield engineering, smart monitoring, and guaranteed government subsidies.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-5 pt-4 md:pt-6 w-full max-w-md mx-auto sm:max-w-none">
-              <Button asChild variant="default" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto">
+              <Button asChild variant="default" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto bg-[#FF9800] hover:bg-[#F59E0B]">
                 <Link href="/get-quote" className="flex items-center gap-2">Get Your Quote <ArrowRight className="size-4" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto">
+              <Button asChild variant="outline" size="lg" className="rounded-full px-8 md:px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all w-full sm:w-auto border-[#E6EEF8] text-[#1D2348] hover:bg-white">
                 <Link href="/get-quote">Book Site Survey</Link>
               </Button>
             </div>
@@ -81,7 +81,7 @@ export default function Home() {
 
       <SubsidyShowcase />
 
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-12 md:py-20 bg-[#F5FAFF]">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <StatItem val={500} suffix="+" label="Solar Projects" />
@@ -93,12 +93,12 @@ export default function Home() {
       </section>
 
       {/* LEADING SOLAR AUTHORITY SECTION */}
-      <section className="py-16 md:py-24 bg-[#F3F8FC]">
+      <section className="py-16 md:py-24 bg-[#EEF7FF]">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
               <ScrollReveal direction="up">
-                <span className="inline-block bg-white text-[#1D2348] px-4 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">
+                <span className="inline-block bg-white text-[#1D2348] px-4 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#E6EEF8] shadow-sm">
                   Leading Solar Authority
                 </span>
               </ScrollReveal>
@@ -108,12 +108,12 @@ export default function Home() {
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
-                <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#475569] leading-relaxed max-w-xl mx-auto lg:mx-0">
+                <p className="text-[14px] md:text-[15px] lg:text-[16px] text-[#4B587C] leading-relaxed max-w-xl mx-auto lg:mx-0">
                   SKY RENEWABLE is redefining how homes and industries harvest the sun. We provide end-to-end EPC services, from custom structural engineering to seamless subsidy approvals.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.3}>
-                <Button asChild variant="outline" className="rounded-full px-6 md:px-8 h-11 md:h-12 font-bold transition-all text-[13px] md:text-[14px]">
+                <Button asChild variant="outline" className="rounded-full px-6 md:px-8 h-11 md:h-12 font-bold transition-all text-[13px] md:text-[14px] border-[#E6EEF8] text-[#1D2348] hover:bg-white">
                   <Link href="/about-us">Our Engineering Legacy</Link>
                 </Button>
               </ScrollReveal>
@@ -136,11 +136,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-[#F5FAFF]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center space-y-4 mb-12 md:mb-16">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight">Advanced Energy Solutions</h2>
-            <p className="text-[#64748B] text-[14px] md:text-[15px] max-w-xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
+            <p className="text-[#8A98B8] text-[14px] md:text-[15px] max-w-xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <SolutionCard icon={<HomeIcon />} title="Residential Solar" desc="Slash bills by 90% with subsidized rooftop systems." href="/services/residential-solar" />
@@ -153,13 +153,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-[#F8FAFC] border-y border-border">
+      <section className="py-16 md:py-24 bg-[#EEF7FF] border-y border-[#E6EEF8]">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 items-end text-center lg:text-left">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight tracking-tighter">
               Why Sky Renewable <br />Solar Solutions?
             </h2>
-            <p className="text-[14px] md:text-[16px] text-[#475569] leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <p className="text-[14px] md:text-[16px] text-[#4B587C] leading-relaxed max-w-xl mx-auto lg:mx-0">
               Solar is a strategic asset. We maximize its value through engineering excellence and lifecycle support.
             </p>
           </div>
@@ -175,23 +175,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[#0EA5E9] to-[#1D4ED8] text-white overflow-hidden relative border-t border-white/5">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-[#91C8FF] to-[#1D2348] text-white overflow-hidden relative border-t border-white/5">
         <div className="container relative z-10 mx-auto px-4">
           <Calculator />
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-[#F5FAFF]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-tight">Featured Case Studies</h2>
-            <p className="text-[#64748B] text-[14px] md:text-[15px]">High-yield solar deployments across India's industrial landscape.</p>
+            <p className="text-[#8A98B8] text-[14px] md:text-[15px]">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <Link href="/projects" className="group block">
-                  <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2 bg-neutral-50 p-2">
+                  <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2 bg-white p-2 border border-[#E6EEF8]">
                     <video
                       autoPlay
                       loop
@@ -202,7 +202,7 @@ export default function Home() {
                       <source src={p.video} type="video/mp4" />
                     </video>
                     
-                    <div className="absolute bottom-2 left-2 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] rounded-bl-[22px] border-r-[6px] border-[#0EA5E9] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <div className="absolute bottom-2 left-2 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] rounded-bl-[22px] border-r-[6px] border-[#91C8FF] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                       <div className="text-[30px] md:text-[40px] font-black text-[#1D2348] tracking-tighter leading-none">
                         {p.id < 10 ? `0${p.id}` : p.id}
                       </div>
@@ -213,18 +213,18 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center">
-            <Button asChild variant="outline" className="rounded-full px-8 h-12 md:h-14 border-border text-[#1D2348] hover:bg-[#F8FAFC] font-bold transition-all text-[13px] md:text-[14px]">
+            <Button asChild variant="outline" className="rounded-full px-8 h-12 md:h-14 border-[#E6EEF8] text-[#1D2348] hover:bg-white font-bold transition-all text-[13px] md:text-[14px]">
               <Link href="/projects">View All Projects</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-[#F3F8FC] border-t border-border">
+      <section className="py-16 md:py-24 bg-[#EEF7FF] border-t border-[#E6EEF8]">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-12 space-y-4">
             <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348]">Voice of our Clients</h2>
-            <p className="text-[#64748B] text-[14px] md:text-[15px]">Trusted by homeowners and industrial leaders alike.</p>
+            <p className="text-[#8A98B8] text-[14px] md:text-[15px]">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
           
           <div className="relative max-w-7xl mx-auto px-4">
@@ -247,8 +247,8 @@ export default function Home() {
                 </CarouselItem>
               </CarouselContent>
               <div className="flex justify-center gap-3 mt-8">
-                <CarouselPrevious className="relative static translate-y-0 translate-x-0 border-primary/20 text-[#1D2348]" />
-                <CarouselNext className="relative static translate-y-0 translate-x-0 border-primary/20 text-[#1D2348]" />
+                <CarouselPrevious className="relative static translate-y-0 translate-x-0 border-[#91C8FF]/20 text-[#1D2348]" />
+                <CarouselNext className="relative static translate-y-0 translate-x-0 border-[#91C8FF]/20 text-[#1D2348]" />
               </div>
             </Carousel>
           </div>
@@ -265,10 +265,10 @@ export default function Home() {
 function StatItem({ val, suffix, label }: { val: number, suffix: string, label: string }) {
   return (
     <div className="space-y-1.5 md:space-y-2">
-      <div className="text-[28px] md:text-[40px] font-bold text-[#0EA5E9] leading-none">
+      <div className="text-[28px] md:text-[40px] font-bold text-[#91C8FF] leading-none">
         <Counter value={val} suffix={suffix} />
       </div>
-      <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] text-[#64748B]">{label}</p>
+      <p className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.15em] text-[#8A98B8]">{label}</p>
     </div>
   );
 }
@@ -284,7 +284,7 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
           </div>
           <h3 className="text-lg md:text-xl font-bold text-[#1D2348] mb-3">{title}</h3>
           <p className="text-[14px] md:text-[15px] text-[#4B587C] leading-relaxed mb-6">{desc}</p>
-          <div className="flex items-center gap-2 text-[#0EA5E9] font-bold text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
+          <div className="flex items-center gap-2 text-[#91C8FF] font-bold text-xs uppercase tracking-wider group-hover:gap-4 transition-all">
             Explore <ArrowRight className="size-4" />
           </div>
         </Card>
@@ -296,9 +296,9 @@ function SolutionCard({ icon, title, desc, href }: { icon: any, title: string, d
 function ValueItem({ title, desc }: { title: string, desc: string }) {
   return (
     <div className="space-y-2 md:space-y-3">
-      <div className="size-1.5 bg-[#0EA5E9] rounded-full" />
+      <div className="size-1.5 bg-[#91C8FF] rounded-full" />
       <h3 className="text-lg md:text-xl font-bold text-[#1D2348]">{title}</h3>
-      <p className="text-[14px] md:text-[15px] text-[#475569] leading-relaxed">{desc}</p>
+      <p className="text-[14px] md:text-[15px] text-[#4B587C] leading-relaxed">{desc}</p>
     </div>
   );
 }
@@ -307,11 +307,11 @@ function TestimonialCard({ name, loc, review }: { name: string, loc: string, rev
   return (
     <ScrollReveal direction="up" className="h-full">
       <Card className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border-[#E6EEF8] bg-white shadow-[0_20px_60px_rgba(145,200,255,0.18)] space-y-6 flex flex-col h-full hover-lift">
-        <div className="flex gap-1 text-[#0EA5E9]">
+        <div className="flex gap-1 text-[#91C8FF]">
           {[1, 2, 3, 4, 5].map(i => <Star key={i} className="size-3.5 fill-current" />)}
         </div>
         <p className="text-[14px] md:text-[15px] text-[#4B587C] font-medium italic leading-relaxed flex-grow">"{review}"</p>
-        <div className="flex items-center gap-4 border-t border-border pt-6">
+        <div className="flex items-center gap-4 border-t border-[#E6EEF8] pt-6">
           <div className="size-10 rounded-full bg-[#EEF7FF] flex items-center justify-center text-[#91C8FF] font-bold text-base shrink-0">
             {name[0]}
           </div>

@@ -35,7 +35,7 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="py-24 md:py-32 bg-[#F5FAFF]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -43,13 +43,13 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
       
       <div className="container mx-auto px-4 max-w-4xl">
         <ScrollReveal direction="up" className="text-center mb-16 md:mb-20 space-y-4">
-          <div className="inline-flex items-center px-4 py-1 rounded-full bg-white border border-border shadow-sm">
+          <div className="inline-flex items-center px-4 py-1 rounded-full bg-white border border-[#E6EEF8] shadow-sm">
             <span className="text-[12px] font-medium text-[#1D2348] uppercase tracking-wider">FAQ</span>
           </div>
           <h2 className="text-[32px] md:text-[52px] font-bold text-[#1D2348] tracking-tight leading-[1.1]">
             Your Solar Questions, <br />Answered Clearly
           </h2>
-          <p className="text-[#475569] text-[16px] md:text-[18px] max-w-[700px] mx-auto leading-relaxed">
+          <p className="text-[#8DA3BD] text-[16px] md:text-[18px] max-w-[700px] mx-auto leading-relaxed">
             Everything you need to know about our {serviceName.toLowerCase()}. If you have other questions, feel free to reach out.
           </p>
         </ScrollReveal>
@@ -64,7 +64,7 @@ export function ServiceFAQ({ serviceName, faqs }: ServiceFAQProps) {
                 >
                   <AccordionTrigger className="text-left py-6 font-medium text-[#1D2348] hover:no-underline text-[18px] md:text-[24px] group">
                     <span className="flex-1">{faq.question}</span>
-                    <div className="size-[38px] rounded-full border border-[#1D2348]/10 flex items-center justify-center shrink-0 ml-4 group-data-[state=open]:text-[#0EA5E9] group-data-[state=open]:border-[#0EA5E9]/20 transition-colors">
+                    <div className="size-[38px] rounded-full border border-[#1D2348]/10 flex items-center justify-center shrink-0 ml-4 group-data-[state=open]:text-[#91C8FF] group-data-[state=open]:border-[#91C8FF]/20 transition-colors">
                       <div className="group-data-[state=open]:hidden"><Plus className="size-5" /></div>
                       <div className="hidden group-data-[state=open]:block"><Minus className="size-5" /></div>
                     </div>
