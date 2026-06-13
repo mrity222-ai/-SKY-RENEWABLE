@@ -36,7 +36,17 @@ export function Footer() {
 
   return (
     <footer className="bg-[#F0F7FF] text-[#475569] pt-16 md:pt-24 pb-8 md:pb-12 relative overflow-hidden border-t border-[#DCE7F5]">
-      <div className="container mx-auto px-4">
+      {/* BACKGROUND IMAGE OVERLAY */}
+      <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
+        <Image 
+          src="https://images.unsplash.com/photo-1509391366360-fe5bb6583e22?q=80&w=2070&auto=format&fit=crop"
+          alt="Solar Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
         {/* TOP FOOTER */}
         <div className="grid lg:grid-cols-2 gap-12 md:gap-24 mb-12 md:mb-24">
           {/* LEFT SIDE */}
