@@ -57,13 +57,15 @@ export default function AboutPage() {
           
           <ScrollReveal direction="up" delay={0.4} className="mt-16 group">
             <div className="relative aspect-[21/9] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(20,33,61,0.12)] border border-border/50">
-              <Image 
-                src="/ab/5.png" 
-                alt="Solar Field" 
-                fill 
-                className="object-cover w-full h-full transition-transform duration-[2.5s] ease-out group-hover:scale-105"
-                priority
-              />
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover transition-transform duration-[2.5s] ease-out group-hover:scale-105"
+              >
+                <source src="/vio/1.mp4" type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/10 to-transparent pointer-events-none" />
             </div>
           </ScrollReveal>
