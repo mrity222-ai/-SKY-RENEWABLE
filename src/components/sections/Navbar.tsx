@@ -70,16 +70,16 @@ export function Navbar() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] w-full">
-      <div className="bg-[#DDF5E3] h-[36px] md:h-[40px] flex items-center border-b border-black/5">
+      <div className="bg-[#048037] h-[36px] md:h-[40px] flex items-center border-b border-black/5">
         <div className="container mx-auto px-6 max-w-[1400px] flex justify-between items-center">
-          <p className="text-[11px] md:text-[13px] font-semibold text-[#14213D] tracking-tight">
+          <p className="text-[11px] md:text-[13px] font-semibold text-white tracking-tight">
             Powering Chhattisgarh With Clean Solar Energy
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-[#14213D] hover:text-[#2563EB] transition-colors"><Facebook className="size-3.5" /></Link>
-            <Link href="#" className="text-[#14213D] hover:text-[#2563EB] transition-colors"><Instagram className="size-3.5" /></Link>
-            <Link href="#" className="text-[#14213D] hover:text-[#2563EB] transition-colors"><Youtube className="size-3.5" /></Link>
-            <Link href="#" className="text-[#14213D] hover:text-[#2563EB] transition-colors"><Linkedin className="size-3.5" /></Link>
+            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Facebook className="size-3.5" /></Link>
+            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Instagram className="size-3.5" /></Link>
+            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Youtube className="size-3.5" /></Link>
+            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Linkedin className="size-3.5" /></Link>
           </div>
         </div>
       </div>
