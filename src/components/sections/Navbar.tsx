@@ -97,7 +97,7 @@ export function Navbar() {
         <div className="container mx-auto px-6 max-w-[1400px] h-full flex items-center justify-between">
           {/* LOGO */}
           <div className="flex-shrink-0">
-            <Link href="/" className="relative h-12 w-48 md:w-56 block">
+            <Link href="/" className="relative h-14 w-56 md:h-16 md:w-72 block">
               <Image 
                 src="/ab/lo.png" 
                 alt="Sky Renewable" 
@@ -198,7 +198,7 @@ export function Navbar() {
                       <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                       <SheetDescription className="sr-only">Navigation</SheetDescription>
                       <div className="flex items-center justify-between">
-                        <div className="relative h-10 w-40">
+                        <div className="relative h-12 w-48">
                           <Image src="/ab/lo.png" alt="Sky Renewable" fill className="object-contain object-left" />
                         </div>
                       </div>
