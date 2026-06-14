@@ -28,7 +28,7 @@ export function SubsidyShowcase() {
           {/* RIGHT CONTENT */}
           <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-2">
             <ScrollReveal direction="up" className="space-y-4 md:space-y-6">
-              <span className="inline-block bg-white text-[#1D2348] px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">
+              <span className="inline-block bg-[#048037] text-white px-4 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm">
                 PM Surya Ghar Yojana
               </span>
               <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-bold text-[#1D2348] leading-[1.2] tracking-tighter">
