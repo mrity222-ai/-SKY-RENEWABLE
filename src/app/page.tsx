@@ -40,44 +40,44 @@ export default function Home() {
   return (
     <div className="bg-white selection:bg-primary/20 selection:text-[#14213D] overflow-x-hidden">
       {/* HERO SECTION - Premium Video Variant */}
-      <section className="relative min-h-[520px] h-[72vh] md:h-[82vh] lg:h-[86vh] w-full overflow-hidden bg-[#14213D]">
+      <section className="relative h-screen w-full overflow-hidden bg-[#14213D]">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-70"
+            className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/vio/3.mp4" type="video/mp4" />
           </video>
           {/* Enhanced three-layer gradient for maximum text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#14213D]/70 via-[#14213D]/45 to-[#14213D]/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#14213D]/70 via-[#14213D]/40 to-[#14213D]/80 pointer-events-none" />
         </div>
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
-          <ScrollReveal direction="up" className="max-w-4xl mx-auto space-y-5 md:space-y-7">
+          <ScrollReveal direction="up" className="max-w-4xl mx-auto space-y-6 md:space-y-8">
             {/* Premium Badge */}
             <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.22em] text-white backdrop-blur-md">
               SKY RENEWABLE
             </span>
 
-            <h1 className="font-bold text-white leading-[1.05] tracking-tight font-headline drop-shadow-2xl text-[32px] md:text-[46px] lg:text-[58px]">
+            <h1 className="font-bold text-white leading-[1.05] tracking-tight font-headline drop-shadow-2xl text-[36px] md:text-[52px] lg:text-[64px]">
               The Future of <br />
               <span className="text-primary">Clean Energy</span>
             </h1>
             
-            <p className="text-white/90 max-w-2xl mx-auto leading-relaxed font-medium px-2 text-[14px] md:text-[17px]">
+            <p className="text-white/90 max-w-2xl mx-auto leading-relaxed font-medium px-2 text-[15px] md:text-[18px]">
               Switch to SKY RENEWABLE. High-yield engineering, smart monitoring, and guaranteed government subsidies.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4 w-full max-w-md mx-auto sm:max-w-none">
-              <Button asChild variant="default" size="lg" className="rounded-full w-full sm:w-auto text-white shadow-2xl shadow-primary/20 h-12 md:h-14 px-8 md:px-10 text-[14px] md:text-[15px]">
+            <div className="flex flex-col sm:flex-row justify-center gap-5 pt-6 w-full max-w-md mx-auto sm:max-w-none">
+              <Button asChild variant="default" size="lg" className="rounded-full w-full sm:w-auto text-white shadow-2xl shadow-primary/20 h-12 md:h-14 px-10 text-[14px] md:text-[15px]">
                 <Link href="/get-quote" className="flex items-center justify-center gap-2">
                   Get Your Quote <ArrowRight className="size-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full w-full sm:w-auto border-white/30 text-white bg-white/5 backdrop-blur-md hover:bg-white/10 h-12 md:h-14 px-8 md:px-10 text-[14px] md:text-[15px]">
+              <Button asChild variant="outline" size="lg" className="rounded-full w-full sm:w-auto border-white/30 text-white bg-white/5 backdrop-blur-md hover:bg-white/10 h-12 md:h-14 px-10 text-[14px] md:text-[15px]">
                 <Link href="/get-quote">Book Site Survey</Link>
               </Button>
             </div>
