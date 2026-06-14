@@ -97,7 +97,7 @@ export function Navbar() {
         <div className="container mx-auto px-6 max-w-[1400px] h-full flex items-center justify-between">
           {/* LOGO */}
           <div className="flex-shrink-0">
-            <Link href="/" className="relative h-20 w-72 md:h-24 md:w-[420px] block">
+            <Link href="/" className="relative h-20 w-[220px] md:h-24 md:w-[280px] block">
               <Image 
                 src="/ab/lo.png" 
                 alt="Sky Renewable" 
