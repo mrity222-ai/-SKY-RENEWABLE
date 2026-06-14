@@ -123,7 +123,7 @@ export default function AboutPage() {
             <ScrollReveal direction="left" delay={0.2} className="group">
               <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(20,33,61,0.12)] border border-border/50">
                 <Image 
-                  src="https://picsum.photos/seed/arka_engineers/800/600" 
+                  src="/ab/5.png" 
                   alt="Solar Engineers" 
                   fill 
                   className="object-cover w-full h-full transition-transform duration-[2.5s] ease-out group-hover:scale-105"
