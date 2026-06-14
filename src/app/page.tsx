@@ -55,8 +55,8 @@ export default function Home() {
         </div>
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
-          <ScrollReveal direction="up" className="max-w-4xl space-y-6 md:space-y-8">
-            <h1 className="font-bold text-white leading-[1.05] tracking-tight font-headline drop-shadow-2xl">
+          <ScrollReveal direction="up" className="max-w-4xl mx-auto space-y-6 md:space-y-8">
+            <h1 className="font-bold text-white leading-[1.05] tracking-tight font-headline drop-shadow-2xl text-[34px] md:text-[52px] lg:text-[64px]">
               The Future of <br />
               <span className="text-primary">Clean Energy</span>
             </h1>
@@ -82,7 +82,7 @@ export default function Home() {
       <SubsidyShowcase />
 
       {/* STATS SECTION */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <StatItem val={500} suffix="+" label="Solar Projects" />
@@ -94,9 +94,9 @@ export default function Home() {
       </section>
 
       {/* LEADING SOLAR AUTHORITY SECTION */}
-      <section className="py-20 md:py-24 bg-[#F8FAFC]">
+      <section className="py-24 bg-[#F8FAFC]">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
             <div className="space-y-6 md:space-y-8 text-center lg:text-left order-1 lg:order-1">
               <ScrollReveal direction="up">
                 <span className="inline-flex items-center bg-white text-[#14213D] px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase border border-border shadow-sm">
@@ -104,12 +104,12 @@ export default function Home() {
                 </span>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.1}>
-                <h2 className="leading-[1.1] tracking-tight font-headline">
+                <h2 className="leading-[1.1] tracking-tight font-headline text-[30px] md:text-[40px] lg:text-[48px]">
                   Empowering India <br />Through <span className="text-primary">Smart Solar</span>
                 </h2>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
-                <p className="leading-relaxed max-w-xl mx-auto lg:mx-0 text-[#475569] text-[16px]">
+                <p className="leading-relaxed max-w-xl mx-auto lg:mx-0 text-[#475569] text-[16px] md:text-[18px]">
                   SKY RENEWABLE is redefining how homes and industries harvest the sun. We provide end-to-end EPC services, from custom structural engineering to seamless subsidy approvals.
                 </p>
               </ScrollReveal>
@@ -138,10 +138,10 @@ export default function Home() {
       </section>
 
       {/* SOLUTIONS GRID */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="leading-tight font-headline">Advanced Energy Solutions</h2>
+            <h2 className="leading-tight font-headline text-[30px] md:text-[40px]">Advanced Energy Solutions</h2>
             <p className="text-[#64748B] max-w-xl mx-auto">Scalable solar architecture tailored for maximum yield and reliability.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
@@ -156,10 +156,10 @@ export default function Home() {
       </section>
 
       {/* WHY CHOOSE SECTION */}
-      <section className="py-20 md:py-24 bg-[#F8FAFC] border-y border-border">
+      <section className="py-24 bg-[#F8FAFC] border-y border-border">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-16 mb-16 items-end text-center lg:text-left">
-            <h2 className="leading-[1.1] tracking-tight font-headline">
+            <h2 className="leading-[1.1] tracking-tight font-headline text-[30px] md:text-[40px]">
               Why Sky Renewable <br />Solar Solutions?
             </h2>
             <p className="leading-relaxed max-w-xl mx-auto lg:mx-0 text-[#64748B]">
@@ -179,17 +179,17 @@ export default function Home() {
       </section>
 
       {/* CALCULATOR SECTION */}
-      <section className="py-20 md:py-24 bg-[#14213D] text-white overflow-hidden relative border-t border-white/5">
+      <section className="py-24 bg-[#14213D] text-white overflow-hidden relative border-t border-white/5">
         <div className="container relative z-10 mx-auto px-4">
           <Calculator />
         </div>
       </section>
 
       {/* PROJECTS SECTION */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-16 space-y-4">
-            <h2 className="leading-tight font-headline">Featured Case Studies</h2>
+            <h2 className="leading-tight font-headline text-[30px] md:text-[40px]">Featured Case Studies</h2>
             <p className="text-[#64748B]">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
@@ -226,10 +226,10 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-20 md:py-24 bg-[#F8FAFC] border-t border-border">
+      <section className="py-24 bg-[#F8FAFC] border-t border-border">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-16 space-y-4">
-            <h2 className="leading-tight font-headline">Voice of our Clients</h2>
+            <h2 className="leading-tight font-headline text-[30px] md:text-[40px]">Voice of our Clients</h2>
             <p className="text-[#64748B]">Trusted by homeowners and industrial leaders alike.</p>
           </ScrollReveal>
           
