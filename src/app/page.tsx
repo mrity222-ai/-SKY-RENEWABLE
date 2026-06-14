@@ -56,11 +56,6 @@ export default function Home() {
 
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
           <ScrollReveal direction="up" className="max-w-4xl space-y-6 md:space-y-8">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-white text-[11px] font-bold tracking-[0.3em] uppercase">Pioneering Renewable Energy</span>
-            </div>
-            
             <h1 className="font-bold text-white leading-[1.05] tracking-tight font-headline drop-shadow-2xl">
               The Future of <br />
               <span className="text-primary">Clean Energy</span>
