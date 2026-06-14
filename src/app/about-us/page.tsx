@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white overflow-hidden selection:bg-primary/20 selection:text-primary">
       {/* SECTION 1 – HERO INTRO */}
-      <section className="relative pt-32 pb-16 lg:pt-32 lg:pb-16 overflow-hidden">
+      <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-24 overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
           <div className="absolute -top-24 -right-24 size-[500px] bg-primary/5 blur-[120px] rounded-full" />
