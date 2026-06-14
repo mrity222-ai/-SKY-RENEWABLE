@@ -33,23 +33,38 @@
   }
   body {
     @apply bg-background text-[#475569] font-body antialiased;
-    font-size: clamp(14px, 1.2vw, 16px);
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.5;
     scroll-behavior: smooth;
+  }
+  @media (min-width: 1024px) {
+    body { font-size: 16px; }
   }
   h1 {
     @apply font-bold leading-[1.1] tracking-tighter text-[#14213D];
-    font-size: clamp(30px, 4vw, 52px);
+    font-size: 28px;
+  }
+  @media (min-width: 768px) {
+    h1 { font-size: 40px; }
+  }
+  @media (min-width: 1024px) {
+    h1 { font-size: 52px; }
   }
   h2 {
     @apply font-bold leading-[1.2] tracking-tight text-[#14213D];
-    font-size: clamp(26px, 3vw, 40px);
+    font-size: 24px;
+  }
+  @media (min-width: 1024px) {
+    h2 { font-size: 40px; }
   }
   h3, h4, h5, h6 {
     @apply font-semibold text-[#14213D];
   }
   h3 {
-    font-size: clamp(20px, 2vw, 28px);
+    font-size: 18px;
+  }
+  @media (min-width: 1024px) {
+    h3 { font-size: 24px; }
   }
 }
 

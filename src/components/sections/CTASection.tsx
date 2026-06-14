@@ -11,11 +11,10 @@ export function CTASection() {
   return (
     <>
       <FinancePartners />
-      <section className="py-16 md:py-24 px-4 bg-[#F8FAFC]">
+      <section className="py-12 md:py-16 lg:py-20 px-4 bg-[#F8FAFC]">
         <div className="container mx-auto max-w-6xl">
           <ScrollReveal direction="zoom">
-            <div className="relative overflow-hidden rounded-[32px] md:rounded-[40px] bg-gradient-to-br from-[#EEF6FF] to-[#F8FAFC] px-8 py-16 md:px-12 md:py-20 text-center shadow-xl border border-[#2563EB]/10">
-              {/* Background Image Overlay */}
+            <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#EEF6FF] to-[#F8FAFC] px-8 py-12 md:px-12 md:py-16 text-center shadow-lg border border-[#2563EB]/10">
               <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
                 <Image 
                   src="https://images.unsplash.com/photo-1509391366360-fe5bb6583e22?q=80&w=2070&auto=format&fit=crop"
@@ -25,21 +24,21 @@ export function CTASection() {
                 />
               </div>
 
-              <div className="relative z-10 max-w-4xl mx-auto space-y-6 md:space-y-8">
-                <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-black leading-[1.1] tracking-tighter">
+              <div className="relative z-10 max-w-4xl mx-auto space-y-5 md:space-y-6">
+                <h2 className="font-black leading-[1.1] tracking-tighter">
                   <span className="text-[#14213D] block">Predictable Power for a</span>
                   <span className="text-[#2563EB]">Sustainable Future</span>
                 </h2>
                 
-                <p className="text-[#475569] text-[14px] md:text-[15px] lg:text-[16px] font-medium max-w-2xl mx-auto leading-relaxed">
+                <p className="text-[#475569] font-medium max-w-2xl mx-auto leading-relaxed">
                   Join homeowners and businesses who have already transitioned to affordable solar energy solutions.
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 md:pt-6">
-                  <Button asChild variant="default" size="lg" className="w-full sm:w-auto rounded-full px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all active:scale-95 text-white">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                  <Button asChild variant="default" size="lg" className="w-full sm:w-auto rounded-full text-white">
                     <Link href="/get-quote">Request Energy Audit</Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full px-10 h-12 md:h-14 text-[14px] md:text-[15px] font-bold transition-all active:scale-95 border-[#DCE7F5] text-[#14213D]">
+                  <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-full border-[#DCE7F5] text-[#14213D]">
                     <Link href="/get-quote">Consult Solar Experts</Link>
                   </Button>
                 </div>
