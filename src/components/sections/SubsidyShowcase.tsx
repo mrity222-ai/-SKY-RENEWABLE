@@ -15,7 +15,7 @@ export function SubsidyShowcase() {
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* LEFT SIDE IMAGE CARD */}
           <ScrollReveal direction="right" className="order-2 lg:order-1">
-            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
               <Image
                 src="/servie/8.png"
                 alt="Solar Subsidy Assistance"

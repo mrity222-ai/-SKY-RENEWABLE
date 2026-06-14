@@ -52,7 +52,7 @@ export function Footer() {
           {/* LEFT SIDE */}
           <div className="space-y-8 md:space-y-12">
             <div className="space-y-4 md:space-y-6">
-              <Link href="/" className="inline-block relative h-16 md:h-20 w-64 md:w-80 mb-4 bg-white p-2 rounded-2xl border border-[#DCE7F5] shadow-sm">
+              <Link href="/" className="inline-block relative h-16 md:h-20 w-64 md:w-80 mb-4">
                 <Image 
                   src="/ab/lo.png" 
                   alt="Sky Renewable Logo" 

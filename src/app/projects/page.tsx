@@ -66,7 +66,7 @@ export default function ProjectsPage() {
               </ScrollReveal>
             </div>
             <ScrollReveal direction="left" delay={0.4}>
-              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-neutral-100">
+              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
                 <Image 
                   src="/project/5.png" 
                   alt="Solar Project Hero" 
@@ -130,7 +130,7 @@ export default function ProjectsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
-                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-neutral-100">
+                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500">
                       <video
                         autoPlay
                         loop
@@ -177,7 +177,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <ScrollReveal direction="left">
-              <div className="relative w-full aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl bg-neutral-100">
+              <div className="relative w-full aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl">
                 <Image src="/project/6.png" alt="Solar Impact" fill className="object-cover w-full h-full" />
               </div>
             </ScrollReveal>

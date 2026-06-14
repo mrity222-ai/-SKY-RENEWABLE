@@ -33,7 +33,7 @@ export function ServiceHero({
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Image side */}
           <ScrollReveal direction="right" delay={0.4} className="order-2 lg:order-1">
-            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-white border border-[#DCE7F5]">
+            <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
               <Image 
                 src={image} 
                 alt={titleLine1} 

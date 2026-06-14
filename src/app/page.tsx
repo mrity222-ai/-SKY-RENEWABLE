@@ -120,13 +120,13 @@ export default function Home() {
             </div>
 
             <ScrollReveal direction="left" className="order-2 lg:order-2">
-              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl bg-white p-2">
+              <div className="relative w-full aspect-[4/3] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-xl">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover rounded-[20px] md:rounded-[28px]"
+                  className="w-full h-full object-cover"
                 >
                   <source src="/vio/2.mp4" type="video/mp4" />
                 </video>
@@ -191,18 +191,18 @@ export default function Home() {
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <Link href="/projects" className="group block">
-                  <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2 bg-white p-2 border border-[#DCE7F5]">
+                  <div className="relative h-[400px] md:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg md:shadow-xl transition-all duration-700 hover:-translate-y-2">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 rounded-[22px] md:rounded-[30px]"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     >
                       <source src={p.video} type="video/mp4" />
                     </video>
                     
-                    <div className="absolute bottom-2 left-2 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] rounded-bl-[22px] border-r-[6px] border-[#2563EB] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] border-r-[6px] border-[#2563EB] shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
                       <div className="text-[30px] md:text-[40px] font-black text-[#14213D] tracking-tighter leading-none">
                         {p.id < 10 ? `0${p.id}` : p.id}
                       </div>
