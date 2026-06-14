@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white overflow-hidden selection:bg-primary/20 selection:text-primary">
       {/* SECTION 1 – HERO INTRO */}
-      <section className="relative pt-40 pb-16 lg:pt-48 lg:pb-24 overflow-hidden">
+      <section className="relative pt-44 pb-16 lg:pt-52 lg:pb-24 overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
           <div className="absolute -top-24 -right-24 size-[500px] bg-primary/5 blur-[120px] rounded-full" />
@@ -58,12 +58,11 @@ export default function AboutPage() {
           <ScrollReveal direction="up" delay={0.4} className="mt-16 group">
             <div className="relative aspect-[21/9] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(20,33,61,0.12)] border border-border/50">
               <Image 
-                src="https://picsum.photos/seed/arka_about_hero/1600/700" 
+                src="/ab/5.png" 
                 alt="Solar Field" 
                 fill 
                 className="object-cover w-full h-full transition-transform duration-[2.5s] ease-out group-hover:scale-105"
                 priority
-                data-ai-hint="solar field"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/10 to-transparent pointer-events-none" />
             </div>
