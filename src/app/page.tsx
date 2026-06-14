@@ -58,7 +58,7 @@ export default function Home() {
         <div className="container relative z-20 h-full mx-auto px-4 flex flex-col justify-center items-center text-center">
           <ScrollReveal direction="up" className="max-w-4xl mx-auto space-y-6 md:space-y-8">
             {/* Premium Badge */}
-            <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.22em] text-white backdrop-blur-md">
+            <span className="inline-flex items-center rounded-full border border-[#048037]/20 bg-[#048037] px-4 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.22em] text-white backdrop-blur-md">
               SKY RENEWABLE
             </span>
 
