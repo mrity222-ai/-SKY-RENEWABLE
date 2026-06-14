@@ -26,7 +26,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl text-left space-y-8">
             <ScrollReveal direction="up">
-              <span className="inline-block bg-white text-[#1D2348] px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-[#E2E8F0] shadow-sm">
+              <span className="inline-block bg-[#048037] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase border border-white/10 shadow-sm">
                 Who We Are
               </span>
             </ScrollReveal>
