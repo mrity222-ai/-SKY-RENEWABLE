@@ -91,13 +91,13 @@ export function Navbar() {
       <header 
         className={cn(
           "w-full bg-white transition-all duration-300 border-b border-[#E2E8F0]",
-          isScrolled ? "shadow-[0_4px_20px_rgba(0,0,0,0.05)] h-[70px]" : "h-[80px]"
+          isScrolled ? "shadow-[0_4px_20px_rgba(0,0,0,0.05)] h-[80px] md:h-[100px]" : "h-[90px] md:h-[110px]"
         )}
       >
         <div className="container mx-auto px-6 max-w-[1400px] h-full flex items-center justify-between">
           {/* LOGO */}
           <div className="flex-shrink-0">
-            <Link href="/" className="relative h-14 w-56 md:h-16 md:w-72 block">
+            <Link href="/" className="relative h-20 w-72 md:h-24 md:w-[420px] block">
               <Image 
                 src="/ab/lo.png" 
                 alt="Sky Renewable" 
@@ -120,7 +120,7 @@ export function Navbar() {
                   {link.submenu ? (
                     <DropdownMenu>
                       <DropdownMenuTrigger className={cn(
-                        "text-[15px] font-semibold flex items-center gap-1 transition-colors outline-none h-[80px] relative",
+                        "text-[15px] font-semibold flex items-center gap-1 transition-colors outline-none h-full relative py-6",
                         isActive ? "text-[#2563EB]" : "text-[#14213D] hover:text-[#2563EB]"
                       )}>
                         {link.name} <ChevronDown className="size-4 opacity-50 transition-transform group-hover:rotate-180" />
@@ -153,7 +153,7 @@ export function Navbar() {
                     <Link 
                       href={link.href}
                       className={cn(
-                        "text-[15px] font-semibold transition-colors h-[80px] flex items-center relative",
+                        "text-[15px] font-semibold transition-colors h-full flex items-center relative py-6",
                         isActive ? "text-[#2563EB]" : "text-[#14213D] hover:text-[#2563EB]"
                       )}
                     >
