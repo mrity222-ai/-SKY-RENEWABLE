@@ -26,6 +26,7 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -36,6 +37,11 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Automatically close mobile menu when pathname changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -178,7 +184,7 @@ export function Navbar() {
             </Link>
 
             <div className="lg:hidden">
-              <Sheet>
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="text-[#14213D] hover:bg-blue-50">
                     <Menu className="size-6" />
@@ -190,9 +196,9 @@ export function Navbar() {
                       <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                       <SheetDescription className="sr-only">Navigation</SheetDescription>
                       <div className="flex items-center justify-between">
-                        <div className="relative h-10 w-40">
+                        <Link href="/" className="relative h-10 w-40 block" onClick={() => setIsOpen(false)}>
                           <Image src="/ab/lo.png" alt="Sky Renewable" fill className="object-contain object-left" />
-                        </div>
+                        </Link>
                       </div>
                     </SheetHeader>
                     
@@ -207,6 +213,7 @@ export function Navbar() {
                                   <Link 
                                     key={sub.name} 
                                     href={sub.href} 
+                                    onClick={() => setIsOpen(false)}
                                     className={cn(
                                       "text-[14px] font-semibold py-1.5 transition-colors",
                                       pathname === sub.href ? "text-[#2563EB]" : "text-[#14213D] hover:text-[#2563EB]"
@@ -220,6 +227,7 @@ export function Navbar() {
                           ) : (
                             <Link 
                               href={link.href} 
+                              onClick={() => setIsOpen(false)}
                               className={cn(
                                 "text-[16px] font-bold px-4 py-2.5 block transition-colors",
                                 pathname === link.href ? "text-[#2563EB]" : "text-[#14213D] hover:text-[#2563EB]"
@@ -235,6 +243,7 @@ export function Navbar() {
                     <div className="pt-6 border-t border-blue-50 mt-auto">
                       <Link 
                         href="tel:8871105807" 
+                        onClick={() => setIsOpen(false)}
                         className="flex items-center gap-3 bg-[#2563EB] text-white p-4 rounded-none justify-center transition-colors"
                       >
                         <Phone className="size-4" />
