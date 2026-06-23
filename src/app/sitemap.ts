@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -19,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/government-solar-subsidy',
     '/solar-calculator',
     '/contact-us',
+    '/privacy-policy',
+    '/terms-and-conditions',
     '/legal/privacy',
     '/solar-company-in-balod',
     '/solar-company-in-durg',
