@@ -48,6 +48,12 @@
       "description": "Main solar service illustration",
       "imageUrl": "/servie/8.png",
       "imageHint": "solar service"
+    },
+    {
+      "id": "electrical-solutions",
+      "description": "Electrician working on electrical panel",
+      "imageUrl": "https://picsum.photos/seed/arka_elec/800/600",
+      "imageHint": "electrical wiring"
     }
   ]
 }

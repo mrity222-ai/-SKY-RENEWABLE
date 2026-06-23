@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -6,14 +7,46 @@ import Link from "next/link";
 import { 
   CheckCircle2, 
   TrendingUp, 
-  Target
+  Target,
+  Users,
+  ShieldCheck,
+  Zap,
+  Star
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTASection } from "@/components/sections/CTASection";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
+import { Card } from "@/components/ui/card";
 
 export default function AboutPage() {
+  const teamMembers = [
+    {
+      name: "Naimesh Chandraker",
+      role: "Founder & Managing Director",
+      desc: "Visionary leader driving the sustainable energy transition in Chhattisgarh.",
+      image: "https://picsum.photos/seed/arka_t1/400/400"
+    },
+    {
+      name: "Engr. Rajesh Kumar",
+      role: "Solar Project Engineer",
+      desc: "Expert in MW-scale solar design and electrical structural integrity.",
+      image: "https://picsum.photos/seed/arka_t2/400/400"
+    },
+    {
+      name: "Suresh Sahu",
+      role: "Operations Manager",
+      desc: "Specialist in rooftop installation workflows and DISCOM liaison.",
+      image: "https://picsum.photos/seed/arka_t3/400/400"
+    },
+    {
+      name: "Anjali Verma",
+      role: "Technical Consultant",
+      desc: "Advising residential and commercial clients on ROI and subsidies.",
+      image: "https://picsum.photos/seed/arka_t4/400/400"
+    }
+  ];
+
   return (
     <div className="bg-white overflow-hidden selection:bg-primary/20 selection:text-primary">
       {/* SECTION 1 – HERO INTRO */}
@@ -163,7 +196,77 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* OUR TEAM SECTION */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto space-y-6 mb-16 md:mb-20">
+            <ScrollReveal direction="up">
+              <span className="inline-flex items-center bg-[#048037] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase border border-white/10 shadow-sm">
+                Our Team
+              </span>
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.1}>
+              <h2 className="text-[30px] md:text-[40px] font-bold text-[#14213D] font-headline tracking-tighter">
+                Meet The Experts Behind <span className="text-primary">SKY RENEWABLE</span>
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.2}>
+              <p className="text-[#475569] leading-relaxed font-medium">
+                Our experienced team of engineers, technicians, project managers, and energy consultants work together to deliver reliable, efficient, and high-performance solar and electrical solutions across Chhattisgarh.
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, i) => (
+              <ScrollReveal key={i} delay={i * 0.1} direction="up">
+                <Card className="group relative overflow-hidden rounded-[32px] border-none shadow-lg hover:shadow-2xl transition-all duration-500 bg-[#F8FAFC]">
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image 
+                      src={member.image} 
+                      alt={member.name} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <div className="p-8 space-y-3 relative z-10">
+                    <div className="space-y-1">
+                      <h3 className="text-lg font-bold text-[#14213D] group-hover:text-primary transition-colors">{member.name}</h3>
+                      <p className="text-[12px] font-bold text-primary uppercase tracking-widest">{member.role}</p>
+                    </div>
+                    <p className="text-[13px] text-[#475569] leading-relaxed font-medium opacity-80">{member.desc}</p>
+                  </div>
+                </Card>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal direction="up" delay={0.4} className="mt-16 pt-16 border-t border-border">
+             <div className="grid md:grid-cols-3 gap-8">
+                <HighlightItem icon={<Users />} title="Experienced Engineers" desc="Over 10 years of combined solar engineering experience." />
+                <HighlightItem icon={<ShieldCheck />} title="Certified Technicians" desc="MNRE registered and certified installation specialists." />
+                <HighlightItem icon={<Zap />} title="Electrical Experts" desc="Master electricians for end-to-end wiring solutions." />
+             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <CTASection />
+    </div>
+  );
+}
+
+function HighlightItem({ icon, title, desc }: { icon: any, title: string, desc: string }) {
+  return (
+    <div className="flex gap-5">
+      <div className="size-12 bg-[#EEF7FF] rounded-xl flex items-center justify-center text-primary shrink-0">
+        {React.cloneElement(icon, { className: "size-6" })}
+      </div>
+      <div className="space-y-1">
+        <h4 className="font-bold text-[#14213D] text-[15px]">{title}</h4>
+        <p className="text-[13px] text-[#475569] leading-relaxed">{desc}</p>
+      </div>
     </div>
   );
 }

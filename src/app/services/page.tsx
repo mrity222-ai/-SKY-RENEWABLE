@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -14,7 +15,8 @@ import {
   ClipboardCheck, 
   Banknote,
   Layout,
-  Cpu
+  Cpu,
+  Lightbulb
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
@@ -42,6 +44,13 @@ export default function ServicesPage() {
       icon: <Factory className="size-6" />,
       href: "/services/commercial-solar",
       image: "/servie/3.png"
+    },
+    {
+      title: "Complete Electrical Solutions",
+      desc: "Professional residential and commercial electrical wiring, maintenance, and power backup solutions.",
+      icon: <Lightbulb className="size-6" />,
+      href: "/complete-electrical-solutions",
+      image: "https://picsum.photos/seed/arka_elec/800/600"
     },
     {
       title: "Operation & Maintenance Services",
@@ -130,7 +139,7 @@ export default function ServicesPage() {
                       alt={service.title} 
                       fill 
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      data-ai-hint="solar installation"
+                      data-ai-hint="electrical service"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>

@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from "react";
@@ -73,18 +74,27 @@ export function Footer() {
               <Link href="/" className="text-[13px] md:text-[14px] font-semibold text-[#14213D] hover:text-[#2563EB] transition-colors">Home</Link>
               <Link href="/about-us" className="text-[13px] md:text-[14px] font-semibold text-[#14213D] hover:text-[#2563EB] transition-colors">About Us</Link>
               <Link href="/services" className="text-[13px] md:text-[14px] font-semibold text-[#14213D] hover:text-[#2563EB] transition-colors">Services</Link>
+              <Link href="/complete-electrical-solutions" className="text-[13px] md:text-[14px] font-semibold text-[#14213D] hover:text-[#2563EB] transition-colors">Electrical</Link>
               <Link href="/projects" className="text-[13px] md:text-[14px] font-semibold text-[#14213D] hover:text-[#2563EB] transition-colors">Projects</Link>
             </nav>
             
             <div className="flex gap-4">
-              <SocialLink 
+              <Link 
                 href="https://www.facebook.com/skyrenewable/" 
-                icon={<Facebook className="size-4" />} 
-              />
-              <SocialLink 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="size-10 md:size-12 bg-white border border-[#DCE7F5] rounded-full flex items-center justify-center hover:bg-[#EEF7FF] hover:border-[#2563EB]/20 transition-all duration-500 text-[#2563EB] shadow-sm"
+              >
+                <Facebook className="size-4" />
+              </Link>
+              <Link 
                 href="https://www.instagram.com/skyrenewableofficial/" 
-                icon={<Instagram className="size-4" />} 
-              />
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="size-10 md:size-12 bg-white border border-[#DCE7F5] rounded-full flex items-center justify-center hover:bg-[#EEF7FF] hover:border-[#2563EB]/20 transition-all duration-500 text-[#2563EB] shadow-sm"
+              >
+                <Instagram className="size-4" />
+              </Link>
             </div>
           </div>
 
@@ -164,21 +174,3 @@ function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, lab
     </div>
   );
 }
-
-function SocialLink({ icon, href }: { icon: any, href: string }) {
-  return (
-    <Link 
-      href={href} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="size-10 md:size-12 bg-white border border-[#DCE7F5] rounded-full flex items-center justify-center hover:bg-[#EEF7FF] hover:border-[#2563EB]/20 transition-all duration-500 text-[#2563EB] shadow-sm"
-    >
-      {socialMap[href.includes('facebook') ? 'facebook' : 'instagram']}
-    </Link>
-  );
-}
-
-const socialMap = {
-  facebook: <Facebook className="size-4" />,
-  instagram: <Instagram className="size-4" />
-};

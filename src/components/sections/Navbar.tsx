@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -50,6 +51,7 @@ export function Navbar() {
         { name: "Solar EPC Solutions", href: "/services/industrial-solar" },
         { name: "Rooftop Solar Installations", href: "/services/rooftop-installation" },
         { name: "Commercial & Industrial Projects", href: "/services/commercial-solar" },
+        { name: "Complete Electrical Solutions", href: "/complete-electrical-solutions" },
         { name: "Operation & Maintenance", href: "/services/solar-maintenance" },
         { name: "Solar Panel Cleaning", href: "/solar-panel-cleaning-solutions" },
         { name: "Storage & Optimization", href: "/services/battery-storage" },
