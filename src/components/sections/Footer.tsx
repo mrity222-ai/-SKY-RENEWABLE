@@ -173,7 +173,12 @@ function SocialLink({ icon, href }: { icon: any, href: string }) {
       rel="noopener noreferrer"
       className="size-10 md:size-12 bg-white border border-[#DCE7F5] rounded-full flex items-center justify-center hover:bg-[#EEF7FF] hover:border-[#2563EB]/20 transition-all duration-500 text-[#2563EB] shadow-sm"
     >
-      {icon}
+      {socialMap[href.includes('facebook') ? 'facebook' : 'instagram']}
     </Link>
   );
 }
+
+const socialMap = {
+  facebook: <Facebook className="size-4" />,
+  instagram: <Instagram className="size-4" />
+};
