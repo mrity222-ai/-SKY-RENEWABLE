@@ -9,9 +9,7 @@ import {
   ChevronDown, 
   Phone,
   Facebook,
-  Instagram,
-  Youtube,
-  Linkedin
+  Instagram
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
@@ -82,10 +80,22 @@ export function Navbar() {
             Powering Chhattisgarh With Clean Solar Energy
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Facebook className="size-3.5" /></Link>
-            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Instagram className="size-3.5" /></Link>
-            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Youtube className="size-3.5" /></Link>
-            <Link href="#" className="text-white hover:text-white/80 transition-colors"><Linkedin className="size-3.5" /></Link>
+            <Link 
+              href="https://www.facebook.com/skyrenewable/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-white hover:text-white/80 transition-colors"
+            >
+              <Facebook className="size-3.5" />
+            </Link>
+            <Link 
+              href="https://www.instagram.com/skyrenewableofficial/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-white hover:text-white/80 transition-colors"
+            >
+              <Instagram className="size-3.5" />
+            </Link>
           </div>
         </div>
       </div>

@@ -10,9 +10,7 @@ import {
   MessageCircle, 
   ArrowUp,
   Facebook,
-  Twitter,
-  Instagram,
-  Linkedin
+  Instagram
 } from "lucide-react";
 
 export function Footer() {
@@ -79,10 +77,14 @@ export function Footer() {
             </nav>
             
             <div className="flex gap-4">
-              <SocialLink icon={<Facebook className="size-4" />} />
-              <SocialLink icon={<Twitter className="size-4" />} />
-              <SocialLink icon={<Instagram className="size-4" />} />
-              <SocialLink icon={<Linkedin className="size-4" />} />
+              <SocialLink 
+                href="https://www.facebook.com/skyrenewable/" 
+                icon={<Facebook className="size-4" />} 
+              />
+              <SocialLink 
+                href="https://www.instagram.com/skyrenewableofficial/" 
+                icon={<Instagram className="size-4" />} 
+              />
             </div>
           </div>
 
@@ -163,9 +165,14 @@ function ContactInfoBlock({ icon, label, text, secondaryText }: { icon: any, lab
   );
 }
 
-function SocialLink({ icon }: { icon: any }) {
+function SocialLink({ icon, href }: { icon: any, href: string }) {
   return (
-    <Link href="#" className="size-10 md:size-12 bg-white border border-[#DCE7F5] rounded-full flex items-center justify-center hover:bg-[#EEF7FF] hover:border-[#2563EB]/20 transition-all duration-500 text-[#2563EB] shadow-sm">
+    <Link 
+      href={href} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="size-10 md:size-12 bg-white border border-[#DCE7F5] rounded-full flex items-center justify-center hover:bg-[#EEF7FF] hover:border-[#2563EB]/20 transition-all duration-500 text-[#2563EB] shadow-sm"
+    >
       {icon}
     </Link>
   );
