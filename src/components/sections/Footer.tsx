@@ -127,6 +127,8 @@ export function Footer() {
             <p>© 2025 SKY RENEWABLE. ALL RIGHTS RESERVED.</p>
             <span className="hidden md:block opacity-20">|</span>
             <p>A COMPLETE SOLAR SOLUTION</p>
+            <span className="hidden md:block opacity-20">|</span>
+            <p className="uppercase">Created by <a href="https://avedatechnologies.com/" target="_blank" rel="noopener noreferrer" className="text-[#14213D] font-bold hover:text-[#2563EB] transition-colors">Aveda technologies</a></p>
           </div>
 
           <div className="flex gap-6 md:gap-10">
