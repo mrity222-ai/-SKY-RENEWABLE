@@ -39,6 +39,29 @@ export default function Home() {
     { id: 3, name: "Emerald Heights", video: "/project/4.mp4" },
   ];
 
+  const testimonials = [
+    { name: "Amit Verma", loc: "Balod", review: "Professional installation and excellent support. Our electricity bill has reduced significantly after installing rooftop solar." },
+    { name: "Prakash Sahu", loc: "Durg", review: "SKY RENEWABLE handled everything from design to subsidy assistance. Highly recommended." },
+    { name: "Rakesh Yadav", loc: "Rajnandgaon", review: "The installation team was professional and completed the project on time." },
+    { name: "Sunita Sharma", loc: "Raipur", review: "Excellent solar EPC company in Chhattisgarh. Great quality panels and service." },
+    { name: "Vikram Jain", loc: "Raipur", review: "Our commercial building now saves thousands every month on electricity costs." },
+    { name: "Manoj Patel", loc: "Dhamtari", review: "Smooth net metering process and outstanding customer support." },
+    { name: "Anjali Gupta", loc: "Balod", review: "Best rooftop solar installation company in Balod. Very satisfied with the service." },
+    { name: "Rahul Verma", loc: "Korba", review: "Their maintenance team is always available whenever required." },
+    { name: "Kunal Agrawal", loc: "Bemetara", review: "Professional engineers and transparent pricing. Highly trustworthy company." },
+    { name: "Nitin Sahu", loc: "Kanker", review: "Solar panel cleaning service improved our system performance noticeably." },
+    { name: "Pooja Sharma", loc: "Bhilai", review: "Excellent experience from consultation to commissioning." },
+    { name: "Deepak Agarwal", loc: "Korba", review: "Our factory achieved significant energy savings after installation." },
+    { name: "Sanjay Verma", loc: "Durg", review: "Fast installation and quality workmanship. Highly recommended." },
+    { name: "Anita Yadav", loc: "Rajnandgaon", review: "Government subsidy support made the entire process easy." },
+    { name: "Mukesh Patel", loc: "Raipur", review: "Reliable team with strong technical knowledge and support." },
+    { name: "Ritesh Gupta", loc: "Dhamtari", review: "The solar system is performing better than expected." },
+    { name: "Vandana Mishra", loc: "Balod", review: "Very professional electrical and solar solutions provider." },
+    { name: "Ashok Jain", loc: "Bemetara", review: "Excellent after-sales service and maintenance support." },
+    { name: "Shubham Verma", loc: "Bhilai", review: "Best solar company for residential and commercial projects." },
+    { name: "Priyanka Sahu", loc: "Kanker", review: "Highly satisfied with the quality, service, and long-term savings." },
+  ];
+
   return (
     <div className="bg-white selection:bg-primary/20 selection:text-[#14213D] overflow-x-hidden">
       {/* HERO SECTION - Premium Video Variant */}
@@ -239,8 +262,8 @@ export default function Home() {
       <section className="py-24 bg-[#F8FAFC] border-t border-border">
         <div className="container mx-auto px-4">
           <ScrollReveal className="text-center mb-16 space-y-4">
-            <h2 className="leading-tight font-headline text-[30px] md:text-[40px]">Voice of our Clients</h2>
-            <p className="text-[#64748B]">Trusted by homeowners and industrial leaders alike.</p>
+            <h2 className="leading-tight font-headline text-[30px] md:text-[40px]">Voice of Our Clients</h2>
+            <p className="text-[#64748B]">Trusted by homeowners, businesses, industries, hospitals, and institutions across Chhattisgarh.</p>
           </ScrollReveal>
           
           <div className="relative max-w-7xl mx-auto px-4">
@@ -252,15 +275,11 @@ export default function Home() {
               className="w-full"
             >
               <CarouselContent className="-ml-6 md:-ml-8">
-                <CarouselItem className="pl-6 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3">
-                  <TestimonialCard name="Rajesh Kumar" loc="Ahmedabad" review="Professional execution and visible savings. SKY RENEWABLE is easily the best solar company in Gujarat." />
-                </CarouselItem>
-                <CarouselItem className="pl-6 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3">
-                  <TestimonialCard name="Suresh Mehta" loc="Surat" review="Seamless experience with PM-Suryodaya paperwork. Highly recommended for rooftop solar." />
-                </CarouselItem>
-                <CarouselItem className="pl-6 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3">
-                  <TestimonialCard name="Dr. Ananya Singh" loc="Baroda" review="Our hospital's electricity bill dropped by 85%. Excellent engineering and technical support." />
-                </CarouselItem>
+                {testimonials.map((t, i) => (
+                  <CarouselItem key={i} className="pl-6 md:pl-8 basis-full sm:basis-1/2 md:basis-1/3">
+                    <TestimonialCard name={t.name} loc={t.loc} review={t.review} />
+                  </CarouselItem>
+                ))}
               </CarouselContent>
               <div className="flex justify-center gap-4 mt-12">
                 <CarouselPrevious className="relative static translate-y-0 translate-x-0 border-primary/20 text-[#14213D] h-12 w-12" />
