@@ -20,7 +20,8 @@ import { cn } from "@/lib/utils";
 const projects = [
   { id: 1, title: "Skyline Residential Villa", type: "Residential", location: "Lucknow, Uttar Pradesh", video: "/project/1.mp4" },
   { id: 2, title: "TechPark Commercial Complex", type: "Commercial", location: "Noida, Uttar Pradesh", video: "/project/2.mp4" },
-  { id: 3, title: "Eco Manufacturing Unit", type: "Industrial", location: "Kanpur, Uttar Pradesh", video: "/project/4.mp4" }
+  { id: 3, title: "Eco Manufacturing Unit", type: "Industrial", location: "Kanpur, Uttar Pradesh", video: "/project/4.mp4" },
+  { id: 4, title: "Industrial Solar Plant", type: "Industrial", location: "Raipur, Chhattisgarh", video: "/vio/a.mp4" }
 ];
 
 const categories = ["All Projects", "Residential", "Commercial", "Industrial"];
