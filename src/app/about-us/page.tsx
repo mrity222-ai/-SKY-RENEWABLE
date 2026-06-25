@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -10,43 +9,14 @@ import {
   Target,
   Users,
   ShieldCheck,
-  Zap,
-  Star
+  Zap
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { CTASection } from "@/components/sections/CTASection";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
-import { Card } from "@/components/ui/card";
 
 export default function AboutPage() {
-  const teamMembers = [
-    {
-      name: "Naimesh Chandraker",
-      role: "Founder & Managing Director",
-      desc: "Visionary leader driving the sustainable energy transition in Chhattisgarh.",
-      image: "https://picsum.photos/seed/arka_t1/400/400"
-    },
-    {
-      name: "Engr. Rajesh Kumar",
-      role: "Solar Project Engineer",
-      desc: "Expert in MW-scale solar design and electrical structural integrity.",
-      image: "https://picsum.photos/seed/arka_t2/400/400"
-    },
-    {
-      name: "Suresh Sahu",
-      role: "Operations Manager",
-      desc: "Specialist in rooftop installation workflows and DISCOM liaison.",
-      image: "https://picsum.photos/seed/arka_t3/400/400"
-    },
-    {
-      name: "Anjali Verma",
-      role: "Technical Consultant",
-      desc: "Advising residential and commercial clients on ROI and subsidies.",
-      image: "https://picsum.photos/seed/arka_t4/400/400"
-    }
-  ];
-
   return (
     <div className="bg-white overflow-hidden selection:bg-primary/20 selection:text-primary">
       {/* SECTION 1 – HERO INTRO */}
@@ -196,50 +166,79 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* OUR TEAM SECTION */}
+      {/* SOLAR TEAM GALLERY SECTION */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto space-y-6 mb-16 md:mb-20">
+        <div className="container mx-auto px-4 max-w-[1200px]">
+          <div className="text-center space-y-4 mb-16 md:mb-20">
             <ScrollReveal direction="up">
               <span className="inline-flex items-center bg-[#048037] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase border border-white/10 shadow-sm">
-                Our Team
+                Our Projects
               </span>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.1}>
               <h2 className="text-[30px] md:text-[40px] font-bold text-[#14213D] font-headline tracking-tighter">
-                Meet The Experts Behind <span className="text-primary">SKY RENEWABLE</span>
+                Real Solar <span className="text-primary">Installation Gallery</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal direction="up" delay={0.2}>
-              <p className="text-[#475569] leading-relaxed font-medium">
-                Our experienced team of engineers, technicians, project managers, and energy consultants work together to deliver reliable, efficient, and high-performance solar and electrical solutions across Chhattisgarh.
+              <p className="text-[#475569] leading-relaxed font-medium max-w-2xl mx-auto">
+                Professional rooftop solar installation work by our expert team.
               </p>
             </ScrollReveal>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, i) => (
-              <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                <Card className="group relative overflow-hidden rounded-[32px] border-none shadow-lg hover:shadow-2xl transition-all duration-500 bg-[#F8FAFC]">
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image 
-                      src={member.image} 
-                      alt={member.name} 
-                      fill 
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#14213D]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <div className="p-8 space-y-3 relative z-10">
-                    <div className="space-y-1">
-                      <h3 className="text-lg font-bold text-[#14213D] group-hover:text-primary transition-colors">{member.name}</h3>
-                      <p className="text-[12px] font-bold text-primary uppercase tracking-widest">{member.role}</p>
-                    </div>
-                    <p className="text-[13px] text-[#475569] leading-relaxed font-medium opacity-80">{member.desc}</p>
-                  </div>
-                </Card>
-              </ScrollReveal>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-[20px]">
+            {/* Top Row: Left Wide */}
+            <ScrollReveal direction="up" className="md:col-span-8 h-[300px] md:h-[450px]">
+               <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
+                 <Image 
+                   src="/project/5.png" 
+                   alt="Solar Installation Work" 
+                   fill 
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   data-ai-hint="solar rooftop"
+                 />
+               </div>
+            </ScrollReveal>
+
+            {/* Top Row: Right Portrait */}
+            <ScrollReveal direction="up" delay={0.1} className="md:col-span-4 h-[300px] md:h-[450px]">
+               <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
+                 <Image 
+                   src="/ab/1.jpg" 
+                   alt="Installation Site Survey" 
+                   fill 
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   data-ai-hint="solar survey"
+                 />
+               </div>
+            </ScrollReveal>
+
+            {/* Bottom Row: Left Square */}
+            <ScrollReveal direction="up" delay={0.2} className="md:col-span-4 h-[300px] md:h-[450px]">
+               <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
+                 <Image 
+                   src="/ab/4.jpg" 
+                   alt="Solar Mounting" 
+                   fill 
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   data-ai-hint="solar structure"
+                 />
+               </div>
+            </ScrollReveal>
+
+            {/* Bottom Row: Right Wide */}
+            <ScrollReveal direction="up" delay={0.3} className="md:col-span-8 h-[300px] md:h-[450px]">
+               <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
+                 <Image 
+                   src="/project/6.png" 
+                   alt="Completed Solar Project" 
+                   fill 
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   data-ai-hint="industrial solar"
+                 />
+               </div>
+            </ScrollReveal>
           </div>
 
           <ScrollReveal direction="up" delay={0.4} className="mt-16 pt-16 border-t border-border">
