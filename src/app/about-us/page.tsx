@@ -20,7 +20,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white overflow-hidden selection:bg-primary/20 selection:text-primary">
       {/* SECTION 1 – HERO INTRO */}
-      <section className="relative pt-44 pb-16 lg:pt-52 lg:pb-24 overflow-hidden">
+      <section className="relative pt-48 pb-16 lg:pt-56 lg:pb-24 overflow-hidden">
         {/* Decorative background element */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
           <div className="absolute -top-24 -right-24 size-[500px] bg-primary/5 blur-[120px] rounded-full" />
@@ -192,8 +192,8 @@ export default function AboutPage() {
             <ScrollReveal direction="up" className="md:col-span-8 h-[300px] md:h-[400px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
-                   src="/project/5.png" 
-                   alt="Solar Installation Work" 
+                   src="/vio/1.jpeg" 
+                   alt="Solar Installation Work 1" 
                    fill 
                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                    data-ai-hint="solar rooftop"
@@ -203,8 +203,8 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.1} className="md:col-span-4 h-[300px] md:h-[400px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
-                   src="/ab/1.jpg" 
-                   alt="Installation Site Survey" 
+                   src="/vio/2.jpeg" 
+                   alt="Installation Site Survey 2" 
                    fill 
                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                    data-ai-hint="solar survey"
@@ -216,8 +216,8 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.15} className="md:col-span-4 h-[300px] md:h-[300px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
-                   src="/ab/4.jpg" 
-                   alt="Solar Mounting" 
+                   src="/vio/3.jpeg" 
+                   alt="Solar Mounting 3" 
                    fill 
                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                    data-ai-hint="solar structure"
@@ -227,8 +227,8 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.2} className="md:col-span-4 h-[300px] md:h-[300px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
-                   src="/ab/5.png" 
-                   alt="Solar Team" 
+                   src="/vio/4.jpeg" 
+                   alt="Solar Team 4" 
                    fill 
                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                    data-ai-hint="solar engineering"
@@ -238,8 +238,8 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.25} className="md:col-span-4 h-[300px] md:h-[300px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
-                   src="https://picsum.photos/seed/arka_gal_5/600/600" 
-                   alt="Residential Installation" 
+                   src="/vio/5.jpeg" 
+                   alt="Residential Installation 5" 
                    fill 
                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                    data-ai-hint="solar home"
@@ -251,8 +251,8 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.3} className="md:col-span-4 h-[300px] md:h-[400px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
-                   src="https://picsum.photos/seed/arka_gal_6/600/800" 
-                   alt="Solar Panels Close-up" 
+                   src="/vio/6.jpeg" 
+                   alt="Solar Panels Close-up 6" 
                    fill 
                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                    data-ai-hint="solar panels"
@@ -262,8 +262,8 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.35} className="md:col-span-8 h-[300px] md:h-[400px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
-                   src="/project/6.png" 
-                   alt="Completed Solar Project" 
+                   src="/vio/7.jpeg" 
+                   alt="Completed Solar Project 7" 
                    fill 
                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                    data-ai-hint="industrial solar"
