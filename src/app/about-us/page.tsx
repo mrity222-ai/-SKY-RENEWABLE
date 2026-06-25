@@ -115,13 +115,13 @@ export default function AboutPage() {
                   <div className="size-10 rounded-xl bg-white border border-border flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
-                  <span className="text-[13px] md:text-sm font-bold text-[#14213D]">Certified Engineers</span>
+                  <span className="text-[13px] md:sm font-bold text-[#14213D]">Certified Engineers</span>
                 </div>
                 <div className="flex items-center gap-4 p-5 bg-[#F8FAFC] rounded-3xl border border-border shadow-sm hover:shadow-md transition-all">
                   <div className="size-10 rounded-xl bg-white border border-border flex items-center justify-center text-[#22C55E]">
                     <CheckCircle2 className="size-5" />
                   </div>
-                  <span className="text-[13px] md:text-sm font-bold text-[#14213D]">MNRE Registered</span>
+                  <span className="text-[13px] md:sm font-bold text-[#14213D]">MNRE Registered</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -188,8 +188,8 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-[20px]">
-            {/* Top Row: Left Wide */}
-            <ScrollReveal direction="up" className="md:col-span-8 h-[300px] md:h-[450px]">
+            {/* ROW 1 */}
+            <ScrollReveal direction="up" className="md:col-span-8 h-[300px] md:h-[400px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
                    src="/project/5.png" 
@@ -200,9 +200,7 @@ export default function AboutPage() {
                  />
                </div>
             </ScrollReveal>
-
-            {/* Top Row: Right Portrait */}
-            <ScrollReveal direction="up" delay={0.1} className="md:col-span-4 h-[300px] md:h-[450px]">
+            <ScrollReveal direction="up" delay={0.1} className="md:col-span-4 h-[300px] md:h-[400px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
                    src="/ab/1.jpg" 
@@ -214,8 +212,8 @@ export default function AboutPage() {
                </div>
             </ScrollReveal>
 
-            {/* Bottom Row: Left Square */}
-            <ScrollReveal direction="up" delay={0.2} className="md:col-span-4 h-[300px] md:h-[450px]">
+            {/* ROW 2 */}
+            <ScrollReveal direction="up" delay={0.15} className="md:col-span-4 h-[300px] md:h-[300px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
                    src="/ab/4.jpg" 
@@ -226,9 +224,42 @@ export default function AboutPage() {
                  />
                </div>
             </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.2} className="md:col-span-4 h-[300px] md:h-[300px]">
+               <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
+                 <Image 
+                   src="/ab/5.png" 
+                   alt="Solar Team" 
+                   fill 
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   data-ai-hint="solar engineering"
+                 />
+               </div>
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.25} className="md:col-span-4 h-[300px] md:h-[300px]">
+               <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
+                 <Image 
+                   src="https://picsum.photos/seed/arka_gal_5/600/600" 
+                   alt="Residential Installation" 
+                   fill 
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   data-ai-hint="solar home"
+                 />
+               </div>
+            </ScrollReveal>
 
-            {/* Bottom Row: Right Wide */}
-            <ScrollReveal direction="up" delay={0.3} className="md:col-span-8 h-[300px] md:h-[450px]">
+            {/* ROW 3 */}
+            <ScrollReveal direction="up" delay={0.3} className="md:col-span-4 h-[300px] md:h-[400px]">
+               <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
+                 <Image 
+                   src="https://picsum.photos/seed/arka_gal_6/600/800" 
+                   alt="Solar Panels Close-up" 
+                   fill 
+                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                   data-ai-hint="solar panels"
+                 />
+               </div>
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.35} className="md:col-span-8 h-[300px] md:h-[400px]">
                <div className="relative w-full h-full rounded-[22px] overflow-hidden shadow-xl group bg-muted">
                  <Image 
                    src="/project/6.png" 
