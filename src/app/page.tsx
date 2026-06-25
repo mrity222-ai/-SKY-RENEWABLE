@@ -37,6 +37,7 @@ export default function Home() {
     { id: 1, name: "Skyline Villa", video: "/project/1.mp4" },
     { id: 2, name: "GIDC Industrial Park", video: "/project/2.mp4" },
     { id: 3, name: "Emerald Heights", video: "/project/4.mp4" },
+    { id: 4, name: "Industrial Solar Plant", video: "/vio/a.mp4" },
   ];
 
   const testimonials = [
@@ -225,7 +226,7 @@ export default function Home() {
             <h2 className="leading-tight font-headline text-[30px] md:text-[40px]">Featured Case Studies</h2>
             <p className="text-[#64748B]">High-yield solar deployments across India's industrial landscape.</p>
           </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10 mb-12">
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <Link href="/projects" className="group block">
@@ -233,7 +234,6 @@ export default function Home() {
                     <video
                       autoPlay
                       loop
-                      muted
                       playsInline
                       className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                     >
