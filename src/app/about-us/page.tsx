@@ -57,7 +57,7 @@ export default function AboutPage() {
                   <Link href="/get-quote">Get Your Quote</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full px-10 h-10 md:h-12 text-[14px] font-bold transition-all border-border text-[#14213D] hover:bg-[#F8FAFC]">
-                  <a href="/p.pdf" target="_blank">Download Brochure</a>
+                  <a href="/P.pdf" target="_blank">Download Brochure</a>
                 </Button>
               </div>
             </ScrollReveal>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -103,7 +102,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full w-full sm:w-auto border-white/30 text-white bg-white/5 backdrop-blur-md hover:bg-white/10 h-12 md:h-14 px-8 md:px-10 text-[14px] md:text-[15px]">
-                <a href="/p.pdf" target="_blank">Download Brochure</a>
+                <a href="/P.pdf" target="_blank">Download Brochure</a>
               </Button>
             </div>
           </ScrollReveal>

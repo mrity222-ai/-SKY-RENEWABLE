@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -60,7 +59,7 @@ export function Hero() {
                 <a href="/get-quote" className="flex items-center gap-2">Get Free Quote <ArrowRight className="size-4" /></a>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-border text-[#14213D] rounded-full px-10 h-12 md:h-14 text-[14px] font-bold hover:bg-[#F8FAFC] transition-all">
-                <a href="/p.pdf" target="_blank">Download Brochure</a>
+                <a href="/P.pdf" target="_blank">Download Brochure</a>
               </Button>
             </motion.div>
           </div>
