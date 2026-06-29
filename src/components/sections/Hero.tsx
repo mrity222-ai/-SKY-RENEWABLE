@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -55,11 +56,11 @@ export function Hero() {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-4 pt-4"
             >
-              <Button size="lg" className="bg-[#14213D] text-white rounded-full px-10 h-12 md:h-14 text-[14px] font-bold hover:bg-neutral-800 transition-all shadow-xl shadow-[#14213D]/10">
+              <Button asChild size="lg" className="bg-[#14213D] text-white rounded-full px-10 h-12 md:h-14 text-[14px] font-bold hover:bg-neutral-800 transition-all shadow-xl shadow-[#14213D]/10">
                 <a href="/get-quote" className="flex items-center gap-2">Get Free Quote <ArrowRight className="size-4" /></a>
               </Button>
-              <Button variant="outline" size="lg" className="border-border text-[#14213D] rounded-full px-10 h-12 md:h-14 text-[14px] font-bold hover:bg-[#F8FAFC] transition-all">
-                <a href="/get-quote">Book Site Survey</a>
+              <Button asChild variant="outline" size="lg" className="border-border text-[#14213D] rounded-full px-10 h-12 md:h-14 text-[14px] font-bold hover:bg-[#F8FAFC] transition-all">
+                <a href="/p.pdf" target="_blank">Download Brochure</a>
               </Button>
             </motion.div>
           </div>

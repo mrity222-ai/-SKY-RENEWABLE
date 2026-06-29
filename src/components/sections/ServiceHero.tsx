@@ -78,7 +78,11 @@ export function ServiceHero({
                   <Link href="/get-quote">{primaryButtonText}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full w-full sm:w-auto border-border text-[#14213D] hover:bg-[#F8FAFC] h-12 md:h-14 px-10">
-                  <Link href="/get-quote">{secondaryButtonText}</Link>
+                  {secondaryButtonText === "Download Brochure" ? (
+                    <a href="/p.pdf" target="_blank">Download Brochure</a>
+                  ) : (
+                    <Link href="/get-quote">{secondaryButtonText}</Link>
+                  )}
                 </Button>
               </div>
             </ScrollReveal>

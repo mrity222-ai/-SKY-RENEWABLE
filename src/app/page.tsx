@@ -103,7 +103,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full w-full sm:w-auto border-white/30 text-white bg-white/5 backdrop-blur-md hover:bg-white/10 h-12 md:h-14 px-8 md:px-10 text-[14px] md:text-[15px]">
-                <Link href="/get-quote">Download Brochure</Link>
+                <a href="/p.pdf" target="_blank">Download Brochure</a>
               </Button>
             </div>
           </ScrollReveal>
@@ -227,7 +227,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10 mb-12">
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
-                <Link href="/projects" className="group block">
+                <div className="group relative">
                   <div className="relative h-[400px] md:h-[500px] rounded-[32px] overflow-hidden shadow-xl transition-all duration-700 hover:-translate-y-2 border border-border/50">
                     <video
                       autoPlay
@@ -243,8 +243,10 @@ export default function Home() {
                         {p.id < 10 ? `0${p.id}` : p.id}
                       </div>
                     </div>
+
+                    <Link href="/get-quote" className="absolute inset-0 z-10" aria-label={`View Project ${p.id}`} />
                   </div>
-                </Link>
+                </div>
               </ScrollReveal>
             ))}
           </div>
