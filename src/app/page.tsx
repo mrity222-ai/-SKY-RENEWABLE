@@ -71,7 +71,6 @@ export default function Home() {
           <video
             autoPlay
             loop
-            muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
@@ -104,7 +103,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full w-full sm:w-auto border-white/30 text-white bg-white/5 backdrop-blur-md hover:bg-white/10 h-12 md:h-14 px-8 md:px-10 text-[14px] md:text-[15px]">
-                <Link href="/get-quote">Book Site Survey</Link>
+                <Link href="/get-quote">Download Brochure</Link>
               </Button>
             </div>
           </ScrollReveal>
@@ -159,7 +158,6 @@ export default function Home() {
                 <video
                   autoPlay
                   loop
-                  muted
                   playsInline
                   className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                 >

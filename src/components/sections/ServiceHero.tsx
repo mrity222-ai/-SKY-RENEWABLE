@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -23,7 +24,7 @@ export function ServiceHero({
   description,
   image,
   primaryButtonText = "Get Free Quote",
-  secondaryButtonText = "Book Site Survey",
+  secondaryButtonText = "Download Brochure",
 }: ServiceHeroProps) {
   return (
     <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-white overflow-hidden">

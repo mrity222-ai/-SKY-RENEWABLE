@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from "react";
@@ -52,7 +53,7 @@ export default function AboutPage() {
                   <Link href="/get-quote">Get Free Quote</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full px-10 h-10 md:h-12 text-[14px] font-bold transition-all border-border text-[#14213D] hover:bg-[#F8FAFC]">
-                  <Link href="/get-quote">Book Site Survey</Link>
+                  <Link href="/get-quote">Download Brochure</Link>
                 </Button>
               </div>
             </ScrollReveal>
