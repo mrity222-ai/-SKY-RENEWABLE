@@ -10,7 +10,13 @@ import {
   Target,
   Users,
   ShieldCheck,
-  Zap
+  Zap,
+  Quote,
+  Calendar,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Award
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
@@ -141,11 +147,110 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* SECTION 4 – LEADERSHIP / FOUNDER SECTION */}
+      <section className="py-24 bg-[#F8FAFC] overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-12 md:gap-20 items-start">
+              {/* Left Side: Founder Profile */}
+              <div className="lg:col-span-5">
+                <ScrollReveal direction="right">
+                  <div className="relative">
+                    {/* Background Glow */}
+                    <div className="absolute -inset-10 bg-gradient-to-tr from-primary/20 via-primary/5 to-transparent blur-[80px] rounded-full opacity-60 pointer-events-none" />
+                    
+                    <div className="relative bg-white p-8 md:p-12 rounded-[48px] shadow-[0_32px_80px_-16px_rgba(20,33,61,0.1)] border border-border text-center">
+                      <div className="relative size-48 md:size-64 mx-auto mb-8">
+                        <div className="absolute inset-0 rounded-full border-[8px] border-white shadow-xl overflow-hidden">
+                          <Image 
+                            src="https://picsum.photos/seed/naimesh/400/400" 
+                            alt="Naimesh Chandraker" 
+                            fill 
+                            className="object-cover"
+                            data-ai-hint="portrait professional"
+                          />
+                        </div>
+                        {/* Status Dot */}
+                        <div className="absolute bottom-4 right-4 size-6 bg-[#22C55E] border-[4px] border-white rounded-full animate-pulse" />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <h3 className="text-[24px] md:text-[30px] font-bold text-[#14213D] font-headline">Naimesh Chandraker</h3>
+                        <p className="text-[14px] font-bold text-primary uppercase tracking-widest">Proprietor</p>
+                      </div>
+
+                      <div className="flex justify-center gap-4 mt-8">
+                        {[Facebook, Linkedin, Twitter].map((Icon, i) => (
+                          <Link key={i} href="#" className="size-10 rounded-full bg-[#F1F5F9] text-[#14213D] flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm">
+                            <Icon className="size-4" />
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              </div>
+
+              {/* Right Side: Content & Timeline */}
+              <div className="lg:col-span-7 space-y-12">
+                <ScrollReveal direction="left" className="space-y-8">
+                  <div className="space-y-4">
+                    <span className="inline-flex items-center bg-[#EEF7FF] text-primary px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest uppercase border border-primary/10">
+                      LEADERSHIP
+                    </span>
+                    <h2 className="text-[32px] md:text-[44px] font-bold text-[#14213D] leading-[1.1] tracking-tighter font-headline">
+                      Leadership That Drives <br /><span className="text-primary">Clean Energy Innovation</span>
+                    </h2>
+                    <p className="text-[#475569] font-medium leading-relaxed max-w-2xl">
+                      A vision of sustainable growth, reliable solar technology, and customer-first renewable energy solutions.
+                    </p>
+                  </div>
+
+                  <div className="relative pl-10 border-l-[3px] border-primary/20">
+                    <Quote className="absolute -left-[14px] -top-2 size-7 text-primary bg-[#F8FAFC]" />
+                    <p className="text-[18px] md:text-[22px] font-bold text-[#14213D] leading-relaxed italic font-headline">
+                      "Our mission is to make clean solar energy affordable, reliable, and accessible for every home, business, and industry."
+                    </p>
+                  </div>
+
+                  <p className="text-[15px] md:text-[16px] text-[#475569] leading-relaxed font-medium">
+                    A passionate renewable energy entrepreneur leading SKY RENEWABLE with a vision to deliver high-quality solar EPC, rooftop solar, O&M, net metering, and subsidy support across Chhattisgarh.
+                  </p>
+                </ScrollReveal>
+
+                {/* Timeline */}
+                <ScrollReveal direction="up" delay={0.2} className="space-y-8">
+                  <h4 className="text-[12px] font-bold text-[#14213D] uppercase tracking-[0.3em] flex items-center gap-3">
+                    <Calendar className="size-4 text-primary" />
+                    Leadership Journey
+                  </h4>
+                  <div className="grid gap-8 border-l border-border pl-6 relative">
+                    <TimelineItem year="2018" title="Company Vision Started" desc="Started with a mission to promote clean and affordable solar energy." />
+                    <TimelineItem year="2020" title="Residential Solar Growth" desc="Delivered rooftop solar solutions for homes and small businesses." />
+                    <TimelineItem year="2022" title="Commercial & Industrial Projects" desc="Expanded into commercial, industrial, and institutional solar installations." />
+                    <TimelineItem year="2024" title="O&M and Subsidy Support" desc="Strengthened service quality with maintenance, monitoring, and government subsidy assistance." />
+                    <TimelineItem year="2026" title="Regional Growth" desc="Serving customers across Balod, Durg, Raipur, Rajnandgaon, Dhamtari, and nearby districts." />
+                  </div>
+                </ScrollReveal>
+
+                {/* Bottom Badges */}
+                <div className="flex flex-wrap gap-4 pt-6">
+                  <LeadershipBadge icon={<ShieldCheck />} text="CSPDCL Registered Vendor" />
+                  <LeadershipBadge icon={<Zap />} text="Solar EPC Solutions" />
+                  <LeadershipBadge icon={<Award />} text="Net Metering Support" />
+                  <LeadershipBadge icon={<Target />} text="PM Surya Ghar Assistance" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MISSION & VISION SECTION */}
-      <section className="py-12 md:py-16 lg:py-20 bg-[#F8FAFC]">
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            <ScrollReveal direction="up" className="p-10 md:p-12 bg-white rounded-[40px] shadow-[0_20px_60px_rgba(20,33,61,0.05)] border border-border space-y-6 hover:shadow-xl transition-all">
+            <ScrollReveal direction="up" className="p-10 md:p-12 bg-[#F8FAFC] rounded-[40px] shadow-[0_20px_60px_rgba(20,33,61,0.05)] border border-border space-y-6 hover:shadow-xl transition-all">
               <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-primary">
                 <Target className="size-8" />
               </div>
@@ -154,7 +259,7 @@ export default function AboutPage() {
                 To accelerate India's transition to sustainable energy by providing reliable, high-yield solar solutions and exceptional engineering services that deliver long-term value to our customers and the environment.
               </p>
             </ScrollReveal>
-            <ScrollReveal direction="up" delay={0.2} className="p-10 md:p-12 bg-white rounded-[40px] shadow-[0_20px_60px_rgba(20,33,61,0.05)] border border-border space-y-6 hover:shadow-xl transition-all">
+            <ScrollReveal direction="up" delay={0.2} className="p-10 md:p-12 bg-[#F8FAFC] rounded-[40px] shadow-[0_20px_60px_rgba(20,33,61,0.05)] border border-border space-y-6 hover:shadow-xl transition-all">
               <div className="size-14 rounded-2xl bg-[#EEF7FF] flex items-center justify-center text-primary">
                 <TrendingUp className="size-8" />
               </div>
@@ -298,6 +403,30 @@ function HighlightItem({ icon, title, desc }: { icon: any, title: string, desc: 
         <h4 className="font-bold text-[#14213D] text-[15px]">{title}</h4>
         <p className="text-[13px] text-[#475569] leading-relaxed">{desc}</p>
       </div>
+    </div>
+  );
+}
+
+function TimelineItem({ year, title, desc }: { year: string, title: string, desc: string }) {
+  return (
+    <div className="relative">
+      <div className="absolute -left-[31px] top-1.5 size-4 rounded-full border-2 border-primary bg-white transition-all group-hover:scale-125" />
+      <div className="space-y-1">
+        <span className="text-[13px] font-bold text-primary">{year}</span>
+        <h5 className="text-[16px] font-bold text-[#14213D] font-headline">{title}</h5>
+        <p className="text-[14px] text-[#64748B] leading-relaxed">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function LeadershipBadge({ icon, text }: { icon: any, text: string }) {
+  return (
+    <div className="flex items-center gap-3 bg-white px-4 py-3 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all group">
+      <div className="text-primary group-hover:scale-110 transition-transform">
+        {React.cloneElement(icon, { className: "size-5" })}
+      </div>
+      <span className="text-[13px] font-bold text-[#14213D]">{text}</span>
     </div>
   );
 }
