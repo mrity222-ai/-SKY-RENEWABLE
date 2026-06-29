@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   Zap,
   Quote,
-  Calendar,
   Facebook,
   Linkedin,
   Twitter,
@@ -55,7 +54,7 @@ export default function AboutPage() {
             <ScrollReveal direction="up" delay={0.3}>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Button asChild variant="default" size="lg" className="rounded-full px-10 h-10 md:h-12 text-[14px] font-bold transition-all shadow-xl shadow-primary/20 hover:shadow-primary/30">
-                  <Link href="/get-quote">Get Free Quote</Link>
+                  <Link href="/get-quote">Get Your Quote</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full px-10 h-10 md:h-12 text-[14px] font-bold transition-all border-border text-[#14213D] hover:bg-[#F8FAFC]">
                   <a href="/p.pdf" target="_blank">Download Brochure</a>
@@ -190,7 +189,7 @@ export default function AboutPage() {
                 </ScrollReveal>
               </div>
 
-              {/* Right Side: Content & Timeline */}
+              {/* Right Side: Content */}
               <div className="lg:col-span-7 space-y-12">
                 <ScrollReveal direction="left" className="space-y-8">
                   <div className="space-y-4">
@@ -215,21 +214,6 @@ export default function AboutPage() {
                   <p className="text-[15px] md:text-[16px] text-[#475569] leading-relaxed font-medium">
                     A passionate renewable energy entrepreneur leading SKY RENEWABLE with a vision to deliver high-quality solar EPC, rooftop solar, O&M, net metering, and subsidy support across Chhattisgarh.
                   </p>
-                </ScrollReveal>
-
-                {/* Timeline */}
-                <ScrollReveal direction="up" delay={0.2} className="space-y-8">
-                  <h4 className="text-[12px] font-bold text-[#14213D] uppercase tracking-[0.3em] flex items-center gap-3">
-                    <Calendar className="size-4 text-primary" />
-                    Leadership Journey
-                  </h4>
-                  <div className="grid gap-8 border-l border-border pl-6 relative">
-                    <TimelineItem year="2018" title="Company Vision Started" desc="Started with a mission to promote clean and affordable solar energy." />
-                    <TimelineItem year="2020" title="Residential Solar Growth" desc="Delivered rooftop solar solutions for homes and small businesses." />
-                    <TimelineItem year="2022" title="Commercial & Industrial Projects" desc="Expanded into commercial, industrial, and institutional solar installations." />
-                    <TimelineItem year="2024" title="O&M and Subsidy Support" desc="Strengthened service quality with maintenance, monitoring, and government subsidy assistance." />
-                    <TimelineItem year="2026" title="Regional Growth" desc="Serving customers across Balod, Durg, Raipur, Rajnandgaon, Dhamtari, and nearby districts." />
-                  </div>
                 </ScrollReveal>
 
                 {/* Bottom Badges */}
@@ -401,19 +385,6 @@ function HighlightItem({ icon, title, desc }: { icon: any, title: string, desc: 
       <div className="space-y-1">
         <h4 className="font-bold text-[#14213D] text-[15px]">{title}</h4>
         <p className="text-[13px] text-[#475569] leading-relaxed">{desc}</p>
-      </div>
-    </div>
-  );
-}
-
-function TimelineItem({ year, title, desc }: { year: string, title: string, desc: string }) {
-  return (
-    <div className="relative">
-      <div className="absolute -left-[31px] top-1.5 size-4 rounded-full border-2 border-primary bg-white transition-all group-hover:scale-125" />
-      <div className="space-y-1">
-        <span className="text-[13px] font-bold text-primary">{year}</span>
-        <h5 className="text-[16px] font-bold text-[#14213D] font-headline">{title}</h5>
-        <p className="text-[14px] text-[#64748B] leading-relaxed">{desc}</p>
       </div>
     </div>
   );
