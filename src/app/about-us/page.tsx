@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from "react";
@@ -163,7 +162,7 @@ export default function AboutPage() {
                       <div className="relative size-48 md:size-64 mx-auto mb-8">
                         <div className="absolute inset-0 rounded-full border-[8px] border-white shadow-xl overflow-hidden">
                           <Image 
-                            src="https://picsum.photos/seed/naimesh/400/400" 
+                            src="/AD.jpeg" 
                             alt="Naimesh Chandraker" 
                             fill 
                             className="object-cover"
