@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { useState } from "react";
 import { 
   Phone, 
   Mail, 
@@ -26,13 +26,63 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 export default function ContactPage() {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    solution: "Residential Installation",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Inquiry Sent Successfully!",
-      description: "Our solar consultants will reach out to you within 24 hours.",
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzW1dPqLs364oyqiNYQ6gG493wqj1es7VGZ1-R-EOmyVOC4JfqXwR6CMBVfH3nVsxlZ/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      toast({
+        title: "Inquiry Sent Successfully!",
+        description: "Our solar consultants will reach out to you within 24 hours.",
+      });
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        solution: "Residential Installation",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your submission. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -81,20 +131,67 @@ export default function ContactPage() {
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
-                      <Input placeholder="First Name" className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" required />
-                      <Input placeholder="Last Name" className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" required />
+                      <Input 
+                        name="firstName"
+                        placeholder="First Name" 
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" 
+                        required 
+                      />
+                      <Input 
+                        name="lastName"
+                        placeholder="Last Name" 
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" 
+                        required 
+                      />
                     </div>
-                    <Input type="email" placeholder="Email Address" className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" required />
-                    <Input type="tel" placeholder="Phone Number" className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" required />
-                    <select className="w-full h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border border-neutral-100 px-4 text-[13px] md:text-[14px] text-black focus:ring-black outline-none appearance-none">
+                    <Input 
+                      name="email"
+                      type="email" 
+                      placeholder="Email Address" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" 
+                      required 
+                    />
+                    <Input 
+                      name="phone"
+                      type="tel" 
+                      placeholder="Phone Number" 
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" 
+                      required 
+                    />
+                    <select 
+                      name="solution"
+                      value={formData.solution}
+                      onChange={handleChange}
+                      className="w-full h-12 md:h-14 rounded-xl md:rounded-2xl bg-white border border-neutral-100 px-4 text-[13px] md:text-[14px] text-black focus:ring-black outline-none appearance-none"
+                    >
                       <option>Residential Installation</option>
                       <option>Commercial Solutions</option>
                       <option>Industrial EPC</option>
                       <option>Maintenance (AMC)</option>
                     </select>
-                    <Textarea placeholder="Tell us about your roof size or power needs..." className="min-h-[100px] md:min-h-[120px] rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" />
-                    <Button type="submit" variant="default" size="lg" className="w-full rounded-full py-6 md:py-7 font-bold text-[14px] transition-all">
-                      Send Inquiry <ArrowRight className="ml-2 size-5" />
+                    <Textarea 
+                      name="message"
+                      placeholder="Tell us about your roof size or power needs..." 
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="min-h-[100px] md:min-h-[120px] rounded-xl md:rounded-2xl bg-white border-neutral-100 focus:ring-black" 
+                    />
+                    <Button 
+                      type="submit" 
+                      disabled={loading}
+                      variant="default" 
+                      size="lg" 
+                      className="w-full rounded-full py-6 md:py-7 font-bold text-[14px] transition-all"
+                    >
+                      {loading ? "Sending..." : <>Send Inquiry <ArrowRight className="ml-2 size-5" /></>}
                     </Button>
                   </form>
                 </CardContent>
