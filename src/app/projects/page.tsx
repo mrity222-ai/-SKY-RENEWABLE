@@ -131,23 +131,21 @@ export default function ProjectsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                   >
-                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500">
+                    <Card className="rounded-[24px] border-none overflow-hidden group relative h-[500px] md:h-[560px] w-full shadow-sm hover:shadow-2xl transition-all duration-500 bg-black">
                       <video
-                        autoPlay
                         loop
                         playsInline
+                        controls
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       >
                         <source src={project.video} type="video/mp4" />
                       </video>
                       
                       <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-8 md:pr-10 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] border-r-[6px] border-secondary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                        <div className="text-[30px] md:text-[40px] font-black text-[#0F172A] tracking-tighter leading-none">
+                        <Link href={`/get-quote`} className="text-[30px] md:text-[40px] font-black text-[#0F172A] tracking-tighter leading-none hover:text-secondary transition-colors">
                           {project.id < 10 ? `0${project.id}` : project.id}
-                        </div>
+                        </Link>
                       </div>
-
-                      <Link href={`/get-quote`} className="absolute inset-0 z-10" aria-label={`View Project ${project.id}`} />
                     </Card>
                   </motion.div>
                 ))}

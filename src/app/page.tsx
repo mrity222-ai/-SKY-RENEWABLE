@@ -70,6 +70,7 @@ export default function Home() {
           <video
             autoPlay
             loop
+            muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
@@ -157,6 +158,7 @@ export default function Home() {
                 <video
                   autoPlay
                   loop
+                  muted
                   playsInline
                   className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                 >
@@ -227,23 +229,21 @@ export default function Home() {
             {projects.map((p) => (
               <ScrollReveal key={p.id} direction="up" delay={p.id * 0.1}>
                 <div className="group relative">
-                  <div className="relative h-[400px] md:h-[500px] rounded-[32px] overflow-hidden shadow-xl transition-all duration-700 hover:-translate-y-2 border border-border/50">
+                  <div className="relative h-[400px] md:h-[500px] rounded-[32px] overflow-hidden shadow-xl transition-all duration-700 hover:-translate-y-2 border border-border/50 bg-black">
                     <video
-                      autoPlay
                       loop
                       playsInline
+                      controls
                       className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                     >
                       <source src={p.video} type="video/mp4" />
                     </video>
                     
                     <div className="absolute bottom-0 left-0 bg-white pl-6 md:pl-8 pr-10 md:pr-12 py-5 md:py-6 flex items-center justify-center rounded-tr-[32px] border-r-[6px] border-primary shadow-2xl transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
-                      <div className="text-[34px] md:text-[40px] font-black text-[#14213D] tracking-tighter leading-none">
+                      <Link href="/get-quote" className="text-[34px] md:text-[40px] font-black text-[#14213D] tracking-tighter leading-none hover:text-primary transition-colors">
                         {p.id < 10 ? `0${p.id}` : p.id}
-                      </div>
+                      </Link>
                     </div>
-
-                    <Link href="/get-quote" className="absolute inset-0 z-10" aria-label={`View Project ${p.id}`} />
                   </div>
                 </div>
               </ScrollReveal>
