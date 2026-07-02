@@ -148,16 +148,28 @@ export function Footer() {
         </div>
       </div>
 
-      {/* FLOATING WHATSAPP */}
-      <a 
-        href="https://wa.me/918871105807" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[80] bg-[#22C55E] text-white p-4 md:p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageCircle className="size-6 md:size-8 fill-current" />
-      </a>
+      {/* FLOATING ACTION BUTTONS */}
+      <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[80] flex flex-col gap-4">
+        {/* CALL BUTTON */}
+        <a 
+          href="tel:8871105807" 
+          className="bg-[#2563EB] text-white p-4 md:p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center group"
+          aria-label="Call Now"
+        >
+          <Phone className="size-6 md:size-8" />
+        </a>
+
+        {/* WHATSAPP BUTTON */}
+        <a 
+          href="https://wa.me/918871105807" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-[#22C55E] text-white p-4 md:p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle className="size-6 md:size-8 fill-current" />
+        </a>
+      </div>
     </footer>
   );
 }
